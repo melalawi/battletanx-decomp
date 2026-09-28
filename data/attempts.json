@@ -1,0 +1,2228 @@
+{
+ "functions": {
+  "func_80076038": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 12,
+       "inserted": 0,
+       "missing": 0,
+       "of": 12,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 12,
+      "inserted": 0,
+      "missing": 0,
+      "of": 12
+     },
+     "note": "func_80076038 -- ORs its argument into what func_800771F4 returns and hands the result to func_80077200.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 12,
+    "inserted": 0,
+    "missing": 0,
+    "of": 12
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007627C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 69,
+       "inserted": 0,
+       "missing": 0,
+       "of": 69,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 69,
+      "inserted": 0,
+      "missing": 0,
+      "of": 69
+     },
+     "note": "func_8007627C -- copies n bytes between two byte-addressed spaces, a byte at a time until the source is word-aligned, then a word at a time split into four byte stores, then the tail.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 69,
+    "inserted": 0,
+    "missing": 0,
+    "of": 69
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_80076E9C": {
+   "attempt_count": 2,
+   "attempts": [
+    {
+     "assignment": "20260928T192904Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 38,
+       "inserted": 1,
+       "missing": 1,
+       "of": 49,
+       "result": "differs",
+       "typed": {
+        "changed": 1,
+        "imm": 1,
+        "inserted": 1,
+        "missing": 1,
+        "reg": 7,
+        "reordered": 1
+       }
+      }
+     },
+     "measurement": {
+      "identical": 38,
+      "inserted": 1,
+      "missing": 1,
+      "of": 49
+     },
+     "note": "Register allocation: / persistently swapped across all 10 attempts. Same registers saved (7 total) but different order forces instruction reordering. May require register-specific allocation idiom or compiler-specific trick.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T19:32:59Z",
+     "retained": "artifacts/retained-candidates/func_80076E9C/1.c",
+     "retained_sha256": "33c742307eacf6d5dc9023db2ec7c68fd0c42f1ce2d0288a312d9887e1e52920"
+    },
+    {
+     "assignment": "20260928T192903Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 38,
+       "inserted": 2,
+       "missing": 2,
+       "of": 49,
+       "result": "differs",
+       "typed": {
+        "changed": 2,
+        "imm": 1,
+        "inserted": 2,
+        "missing": 2,
+        "reg": 6
+       }
+      }
+     },
+     "measurement": {
+      "identical": 38,
+      "inserted": 2,
+      "missing": 2,
+      "of": 49
+     },
+     "note": "Register allocation and instruction selection differ across 10 trials; core logic matches (38/49 instructions) but requires compiler-specific ori/addiu instruction selection and s2/s3 register swaps beyond C-level control",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T19:34:11Z",
+     "retained": "artifacts/retained-candidates/func_80076E9C/2.c",
+     "retained_sha256": "71534a61b8ac365e1c31756e7161aa4b3163a8b4cf69dbb278d97bb6ae5dfd92"
+    }
+   ],
+   "best": {
+    "identical": 38,
+    "inserted": 1,
+    "missing": 1,
+    "of": 49
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_8007967C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "note": "func_8007967C -- does nothing. * * Two words: the return and an empty delay slot. The cartridge keeps the entry point, so * something calls it; what it was meant to do, if anything, is not in the image. The interval is a bare return, so the cartridge's two words are the epilogue and its empty delay slot.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-25T14:05:32Z",
+     "trials": 1
+    }
+   ],
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80079A5C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 22,
+       "inserted": 0,
+       "missing": 0,
+       "of": 22,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 22,
+      "inserted": 0,
+      "missing": 0,
+      "of": 22
+     },
+     "note": "func_80079A5C -- unless the handle is -1, sets it and then the float value on the object D_80150380 holds.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 22,
+    "inserted": 0,
+    "missing": 0,
+    "of": 22
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007AAC0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 9,
+       "inserted": 0,
+       "missing": 0,
+       "of": 9,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 9,
+      "inserted": 0,
+      "missing": 0,
+      "of": 9
+     },
+     "note": "func_8007AAC0 -- returns the field at 0x204 of the object D_801B4ABC points to, or 0 when there is none.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 9,
+    "inserted": 0,
+    "missing": 0,
+    "of": 9
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007C6D8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 10,
+       "inserted": 0,
+       "missing": 0,
+       "of": 10,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 10,
+      "inserted": 0,
+      "missing": 0,
+      "of": 10
+     },
+     "note": "func_8007C6D8 -- whether the state D_801B4ABC points at is one of 3 to 6.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 10,
+    "inserted": 0,
+    "missing": 0,
+    "of": 10
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007FF68": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T222759Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 45,
+       "inserted": 0,
+       "missing": 0,
+       "of": 45,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 45,
+      "inserted": 0,
+      "missing": 0,
+      "of": 45
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T22:35:23Z"
+    }
+   ],
+   "best": {
+    "identical": 45,
+    "inserted": 0,
+    "missing": 0,
+    "of": 45
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800805D0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 12,
+     "note": "* Returns the constant 0x12320. The value is built with lui plus ori into * $v0, which is how a 32-bit integer constant too large for one immediate is * loaded, so the return type is int rather than anything narrower.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80085E18": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T042350Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 4,
+       "inserted": 50,
+       "missing": 63,
+       "of": 295,
+       "result": "differs"
+      }
+     },
+     "measurement": {
+      "identical": 4,
+      "inserted": 50,
+      "missing": 63,
+      "of": 295
+     },
+     "note": "structurally exact (25 independent if-blocks matching the cartridge's 25 fields) with the multiply expanded to the cartridge's shift/add form, but IDO keeps D_802D5A46's base in $a1 for the whole function while every candidate variant recomputes lui/addiu per block; closest is identical 3 of 295 words.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T05:52:11Z",
+     "retained": "artifacts/retained-candidates/func_80085E18/1.c",
+     "retained_sha256": "1a8dfcde1645c11d34d5e79801bbe31a9cb3f018fd096753d885da678f8f82da"
+    }
+   ],
+   "best": {
+    "identical": 4,
+    "inserted": 50,
+    "missing": 63,
+    "of": 295
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_80090F10": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 33,
+       "inserted": 0,
+       "missing": 0,
+       "of": 33,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 33,
+      "inserted": 0,
+      "missing": 0,
+      "of": 33
+     },
+     "note": "func_80090F10 -- picks an index at random, weighted by the byte table D_802D5BA0 whose total is D_802D5BB7.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 33,
+    "inserted": 0,
+    "missing": 0,
+    "of": 33
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800917C4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 20,
+     "note": "* Copies the two 16-bit fields at offsets 8 and 0xA from one structure to * another. Both loads are `lhu` and both stores are `sh`, which fixes the * fields as unsigned 16-bit halfwords, and the single register reused for both * copies is what a named scratch variable produces.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800917D8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 15,
+       "inserted": 0,
+       "missing": 0,
+       "of": 15,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 15,
+      "inserted": 0,
+      "missing": 0,
+      "of": 15
+     },
+     "note": "func_800917D8 -- copies the pair of halfwords at 0x8 and 0xA from each of n 16-byte records to another array.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 15,
+    "inserted": 0,
+    "missing": 0,
+    "of": 15
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800949B8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 32,
+     "note": "func_800949B8 -- keeps the smallest value seen: it loads the current best from * the third argument with lw, compares the second argument against it with a * signed slt, and on a smaller value writes the value and the first argument * into the record's first two words. The lw/sw widths fix both record fields as * 32-bit, and slt (not sltu) fixes the compared value as a signed int; the * compare lands in the same register as the loaded value because the cartridge * reuses one local for both.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:22:49Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80095CDC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T042350Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 10,
+       "inserted": 91,
+       "missing": 37,
+       "of": 116,
+       "result": "differs"
+      }
+     },
+     "measurement": {
+      "identical": 10,
+      "inserted": 91,
+      "missing": 37,
+      "of": 116
+     },
+     "note": "closest candidate is identical 10 of 116 words; the row(page,band) address math and the arg0..arg2 linear-step loop both compile, but the cartridge's register/scheduling choices were not reproduced within budget, and D_802D5BC0/D_802D5BC4's real element layout is still unconfirmed (declared as bare int here).",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T05:53:19Z",
+     "retained": "artifacts/retained-candidates/func_80095CDC/1.c",
+     "retained_sha256": "35295d14ac8f470536f34e769ecec1079968c0b8257a4ec65394984e4b102d12"
+    }
+   ],
+   "best": {
+    "identical": 10,
+    "inserted": 91,
+    "missing": 37,
+    "of": 116
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_80096784": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T000847Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 44,
+       "inserted": 0,
+       "missing": 0,
+       "of": 44,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 44,
+      "inserted": 0,
+      "missing": 0,
+      "of": 44
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T00:17:52Z"
+    }
+   ],
+   "best": {
+    "identical": 44,
+    "inserted": 0,
+    "missing": 0,
+    "of": 44
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800968FC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 9,
+       "inserted": 0,
+       "missing": 0,
+       "of": 9,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 9,
+      "inserted": 0,
+      "missing": 0,
+      "of": 9
+     },
+     "note": "func_800968FC -- forwards its two arguments to func_800A8EF8 with the second repeated and a zero fourth.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 9,
+    "inserted": 0,
+    "missing": 0,
+    "of": 9
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_80097C24": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 64,
+     "note": "func_80097C24 -- clears a 0x3C-byte record reached through the first argument by * storing $zero into all fifteen words from 0x0 to 0x38. Every store is `sw`, so * every field is a 32-bit word; the cartridge writes them in the order 0,4,8, * 0x14,0x18,0x20,0xC,0x10,0x1C,0x2C,0x30,0x24,0x28,0x34,0x38, which is the order * kept here.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:22:49Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80099CD8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T194859Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 46,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x800723B0",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_800723B0"
+        },
+        {
+         "address": "0x800723B8",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_800723B8"
+        },
+        {
+         "address": "0x800723BC",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_800723BC"
+        }
+       ],
+       "of": 46,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 46,
+      "inserted": 0,
+      "missing": 0,
+      "of": 46
+     },
+     "note": "checks field conditions and calls handler with scaled float parameter",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T19:59:34Z"
+    }
+   ],
+   "best": {
+    "identical": 46,
+    "inserted": 0,
+    "missing": 0,
+    "of": 46
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A4254": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 20,
+       "inserted": 0,
+       "missing": 0,
+       "of": 20,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 20,
+      "inserted": 0,
+      "missing": 0,
+      "of": 20
+     },
+     "note": "func_800A4254 -- the value func_800F3BE4 gives for the float at 0xB0, negated when the float at 0xB8 is negative, as a halfword.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 20,
+    "inserted": 0,
+    "missing": 0,
+    "of": 20
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A42A4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "note": "func_800A42A4 -- reads the word at 0x0F4 out of the object it is given. * * One load and a return: the cartridge loads a word from 0xF4 past the pointer in the first * argument and leaves it in the return register, so this is the read half of a field accessor. * What the field means is not in the image, so it is named for its offset.",
+     "outcome": "failed",
+     "positional_differing_words": 3,
+     "recorded_at": "2026-09-25T14:18:55Z",
+     "trials": 1
+    }
+   ],
+   "positional_best_differing_words": 3,
+   "verdict": "Open"
+  },
+  "func_800A4A64": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 50,
+       "inserted": 0,
+       "missing": 0,
+       "of": 50,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 50,
+      "inserted": 0,
+      "missing": 0,
+      "of": 50
+     },
+     "note": "func_800A4A64 -- appends arg1's two floats to the looked-up object's pair list (count at 0x1AF, * stopping at one entry) and keeps the first entry's id from func_800A6AB4 at 0x1B8.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T19:37:26Z"
+    }
+   ],
+   "best": {
+    "identical": 50,
+    "inserted": 0,
+    "missing": 0,
+    "of": 50
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A4D10": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "note": "func_800A4D10 -- reports whether the counter at 0x208 has run out. * * The cartridge loads the word at 0x208 and returns `sltu $zero, $v0`, which is zero when the * field is zero and one otherwise, so the answer is a flag rather than the count. The field is * the same one the function twelve bytes later counts down, which is what makes this the test * that goes with that countdown; nothing in the image says what is being timed, so both the * struct and the field keep names taken from the offset.",
+     "outcome": "failed",
+     "positional_differing_words": 1,
+     "recorded_at": "2026-09-25T14:18:55Z",
+     "trials": 1
+    }
+   ],
+   "positional_best_differing_words": 1,
+   "verdict": "Open"
+  },
+  "func_800A6E10": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 8,
+       "inserted": 0,
+       "missing": 0,
+       "of": 8,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 8,
+      "inserted": 0,
+      "missing": 0,
+      "of": 8
+     },
+     "note": "func_800A6E10 -- counts the nodes of the list held at 0x10.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 8,
+    "inserted": 0,
+    "missing": 0,
+    "of": 8
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A72C8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 24,
+       "inserted": 0,
+       "missing": 0,
+       "of": 24,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 24,
+      "inserted": 0,
+      "missing": 0,
+      "of": 24
+     },
+     "note": "func_800A72C8 -- hands every node of the list at 0x98 to func_800A6E30 with the byte at 0xC of the second argument, then empties the list.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 24,
+    "inserted": 0,
+    "missing": 0,
+    "of": 24
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A76A0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 28,
+     "note": "* Copies three consecutive floats into the fields at offsets 0x30, 0x34 and * 0x38 of the destination structure. Every load is `lwc1` and every store * `swc1`, so both sides are single-precision floats, and the one * floating-point register reused for all three copies is what a named float * scratch variable produces.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800A81F0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 19,
+       "inserted": 0,
+       "missing": 0,
+       "of": 19,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 19,
+      "inserted": 0,
+      "missing": 0,
+      "of": 19
+     },
+     "note": "func_800A81F0 -- transposes the 3x3 part of a 4-float-row matrix into another.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 19,
+    "inserted": 0,
+    "missing": 0,
+    "of": 19
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A979C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T222813Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 45,
+       "inserted": 0,
+       "missing": 0,
+       "of": 45,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 45,
+      "inserted": 0,
+      "missing": 0,
+      "of": 45
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T22:35:23Z"
+    }
+   ],
+   "best": {
+    "identical": 45,
+    "inserted": 0,
+    "missing": 0,
+    "of": 45
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A9B44": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 11,
+       "inserted": 0,
+       "missing": 0,
+       "of": 11,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 11,
+      "inserted": 0,
+      "missing": 0,
+      "of": 11
+     },
+     "note": "func_800A9B44 -- sums the bytes from offset 4 to 0xFF of a block.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 11,
+    "inserted": 0,
+    "missing": 0,
+    "of": 11
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800AB200": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 8,
+     "note": "Does nothing and returns; the body is a bare jr $ra with no frame, so it takes no arguments it uses and leaves no value.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800AB95C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 40,
+       "inserted": 0,
+       "missing": 0,
+       "of": 40,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 40,
+      "inserted": 0,
+      "missing": 0,
+      "of": 40
+     },
+     "note": "func_800AB95C -- selects one of five modes, taking the mode's value from a five-entry table as the current value, and returns the mode that was set before.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T17:10:27Z"
+    }
+   ],
+   "best": {
+    "identical": 40,
+    "inserted": 0,
+    "missing": 0,
+    "of": 40
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800D1F20": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T042350Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 0,
+       "inserted": 30,
+       "missing": 31,
+       "of": 113,
+       "result": "differs"
+      }
+     },
+     "measurement": {
+      "identical": 0,
+      "inserted": 30,
+      "missing": 31,
+      "of": 113
+     },
+     "note": "a single-exit nested if/else ladder reaches only 2 of 113 words identical; the cartridge is a true leaf function (no $sp adjustment) but every candidate needs a stack frame (sw $s0 or a stack spill) to keep a2/a3 live across the ten-way bracket chain that the cartridge keeps entirely in $t0-$t4/$a0-$a3 without spilling.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T05:47:51Z",
+     "retained": "artifacts/retained-candidates/func_800D1F20/1.c",
+     "retained_sha256": "4602f8af0f3f2d194f2e7b9bc11c856a377f5bc219c34649dee48505deeab7c4"
+    }
+   ],
+   "best": {
+    "identical": 0,
+    "inserted": 30,
+    "missing": 31,
+    "of": 113
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_800DDCA4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 10,
+       "inserted": 0,
+       "missing": 0,
+       "of": 10,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 10,
+      "inserted": 0,
+      "missing": 0,
+      "of": 10
+     },
+     "note": "func_800DDCA4 -- initialises a header in place: its data pointer to just past the header, four halfwords to zero and the last to 0xF8; returns the header.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 10,
+    "inserted": 0,
+    "missing": 0,
+    "of": 10
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800E0B00": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T192912Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 49,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x80074428",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_80074428"
+        },
+        {
+         "address": "0x80135834",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_80135834"
+        }
+       ],
+       "of": 49,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 49,
+      "inserted": 0,
+      "missing": 0,
+      "of": 49
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T19:37:26Z"
+    }
+   ],
+   "best": {
+    "identical": 49,
+    "inserted": 0,
+    "missing": 0,
+    "of": 49
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800E3480": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 28,
+     "note": "Two neighbouring resets that share one interval. * func_800E3480 clears the two words at the start of the record; func_800E348C clears * the halfword at 0x344 and the bytes at 0x348 and 0x34A of a much larger one. * sw fixes the first pair as words, sh fixes 0x344 as a halfword and sb fixes 0x348 * and 0x34A as single bytes.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:10:16Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800E349C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "note": "func_800E349C -- clears five fields of the object it is handed and returns nothing. * * Every store is of `$zero`, so this writes zeros and reads nothing back; the widths the * cartridge uses are what fix the types. Two words go out at 0x09C and 0x0A0, one halfword at * 0x344, and two single bytes at 0x34A and 0x348 -- in that order, the last of them in the * return's delay slot. The two bytes are written high one first, which is the order they were * written in rather than the order they sit in, so they are separate fields and not one pair. * Nothing else in the image says what any of them hold, so the struct is a placeholder that * names each field for its width and leaves the gaps between them opaque.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-25T14:22:57Z",
+     "trials": 1
+    }
+   ],
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800E3C18": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 28,
+     "note": "func_800E3C18 -- records a one-shot value on an object: it stores the argument at 0x34C and clears * the byte at 0x358, but only the first time, leaving an already-set 0x34C alone. The sw fixes 0x34C * as a word and the sb fixes 0x358 as a single byte. First landing from the cartridge's addu-move * region, so its 28 bytes move from not-ruled-out to shown reachable.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:27:21Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800E4D44": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T231342Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 45,
+       "inserted": 0,
+       "missing": 0,
+       "of": 45,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 45,
+      "inserted": 0,
+      "missing": 0,
+      "of": 45
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T23:21:22Z"
+    }
+   ],
+   "best": {
+    "identical": 45,
+    "inserted": 0,
+    "missing": 0,
+    "of": 45
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800E5198": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 2,
+       "inserted": 0,
+       "missing": 0,
+       "of": 2,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 2,
+      "inserted": 0,
+      "missing": 0,
+      "of": 2
+     },
+     "note": "func_800E5198 -- does nothing: the return and its empty delay slot.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T03:33:25Z"
+    }
+   ],
+   "best": {
+    "identical": 2,
+    "inserted": 0,
+    "missing": 0,
+    "of": 2
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800E566C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 28,
+     "note": "Clears five bytes and one word of a record: the bytes at 0x4..0x7, the word at * 0x8, and last the byte at 0x3. * sb fixes 0x3..0x7 as single bytes and sw fixes 0x8 as a 32-bit field.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:54:33Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800E6C14": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 18,
+       "inserted": 0,
+       "missing": 0,
+       "of": 18,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 18,
+      "inserted": 0,
+      "missing": 0,
+      "of": 18
+     },
+     "note": "func_800E6C14 -- stores an object's float field, converted to an unsigned integer, into the record the object points to, and returns -1.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T17:10:27Z"
+    }
+   ],
+   "best": {
+    "identical": 18,
+    "inserted": 0,
+    "missing": 0,
+    "of": 18
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800E9DA4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 46,
+       "inserted": 0,
+       "missing": 0,
+       "of": 46,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 46,
+      "inserted": 0,
+      "missing": 0,
+      "of": 46
+     },
+     "note": "Returns an entity weight: 0 when func_800E3470 rejects its object, else 0.5 if the object state is 8 or 9, plus 0.5 - func_800E0BC4(position) / 16000 when that is positive.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T00:07:06Z"
+    }
+   ],
+   "best": {
+    "identical": 46,
+    "inserted": 0,
+    "missing": 0,
+    "of": 46
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800F3014": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T231342Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 45,
+       "inserted": 0,
+       "missing": 0,
+       "of": 45,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 45,
+      "inserted": 0,
+      "missing": 0,
+      "of": 45
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T23:21:22Z"
+    }
+   ],
+   "best": {
+    "identical": 45,
+    "inserted": 0,
+    "missing": 0,
+    "of": 45
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800F5128": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 20,
+       "inserted": 0,
+       "missing": 0,
+       "of": 20,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 20,
+      "inserted": 0,
+      "missing": 0,
+      "of": 20
+     },
+     "note": "func_800F5128 -- shifts seventeen fresh bits from func_800F58F0 into D_8035CD24.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 20,
+    "inserted": 0,
+    "missing": 0,
+    "of": 20
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800F5178": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 59,
+       "inserted": 0,
+       "missing": 0,
+       "of": 59,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 59,
+      "inserted": 0,
+      "missing": 0,
+      "of": 59
+     },
+     "note": "func_800F5178 -- the adaptive model's initial state, as LZARI's StartModel sets it up. * * Every symbol starts with frequency one, so the cumulative table counts down from 314 to 0; the * position table is the running sum of 10000 / (i + 200) over the 4096-entry window.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-28T16:05:22Z"
+    }
+   ],
+   "best": {
+    "identical": 59,
+    "inserted": 0,
+    "missing": 0,
+    "of": 59
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_80109094": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T042350Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 1,
+       "inserted": 0,
+       "missing": 0,
+       "of": 117,
+       "result": "differs"
+      }
+     },
+     "measurement": {
+      "identical": 1,
+      "inserted": 0,
+      "missing": 0,
+      "of": 117
+     },
+     "note": "byte count and instruction shape match exactly (0 inserted, 0 missing of 117 words) across many source variants but IDO puts the accumulator in $v1 instead of $a1; two decomp-permuter runs did not find a matching register layout.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T05:42:56Z",
+     "retained": "artifacts/retained-candidates/func_80109094/1.c",
+     "retained_sha256": "cc4b59135adba8d8107708dee67c793eec78a147964c6cf6cd5a1a03b42b3c1e"
+    }
+   ],
+   "best": {
+    "identical": 1,
+    "inserted": 0,
+    "missing": 0,
+    "of": 117
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_80109354": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 16,
+     "note": "Stores three halfwords into the record at offsets 2, 4 and 0x10. All three stores are sh with no narrowing of the incoming registers, which fixed the fields as shorts and the arguments as plain words.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:58:47Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8010BC08": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 8,
+     "note": "Does nothing and returns nothing: the whole interval is a bare `jr $ra` and its * empty delay slot, so there is no data touched and no type to fix.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:54:33Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80110480": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 12,
+     "note": "* Reads and returns the hardware word at 0xA4500004. The address is built * with a bare `lui` into a general register and the load is a full-word `lw` * at the low half of the address, which is what an absolute address cast to a * pointer produces rather than a %hi/%lo pair against a data symbol.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:13:36Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80110CA0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 132,
+     "note": "* Shuts one screen down: it always calls func_8011BDA0 first, and when the byte * flag D_803C4DC0 is set it also tears down the active view -- func_801112A8(0), * func_8011BFD0(1, D_803C4D80) and func_80119240(arg0, 0, 1) -- before calling * func_8011BFD0(0, D_803C4D80) again, clearing the flag and calling func_8011BDE4. * The result of the last func_8011BFD0 is returned. * Types came from the disassembly: D_803C4DC0 is loaded with lbu and cleared with * sb, so it is an unsigned char; D_803C4D80 is only ever formed as an address * (lui + addiu of %hi/%lo, never loaded), so it is an array passed by address; and * the return value lives in the frame at 0x1C and is written on every assignment * including the dead first two, which is what fixes it as a volatile local.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80114520": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 176,
+     "note": "func_80114520 -- five-bit CRC over the low sixteen bits of one halfword, polynomial 0x15, taking * one bit per round from bit 10 of the running value. The cartridge's byte stores fix the running * value and the polynomial term as single bytes and the round counter as a word; a fourth word of * frame is a declared local the code never reads.",
+     "outcome": "failed",
+     "positional_differing_words": 22,
+     "recorded_at": "2026-09-26T14:08:46Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 22,
+   "verdict": "Open"
+  },
+  "func_801145D0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 208,
+     "note": "func_801145D0 -- eight-bit CRC over 0x20 bytes plus one all-zero flush byte, using the * polynomial 0x85. The store widths in the cartridge fix the types: the running value and the * polynomial term are single bytes, the byte counter and the bit counter are words.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:10:16Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_801147A0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 136,
+     "note": "* Writes a 4x4 identity matrix: for every row i and column j it stores 1.0f when * i == j and 0.0f otherwise, keeping the row pointer as the loop's induction * variable. * Types came from the disassembly: every store is a 32-bit swc1, so the matrix is * float and not double; the 1.0f comes from `lui $at, 0x3F80` plus `mtc1`, and the * 0.0f from `mtc1 $zero`, so both are single-precision literals. The inner j loop * is unrolled by the compiler, which is why i is compared against the literals * 0, 1, 2 and 3 held in registers.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:49:48Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80114828": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 48,
+     "note": "Builds a 4x4 identity matrix in a stack buffer and hands it, with the caller's argument, to the routine that consumes it. The 0x58 frame with $ra at 0x14 fixed the buffer as the 0x40 bytes at 0x18, which the identity writer's swc1 stores make a float[4][4].",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:58:47Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011540C": {
+   "attempt_count": 3,
+   "attempts": [
+    {
+     "measured_bytes": 104,
+     "note": "func_8011540C -- runs a 28-byte halfword checksum over one block, accumulating the plain sum * into *sum and the sum of the one's complements into *check, then returns 0. Both accumulators * are halfwords (lhu/sh) and the byte offset advances by two per step; the loop bound is compared * with `sltiu`, which is why the offset is unsigned. The complement is the cartridge's `not`.",
+     "outcome": "failed",
+     "positional_differing_words": 57,
+     "recorded_at": "2026-09-26T13:32:53Z",
+     "trials": 1
+    },
+    {
+     "measured_bytes": 104,
+     "note": "func_8011540C -- runs a 28-byte halfword checksum over one block, accumulating the plain sum * into *sum and the sum of the one's complements into *check, then returns 0. Both accumulators * are halfwords (lhu/sh) and the byte offset advances by two per step; the loop bound is compared * with `sltiu`, which is why the offset is unsigned. The complement is the cartridge's `not`.",
+     "outcome": "failed",
+     "positional_differing_words": 57,
+     "recorded_at": "2026-09-26T13:35:42Z",
+     "trials": 1
+    },
+    {
+     "measured_bytes": 104,
+     "note": "func_8011540C -- runs a 28-byte halfword checksum over one block, accumulating the plain sum * into *sum and the sum of the one's complements into *check, then returns 0. Both accumulators * are halfwords (lhu/sh) and the byte offset advances by two per step; the loop bound is compared * with `sltiu`, which is why the offset is unsigned. The complement is the cartridge's `not`.",
+     "outcome": "failed",
+     "positional_differing_words": 57,
+     "recorded_at": "2026-09-26T13:38:14Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 57,
+   "verdict": "Open"
+  },
+  "func_80115474": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 1048,
+     "note": "Sizes a memory card by writing a marked, inverted page pattern to page after page * and reading it back, stops at the first page that does not read back or that * aliases page 0, then fills in the caller's header from the template, writes it to * four pages and verifies the first 0x20 bytes of the readback. * lbu/sb fix 0x65 of the context, 0x1A and 0x1B of the header and both scratch * buffers as unsigned bytes; lhu/sh with the andi 0xFFFE mask fixes 0x18 as an * unsigned short; every other field is a word.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011588C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 408,
+     "note": "NOTE: byte-identical only when compiled -O1; this translation unit is not an -O2 one. Verified by * hand-link against battletanx.us.z64 at 0xA588C. `matchkit try` cannot confirm it because trim * destroys the four jal relocations. * * func_8011588C -- reprobes a display device: it first flushes any pending change, then walks the * mode list {1,3,4,6} from index 1 asking func_80114190 to set each mode until func_8011540C * reports the target's own width and height back, returning 10 if no mode fits, and finally asks * func_80113E10 to tear down every mode it tried except the one that stuck. The lhu loads fix the * mode list and the two readback values as unsigned halfwords and the lbu/sb at 0x65 fixes the * dirty flag as one byte.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80115C80": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 252,
+     "note": "NOTE: byte-identical only when compiled -O1; this translation unit is not an -O2 one. Verified by * hand-link against battletanx.us.z64 at 0xA5C80. `matchkit try` cannot confirm it because trim * destroys the three jal relocations. * * func_80115C80 -- reloads a device's 0x20-byte register block: after flushing any pending change * it asks func_80114190 for the block, retrying once when that returns 2, then compares all 0x20 * bytes against the copy the device holds at 0xC and returns 2 on the first mismatch. The lbu loads * fix both the held copy and the readback buffer as unsigned char arrays of 0x20.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011954C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 28,
+     "note": "Copies three fields out of the source record into the destination: two words and one signed halfword. The lw/sw pair fixed the words as 32-bit and the lh/sh pair fixed the halfword as a signed short.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80119B60": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 84,
+     "note": "0x0",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:28:02Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80119BB4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 128,
+     "note": "Resets one 16-byte entry of the array hanging off offset 0x60 of the object to its default field values, ending with a 1.0f scale. The sb/sh/ swc1 widths fixed the entry fields as bytes, a short at 0x4 and a float at 0xC, and the sll by 4 of the index fixed the entry size at 16 bytes.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80119C34": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T000838Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 45,
+       "inserted": 0,
+       "missing": 0,
+       "of": 45,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 45,
+      "inserted": 0,
+      "missing": 0,
+      "of": 45
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T00:17:52Z"
+    }
+   ],
+   "best": {
+    "identical": 45,
+    "inserted": 0,
+    "missing": 0,
+    "of": 45
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_80119F70": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 112,
+     "note": "func_80119F70 -- unlinks one allocation from a heap's in-use list and pushes it onto the free * list. The caller hands over the payload address, so the block header is the four bytes ahead of * it, which is what the cartridge's `addiu $a2, $a1, -0x4` says. Every field touched is a word, so * the three list pointers at 0x064, 0x068 and 0x06C are pointers; the tail pointer at 0x068 is * rewound to the predecessor only when the removed block was the tail.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:39:32Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011A134": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 72,
+     "note": "* Clamps a brightness-like byte: it indexes a 16-byte table held at b->unk60 by * the unsigned byte a->unk31, adds byte 7 of that entry to byte 0xC of the object * a->unk20 points at, subtracts 0x40, then clamps the result into 0..0x7F and * returns it as a byte. * Types came from the load widths: lbu for a->unk31, entry+7 and sub+0xC makes all * three unsigned char; lw for a->unk20 and b->unk60 makes them pointers; the * `sll 4` on the index fixes the table's element stride at 16 bytes; and the final * `andi 0xFF` on the return value fixes the return type as unsigned char.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011A17C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 116,
+     "note": "* Walks the singly linked list hanging off offset 0x64 of the context and * returns the first entry whose byte at 0x32 equals the first argument, whose * byte at 0x31 equals the second, and whose byte at 0x35 is neither 3 nor 4; * it returns a null pointer when no entry qualifies. The lbu loads fix all * three compared fields as unsigned bytes, the `lw` at offset 0 fixes the link * as the first word of an entry, and the two `andi ..., 0xFF` masks on the * incoming registers fix both arguments as unsigned char.",
+     "outcome": "failed",
+     "positional_differing_words": 26,
+     "recorded_at": "2026-09-26T14:08:47Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 26,
+   "verdict": "Open"
+  },
+  "func_8011A1F0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 112,
+     "note": "func_8011A1F0 -- takes one node off the owner's free list, appends it to the owner's active list * and stamps three bytes and a self pointer into it; returns the node, or nothing when the free * list is empty. The cartridge masks each of the three values to eight bits on entry, which fixes * them as unsigned char, and the fields it writes them to are single bytes.",
+     "outcome": "failed",
+     "positional_differing_words": 24,
+     "recorded_at": "2026-09-26T14:08:47Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 24,
+   "verdict": "Open"
+  },
+  "func_8011B1A0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 260,
+     "note": "func_8011B1A0 -- unhooks every node of the owner's list at 0x50 that belongs to one target and is * of kind 0x16 or 0x17: it calls the owner's callback at 0x78 with the node's 0x14 word, retires the * node through func_8011C150, folds the node's 0x8 count into its successor's, returns it to the * owner's free list at 0x48 through func_8011C180, clears bit 0 or bit 1 of the target's flag byte * according to the kind, and stops early once that byte reaches zero. The lh at 0xC fixes the kind * as a signed short and the lbu/sb at 0x37 fixes the flag as one unsigned byte.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:04:41Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011B2A4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 112,
+     "note": "func_8011B2A4 -- walks the owner's entry array once per entry, zeroing each entry's first word * and then calling func_80119BB4 with the owner and the index. The count at 0x34 is read with lbu * on every iteration, so it is an unsigned char; the entry stride of 0x10 fixes the array element * size and the sw fixes the zeroed field as a word.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:34:01Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011B7BC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 116,
+     "note": "func_8011B7BC -- clears the five words at the head of the accumulator, then walks `count` * consecutive 0x1C-byte entries and hands each one, with the accumulator, to func_8011C180. The * five sw of $zero fix the head as five words; the 0x1C add per iteration fixes the entry stride.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:49:48Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011B8F0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 48,
+     "note": "* Sets up one 16-byte request block on the stack with 0xF in its leading halfword * and hands it, together with the sub-object 0x48 bytes into arg0, to * func_8011B60C with a third argument of zero. * Types came from the disassembly: the literal 0xF is written with sh, so the block's * first field is a halfword; the block's address is formed as `addiu $a1, $sp, 0x18` * and the frame runs to 0x28, which fixes the block at 16 bytes rather than a bare * short; and `addiu $a0, $a0, 0x48` on the incoming pointer fixes arg0 as a byte * pointer offset by 0x48.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:10:16Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011B9E0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 48,
+     "note": "Builds a 16-byte command whose only set field is the 0x11 type code and hands it, with the queue at offset 0x48 of the owner, to the queue submitter. The sh fixed the type field as a short and the frame's 16-byte local slot fixed the command size.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:57Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011BDE4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 44,
+     "note": "func_8011BDE4 -- a wrapper that takes no arguments and calls func_801193E0 with * the address of D_803C75C8 and two zeros. The lui/addiu pair builds the address of * the global rather than loading from it, so the first argument is a pointer to that * object; $a1 and $a2 are cleared with `or $zero, $zero`, so the other two arguments * are integer zeros.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:22:49Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011BFD0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 172,
+     "note": "func_8011BFD0 -- starts a 64-byte PI DMA in one direction after checking the interface is * idle. The buffer's physical address goes to PI_DRAM_ADDR and the cartridge address * 0x1FC007C0 to PI_CART_ADDR for a read or to PI_WR_LEN for a write, both as word stores. * The registers are written through constant volatile pointers rather than named externs, * which is what puts their addresses in scratch registers instead of $at. Byte-identical over * all 43 body words at -O1; it needs an [toolchain].object_options entry of [\"-O1\"], and the * split interval is 4 bytes longer than the body because it swallows the alignment word at * 0x8011C07C.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:04:41Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011C150": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 48,
+     "note": "func_8011C150 -- unlinks one node from a doubly linked list, skipping either update when that * neighbour is absent. The two words the cartridge loads from the node are its previous and next * pointers, and each neighbour's opposite link is written back through the other.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:04:41Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011C180": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 36,
+     "note": "Links a node in ahead of a list node: the new node takes the list node's * predecessor as its own and becomes that predecessor's successor. * Both links are words, at 0x0 for the predecessor and 0x4 for the successor. The * predecessor is read twice because writing the new node's own 0x0 may alias it, which * is what the second lw of 0x0($a1) says.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:12:48Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011C300": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 32,
+     "note": "Returns the word at offset 0x28 of the 48-byte slot the owner's current index names. The index scaled by 48 fixed the slot size, and the addu with the scaled offset as its first operand fixed the access as offset-plus-base pointer arithmetic.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:58:47Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011CB60": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T033154Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 4,
+       "inserted": 0,
+       "missing": 0,
+       "of": 12,
+       "result": "differs"
+      }
+     },
+     "measurement": {
+      "identical": 4,
+      "inserted": 0,
+      "missing": 0,
+      "of": 12
+     },
+     "note": "every C shape tried allocates the same instructions to different temporaries; the order the cartridge uses was not reached.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T03:33:46Z",
+     "retained": "artifacts/retained-candidates/func_8011CB60/1.c",
+     "retained_sha256": "0792a9adffee07c4a42fa08bf7e5bad3053b7a39e81232a8bcbcc2d6941ea829"
+    }
+   ],
+   "best": {
+    "identical": 4,
+    "inserted": 0,
+    "missing": 0,
+    "of": 12
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_8011D0D0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 12,
+     "note": "* Writes its argument to the hardware word at 0xA4040010. The address is * built with a bare `lui` into a general register and the store is a full-word * `sw` at the low half of the address, which is what an absolute address cast * to a pointer produces rather than a %hi/%lo pair against a data symbol.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:13:36Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011D0E0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 32,
+     "note": "Calls func_8011D0D0 with a literal 0x400 and nothing else; the frame exists only to * hold the return address across that call. * There is no load or store of data, so no field types are involved: the single * argument is an immediate word.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:54:33Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011D100": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 128,
+     "note": "Polls the status word, reports whether its 0x100 bit was set, and when the 0x80 bit is also set folds that report into the object's flag word at 0x4 and clears bit 1 there. Every field and local is touched with lw/sw, so all are words; nothing is live across the call inside a loop, so both locals sit in the frame.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011D3DC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 40,
+     "note": "* Returns the length of a NUL-terminated string: it walks a cursor forward * while the byte ahead of it is non-zero and returns the distance covered. * The `lbu` loads fix the characters as unsigned bytes and the closing * `subu $v0, $v1, $a0` is the pointer difference that gives the count.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:03:08Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011D6D0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 8,
+     "note": "func_8011D6D0 -- writes zero to the word the pointer it is handed points at, and returns nothing. * Two instructions: one `sw $zero` at offset 0 and the return. The store width in the cartridge is a * word, which is what makes the parameter an int pointer rather than a narrower one.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:13:36Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011DC60": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 56,
+     "note": "Hands the second argument to func_8011C150 and then registers it against the * sub-record 0x14 bytes into the first argument. * Both arguments are homed to their incoming stack slots because they are read after * the first call and the function has no loop.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:54:33Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011DC98": {
+   "attempt_count": 2,
+   "attempts": [
+    {
+     "measured_bytes": 96,
+     "note": "0x00",
+     "outcome": "failed",
+     "positional_differing_words": 2,
+     "recorded_at": "2026-09-26T13:28:50Z",
+     "trials": 1
+    },
+    {
+     "measured_bytes": 96,
+     "note": "func_8011DC98 -- drains the owner's single-entry list at 0x14: while that word is non-zero it * hands the entry to func_8011C150, then to func_8011C180 together with the address of the owner's * field at 0x04, and re-reads 0x14. The lw/sw widths make every field a word, and the loop keeping * the owner and the 0x04 address in $s1/$s2 across the two calls fixes them as one pointer each.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:34:01Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011E3F0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 68,
+     "note": "Registers a pair of callbacks for the object with kind 3, then clears the object's word at 0x14 and sets the one at 0x18 to 1. The two lui/addiu pairs on function symbols fixed arguments two and three as function pointers, and the sw pair fixed both fields as words.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:58:47Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011E434": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 84,
+     "note": "func_8011E434 -- initialises one object by registering a pair of callbacks for it and then * clearing and filling three of its own words. The call takes the two function addresses and a * count of seven; afterwards the word at 0x14 is zeroed and the second and third arguments are * stored at 0x18 and 0x1C, in that order. Every access is a full word (lw/sw), so the object's * fields and both remaining arguments are int-wide.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:34:01Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011E488": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 84,
+     "note": "func_8011E488 -- initialises one object by handing func_8011F7F0 the object, its two handler * entry points and the count 6, then clearing the field at 0x14 and storing the two incoming * arguments at 0x18 and 0x1C. All three stores are sw, so the fields are words; the two handler * addresses are taken with %hi/%lo, so they are function pointers.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:53:22Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011ECA4": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 224,
+     "note": "func_8011ECA4 -- dispatches a command code on one object: code 3 appends the argument to the * object's node list (tail at 0x40, head at 0x3C), code 4 and code 9 set status fields and forward * the literal code to the parent's handler at parent+0x8, code 1 replaces the parent pointer, and * anything else just forwards the code unchanged. The sh at 0x1A fixes that field as a halfword and * the sw stores fix 0x38/0x48 as words; the calls go through jalr, so the handler is a pointer.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T13:34:01Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_8011F7F0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 28,
+     "note": "func_8011F7F0 -- fills six fields of the record it is handed from three of its arguments and zero. * The store widths in the cartridge fix the types: four words at 0x0, 0x4, 0x8 and 0x10, and two * halfwords at 0xC and 0xE. The first word and both halfwords take $zero; the other three take the * second, third and fourth arguments in order.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:13:36Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_80120A98": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260928T042350Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 12,
+       "inserted": 14,
+       "missing": 19,
+       "of": 99,
+       "result": "differs"
+      }
+     },
+     "measurement": {
+      "identical": 12,
+      "inserted": 14,
+      "missing": 19,
+      "of": 99
+     },
+     "note": "closest candidate reaches identical 12 of 99 words with frame -88 vs the cartridge's -96; the cartridge holds arg0/arg2/arg3 in $t2/$t5/$t3 across both func_80121F10 calls instead of spilling them to the stack, and no source restructuring found within budget reproduced that.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-28T05:49:35Z",
+     "retained": "artifacts/retained-candidates/func_80120A98/1.c",
+     "retained_sha256": "d80003b8ea0a6c4b049b46f3b7e128ef1793a8c48ce6bf59b7f06bfebd1fb05b"
+    }
+   ],
+   "best": {
+    "identical": 12,
+    "inserted": 14,
+    "missing": 19,
+    "of": 99
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_80121F10": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "measured_bytes": 124,
+     "note": "func_80121F10 -- turns a virtual address into a physical one. An address in KSEG0 * (0x80000000..0x9FFFFFFF) or KSEG1 (0xA0000000..0xBFFFFFFF) is masked with 0x1FFFFFFF; * anything else is handed to func_80121F90. The `sltu` comparisons fix the address and the * result as unsigned. Byte-identical over all 31 body words at -O1; it needs an * [toolchain].object_options entry of [\"-O1\"], and the split interval is 4 bytes longer than * the body because it swallows the alignment word at 0x80121F8C.",
+     "outcome": "landed",
+     "positional_differing_words": 0,
+     "recorded_at": "2026-09-26T14:04:41Z",
+     "trials": 1
+    }
+   ],
+   "budget_failed_attempts": 10,
+   "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  }
+ },
+ "retire_after_failed_attempts": 10,
+ "schema": "decomp.attempts.v1"
+}

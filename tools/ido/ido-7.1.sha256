@@ -1,0 +1,16 @@
+# The IDO 7.1 files a compiler driver runs, by name and SHA-256.
+# tools/ido/setup finds each one by name under a source directory, checks it against the
+# digest here, refuses anything else, and installs the verified copy into the destination
+# the version configuration names.
+# This is the release the build runs. 7.1 reproduces the cartridge's register allocation
+# where 5.3 does not; docs/toolchain.md records the measurement.
+# These are the Linux recompilations published by the ido-static-recomp project, not SGI's
+# original IRIX binaries, which cannot run here.
+
+fad6d749179e4c037ebdca99687fed6d759d37ab070a419a3362daabd9e82d79  acpp
+52160d61a732d209eed15e0ce6736eee23118e1c34ca5b9ec61474fe1a4011e3  as1
+d886205c468987e49d1b294cc01c3d6bc886a879f4babb2f5035728d1df6029b  cc
+c264f0c1f3ece0d15c2cd2ff73fff20381e98ed09f630c8087e24010e2a5ce1a  cfe
+1baa78a42fe732318b907b39e54ba602d7733b179995ba25f02a800d73638fea  err.english.cc
+a8bcc5d4dad3b67428cde0dac6002c1e1ef3f98ea69746ff05300cdab913d227  ugen
+b21294d653fa414ba97413dc2e17c17bb417f7699166b330ed00a6a3723f03a5  uopt

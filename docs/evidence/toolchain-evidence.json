@@ -1,0 +1,1055 @@
+{
+  "cartridge": "battletanx.us.z64",
+  "image": {
+    "bytes": 8388608,
+    "sha256": "c5b7cf3523de025e3f18e2c8df2deb0eced5613e7c46cb8c6c5a4f22644ead3f"
+  },
+  "description": {
+    "source": "versions/us/battletanx.yaml",
+    "window": 65536
+  },
+  "partition": [
+    {
+      "name": "header",
+      "kind": "header",
+      "rom_start": "0x000000",
+      "rom_end": "0x000040",
+      "bytes": 64,
+      "surveyed": false
+    },
+    {
+      "name": "bootcode",
+      "kind": "bin",
+      "rom_start": "0x000040",
+      "rom_end": "0x001000",
+      "bytes": 4032,
+      "surveyed": false
+    },
+    {
+      "name": "entry",
+      "kind": "text",
+      "rom_start": "0x001000",
+      "rom_end": "0x001038",
+      "bytes": 56,
+      "surveyed": true
+    },
+    {
+      "name": "data",
+      "kind": "data",
+      "rom_start": "0x001038",
+      "rom_end": "0x006000",
+      "bytes": 20424,
+      "surveyed": false
+    },
+    {
+      "name": "text",
+      "kind": "text",
+      "rom_start": "0x006000",
+      "rom_end": "0x0B5550",
+      "bytes": 718160,
+      "surveyed": true
+    },
+    {
+      "name": "rodata",
+      "kind": "rodata",
+      "rom_start": "0x0B5550",
+      "rom_end": "0x0D7040",
+      "bytes": 137968,
+      "surveyed": false
+    },
+    {
+      "name": "bss",
+      "kind": "bss",
+      "rom_start": "0x0D7040",
+      "rom_end": "0x0D7040",
+      "bytes": 0,
+      "surveyed": false
+    },
+    {
+      "name": "assets",
+      "kind": "bin",
+      "rom_start": "0x0D7040",
+      "rom_end": "0x800000",
+      "bytes": 7507904,
+      "surveyed": false
+    }
+  ],
+  "axes": {
+    "small-data": [
+      "no-small-data",
+      "small-data-in-use"
+    ],
+    "move-encoding": [
+      "move-always-addu",
+      "move-always-or",
+      "move-mixed"
+    ],
+    "b-encoding": [
+      "b-always-beq",
+      "b-always-bgez",
+      "b-mixed"
+    ],
+    "return-delay-slot": [
+      "return-slot-always-empty",
+      "return-slot-always-filled",
+      "return-slot-mixed"
+    ],
+    "call-delay-slot": [
+      "call-slot-always-filled",
+      "call-slot-mixed",
+      "call-slot-never-filled"
+    ],
+    "division-check": [
+      "division-always-checked",
+      "division-mixed",
+      "division-never-checked"
+    ],
+    "fp-register-file": [
+      "fp-register-file-32-bit-pairs",
+      "fp-register-file-64-bit"
+    ],
+    "fp-double-transfer": [],
+    "fp-calling-convention": []
+  },
+  "discriminators": [
+    {
+      "name": "gp-relative-accesses",
+      "axis": "small-data",
+      "what_it_counts": "memory accesses and address formations based on $gp",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "gp-relative",
+          "consistent_with": [
+            "small-data-in-use"
+          ],
+          "excludes": [
+            "no-small-data"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "no-gp-relative-access",
+          "consistent_with": [
+            "no-small-data"
+          ],
+          "excludes": [
+            "small-data-in-use"
+          ],
+          "when_no_sites": true,
+          "discriminating": true
+        }
+      ]
+    },
+    {
+      "name": "move-encoding",
+      "axis": "move-encoding",
+      "what_it_counts": "register-to-register copies, by the encoding chosen for them",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "addu",
+          "consistent_with": [
+            "move-always-addu",
+            "move-mixed"
+          ],
+          "excludes": [
+            "move-always-or"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "or",
+          "consistent_with": [
+            "move-always-or",
+            "move-mixed"
+          ],
+          "excludes": [
+            "move-always-addu"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        }
+      ]
+    },
+    {
+      "name": "b-encoding",
+      "axis": "b-encoding",
+      "what_it_counts": "unconditional branches, by the encoding chosen for them",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "beq-zero-zero",
+          "consistent_with": [
+            "b-always-beq",
+            "b-mixed"
+          ],
+          "excludes": [
+            "b-always-bgez"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "bgez-zero",
+          "consistent_with": [
+            "b-always-bgez",
+            "b-mixed"
+          ],
+          "excludes": [
+            "b-always-beq"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        }
+      ]
+    },
+    {
+      "name": "stack-release-position",
+      "axis": "return-delay-slot",
+      "what_it_counts": "returns, by where the frame is released relative to `jr $ra`",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "released-in-delay-slot",
+          "consistent_with": [
+            "return-slot-always-filled",
+            "return-slot-mixed"
+          ],
+          "excludes": [
+            "return-slot-always-empty"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "released-before-empty-slot",
+          "consistent_with": [
+            "return-slot-always-empty",
+            "return-slot-mixed"
+          ],
+          "excludes": [
+            "return-slot-always-filled"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "released-before-filled-slot",
+          "consistent_with": [
+            "return-slot-always-filled",
+            "return-slot-mixed"
+          ],
+          "excludes": [
+            "return-slot-always-empty"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "frameless",
+          "consistent_with": [],
+          "excludes": [],
+          "when_no_sites": false,
+          "discriminating": false
+        }
+      ]
+    },
+    {
+      "name": "call-delay-slot",
+      "axis": "call-delay-slot",
+      "what_it_counts": "calls, by whether the delay slot was filled with work or left empty",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "filled",
+          "consistent_with": [
+            "call-slot-always-filled",
+            "call-slot-mixed"
+          ],
+          "excludes": [
+            "call-slot-never-filled"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "empty",
+          "consistent_with": [
+            "call-slot-never-filled",
+            "call-slot-mixed"
+          ],
+          "excludes": [
+            "call-slot-always-filled"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        }
+      ]
+    },
+    {
+      "name": "division-trap-pair",
+      "axis": "division-check",
+      "what_it_counts": "integer divisions, by whether a trap on a zero divisor follows",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "checked",
+          "consistent_with": [
+            "division-always-checked",
+            "division-mixed"
+          ],
+          "excludes": [
+            "division-never-checked"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "unchecked",
+          "consistent_with": [
+            "division-never-checked",
+            "division-mixed"
+          ],
+          "excludes": [
+            "division-always-checked"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        }
+      ]
+    },
+    {
+      "name": "double-operand-register-parity",
+      "axis": "fp-register-file",
+      "what_it_counts": "double-format operands, by the parity of the float register they name",
+      "discriminating": true,
+      "non_discriminating": null,
+      "outcomes": [
+        {
+          "name": "odd-register-double-operand",
+          "consistent_with": [
+            "fp-register-file-64-bit"
+          ],
+          "excludes": [
+            "fp-register-file-32-bit-pairs"
+          ],
+          "when_no_sites": false,
+          "discriminating": true
+        },
+        {
+          "name": "even-register-double-operand",
+          "consistent_with": [
+            "fp-register-file-32-bit-pairs",
+            "fp-register-file-64-bit"
+          ],
+          "excludes": [],
+          "when_no_sites": false,
+          "discriminating": false
+        }
+      ]
+    },
+    {
+      "name": "double-transfer-form",
+      "axis": "fp-double-transfer",
+      "what_it_counts": "double-width memory transfers, by whether one access or two carries the value",
+      "discriminating": false,
+      "non_discriminating": "ldc1 and sdc1 move 64 bits in one access under either register file: with a 32-bit file the access writes the even/odd pair, with a 64-bit file it writes one register. Their presence dates the instruction set at MIPS II or later and says nothing about register width, and every N64 target is MIPS III, so the count separates no two toolchains in this corpus. It is carried because the shape is worth counting and dropping it would leave the earlier reading of it unanswered.",
+      "outcomes": [
+        {
+          "name": "double-in-one-access",
+          "consistent_with": [],
+          "excludes": [],
+          "when_no_sites": false,
+          "discriminating": false
+        },
+        {
+          "name": "single-word-access",
+          "consistent_with": [],
+          "excludes": [],
+          "when_no_sites": false,
+          "discriminating": false
+        }
+      ]
+    },
+    {
+      "name": "float-argument-registers",
+      "axis": "fp-calling-convention",
+      "what_it_counts": "float registers written in the four instructions before a call",
+      "discriminating": false,
+      "non_discriminating": "A float register written in the four instructions before a call is not necessarily an argument. Under o32 the callee-clobbered temporaries $f4-$f11 and $f16-$f19 are exactly the registers a compiler spends just before a call, and $f13, $f15 and $f17 carry the low word of a double held in the pair below them. Nothing at the call site distinguishes an argument from a dead temporary, because what makes a register an argument is the callee reading it, which is not in the window. The count stands; the exclusion it once drew from $f16 was false and is withdrawn.",
+      "outcomes": [
+        {
+          "name": "first-two-argument-registers",
+          "consistent_with": [],
+          "excludes": [],
+          "when_no_sites": false,
+          "discriminating": false
+        },
+        {
+          "name": "beyond-first-two-argument-registers",
+          "consistent_with": [],
+          "excludes": [],
+          "when_no_sites": false,
+          "discriminating": false
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "gp-relative-accesses": {
+      "axis": "small-data",
+      "sites": 0,
+      "outcomes": {
+        "gp-relative": 0
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {
+        "no-gp-relative-access": [
+          "text"
+        ]
+      }
+    },
+    "move-encoding": {
+      "axis": "move-encoding",
+      "sites": 6635,
+      "outcomes": {
+        "addu": 5694,
+        "or": 941
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "b-encoding": {
+      "axis": "b-encoding",
+      "sites": 516,
+      "outcomes": {
+        "beq-zero-zero": 514,
+        "bgez-zero": 2
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "stack-release-position": {
+      "axis": "return-delay-slot",
+      "sites": 1775,
+      "outcomes": {
+        "released-in-delay-slot": 121,
+        "released-before-empty-slot": 1119,
+        "released-before-filled-slot": 12,
+        "frameless": 523
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "call-delay-slot": {
+      "axis": "call-delay-slot",
+      "sites": 7790,
+      "outcomes": {
+        "filled": 6041,
+        "empty": 1749
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "division-trap-pair": {
+      "axis": "division-check",
+      "sites": 115,
+      "outcomes": {
+        "checked": 102,
+        "unchecked": 13
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "double-operand-register-parity": {
+      "axis": "fp-register-file",
+      "sites": 1718,
+      "outcomes": {
+        "odd-register-double-operand": 17,
+        "even-register-double-operand": 1701
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "double-transfer-form": {
+      "axis": "fp-double-transfer",
+      "sites": 8215,
+      "outcomes": {
+        "double-in-one-access": 1077,
+        "single-word-access": 7138
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    },
+    "float-argument-registers": {
+      "axis": "fp-calling-convention",
+      "sites": 257,
+      "outcomes": {
+        "first-two-argument-registers": 255,
+        "beyond-first-two-argument-registers": 2
+      },
+      "unclassified": 0,
+      "abstained_in": [
+        "entry"
+      ],
+      "concluded_without_sites": {}
+    }
+  },
+  "standing": {
+    "small-data": [
+      "no-small-data"
+    ],
+    "b-encoding": [
+      "b-always-beq",
+      "b-mixed"
+    ],
+    "return-delay-slot": [
+      "return-slot-mixed"
+    ],
+    "call-delay-slot": [
+      "call-slot-mixed"
+    ],
+    "division-check": [
+      "division-always-checked",
+      "division-mixed"
+    ],
+    "fp-register-file": [
+      "fp-register-file-64-bit"
+    ]
+  },
+  "regions_disagreeing": {},
+  "non_discriminating": [
+    "double-transfer-form",
+    "float-argument-registers"
+  ],
+  "excluded_nothing_here": [
+    "move-encoding"
+  ],
+  "thin_exclusions": [],
+  "admissibility": {
+    "rule": "return-bounded-body",
+    "regions": [
+      {
+        "name": "entry",
+        "words": 14,
+        "admissible_words": 0,
+        "inadmissible_words": 14,
+        "closed_bodies": 0,
+        "admits": false,
+        "abstentions": [
+          "gp-relative-accesses abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "move-encoding abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "b-encoding abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "stack-release-position abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "call-delay-slot abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "division-trap-pair abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "double-operand-register-parity abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "double-transfer-form abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted",
+          "float-argument-registers abstains: no span of this region closes, so none of its 14 words is admissible as an instruction and nothing here is counted"
+        ]
+      },
+      {
+        "name": "text",
+        "words": 179540,
+        "admissible_words": 176143,
+        "inadmissible_words": 3397,
+        "closed_bodies": 1775,
+        "admits": true,
+        "abstentions": []
+      }
+    ]
+  },
+  "windowed_summary": {
+    "regions": 12,
+    "narrowed": 11,
+    "not_narrowed": 1,
+    "contradictory": 0,
+    "inadmissible": 1,
+    "abstentions": 19
+  },
+  "windowed_regions": [
+    {
+      "name": "entry",
+      "vram_start": "0x80071000",
+      "vram_end": "0x80071038",
+      "narrowed": false,
+      "contradictions": [],
+      "words": 14,
+      "admissible_words": 0,
+      "inadmissible_words": 14,
+      "standing": {}
+    },
+    {
+      "name": "text[0x006000]",
+      "vram_start": "0x80076000",
+      "vram_end": "0x80086000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 15928,
+      "inadmissible_words": 456,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "b-encoding": [
+          "b-always-bgez",
+          "b-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-always-empty",
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ],
+        "fp-register-file": [
+          "fp-register-file-64-bit"
+        ]
+      }
+    },
+    {
+      "name": "text[0x016000]",
+      "vram_start": "0x80086000",
+      "vram_end": "0x80096000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 16326,
+      "inadmissible_words": 58,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-always-empty",
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x026000]",
+      "vram_start": "0x80096000",
+      "vram_end": "0x800A6000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 16373,
+      "inadmissible_words": 11,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-always-empty",
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x036000]",
+      "vram_start": "0x800A6000",
+      "vram_end": "0x800B6000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 11590,
+      "inadmissible_words": 4794,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x046000]",
+      "vram_start": "0x800B6000",
+      "vram_end": "0x800C6000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 16152,
+      "inadmissible_words": 232,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x056000]",
+      "vram_start": "0x800C6000",
+      "vram_end": "0x800D6000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 14672,
+      "inadmissible_words": 1712,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x066000]",
+      "vram_start": "0x800D6000",
+      "vram_end": "0x800E6000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 16352,
+      "inadmissible_words": 32,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-always-empty",
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x076000]",
+      "vram_start": "0x800E6000",
+      "vram_end": "0x800F6000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 16086,
+      "inadmissible_words": 298,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x086000]",
+      "vram_start": "0x800F6000",
+      "vram_end": "0x80106000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 16329,
+      "inadmissible_words": 55,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-addu",
+          "move-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-always-empty",
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x096000]",
+      "vram_start": "0x80106000",
+      "vram_end": "0x80116000",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 16384,
+      "admissible_words": 13310,
+      "inadmissible_words": 3074,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "b-encoding": [
+          "b-always-beq",
+          "b-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    },
+    {
+      "name": "text[0x0A6000]",
+      "vram_start": "0x80116000",
+      "vram_end": "0x80125550",
+      "narrowed": true,
+      "contradictions": [],
+      "words": 15700,
+      "admissible_words": 15587,
+      "inadmissible_words": 113,
+      "standing": {
+        "small-data": [
+          "no-small-data"
+        ],
+        "move-encoding": [
+          "move-always-or",
+          "move-mixed"
+        ],
+        "b-encoding": [
+          "b-always-beq",
+          "b-mixed"
+        ],
+        "return-delay-slot": [
+          "return-slot-mixed"
+        ],
+        "call-delay-slot": [
+          "call-slot-mixed"
+        ],
+        "division-check": [
+          "division-always-checked",
+          "division-mixed"
+        ]
+      }
+    }
+  ],
+  "whole_summary": {
+    "regions": 2,
+    "narrowed": 1,
+    "not_narrowed": 1,
+    "contradictory": 0,
+    "inadmissible": 1,
+    "abstentions": 9
+  },
+  "release": {
+    "question": "IDO 5.3 or IDO 7.1",
+    "state": "settled for the matched corpus, by compiling against both",
+    "configured": "7.1",
+    "flags": [
+      "-c",
+      "-G0",
+      "-non_shared",
+      "-mips2",
+      "-O2"
+    ],
+    "method": "Both releases were installed from their pinned digests and every authored source was compiled with each at the same flag line, then compared word for word with the image. This is a count over compiled functions, not a count over the image, so it stands apart from the survey above and narrows no structural axis.",
+    "sets": [
+      {
+        "set": "sources that already reproduced",
+        "size": 17,
+        "ido-5.3": 17,
+        "ido-7.1": 17
+      },
+      {
+        "set": "candidates that did not reproduce under 5.3",
+        "size": 10,
+        "ido-5.3": 0,
+        "ido-7.1": 2
+      }
+    ],
+    "properties": [
+      {
+        "property": "intermediate register",
+        "cartridge": "threads the value through $v0",
+        "ido-5.3": "allocates $t6",
+        "ido-7.1": "threads the value through $v0",
+        "flag-invariant": true,
+        "note": "func_800E3460 wants xori $v0,$v0,2 / sltiu $v0,$v0,1. 5.3 emits xori $t6,$v0,2 / sltiu $v0,$t6,1 at every flag line that compiles, and 7.1 emits the cartridge's form at every one. This is the discriminator: it separates the two releases and no flag moves it."
+      },
+      {
+        "property": "return delay slot",
+        "cartridge": "both, mixed",
+        "ido-5.3": "filled at -O2",
+        "ido-7.1": "filled at -O2",
+        "flag-invariant": false,
+        "note": "func_800A42A4 wants lw / jr / nop. Neither release leaves the slot empty at the configured flags. -O0 empties it on both, and -mips1 empties it on both, so the property is reachable by flags rather than by release; neither was adopted, because both change the 17 sources that already reproduce."
+      },
+      {
+        "property": "zero return",
+        "cartridge": "addu $v0,$zero,$zero (0x00001021)",
+        "ido-5.3": "or $v0,$zero,$zero (0x00001025)",
+        "ido-7.1": "or $v0,$zero,$zero (0x00001025)",
+        "flag-invariant": true,
+        "note": "func_80096760 and func_800AB614 are two words, a return and a cleared $v0 encoded as addu. Every flag line that compiles, on both releases, emits or. Nothing measured here moves it and it stays open."
+      }
+    ],
+    "perturbations": [
+      {
+        "flags": "-O0",
+        "moved": "return delay slot empties on both releases"
+      },
+      {
+        "flags": "-O1",
+        "moved": "nothing"
+      },
+      {
+        "flags": "-O3",
+        "moved": "nothing on 7.1; 5.3 refuses the flag"
+      },
+      {
+        "flags": "-mips1",
+        "moved": "return delay slot empties on both releases"
+      },
+      {
+        "flags": "-mips3",
+        "moved": "nothing; both releases refuse the flag"
+      },
+      {
+        "flags": "-G0 removed",
+        "moved": "nothing"
+      },
+      {
+        "flags": "-non_shared removed",
+        "moved": "nothing"
+      },
+      {
+        "flags": "no -mips flag",
+        "moved": "return delay slot empties on 5.3, nothing on 7.1"
+      }
+    ],
+    "open": "Two of the three properties are not answered by the release. The empty return delay slot and the addu-encoded zero return are still unreproduced at the configured flags, and the eight candidates that turn on them are not authored. The flag line is unchanged: a perturbation that wins those eight loses the nineteen that reproduce, which is a worse record, and the flag line is not evidence to be traded for matches."
+  },
+  "unresolved": {
+    "ido-release": {
+      "question": "whether the survey can separate one IDO release from another",
+      "state": "it cannot",
+      "why": "No discriminator in the set separates one IDO release from another. Every label the survey carries is a structural axis, and no mapping from a label set to a named compiler release has been written. Which release built this cartridge is settled under *Which IDO release* below, by compiling the authored sources against both and comparing with the image word for word. That is a different kind of evidence and it is not a count over the image."
+    },
+    "label-to-compiler": {
+      "question": "which compiler the surviving label set names",
+      "state": "unwritten",
+      "why": "The survey reports structural claims such as move-always-addu. Turning a set of those into a compiler name needs a mapping measured from known-provenance images, and no such mapping exists yet."
+    }
+  }
+}

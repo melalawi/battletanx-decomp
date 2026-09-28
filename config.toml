@@ -1,0 +1,112 @@
+# BattleTanx Metadata
+
+[project]
+slug = "battletanx"
+repo = "https://github.com/melalawi/battletanx-decomp"
+title = "BattleTanx"
+tracker_title = "BattleTanx"
+reference = "us"
+
+# The one part of the cartridge a [[split.segments]] entry names: the whole loaded program,
+# one contiguous run from ROM 0x001000 to 0x0D7040.
+[[region]]
+name = "main"
+
+[split]
+# True: nothing in this project's build graph writes the two tables [split].generated_symbols names
+# (the toolkit's convention). They were produced once
+# and are carried in the repository, so they are the only copy there is -- a clone that did not
+# have them would link nothing, and there is no extraction step to regenerate them from. That
+# also means the hazard the false setting guards against does not exist here: no extraction
+# comes along to erase an edit, so an edit to one of these is durable.
+generated_symbols_tracked = true
+linker = "artifacts/{version}/extracted/{slug}.ld"
+include = "artifacts/{version}/extracted/include"
+assets = "artifacts/{version}/extracted/assets"
+empty_sections = ["artifacts/{version}/extracted/asm/data/bss.bss.s"]
+objects = "artifacts/{version}/extracted"
+c_objects = "artifacts/{version}/extracted/src"
+asm_objects = "artifacts/{version}/extracted/asm/nonmatchings"
+# Measured over this cartridge's own intervals; docs/filler.md records the sweep.
+filler_mirror_distance = 0xB8000
+subalign = 4
+
+[[split.segments]]
+name = "main"
+source = "subsegments"
+region = "main"
+vram = 0x80071000
+rom = 0x1000
+
+[toolchain]
+# The build graph; the binutils it links and inspects every object with are the graph's (the toolkit's).
+graph = "ido"
+objdump_machine = "mips"
+asflags = ["-march=vr4300", "-mabi=32", "-EB", "--no-pad-sections"]
+# Two compilers built this cartridge, so its one split segment states no compiler of its own and
+# this table names each object's: IDO 7.1 for the libultra-shaped span 0x80110490..0x80124350 and
+# for every interval already landed under it, GCC 2.7.2 for the rest. See docs/pinned-compiler-reach.md.
+objects = "data/object-toolchains.json"
+
+# IDO 7.1, run with the N64 profile. Which release is measured, not chosen: func_800E3460 and
+# func_800E3470 reproduce under 7.1 and not under 5.3.
+[toolchains."ido-7.1"]
+kind = "ido"
+installed = "artifacts/ido/7.1"
+pins = "tools/ido/ido-7.1.sha256"
+cflags = ["-c", "-G0", "-non_shared", "-mips2", "-O2"]
+
+# GCC 2.7.2 (the KMC N64 build's code generator) with SN Systems' ASN64 2.81 assembler. Measured over
+# 24 intervals of different shapes compiled from C: 23 byte-identical and the 24th at 14 of 15 words,
+# where SN's own cc1n64 builds reproduced 9 and GNU as in place of ASN64 at most 19.
+[toolchains."gcc-2.7.2"]
+kind = "gcc272"
+cc = "{toolkit}/sn64/cc"
+as = "{toolkit}/sn64/as"
+assembler = "SN ASN64 version 2.81"
+installed = "artifacts/gcc-2.7.2"
+pins = "{toolkit}/gcc272/toolchain.sha256"
+cflags = ["-G0", "-mips3", "-mgp32", "-mfp32", "-O2"]
+
+# Where an authored object's .rdata goes: GCC 2.7.2 puts a function's jump tables and float literals
+# in .rdata, and this cartridge keeps them in two runs the split names, the data run ahead of the text
+# and the literal pools after it. Those runs stay assembled as they are, and each authored .rdata is
+# linked over them, unloaded, at the address the function's own text was relocated against; the
+# build proves its words are the cartridge's. Measured over the GCC-region functions: 1,414 literal and
+# table loads address the data run and 76 the pools after the text. The code runs where it is loaded,
+# so the blocks are addressed at their own link base (delta 0), and a jump-table entry is the absolute
+# address of its case (bias 0: func_800AB95C's table at 0x80073110 holds 0x800AB988, its own text plus
+# the entry's 0x2C). The quarantine address lies in no segment, so a trial whose .rdata cannot be
+# placed still links, with every use of it reading as a difference.
+[rodata]
+segment = "main"
+resident_blocks = ["data", "rodata"]
+resident_delta = 0
+table_entry_bias = 0
+quarantine = 0xB0000000
+
+[checks]
+inline_asm_keywords = ["asm", "__asm", "__asm__"]
+forbidden_labels = ["PAL"]
+# No note cites an upstream source tree.
+note_upstreams = []
+# No source form is forbidden beyond what the checks already refuse.
+forbidden_source_forms = {}
+# No inter-function alignment residue has been reviewed on this cartridge; an authored object
+# emitting any is a defect to repair, not residue to allow.
+allowed_text_residue = {}
+
+[[cartridge]]
+id = "us"
+name = "North America"
+region = "North America"
+cartridge = "NUS-NBXE-0"
+code = "NBXE"
+revision = 0
+bytes = 8388608
+sha1 = "535860d941738ac1210c20a9b80114fea0e0ff17"
+sha256 = "c5b7cf3523de025e3f18e2c8df2deb0eced5613e7c46cb8c6c5a4f22644ead3f"
+crc1 = "6AA4DDE7"
+crc2 = "E3E2F4E7"
+buildable = true
+note = "NTSC release."

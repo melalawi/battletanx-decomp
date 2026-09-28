@@ -1,0 +1,73 @@
+/* NOTE: byte-identical only when compiled -O1; this translation unit is not an -O2 one. Verified by
+ * hand-link against battletanx.us.z64 at 0xA588C. `matchkit try` cannot confirm it because trim
+ * destroys the four jal relocations.
+ *
+ * func_8011588C -- reprobes a display device: it first flushes any pending change, then walks the
+ * mode list {1,3,4,6} from index 1 asking func_80114190 to set each mode until func_8011540C
+ * reports the target's own width and height back, returning 10 if no mode fits, and finally asks
+ * func_80113E10 to tear down every mode it tried except the one that stuck. The lhu loads fix the
+ * mode list and the two readback values as unsigned halfwords and the lbu/sb at 0x65 fixes the
+ * dirty flag as one byte.
+ */
+typedef struct Target {
+    char pad0[0x1C];
+    unsigned short unk_1C;
+    unsigned short unk_1E;
+} Target;
+
+typedef struct Obj {
+    char pad0[0x4];
+    void *unk_4;
+    void *unk_8;
+    char pad0C[0x65 - 0x0C];
+    unsigned char unk_65;
+} Obj;
+
+extern int func_8011609C(Obj *);
+extern int func_80114190(void *, void *, unsigned short, Target *);
+extern void func_8011540C(Target *, unsigned short *, unsigned short *);
+extern int func_80113E10(void *, void *, unsigned short, Target *, int);
+
+int func_8011588C(Obj *obj, Target *target) {
+    unsigned short modes[4];
+    int result;
+    unsigned short h1;
+    unsigned short h2;
+    int i;
+    int j;
+
+    result = 0;
+    if (obj->unk_65 != 0) {
+        obj->unk_65 = 0;
+        result = func_8011609C(obj);
+        if (result != 0) {
+            return result;
+        }
+    }
+    modes[0] = 1;
+    modes[1] = 3;
+    modes[2] = 4;
+    modes[3] = 6;
+    for (i = 1; i < 4; i++) {
+        result = func_80114190(obj->unk_4, obj->unk_8, modes[i], target);
+        if (result != 0) {
+            return result;
+        }
+        func_8011540C(target, &h1, &h2);
+        if (target->unk_1C == h1 && target->unk_1E == h2) {
+            break;
+        }
+    }
+    if (i == 4) {
+        return 10;
+    }
+    for (j = 0; j < 4; j++) {
+        if (j != i) {
+            result = func_80113E10(obj->unk_4, obj->unk_8, modes[j], target, 1);
+            if (result != 0) {
+                return result;
+            }
+        }
+    }
+    return 0;
+}

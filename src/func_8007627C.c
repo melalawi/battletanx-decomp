@@ -1,0 +1,25 @@
+/* func_8007627C -- copies n bytes between two byte-addressed spaces, a byte at a time until the source is word-aligned, then a word at a time split into four byte stores, then the tail. */
+
+extern int func_80076124(unsigned int a);
+extern unsigned int func_800760A0(unsigned int a);
+extern void func_80076240(unsigned int a, unsigned char b);
+void func_8007627C(unsigned int src, unsigned int dst, unsigned int n) {
+    unsigned int w;
+    while (n != 0 && (src & 3)) {
+        func_80076240(dst++, func_80076124(src++));
+        n--;
+    }
+    while (n >= 4) {
+        w = func_800760A0(src);
+        func_80076240(dst++, w >> 24);
+        func_80076240(dst++, w >> 16);
+        func_80076240(dst++, w >> 8);
+        func_80076240(dst++, w);
+        src += 4;
+        n -= 4;
+    }
+    while (n != 0) {
+        func_80076240(dst++, func_80076124(src++));
+        n--;
+    }
+}

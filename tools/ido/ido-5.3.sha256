@@ -1,0 +1,16 @@
+# The IDO 5.3 files a compiler driver runs, by name and SHA-256.
+# tools/ido/setup finds each one by name under a source directory, checks it against the
+# digest here, refuses anything else, and installs the verified copy into artifacts/ido/.
+# This release is kept pinned beside 7.1 so the two can be installed side by side and
+# compared. The version configuration names which one the build runs; docs/toolchain.md
+# records what separates them.
+# These are the Linux recompilations published by the ido-static-recomp project, not SGI's
+# original IRIX binaries, which cannot run here.
+
+7bfdf2f79010eb95bd47e165036cac04a69e5f1290fde11736e5f6934f3e9189  acpp
+39c9750c189df37d4df0f33e5eddec9d4e743cbecad0326af3dda437826dc695  as1
+76d796c9591c9f5504949f85b29c32a6039a663791afe2f36f34ca18425b64d0  cc
+7033dfb267f39a6e5381c0769f4fc46bbde193cfec771314429d8367ace898f2  cfe
+6f2d777730f0a70328bb932c116c1c195da765cb9bbdee8c6d3eaf7d6ad77e78  err.english.cc
+1734564701d39db213d6fe9c8f2cff16b82b28939fb1418348de479b41b7ac72  ugen
+4e11956bdce9cac4c2934320cb29c55d1f3d3a0281ee594fafa5ebec88df4dd5  uopt

@@ -1,0 +1,88 @@
+{
+  "question": "IDO 5.3 or IDO 7.1",
+  "state": "settled for the matched corpus, by compiling against both",
+  "configured": "7.1",
+  "flags": [
+    "-c",
+    "-G0",
+    "-non_shared",
+    "-mips2",
+    "-O2"
+  ],
+  "method": "Both releases were installed from their pinned digests and every authored source was compiled with each at the same flag line, then compared word for word with the image. This is a count over compiled functions, not a count over the image, so it stands apart from the survey above and narrows no structural axis.",
+  "sets": [
+    {
+      "set": "sources that already reproduced",
+      "size": 17,
+      "ido-5.3": 17,
+      "ido-7.1": 17
+    },
+    {
+      "set": "candidates that did not reproduce under 5.3",
+      "size": 10,
+      "ido-5.3": 0,
+      "ido-7.1": 2
+    }
+  ],
+  "properties": [
+    {
+      "property": "intermediate register",
+      "cartridge": "threads the value through $v0",
+      "ido-5.3": "allocates $t6",
+      "ido-7.1": "threads the value through $v0",
+      "flag-invariant": true,
+      "note": "func_800E3460 wants xori $v0,$v0,2 / sltiu $v0,$v0,1. 5.3 emits xori $t6,$v0,2 / sltiu $v0,$t6,1 at every flag line that compiles, and 7.1 emits the cartridge's form at every one. This is the discriminator: it separates the two releases and no flag moves it."
+    },
+    {
+      "property": "return delay slot",
+      "cartridge": "both, mixed",
+      "ido-5.3": "filled at -O2",
+      "ido-7.1": "filled at -O2",
+      "flag-invariant": false,
+      "note": "func_800A42A4 wants lw / jr / nop. Neither release leaves the slot empty at the configured flags. -O0 empties it on both, and -mips1 empties it on both, so the property is reachable by flags rather than by release; neither was adopted, because both change the 17 sources that already reproduce."
+    },
+    {
+      "property": "zero return",
+      "cartridge": "addu $v0,$zero,$zero (0x00001021)",
+      "ido-5.3": "or $v0,$zero,$zero (0x00001025)",
+      "ido-7.1": "or $v0,$zero,$zero (0x00001025)",
+      "flag-invariant": true,
+      "note": "func_80096760 and func_800AB614 are two words, a return and a cleared $v0 encoded as addu. Every flag line that compiles, on both releases, emits or. Nothing measured here moves it and it stays open."
+    }
+  ],
+  "perturbations": [
+    {
+      "flags": "-O0",
+      "moved": "return delay slot empties on both releases"
+    },
+    {
+      "flags": "-O1",
+      "moved": "nothing"
+    },
+    {
+      "flags": "-O3",
+      "moved": "nothing on 7.1; 5.3 refuses the flag"
+    },
+    {
+      "flags": "-mips1",
+      "moved": "return delay slot empties on both releases"
+    },
+    {
+      "flags": "-mips3",
+      "moved": "nothing; both releases refuse the flag"
+    },
+    {
+      "flags": "-G0 removed",
+      "moved": "nothing"
+    },
+    {
+      "flags": "-non_shared removed",
+      "moved": "nothing"
+    },
+    {
+      "flags": "no -mips flag",
+      "moved": "return delay slot empties on 5.3, nothing on 7.1"
+    }
+  ],
+  "open": "Two of the three properties are not answered by the release. The empty return delay slot and the addu-encoded zero return are still unreproduced at the configured flags, and the eight candidates that turn on them are not authored. The flag line is unchanged: a perturbation that wins those eight loses the nineteen that reproduce, which is a worse record, and the flag line is not evidence to be traded for matches."
+}

@@ -1,0 +1,25 @@
+// Entry points the split reaches only through a pointer table in the data ahead of the
+// text, so nothing in the code refers to them by a call. Each one is a function: it ends
+// in `jr $31` and the word before it is another function's return delay slot. Declared
+// here so the split types them as code rather than as data.
+func_80077098 = 0x80077098; // type:func
+func_80077B08 = 0x80077B08; // type:func
+func_800795A8 = 0x800795A8; // type:func
+func_8007D42C = 0x8007D42C; // type:func
+func_8007E138 = 0x8007E138; // type:func
+func_80090ED8 = 0x80090ED8; // type:func
+func_8009176C = 0x8009176C; // type:func
+func_80093D2C = 0x80093D2C; // type:func
+func_8009405C = 0x8009405C; // type:func
+func_80096E74 = 0x80096E74; // type:func
+func_800A03F8 = 0x800A03F8; // type:func
+func_800A0CD4 = 0x800A0CD4; // type:func
+func_800A2F48 = 0x800A2F48; // type:func
+func_800A5FE4 = 0x800A5FE4; // type:func
+func_800A7648 = 0x800A7648; // type:func
+func_800A9C14 = 0x800A9C14; // type:func
+D_80074428 = 0x80074428; // derived by the trial of func_800E0B00
+D_80135834 = 0x80135834; // type:u32 derived by the trial of func_800E0B00
+D_800723B0 = 0x800723B0; // derived by the trial of func_80099CD8
+D_800723B8 = 0x800723B8; // derived by the trial of func_80099CD8
+D_800723BC = 0x800723BC; // derived by the trial of func_80099CD8
