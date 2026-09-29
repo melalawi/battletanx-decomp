@@ -23,3 +23,4 @@ D_80135834 = 0x80135834; // type:u32 derived by the trial of func_800E0B00
 D_800723B0 = 0x800723B0; // derived by the trial of func_80099CD8
 D_800723B8 = 0x800723B8; // derived by the trial of func_80099CD8
 D_800723BC = 0x800723BC; // derived by the trial of func_80099CD8
+D_80137888 = 0x80137888; // type:u32 derived by the trial of func_800EA1FC

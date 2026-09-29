@@ -2,8 +2,8 @@
  "cartridges": {
   "us": []
  },
- "date": "2026-09-28",
- "reason": "landed func_8007D384, func_80097B7C",
+ "date": "2026-09-29",
+ "reason": "landed func_800AA280, func_800AA328, func_800EA1FC, func_8010DCD0, func_8011E564",
  "schema": "decomp.drift.v2",
  "written_by": "land run"
 }
