@@ -58,7 +58,7 @@ Nothing lands on a function count, a percentage, or a reviewer's judgement that 
 Each command works on one interval and needs no build. Deal yourself work with exactly this command, `CARTRIDGE` the cartridge you draft for (`us`), `N` how many functions and `LABEL` the tier label your dispatcher gave you:
 
 ```sh
-matchkit --version CARTRIDGE next --holding --drafters 1 --per N --route drafter --write --tier LABEL
+matchkit --version CARTRIDGE next --holding --drafters 1 --per N --route drafter --write --tier LABEL --holder HOLDER
 ```
 
 The cartridge is the global `--version`, before `next`; `--holding` takes no value. Add `--function FUNC` to be dealt one named function. Then, for each function it deals:
