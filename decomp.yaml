@@ -16,19 +16,3 @@ versions:
       expected_dir: "artifacts/us"
       asm: "artifacts/us/extracted/asm"
       nonmatchings: "artifacts/us/extracted/asm/nonmatchings"
-
-tools:
-  mapfile_parser:
-    progress_report:
-      # Reported against us, the manifest's reference version.
-      check_asm_paths: true
-      report_data: false
-      path_index: 4
-      prefixes_to_trim:
-        - artifacts/us/extracted/
-      categories:
-        - id: main
-          name: main
-          paths:
-            - src/
-            - asm/nonmatchings/

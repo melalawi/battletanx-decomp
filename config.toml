@@ -96,6 +96,14 @@ forbidden_source_forms = {}
 # emitting any is a defect to repair, not residue to allow.
 allowed_text_residue = {}
 
+# Where `make readme` writes each cartridge's progress report for decomp.dev, in objdiff's report
+# format, and the GitHub Actions workflow that uploads every one as the `<id>_report` artifact
+# decomp.dev reads. Both are rendered from the measurement README.md is rendered from, and `make check`
+# refuses either when it differs. CI builds nothing and never holds a cartridge: it uploads these.
+[tracker]
+report = "data/progress-report/{version}.json"
+workflow = ".github/workflows/progress-report.yml"
+
 [[cartridge]]
 id = "us"
 name = "North America"

@@ -11,9 +11,8 @@
 #   make check      judge the built tree
 #   make test       this project's own controls; it keeps none, so it says so and passes
 #   make progress   the share of the cartridge that is authored C
-#   make readme     rewrite README.md from a live measurement
+#   make readme     rewrite README.md, the decomp.dev progress reports and their workflow
 #   make decomp-yaml  rewrite decomp.yaml from config.toml
-#   make report     objdiff artifacts/report.json for decomp.dev
 #   make versions   list the cartridges this project describes
 #   make clean      remove this cartridge's build products; your ROM and toolchain stay
 #   make distclean  remove everything under artifacts/ except your ROM and toolchain
@@ -36,7 +35,7 @@ endif
 # and it reads the reference out of config.toml.
 VERSION_ARG := $(if $(strip $(VERSION)),--version $(VERSION),)
 
-GOALS := bootstrap setup build check test progress readme development decomp-yaml report versions clean distclean
+GOALS := bootstrap setup build check test progress readme development decomp-yaml versions clean distclean
 .PHONY: $(GOALS)
 
 $(GOALS):
