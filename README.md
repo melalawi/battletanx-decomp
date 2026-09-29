@@ -26,7 +26,7 @@ I turned these efforts into a repeatable process with [N64DecompTools](https://g
 
 ### Personal Thoughts
 
-A decompilation is plain C built with the original toolchain so nothing opaque runs on the player's machine and the only attack surface is the build tooling.
+AI suits decompilation well. Every function is checked deterministically against the original ROM so correctness is always provable. Decompiled code is plain source built with the original toolchain so nothing opaque runs on the player's machine and the only attack surface is the build tooling. Readable source can be ported, fixed and preserved long after its tools are gone.
 
 I personally think AI-driven recomps are junk and should be entirely avoided. Recomps can be a fine short-term way to play a favourite game. Over time they carry more security risk and leave the scene full of broken and abandoned ports. For games as simple as most N64 titles it makes more sense to go straight to a decompilation.
 

@@ -35,7 +35,7 @@ endif
 # and it reads the reference out of config.toml.
 VERSION_ARG := $(if $(strip $(VERSION)),--version $(VERSION),)
 
-GOALS := bootstrap setup build check test progress readme development decomp-yaml versions clean distclean
+GOALS := bootstrap setup build check check-fast test progress readme development decomp-yaml versions clean distclean
 .PHONY: $(GOALS)
 
 $(GOALS):

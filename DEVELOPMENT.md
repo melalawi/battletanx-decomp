@@ -32,6 +32,7 @@ The Makefile here holds no build logic. It forwards each goal to the toolkit ver
 | `make bootstrap` | create the directories you fill by hand, each with a note naming what goes in it |
 | `make build` | extract, compile, link, and verify the image against the cartridge |
 | `make check` | judge the built tree |
+| `make check-fast` | judge sources and generated descriptions without building an image |
 | `make clean` | remove this cartridge's build products |
 | `make decomp-yaml` | rewrite the split description |
 | `make development` | rewrite this file |
