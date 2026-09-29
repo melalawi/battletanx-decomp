@@ -3,7 +3,7 @@
   "us": []
  },
  "date": "2026-09-29",
- "reason": "landed func_80077930, func_800805DC, func_800A52AC, func_800ABFD0",
+ "reason": "landed func_80077A38, func_800A74AC, func_800A7550",
  "schema": "decomp.drift.v2",
  "written_by": "land run"
 }
