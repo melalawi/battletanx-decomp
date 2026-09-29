@@ -144,6 +144,41 @@
    "budget_failed_attempts": 10,
    "verdict": "Open"
   },
+  "func_80077930": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071806Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 39,
+       "inserted": 0,
+       "missing": 0,
+       "of": 39,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 39,
+      "inserted": 0,
+      "missing": 0,
+      "of": 39
+     },
+     "note": "Initializes the shared game data after preparing its startup arguments.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:23:09Z"
+    }
+   ],
+   "best": {
+    "identical": 39,
+    "inserted": 0,
+    "missing": 0,
+    "of": 39
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
   "func_800793D0": {
    "attempt_count": 1,
    "attempts": [
@@ -301,6 +336,48 @@
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
+  },
+  "func_8007C2A0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071807Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 32,
+       "inserted": 0,
+       "missing": 2,
+       "of": 39,
+       "result": "differs",
+       "typed": {
+        "missing": 2,
+        "reg": 3,
+        "reordered": 2
+       }
+      }
+     },
+     "measurement": {
+      "identical": 32,
+      "inserted": 0,
+      "missing": 2,
+      "of": 39
+     },
+     "note": "The trial differs only in register allocation and instruction order (32/39 identical); matchkit try classified it as a permute case.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-29T07:20:24Z",
+     "retained": "artifacts/retained-candidates/func_8007C2A0/1.c",
+     "retained_sha256": "83389d84fd271b5ede4a15273d2fbc9913db7877e7a649c4420f66abe9fa2c2d"
+    }
+   ],
+   "best": {
+    "identical": 32,
+    "inserted": 0,
+    "missing": 2,
+    "of": 39
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
   },
   "func_8007C6D8": {
    "attempt_count": 1,
@@ -462,6 +539,49 @@
    ],
    "budget_failed_attempts": 10,
    "positional_best_differing_words": 0,
+   "verdict": "Landed"
+  },
+  "func_800805DC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071804Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 40,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x80125800",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_80125800"
+        }
+       ],
+       "of": 40,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 40,
+      "inserted": 0,
+      "missing": 0,
+      "of": 40
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:23:09Z"
+    }
+   ],
+   "best": {
+    "identical": 40,
+    "inserted": 0,
+    "missing": 0,
+    "of": 40
+   },
+   "budget_failed_attempts": 10,
    "verdict": "Landed"
   },
   "func_80085E18": {
@@ -909,6 +1029,49 @@
    "positional_best_differing_words": 1,
    "verdict": "Open"
   },
+  "func_800A52AC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071808Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 39,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x80072DE8",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_80072DE8"
+        }
+       ],
+       "of": 39,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 39,
+      "inserted": 0,
+      "missing": 0,
+      "of": 39
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:23:09Z"
+    }
+   ],
+   "best": {
+    "identical": 39,
+    "inserted": 0,
+    "missing": 0,
+    "of": 39
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
   "func_800A6E10": {
    "attempt_count": 1,
    "attempts": [
@@ -1275,6 +1438,49 @@
      "note": "func_800AB95C -- selects one of five modes, taking the mode's value from a five-entry table as the current value, and returns the mode that was set before.",
      "outcome": "landed",
      "recorded_at": "2026-09-28T17:10:27Z"
+    }
+   ],
+   "best": {
+    "identical": 40,
+    "inserted": 0,
+    "missing": 0,
+    "of": 40
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800ABFD0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071804Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 40,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x800731B0",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_800731B0"
+        }
+       ],
+       "of": 40,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 40,
+      "inserted": 0,
+      "missing": 0,
+      "of": 40
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:23:09Z"
     }
    ],
    "best": {
