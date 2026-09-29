@@ -1065,7 +1065,7 @@ segments:
       - [0x076C14, c, func_800E6C14]
       - [0x076C5C, asm, nonmatchings/func_800E6C5C]
       - [0x076C80, asm, nonmatchings/func_800E6C80]
-      - [0x076CA4, asm, nonmatchings/func_800E6CA4]
+      - [0x076CA4, c, func_800E6CA4]
       - [0x076D58, asm, nonmatchings/func_800E6D58]
       - [0x076FA0, asm, nonmatchings/func_800E6FA0]
       - [0x076FA8, asm, nonmatchings/func_800E6FA8]
