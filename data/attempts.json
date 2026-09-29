@@ -2427,6 +2427,48 @@
    "positional_best_differing_words": 0,
    "verdict": "Landed"
   },
+  "func_801207B0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T064206Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 37,
+       "inserted": 0,
+       "missing": 1,
+       "of": 42,
+       "result": "differs",
+       "typed": {
+        "missing": 1,
+        "reg": 3,
+        "reordered": 1
+       }
+      }
+     },
+     "measurement": {
+      "identical": 37,
+      "inserted": 0,
+      "missing": 1,
+      "of": 42
+     },
+     "note": "The required permutation search stalled after 1200 seconds without improvement. Confirmed candidate remains 40/42 with one missing return-delay nop and one reordered instruction; two edited assignment trials both leave three register-only differences and the reordered return.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-29T07:05:18Z",
+     "retained": "artifacts/retained-candidates/func_801207B0/1.c",
+     "retained_sha256": "8618fd952075260256521634f704d9cbdc86989fb7e4db546aa2b93e749fcdbc"
+    }
+   ],
+   "best": {
+    "identical": 37,
+    "inserted": 0,
+    "missing": 1,
+    "of": 42
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
   "func_80120A98": {
    "attempt_count": 1,
    "attempts": [
