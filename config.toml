@@ -101,7 +101,7 @@ allowed_text_residue = {}
 # decomp.dev reads. Both are rendered from the measurement README.md is rendered from, and `make check`
 # refuses either when it differs. CI builds nothing and never holds a cartridge: it uploads these.
 [tracker]
-report = "data/progress-report/{version}.json"
+report = "data/progress-report/{version}_report.json"
 workflow = ".github/workflows/progress-report.yml"
 
 [[cartridge]]
