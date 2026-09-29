@@ -144,6 +144,41 @@
    "budget_failed_attempts": 10,
    "verdict": "Open"
   },
+  "func_800793D0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071114Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 41,
+       "inserted": 0,
+       "missing": 0,
+       "of": 41,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 41,
+      "inserted": 0,
+      "missing": 0,
+      "of": 41
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:16:00Z"
+    }
+   ],
+   "best": {
+    "identical": 41,
+    "inserted": 0,
+    "missing": 0,
+    "of": 41
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
   "func_8007967C": {
    "attempt_count": 1,
    "attempts": [
@@ -1096,6 +1131,41 @@
    "budget_failed_attempts": 10,
    "verdict": "Landed"
   },
+  "func_800A9B70": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071120Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 41,
+       "inserted": 0,
+       "missing": 0,
+       "of": 41,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 41,
+      "inserted": 0,
+      "missing": 0,
+      "of": 41
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:16:00Z"
+    }
+   ],
+   "best": {
+    "identical": 41,
+    "inserted": 0,
+    "missing": 0,
+    "of": 41
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
   "func_800AA280": {
    "attempt_count": 1,
    "attempts": [
@@ -1212,6 +1282,76 @@
     "inserted": 0,
     "missing": 0,
     "of": 40
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800B8750": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071126Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 41,
+       "inserted": 0,
+       "missing": 0,
+       "of": 41,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 41,
+      "inserted": 0,
+      "missing": 0,
+      "of": 41
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:16:00Z"
+    }
+   ],
+   "best": {
+    "identical": 41,
+    "inserted": 0,
+    "missing": 0,
+    "of": 41
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800CE4B0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T071126Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 41,
+       "inserted": 0,
+       "missing": 0,
+       "of": 41,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 41,
+      "inserted": 0,
+      "missing": 0,
+      "of": 41
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T07:16:00Z"
+    }
+   ],
+   "best": {
+    "identical": 41,
+    "inserted": 0,
+    "missing": 0,
+    "of": 41
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
