@@ -192,6 +192,47 @@
    "budget_failed_attempts": 10,
    "verdict": "Landed"
   },
+  "func_80079EFC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T060510Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 40,
+       "inserted": 0,
+       "missing": 1,
+       "of": 42,
+       "result": "differs",
+       "typed": {
+        "missing": 1,
+        "reg": 1
+       }
+      }
+     },
+     "measurement": {
+      "identical": 40,
+      "inserted": 0,
+      "missing": 1,
+      "of": 42
+     },
+     "note": "Permute search stalled after 1200 seconds without a new best. The closest readable draft tried is 40/42 identical with only register allocation/order differences (one target store missing); the search confirmation best remained 34/42 with immediate differences. A second distinct edited trial confirms the same near miss.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-29T06:29:24Z",
+     "retained": "artifacts/retained-candidates/func_80079EFC/1.c",
+     "retained_sha256": "9027d010e7d2565c02637ca07e9a07f35e820fdea226c35e44d3abe2b54ef2f7"
+    }
+   ],
+   "best": {
+    "identical": 40,
+    "inserted": 0,
+    "missing": 1,
+    "of": 42
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
   "func_8007AAC0": {
    "attempt_count": 1,
    "attempts": [
@@ -256,6 +297,83 @@
     "inserted": 0,
     "missing": 0,
     "of": 10
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007D1F8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T060510Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 40,
+       "inserted": 1,
+       "missing": 1,
+       "of": 42,
+       "result": "differs",
+       "typed": {
+        "inserted": 1,
+        "missing": 1,
+        "reordered": 1
+       }
+      }
+     },
+     "measurement": {
+      "identical": 40,
+      "inserted": 1,
+      "missing": 1,
+      "of": 42
+     },
+     "note": "Permute search stalled after 1200 seconds without a new best. Closest readable draft trial is 40/42 with only the equality branch/delay-slot instruction reordered; distinct alternate branch trial regressed to 32/42 with register-allocation differences. Search confirmation best differed 34/42 with immediate and relocation-only differences; no exact readable candidate.",
+     "outcome": "failed",
+     "recorded_at": "2026-09-29T06:35:35Z",
+     "retained": "artifacts/retained-candidates/func_8007D1F8/1.c",
+     "retained_sha256": "567c7eaa387bc4812a9ce1d6bd725a5d3634b43ac174e8dc6726d3b9aa7a141f"
+    }
+   ],
+   "best": {
+    "identical": 40,
+    "inserted": 1,
+    "missing": 1,
+    "of": 42
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Open"
+  },
+  "func_8007D384": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T060521Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 42,
+       "inserted": 0,
+       "missing": 0,
+       "of": 42,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 42,
+      "inserted": 0,
+      "missing": 0,
+      "of": 42
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T06:37:09Z"
+    }
+   ],
+   "best": {
+    "identical": 42,
+    "inserted": 0,
+    "missing": 0,
+    "of": 42
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
@@ -550,6 +668,41 @@
     "inserted": 0,
     "missing": 0,
     "of": 9
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_80097B7C": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "assignment": "20260929T060521Z-d1",
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 42,
+       "inserted": 0,
+       "missing": 0,
+       "of": 42,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 42,
+      "inserted": 0,
+      "missing": 0,
+      "of": 42
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-29T06:37:09Z"
+    }
+   ],
+   "best": {
+    "identical": 42,
+    "inserted": 0,
+    "missing": 0,
+    "of": 42
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
