@@ -14,7 +14,7 @@ A matching decompilation of *BattleTanx* for the Nintendo 64.
 
 Contributions and corrections are welcome. Run `make check` before opening a pull request.
 
-For detailed instructions please see [DEVELOPMENT.md](DEVELOPMENT.md).
+For detailed instructions please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## AI Usage
 
