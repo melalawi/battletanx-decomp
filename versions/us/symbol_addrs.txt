@@ -32,3 +32,7 @@ D_80125860 = 0x80125860; // type:u32 derived by the trial of func_80085330
 D_801258D8 = 0x801258D8; // type:u32 derived by the trial of func_80085330
 D_80126128 = 0x80126128; // type:u32 derived by the trial of func_800A3D30
 D_80126140 = 0x80126140; // type:u32 derived by the trial of func_800A3D30
+D_80072DE4 = 0x80072DE4; // derived by the trial of func_800A51E8
+D_801260A8 = 0x801260A8; // type:u32 derived by the trial of func_800A51E8
+D_8013957C = 0x8013957C; // type:u32 derived by the trial of func_800EEBEC
+D_801395B8 = 0x801395B8; // type:u32 derived by the trial of func_800EEBEC

@@ -582,6 +582,74 @@
    "budget_failed_attempts": 10,
    "verdict": "Landed"
   },
+  "func_8007EC38": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 44,
+       "inserted": 0,
+       "missing": 0,
+       "of": 44,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 44,
+      "inserted": 0,
+      "missing": 0,
+      "of": 44
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:46Z"
+    }
+   ],
+   "best": {
+    "identical": 44,
+    "inserted": 0,
+    "missing": 0,
+    "of": 44
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007ECE8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 44,
+       "inserted": 0,
+       "missing": 0,
+       "of": 44,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 44,
+      "inserted": 0,
+      "missing": 0,
+      "of": 44
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:46Z"
+    }
+   ],
+   "best": {
+    "identical": 44,
+    "inserted": 0,
+    "missing": 0,
+    "of": 44
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
   "func_8007ED98": {
    "attempt_count": 1,
    "attempts": [
@@ -613,6 +681,40 @@
      "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
      "outcome": "landed",
      "recorded_at": "2026-09-30T13:40:58Z"
+    }
+   ],
+   "best": {
+    "identical": 44,
+    "inserted": 0,
+    "missing": 0,
+    "of": 44
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_8007EE48": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 44,
+       "inserted": 0,
+       "missing": 0,
+       "of": 44,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 44,
+      "inserted": 0,
+      "missing": 0,
+      "of": 44
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:47Z"
     }
    ],
    "best": {
@@ -880,6 +982,40 @@
     "inserted": 0,
     "missing": 0,
     "of": 33
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_80091608": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 44,
+       "inserted": 0,
+       "missing": 0,
+       "of": 44,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 44,
+      "inserted": 0,
+      "missing": 0,
+      "of": 44
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:47Z"
+    }
+   ],
+   "best": {
+    "identical": 44,
+    "inserted": 0,
+    "missing": 0,
+    "of": 44
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
@@ -1442,6 +1578,54 @@
    "positional_best_differing_words": 1,
    "verdict": "Open"
   },
+  "func_800A51E8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 49,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x80072DE4",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_80072DE4"
+        },
+        {
+         "address": "0x801260A8",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_801260A8"
+        }
+       ],
+       "of": 49,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 49,
+      "inserted": 0,
+      "missing": 0,
+      "of": 49
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:47Z"
+    }
+   ],
+   "best": {
+    "identical": 49,
+    "inserted": 0,
+    "missing": 0,
+    "of": 49
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
   "func_800A52AC": {
    "attempt_count": 1,
    "attempts": [
@@ -1481,6 +1665,40 @@
     "inserted": 0,
     "missing": 0,
     "of": 39
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800A59E8": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 47,
+       "inserted": 0,
+       "missing": 0,
+       "of": 47,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 47,
+      "inserted": 0,
+      "missing": 0,
+      "of": 47
+     },
+     "note": "Adds to the counter at offset 0x210 and, when its 50000-unit quotient increases and the mode check succeeds, calls func_800A5DD8 with the new quotient scaled by 50000.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:47Z"
+    }
+   ],
+   "best": {
+    "identical": 47,
+    "inserted": 0,
+    "missing": 0,
+    "of": 47
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
@@ -2541,6 +2759,102 @@
     "inserted": 0,
     "missing": 0,
     "of": 43
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800EEBEC": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 45,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x8013957C",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_8013957C"
+        },
+        {
+         "address": "0x801395B8",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_801395B8"
+        }
+       ],
+       "of": 45,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 45,
+      "inserted": 0,
+      "missing": 0,
+      "of": 45
+     },
+     "note": "* This header contains macros emitted by m2c in \"valid syntax\" mode, * which can be enabled by passing `--valid-syntax` on the command line. * * In this mode, unhandled types and expressions are emitted as macros so * that the output is compilable without human intervention.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:47Z"
+    }
+   ],
+   "best": {
+    "identical": 45,
+    "inserted": 0,
+    "missing": 0,
+    "of": 45
+   },
+   "budget_failed_attempts": 10,
+   "verdict": "Landed"
+  },
+  "func_800EECA0": {
+   "attempt_count": 1,
+   "attempts": [
+    {
+     "cartridge": "us",
+     "carts": {
+      "us": {
+       "identical": 47,
+       "inserted": 0,
+       "missing": 0,
+       "needs": [
+        {
+         "address": "0x8013957C",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_8013957C"
+        },
+        {
+         "address": "0x801395B8",
+         "conflicts": [],
+         "kind": "data-symbol",
+         "name": "D_801395B8"
+        }
+       ],
+       "of": 47,
+       "result": "byte-identical"
+      }
+     },
+     "measurement": {
+      "identical": 47,
+      "inserted": 0,
+      "missing": 0,
+      "of": 47
+     },
+     "note": "When arg2 and the status field at offset 8 are zero, sets output code 10 and sign-specific data if func_800E3470 succeeds and the corresponding flag is set, otherwise setting code 1.",
+     "outcome": "landed",
+     "recorded_at": "2026-09-30T14:55:47Z"
+    }
+   ],
+   "best": {
+    "identical": 47,
+    "inserted": 0,
+    "missing": 0,
+    "of": 47
    },
    "budget_failed_attempts": 10,
    "verdict": "Landed"
