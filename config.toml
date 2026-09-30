@@ -118,3 +118,7 @@ crc1 = "6AA4DDE7"
 crc2 = "E3E2F4E7"
 buildable = true
 note = "NTSC release."
+
+[source]
+# Best non-matching drafts, scored for the progress report only; never linked or landed.
+nonmatching = "nonmatching"
