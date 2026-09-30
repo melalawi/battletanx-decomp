@@ -33,6 +33,7 @@ While recompilations can be a fine short-term way to play a favourite game, I be
 ## License
 
 The repository's own code is released under [CC0 1.0](LICENSE).
+Mods and ports built on this code should stay open source.
 
 ## Dependencies
 
