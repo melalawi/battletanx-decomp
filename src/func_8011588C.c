@@ -1,6 +1,6 @@
-/* NOTE: byte-identical only when compiled -O1; this translation unit is not an -O2 one. Verified by
- * hand-link against battletanx.us.z64 at 0xA588C. `matchkit try` cannot confirm it because trim
- * destroys the four jal relocations.
+/* NOTE: byte-identical only when compiled at -O1. Verified by hand-link against
+ * battletanx.us.z64 at 0xA588C. Automatic per-function comparison cannot confirm this
+ * because trimming drops the four jal relocations.
  *
  * func_8011588C -- reprobes a display device: it first flushes any pending change, then walks the
  * mode list {1,3,4,6} from index 1 asking func_80114190 to set each mode until func_8011540C

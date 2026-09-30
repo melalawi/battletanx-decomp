@@ -1,6 +1,6 @@
-/* NOTE: byte-identical only when compiled -O1; this translation unit is not an -O2 one. Verified by
- * hand-link against battletanx.us.z64 at 0xA5C80. `matchkit try` cannot confirm it because trim
- * destroys the three jal relocations.
+/* NOTE: byte-identical only when compiled at -O1. Verified by hand-link against
+ * battletanx.us.z64 at 0xA5C80. Automatic per-function comparison cannot confirm this
+ * because trimming drops the three jal relocations.
  *
  * func_80115C80 -- reloads a device's 0x20-byte register block: after flushing any pending change
  * it asks func_80114190 for the block, retrying once when that returns 2, then compares all 0x20
