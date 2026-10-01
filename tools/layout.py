@@ -109,6 +109,13 @@ def place(args: argparse.Namespace) -> None:
         if unit not in intervals:
             raise ValueError(f"{name}: unit-ranges.{unit} missing")
         obj = Object(args.build / name)
+        local = intervals[unit].get("rodata_address")
+        rdata = obj.section(".rdata")
+        if not partial and local is not None and rdata is not None and obj.sections[rdata][5]:
+            base = resident(obj, intervals[unit], image, ".rdata", mappings)
+            if base != local:
+                raise ValueError(f"{name}: local .rdata placement disagrees with split row")
+            script = re.sub(re.escape(name) + r"\s*\(\.rodata\)", name + "(.rdata)", script)
         if partial:
             for section in (".rdata", ".rodata"):
                 index = obj.section(section)

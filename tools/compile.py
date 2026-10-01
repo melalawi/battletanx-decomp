@@ -11,8 +11,9 @@ import shutil
 import subprocess
 import tempfile
 import tomllib
+from functools import lru_cache
 from pathlib import Path
-from typing import TypedDict
+from typing import TypedDict, cast
 
 from cache import Cache, key
 from host import resolve_tool
@@ -98,8 +99,58 @@ def external_branches(content: bytes) -> bytes:
     return "".join(lines).encode()
 
 
-def compile_object(args: argparse.Namespace) -> None:
-    data: Recipe = json.loads(args.recipe.read_text())
+def read_recipe(path: Path) -> Recipe:
+    return cast(Recipe, json.loads(path.read_text()))
+
+
+@lru_cache(maxsize=64)
+def tool_digest(paths: tuple[Path, ...]) -> str:
+    """Fingerprint immutable build tools once per compiler process."""
+    return key(*paths)
+
+
+def codegen_flags(flags: list[str]) -> list[str]:
+    """Remove preprocessing options from a compiler invocation on a .i file."""
+    result = []
+    previous = False
+    for flag in flags:
+        if previous:
+            previous = False
+        elif flag in {"-I", "-D", "-U", "-include", "-imacros", "-isystem", "-iquote"}:
+            previous = True
+        elif not flag.startswith(("-I", "-D", "-U")) and flag != "-c":
+            result.append(flag)
+    if previous:
+        raise ValueError("preprocessor option missing its value")
+    return result
+
+
+def assembly_inputs(asflags: list[str]) -> tuple[list[str], list[str | bytes]]:
+    """Identify assembler include contents, independently of directory spelling."""
+    flags: list[str] = []
+    inputs: list[str | bytes] = []
+    previous = False
+    for flag in asflags:
+        if previous or flag.startswith("-I"):
+            if flag == "-I" and not previous:
+                previous = True
+                continue
+            root = Path(flag if previous else flag[2:])
+            previous = False
+            files = sorted(path for path in root.rglob("*") if path.is_file())
+            inputs.append("include-directory")
+            for path in files:
+                inputs.extend((str(path.relative_to(root)), path.read_bytes()))
+        else:
+            flags.append(flag)
+    if previous:
+        raise ValueError("assembler include option missing its value")
+    return flags, inputs
+
+
+def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None:
+    if data is None:
+        data = read_recipe(args.recipe)
     out = args.output.resolve()
     out.parent.mkdir(parents=True, exist_ok=True)
     version = args.version
@@ -196,7 +247,20 @@ def compile_object(args: argparse.Namespace) -> None:
         if not assembler:
             raise ValueError(f"[build].as: missing executable {data['as']}")
         inputs.append(Path(assembler))
-    digest = key(content, json.dumps([ident, selected, flags, asflags, data["cppflags"]], sort_keys=True), *inputs)
+    # A .i input is already preprocessed. Macro definitions, CPP options and
+    # include directory names cannot affect code generation at this point.
+    generation = codeflags if sn64 else codegen_flags(flags)
+    assembler_flags, assembler_inputs = assembly_inputs(asflags)
+    if compiler is not None:
+        inputs.append(Path(compiler["cc"]))
+        if sn64:
+            inputs.extend(Path(compiler[name]) for name in ("as", "wibo", "obj_parser"))
+    digest = key(
+        content,
+        json.dumps([selected, generation, assembler_flags], sort_keys=True),
+        tool_digest(tuple(inputs)),
+        *assembler_inputs,
+    )
 
     def produce(destination: Path) -> None:
         with tempfile.TemporaryDirectory(prefix=".object-", dir=out.parent) as temporary:
@@ -235,7 +299,7 @@ def compile_object(args: argparse.Namespace) -> None:
                     )
             else:
                 assert compiler is not None
-                run([compiler["cc"], *flags, "-c", str(source), "-o", str(destination)])
+                run([compiler["cc"], *generation, "-c", str(source), "-o", str(destination)])
                 from elf import Object
 
                 Object(destination).trim_text()
@@ -249,6 +313,22 @@ def compile_object(args: argparse.Namespace) -> None:
         args.depfile.write_text((args.dep_target or str(out)) + ": " + str(args.source) + "\n")
 
 
+def compile_batch(args: argparse.Namespace) -> None:
+    """Compile a cold graph chunk in one interpreter, sequentially per Make job."""
+    data = read_recipe(args.recipe)
+    for source in args.batch:
+        relative = source.relative_to(args.source)
+        output = args.output / relative.with_suffix(".o")
+        item = argparse.Namespace(**vars(args))
+        item.source = source
+        item.unit = str(source)
+        item.output = output
+        item.depfile = output.with_suffix(".d")
+        item.dep_target = "$(BUILD)/obj/src/" + str(relative.with_suffix(".built"))
+        compile_object(item, data)
+        output.with_suffix(".built").touch()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--kind", choices=("cc", "as"), required=True)
@@ -258,9 +338,13 @@ def main() -> None:
     parser.add_argument("--version", required=True)
     parser.add_argument("--unit", required=True)
     parser.add_argument("--dep-target")
+    parser.add_argument("--batch", type=Path, nargs="+")
     args = parser.parse_args()
     try:
-        compile_object(args)
+        if args.batch:
+            compile_batch(args)
+        else:
+            compile_object(args)
     except (OSError, ValueError, KeyError) as error:
         parser.exit(1, f"HELD(compile): {error}\n")
 

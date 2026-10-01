@@ -92,6 +92,18 @@ $(BUILD)/.split: $(BUILD)/.split.mk
 $(LD_SCRIPT) $(LINK_SCRIPTS) $(BUILD)/symbol-addresses.txt: | $(BUILD)/.split
 	@test -f $@ || { printf '%s\n' 'HELD(extract): missing $@; remove $(BUILD)/.split.mk and make extract'; exit 1; }
 
+# Group only missing receipts. Existing objects retain their individual rules,
+# including header dependency tracking and unchanged-object timestamp behavior.
+C_COLD := $(filter-out $(wildcard $(C_OBJECTS:.o=.built)),$(C_OBJECTS:.o=.built))
+define compile-chunk
+$(1) &: $(patsubst $(BUILD)/obj/src/%.built,$(SRC)/%.c,$(1)) $(RECIPE) $(DRIVERS) | verify
+	python3 $(TOOLS)/compile.py --kind cc --non-matching $(NON_MATCHING) --recipe $(RECIPE) --version $(VERSION) --unit batch --source $(SRC) --output $(BUILD)/obj/src --batch $(patsubst $(BUILD)/obj/src/%.built,$(SRC)/%.c,$(1))
+endef
+define compile-chunks
+$(if $(strip $(1)),$(eval $(call compile-chunk,$(wordlist 1,128,$(1))))$(call compile-chunks,$(wordlist 129,$(words $(1)),$(1))))
+endef
+$(call compile-chunks,$(C_COLD))
+
 $(BUILD)/obj/src/%.built: $(SRC)/%.c $(RECIPE) $(DRIVERS) | verify
 	@mkdir -p $(@D)
 	python3 $(TOOLS)/compile.py --kind cc --non-matching $(NON_MATCHING) --recipe $(RECIPE) --version $(VERSION) --unit $(SRC)/$*.c --source $< --output $(@:.built=.o) --depfile $(@:.built=.d) --dep-target='$$(BUILD)/obj/src/$*.built'

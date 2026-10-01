@@ -120,7 +120,13 @@ def unit_addresses(text: str) -> dict[str, int]:
             if not in_code or start is None or vram is None:
                 raise ValueError("split code segment requires type, start, vram before subsegments")
             rom, _, name = row.groups()
-            found[Path(scalar(name)).name] = vram + int(rom, 0) - start
+            name = Path(scalar(name)).name
+            if not re.fullmatch(r"[A-Za-z_.$][\w.$]*", name):
+                raise ValueError(f"invalid split unit symbol {name}")
+            address = vram + int(rom, 0) - start
+            if name in found and found[name] != address:
+                raise ValueError(f"conflicting split unit symbol {name}")
+            found[name] = address
     return found
 
 
@@ -152,6 +158,17 @@ def unit_ranges(text: str) -> dict[str, dict[str, int]]:
                 "end": end,
                 "address": int(vram[1], 0) + rom_offset - int(start[1], 0),
             }
+    for block in blocks:
+        start = re.search(r"^    start: (\S+)", block, re.M)
+        vram = re.search(r"^    vram: (\S+)", block, re.M)
+        if not start or not vram:
+            continue
+        for offset, name in re.findall(
+            r"^      - \[\s*(0x[\da-fA-F]+|\d+)\s*,\s*\.rodata\s*,\s*([^,\]]+)", block, re.M
+        ):
+            unit = Path(scalar(name)).name
+            if unit in found:
+                found[unit]["rodata_address"] = int(vram[1], 0) + int(offset, 0) - int(start[1], 0)
     return found
 
 
@@ -234,8 +251,6 @@ def inventory(script: str, staging: Path, asm: Path, src: Path, compiler: str) -
         return str(obj)
 
     rewritten = pattern.sub(replace, script)
-    if compiler == "sn64":
-        rewritten = rewritten.replace("(.rodata)", "(.rdata)")
     if not seen:
         raise ValueError("splat linker script names no .s.o, .c.o, or .bin.o objects")
     lines = [f"{kind}_OBJECTS := {' '.join(objects)}" for kind, objects in groups.items()]
@@ -320,7 +335,14 @@ def extract(args: argparse.Namespace) -> None:
         config.write_text(text)
         options["base_path"] = str(staging)
         overlay.write_text("options:\n" + "".join(f"  {key}: {json.dumps(value)}\n" for key, value in options.items()))
-        subprocess.run([args.splat, "split", str(config), str(overlay)], check=True)
+        result = subprocess.run(
+            [args.splat, "split", str(config), str(overlay)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if result.returncode:
+            sys.stderr.write(result.stdout.decode(errors="replace"))
+            raise subprocess.CalledProcessError(result.returncode, result.args)
         script = (staging / "layout.ld").read_text()
         rewritten, graph = inventory(script, staging, args.asm, args.src, compiler)
         rewritten = render_alignment(rewritten, alignments)
@@ -336,6 +358,11 @@ def extract(args: argparse.Namespace) -> None:
         symbol_dump = staging / ".splat" / "splat_symbols.csv"
         publish(args.build / "splat_symbols.csv", symbol_dump.read_bytes())
         committed = discovered_symbols(symbol_dump, symbols_from(tables))
+        units = unit_addresses(text)
+        for name, address in units.items():
+            if name in committed and committed[name] != address:
+                raise ValueError(f"split and symbols disagree for {name}")
+            committed[name] = address
         definitions = "".join(f"PROVIDE({name} = 0x{address:08X});\n" for name, address in sorted(committed.items()))
         publish(args.build / "committed_symbols.ld", definitions.encode())
         link_scripts = ["$(BUILD)/committed_symbols.ld"]
@@ -350,7 +377,6 @@ def extract(args: argparse.Namespace) -> None:
             publish(args.build / filename, path.read_bytes())
             link_scripts.append("$(BUILD)/" + filename)
         symbols = symbols_from(tables)
-        units = unit_addresses(text)
         for name, address in units.items():
             if name in symbols and symbols[name] != address:
                 raise ValueError(f"split and symbols disagree for {name}")

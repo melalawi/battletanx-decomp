@@ -8,4 +8,9 @@ struct ResetState {
     int field44;
 };
 
+struct Unknown800A42A4 {
+    u8 padding[0xF4];
+    s32 value;
+};
+
 #endif
