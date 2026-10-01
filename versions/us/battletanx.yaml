@@ -519,7 +519,7 @@ segments:
       - [212448, asm, func_800A3DE0]
       - [213580, c, func_800A424C]
       - [213588, c, func_800A4254]
-      - [213668, asm, func_800A42A4]
+      - [213668, c, func_800A42A4]
       - [213680, asm, func_800A42B0]
       - [213692, c, func_800A42BC]
       - [213700, asm, func_800A42C4]
