@@ -1,12 +1,36 @@
 #!/usr/bin/env python3
 """Encode branches ASN64 cannot relocate, using explicit version placements."""
+
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 import re
+from pathlib import Path
 
-CONDITIONAL = {"b", "bal", "beq", "bne", "beql", "bnel", "beqz", "bnez", "blez", "bgtz", "blezl", "bgtzl", "bltz", "bgez", "bltzl", "bgezl", "bltzal", "bgezal", "bc1f", "bc1t", "bc1fl", "bc1tl"}
+CONDITIONAL = {
+    "b",
+    "bal",
+    "beq",
+    "bne",
+    "beql",
+    "bnel",
+    "beqz",
+    "bnez",
+    "blez",
+    "bgtz",
+    "blezl",
+    "bgtzl",
+    "bltz",
+    "bgez",
+    "bltzl",
+    "bgezl",
+    "bltzal",
+    "bgezal",
+    "bc1f",
+    "bc1t",
+    "bc1fl",
+    "bc1tl",
+}
 JUMPS = {"j": 2, "jal": 3}
 TRAPS = {"tge": 48, "tgeu": 49, "tlt": 50, "tltu": 51, "teq": 52, "tne": 54}
 BRANCHES = CONDITIONAL | set(JUMPS) | {"jr", "jalr"}
@@ -16,7 +40,40 @@ LABEL = re.compile(r"^\s*([A-Za-z_][\w]*):\s*$")
 
 
 def register(value: str) -> int:
-    names = ["zero", "at", "v0", "v1", "a0", "a1", "a2", "a3", "t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "t8", "t9", "k0", "k1", "gp", "sp", "fp", "ra"]
+    names = [
+        "zero",
+        "at",
+        "v0",
+        "v1",
+        "a0",
+        "a1",
+        "a2",
+        "a3",
+        "t0",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6",
+        "t7",
+        "s0",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "t8",
+        "t9",
+        "k0",
+        "k1",
+        "gp",
+        "sp",
+        "fp",
+        "ra",
+    ]
     value = value.removeprefix("$")
     if value in names:
         return names.index(value)
@@ -25,7 +82,7 @@ def register(value: str) -> int:
     raise ValueError(f"unsupported register ${value}")
 
 
-def instruction(line: str):
+def instruction(line: str) -> tuple[str, list[str]] | None:
     body = re.sub(r"/\*.*?\*/", "", line).split("#", 1)[0].strip()
     if not body or body.startswith(".") or body.endswith(":"):
         return None
@@ -67,7 +124,7 @@ def encode(mnemonic: str, operands: list[str], pc: int, target: int) -> int:
     return (17 << 26) | (8 << 21) | (rt << 16) | immediate
 
 
-def read_symbols(path: Path):
+def read_symbols(path: Path) -> tuple[dict[str, int], set[str]]:
     symbols, units = {}, set()
     for line in path.read_text().splitlines():
         fields = line.split()
@@ -152,7 +209,12 @@ def resolve(text: str, unit: str, symbols: dict[str, int], units: set[str]) -> s
                 word = (register(operands[0]) << 21) | 8
             elif mnemonic in TRAPS:
                 code = int(operands[2], 0) if len(operands) > 2 else 0
-                word = (register(operands[0]) << 21) | (register(operands[1]) << 16) | ((code & 1023) << 6) | TRAPS[mnemonic]
+                word = (
+                    (register(operands[0]) << 21)
+                    | (register(operands[1]) << 16)
+                    | ((code & 1023) << 6)
+                    | TRAPS[mnemonic]
+                )
             elif mnemonic in {"div", "divu", "mult", "multu"}:
                 if len(operands) != 2:
                     raise ValueError(f"{mnemonic}: expected two register operands")

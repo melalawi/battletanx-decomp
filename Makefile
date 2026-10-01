@@ -69,6 +69,14 @@ setup: verify
 
 extract: $(BUILD)/.split
 
+ifeq ($(BUILD),build/$(VERSION))
+prepare-build:
+	python3 $(TOOLS)/extract.py prepare-build --build $(BUILD)
+
+$(BUILD)/.split.mk: | prepare-build
+.PHONY: prepare-build
+endif
+
 ifneq ($(filter-out setup clean distclean,$(if $(MAKECMDGOALS),$(MAKECMDGOALS),all)),)
 include $(BUILD)/.split.mk
 endif

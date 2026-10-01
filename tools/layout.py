@@ -1,27 +1,31 @@
 #!/usr/bin/env python3
 """Place compiler constants over the exact resident ROM bytes proved by relocations."""
+
 import argparse
 import json
-from pathlib import Path
 import re
 import struct
+from pathlib import Path
 
 from elf import Object
 from extract import publish
 from rodata import fragment, insert_fragment
 
 
-def signed(value):
+def signed(value: int) -> int:
     return value - 65536 if value & 32768 else value
 
 
-def resident(obj, interval, image, section_name):
+def resident(obj: Object, interval: dict[str, int], image: bytes, section_name: str) -> int | None:
     section = obj.section(section_name)
     if section is None or not obj.sections[section][5]:
         return None
     text = obj.section(".text")
+    if text is None:
+        raise ValueError(f"{obj.path}: missing .text")
     code = obj.content(text)
-    pending, bases = {}, []
+    pending: dict[tuple[str, int], list[tuple[int, int]]] = {}
+    bases: list[int] = []
     for offset, kind, symbol in obj.relocations(text):
         if symbol["section"] != section:
             continue
@@ -29,7 +33,7 @@ def resident(obj, interval, image, section_name):
             raise ValueError(f"{obj.path}: {section_name} relocation outside original function")
         word = struct.unpack_from(">I", code, offset)[0]
         original = struct.unpack_from(">I", image, interval["start"] + offset)[0]
-        if word & 0xffff0000 != original & 0xffff0000:
+        if word & 0xFFFF0000 != original & 0xFFFF0000:
             raise ValueError(f"{obj.path}: {section_name} relocation instruction differs at text+0x{offset:X}")
         key = symbol["name"], symbol["value"]
         if kind == 5:
@@ -51,12 +55,12 @@ def resident(obj, interval, image, section_name):
             raise ValueError(f"{obj.path}: {section_name} relocation {kind} needs explicit placement")
         value = struct.unpack_from(">I", content, at)[0] + interval["address"] + symbol["value"]
         struct.pack_into(">I", content, at, value)
-    if offset < 0 or offset + len(content) > len(image) or content != image[offset:offset + len(content)]:
+    if offset < 0 or offset + len(content) > len(image) or content != image[offset : offset + len(content)]:
         raise ValueError(f"{obj.path}: {section_name} bytes disagree with resident ROM at 0x{base:08X}")
     return base
 
 
-def place(args):
+def place(args: argparse.Namespace) -> None:
     script = args.script.read_text()
     intervals = json.loads(args.ranges.read_text())
     image = args.baserom.read_bytes()
@@ -86,7 +90,7 @@ def place(args):
     publish(args.output.with_suffix(".flags"), b"--no-check-sections" if sections else b"")
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser()
     for name in ("script", "output", "build", "ranges", "baserom"):
         parser.add_argument("--" + name, type=Path, required=True)

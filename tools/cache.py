@@ -1,12 +1,12 @@
 """Atomic file artifacts shared by content key across projects."""
 
-from collections.abc import Callable
 import hashlib
 import os
-from pathlib import Path
 import re
 import shutil
 import tempfile
+from collections.abc import Callable
+from pathlib import Path
 
 class Held(Exception):
     def __init__(self, phase, reason):
@@ -30,15 +30,15 @@ def key(*parts: str | bytes | Path) -> str:
             digest.update(len(part).to_bytes(8, "big"))
             digest.update(part)
         except OSError as error:
-            raise Held("cache", f"key part {index} {part}: {error}") from error
+            raise Held("cache", f"key part {index} {part!s}: {error}") from error
     return digest.hexdigest()
 
 
 class Cache:
-    def __init__(self, root: Path):
+    def __init__(self, root: Path) -> None:
         self.root = Path(root).expanduser().absolute()
 
-    def _path(self, kind: str, content_key: str) -> Path:
+    def path(self, kind: str, content_key: str) -> Path:
         if not isinstance(kind, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", kind):
             raise Held("cache", f"kind {kind!r}: expected a single cache kind")
         if not isinstance(content_key, str) or not re.fullmatch(r"[0-9a-f]{64}", content_key):
@@ -46,7 +46,7 @@ class Cache:
         return self.root / kind / content_key[:2] / content_key
 
     def get(self, kind: str, key: str) -> Path | None:
-        path = self._path(kind, key)
+        path = self.path(kind, key)
         if path.is_file():
             return path
         if path.exists():
@@ -60,7 +60,7 @@ class Cache:
         return Path(name)
 
     def put(self, kind: str, key: str, src: Path) -> Path:
-        path = self._path(kind, key)
+        path = self.path(kind, key)
         temporary = None
         try:
             if not src.is_file():
@@ -79,7 +79,7 @@ class Cache:
         cached = self.get(kind, key)
         if cached is not None:
             return cached
-        path = self._path(kind, key)
+        path = self.path(kind, key)
         temporary = None
         try:
             temporary = self._temporary(path)

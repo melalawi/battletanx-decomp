@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """Run ASN64 from a short working directory and convert its object to ELF."""
+
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 import shlex
 import subprocess
 import tempfile
+from pathlib import Path
 
-from resolve_external_branches import resolve, read_symbols
+from resolve_external_branches import read_symbols, resolve
 
 
-def run(command, *, cwd=None):
+def run(command: list[str], *, cwd: str | Path | None = None) -> str:
     completed = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
     if completed.returncode:
         raise ValueError(f"{command[0]} exited {completed.returncode}: {completed.stdout}{completed.stderr}")
@@ -84,7 +85,22 @@ def main() -> None:
                 previous = True
             elif flag.startswith("-I"):
                 includes.append(flag)
-        text = run([args.cpp, "-P", "-undef", "-nostdinc", "-MMD", "-MP", "-MF", str(args.depfile), "-MT", args.dep_target or str(args.output), *includes, str(args.source)])
+        text = run(
+            [
+                args.cpp,
+                "-P",
+                "-undef",
+                "-nostdinc",
+                "-MMD",
+                "-MP",
+                "-MF",
+                str(args.depfile),
+                "-MT",
+                args.dep_target or str(args.output),
+                *includes,
+                str(args.source),
+            ]
+        )
         symbols, units = read_symbols(args.symbols)
         text = resolve(text, args.source.stem, symbols, units)
         assemble(text, args.output, args.assembler, args.wibo, args.obj_parser, options)

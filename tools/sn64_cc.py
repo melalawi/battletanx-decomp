@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Preprocess C, run the supplied SN64 cc1, then assemble its output."""
+
 from __future__ import annotations
 
 
-
-def partition_flags(flags: list[str]):
+def partition_flags(flags: list[str]) -> tuple[list[str], list[str]]:
     preprocess, compile = [], []
     previous = False
     for flag in flags:
