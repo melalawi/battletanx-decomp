@@ -23,3 +23,8 @@ def partition_flags(flags: list[str]) -> tuple[list[str], list[str]]:
     if previous:
         raise ValueError("[compilers].cflags ends with a preprocessor option missing its value")
     return preprocess, compile
+
+
+def gnu_as_flags(flags: list[str]) -> list[str]:
+    """Supply the project's proven replacement for ASN64's -mips3 recipe."""
+    return ["-march=vr4300", "-mabi=32", "-EB", "-G0", "--no-pad-sections", *[f for f in flags if f != "-mips3"]]

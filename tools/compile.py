@@ -238,16 +238,17 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
             "compile.py",
             "elf.py",
             "sn64_cc.py",
-            "sn64_gnu_as.py",
-            "sn64_schedule.py",
-            "sn64_literals.py",
-            "sn64_macros.py",
             "resolve_external_branches.py",
         )
         if sn64
         else ("compile.py", "elf.py")
     )
     inputs = [args.recipe.parent / name for name in driver_names]
+    if sn64:
+        import abumasn64
+
+        assert abumasn64.__file__ is not None
+        inputs.extend(sorted(Path(abumasn64.__file__).parent.glob("*.py")))
     if assembly and not sn64:
         inputs.extend(p for p in includes if p.is_file())
         assembler = shutil.which(data["as"]) if "/" not in data["as"] else data["as"]
@@ -277,7 +278,9 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
             source.write_bytes(content)
             if sn64:
                 assert compiler is not None
-                from sn64_gnu_as import assemble
+                from abumasn64.assemble import assemble
+
+                from sn64_cc import gnu_as_flags
 
                 if not assembly:
                     generated = work / "source.s"
@@ -289,7 +292,8 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
                     text,
                     destination,
                     Path(compiler["as"]),
-                    asflags,
+                    gnu_as_flags(asflags),
+                    asn64_version="2.81",
                 )
             elif assembly:
                 command = [data["as"], *asflags]

@@ -30,7 +30,7 @@ OBJCOPY = $(call resolve-tool,policy:mips_objcopy)
 SPLAT = $(call resolve-tool,policy:splat)
 PINS := tools/compiler.sha256
 RECIPE := $(TOOLS)/build.json
-DRIVERS := $(TOOLS)/compile.py $(TOOLS)/cache.py $(TOOLS)/elf.py $(TOOLS)/host.py $(TOOLS)/sn64_cc.py $(TOOLS)/sn64_gnu_as.py $(TOOLS)/sn64_schedule.py $(TOOLS)/sn64_literals.py $(TOOLS)/sn64_macros.py $(TOOLS)/resolve_external_branches.py
+DRIVERS := $(TOOLS)/compile.py $(TOOLS)/cache.py $(TOOLS)/elf.py $(TOOLS)/host.py $(TOOLS)/sn64_cc.py $(TOOLS)/resolve_external_branches.py
 ifeq ($(strip $(VERSION)),)
 ifneq ($(origin BUILD),file)
 $(error HELD(build): BUILD requires VERSION)

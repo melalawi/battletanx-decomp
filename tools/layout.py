@@ -13,10 +13,6 @@ from literal_layout import arrange
 from rodata import fragment, insert_fragment, placement
 
 
-def signed(value: int) -> int:
-    return value - 65536 if value & 32768 else value
-
-
 def resident(
     obj: Object,
     interval: dict[str, int],
@@ -63,7 +59,15 @@ def resident(
         if dissent:
             raise ValueError(f"{section_name}: conflicting placements")
     except ValueError:
-        base = arrange(obj, section_name, target_words, interval["address"], read_memory, read_table)
+        base = arrange(
+            obj,
+            section_name,
+            target_words,
+            interval["address"],
+            read_memory,
+            read_table,
+            emit_resident="rodata_address" in interval,
+        )
     content = bytearray(obj.content(section))
     matches = [
         row
@@ -84,7 +88,15 @@ def resident(
         struct.pack_into(">I", content, at, value)
     if offset < 0 or offset + len(content) > len(image) or content != image[offset : offset + len(content)]:
         try:
-            base = arrange(obj, section_name, target_words, interval["address"], read_memory, read_table)
+            base = arrange(
+                obj,
+                section_name,
+                target_words,
+                interval["address"],
+                read_memory,
+                read_table,
+                emit_resident="rodata_address" in interval,
+            )
         except ValueError as error:
             raise ValueError(f"{obj.path}: {section_name} bytes disagree with resident ROM: {error}") from error
     return base
