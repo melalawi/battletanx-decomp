@@ -10,7 +10,7 @@
   "assembly_compiler": null,
   "compilers": {
     "gcc-2.7.2-kmc": {
-      "as": "tools/gcc-2.7.2-kmc/asn64.exe",
+      "as": "policy:mips_as",
       "cc": "tools/gcc-2.7.2-kmc/cc1",
       "cflags": [
         "-G0",
@@ -19,9 +19,7 @@
         "-mfp32",
         "-O2"
       ],
-      "kind": "sn64",
-      "obj_parser": "tools/gcc-2.7.2-kmc/psyq-obj-parser",
-      "wibo": "tools/gcc-2.7.2-kmc/wibo"
+      "kind": "sn64"
     },
     "ido-7.1": {
       "as": "tools/ido-7.1/as1",
@@ -33,9 +31,7 @@
         "-mips2",
         "-O2"
       ],
-      "kind": "ido",
-      "obj_parser": null,
-      "wibo": null
+      "kind": "ido"
     }
   },
   "cpp": "policy:cpp",

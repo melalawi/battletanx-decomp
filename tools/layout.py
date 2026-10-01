@@ -9,7 +9,8 @@ from pathlib import Path
 
 from elf import Object
 from extract import publish
-from rodata import fragment, insert_fragment
+from literal_layout import arrange
+from rodata import fragment, insert_fragment, placement
 
 
 def signed(value: int) -> int:
@@ -30,30 +31,39 @@ def resident(
     if text is None:
         raise ValueError(f"{obj.path}: missing .text")
     code = obj.content(text)
-    pending: dict[tuple[str, int], list[tuple[int, int]]] = {}
-    bases: list[int] = []
-    for offset, kind, symbol in obj.relocations(text):
-        if symbol["section"] != section:
-            continue
-        if offset + 4 > interval["end"] - interval["start"]:
-            raise ValueError(f"{obj.path}: {section_name} relocation outside original function")
-        word = struct.unpack_from(">I", code, offset)[0]
-        original = struct.unpack_from(">I", image, interval["start"] + offset)[0]
-        if word & 0xFFFF0000 != original & 0xFFFF0000:
-            raise ValueError(f"{obj.path}: {section_name} relocation instruction differs at text+0x{offset:X}")
-        key = symbol["name"], symbol["value"]
-        if kind == 5:
-            pending.setdefault(key, []).append((word, original))
-        elif kind == 6:
-            for high, target in pending.pop(key, []):
-                address = ((target & 65535) << 16) + signed(original & 65535)
-                addend = ((high & 65535) << 16) + signed(word & 65535)
-                bases.append(address - addend - symbol["value"])
-        else:
-            raise ValueError(f"{obj.path}: unsupported .rdata relocation type {kind}")
-    if pending or not bases or len(set(bases)) != 1:
-        raise ValueError(f"{obj.path}: {section_name} placement has missing or conflicting HI16/LO16 evidence {bases}")
-    base = bases[0]
+    target_words = {
+        at: int(struct.unpack_from(">I", image, interval["start"] + at)[0])
+        for at in range(0, min(len(code), interval["end"] - interval["start"]), 4)
+    }
+
+    def read_memory(address: int, size: int) -> bytes:
+        matches = [
+            row
+            for row in mappings or []
+            if row["address"] <= address and address + size <= row["address"] + row["end"] - row["start"]
+        ]
+        if len(matches) > 1:
+            raise ValueError(f"{obj.path}: {section_name} has ambiguous resident ROM mappings at 0x{address:08X}")
+        row = matches[0] if matches else interval
+        offset = row["start"] + address - row["address"]
+        if offset < 0 or offset + size > len(image):
+            raise ValueError(f"{obj.path}: {section_name} bytes disagree with resident ROM at 0x{address:08X}")
+        return image[offset : offset + size]
+
+    def read_table(address: int, size: int) -> bytes:
+        data = read_memory(address, size)
+        matches = [
+            row for row in mappings or [] if row["address"] <= address < row["address"] + row["end"] - row["start"]
+        ]
+        bias = matches[0].get("table_entry_bias", 0) if matches else interval.get("table_entry_bias", 0)
+        return b"".join(struct.pack(">I", (word[0] + bias) & 0xFFFFFFFF) for word in struct.iter_unpack(">I", data))
+
+    try:
+        base, dissent = placement(obj, section_name, target_words)
+        if dissent:
+            raise ValueError(f"{section_name}: conflicting placements")
+    except ValueError:
+        base = arrange(obj, section_name, target_words, interval["address"], read_memory, read_table)
     content = bytearray(obj.content(section))
     matches = [
         row
@@ -73,7 +83,10 @@ def resident(
         ) & 0xFFFFFFFF
         struct.pack_into(">I", content, at, value)
     if offset < 0 or offset + len(content) > len(image) or content != image[offset : offset + len(content)]:
-        raise ValueError(f"{obj.path}: {section_name} bytes disagree with resident ROM at 0x{base:08X}")
+        try:
+            base = arrange(obj, section_name, target_words, interval["address"], read_memory, read_table)
+        except ValueError as error:
+            raise ValueError(f"{obj.path}: {section_name} bytes disagree with resident ROM: {error}") from error
     return base
 
 

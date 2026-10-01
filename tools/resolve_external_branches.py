@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Encode branches ASN64 cannot relocate, using explicit version placements."""
+"""Encode external branches using explicit version placements."""
 
 from __future__ import annotations
 

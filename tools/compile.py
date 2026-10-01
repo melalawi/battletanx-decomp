@@ -18,9 +18,7 @@ from typing import TypedDict, cast
 from cache import Cache, key
 from host import resolve_tool
 
-Compiler = TypedDict(
-    "Compiler", {"kind": str, "cc": str, "cflags": list[str], "as": str, "wibo": str, "obj_parser": str}
-)
+Compiler = TypedDict("Compiler", {"kind": str, "cc": str, "cflags": list[str], "as": str})
 
 
 Recipe = TypedDict(
@@ -236,7 +234,16 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
         if ident and compiler is not None and str(Path(name).parent) == str(Path(compiler["cc"]).parent)
     }
     driver_names = (
-        ("compile.py", "elf.py", "sn64_cc.py", "asn64.py", "resolve_external_branches.py")
+        (
+            "compile.py",
+            "elf.py",
+            "sn64_cc.py",
+            "sn64_gnu_as.py",
+            "sn64_schedule.py",
+            "sn64_literals.py",
+            "sn64_macros.py",
+            "resolve_external_branches.py",
+        )
         if sn64
         else ("compile.py", "elf.py")
     )
@@ -254,7 +261,8 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
     if compiler is not None:
         inputs.append(Path(compiler["cc"]))
         if sn64:
-            inputs.extend(Path(compiler[name]) for name in ("as", "wibo", "obj_parser"))
+            compiler["as"] = resolve_tool(compiler["as"])
+            inputs.append(Path(compiler["as"]))
     digest = key(
         content,
         json.dumps([selected, generation, assembler_flags], sort_keys=True),
@@ -269,7 +277,7 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
             source.write_bytes(content)
             if sn64:
                 assert compiler is not None
-                from asn64 import assemble
+                from sn64_gnu_as import assemble
 
                 if not assembly:
                     generated = work / "source.s"
@@ -281,8 +289,6 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
                     text,
                     destination,
                     Path(compiler["as"]),
-                    Path(compiler["wibo"]),
-                    Path(compiler["obj_parser"]),
                     asflags,
                 )
             elif assembly:

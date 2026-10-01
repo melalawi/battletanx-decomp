@@ -7,3 +7,5 @@ baserom.*
 /tools/gcc-2.7.2-kmc/
 /tools/ido-7.1/
 /.env
+/.unbake/
+/tools/clone-policy.toml
