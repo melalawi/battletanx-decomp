@@ -1,0 +1,56 @@
+#!/bin/sh
+set -eu
+
+# Usage: ci/report CONFIG [--matrix]. Paths are relative to this repository.
+command -v python3 >/dev/null 2>&1 || { echo 'missing tool: python3' >&2; exit 1; }
+command -v dirname >/dev/null 2>&1 || { echo 'missing tool: dirname' >&2; exit 1; }
+cd "$(dirname "$0")/.."
+exec python3 - "$@" <<'PY'
+import json
+import re
+import sys
+from pathlib import Path
+
+if sys.version_info < (3, 11):
+    sys.exit("missing tool: Python 3.11 or later (tomllib required)")
+import tomllib
+
+if len(sys.argv) not in (2, 3) or (len(sys.argv) == 3 and sys.argv[2] != "--matrix"):
+    sys.exit("usage: ci/report CONFIG [--matrix]")
+try:
+    with Path(sys.argv[1]).open("rb") as stream:
+        config = tomllib.load(stream)
+    versions = config["project"]["versions"]
+    if not isinstance(versions, list) or not versions:
+        raise ValueError("project.versions must be a nonempty list")
+    if any(not isinstance(v, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", v) for v in versions):
+        raise ValueError("project.versions contains an unsafe VERSION name")
+    if len(versions) != len(set(versions)):
+        raise ValueError("project.versions contains duplicate VERSION names")
+    def reject_constant(value):
+        raise ValueError(f"invalid JSON constant: {value}")
+
+    reports = []
+    for version in versions:
+        if version not in config["version"]:
+            raise ValueError(f"missing config table: version.{version}")
+        path = Path("versions") / version / "report.json"
+        if any(p.is_symlink() for p in (path, *path.parents)):
+            raise ValueError(f"{path}: symlink")
+        with path.open(encoding="utf-8") as stream:
+            report = json.load(stream, parse_constant=reject_constant)
+        if not isinstance(report, dict):
+            raise ValueError(f"{path}: expected a JSON object")
+        reports.append({"version": version, "path": path.as_posix(), "artifact": f"{version}_report"})
+    expected = {r["path"] for r in reports}
+    actual = {p.as_posix() for p in Path("versions").glob("*/report.json")}
+    if actual != expected:
+        raise ValueError(f"reports outside project.versions: {sorted(actual - expected)}")
+except (OSError, ValueError, KeyError, TypeError) as error:
+    sys.exit(f"report: {error}")
+if len(sys.argv) == 3:
+    print(json.dumps({"include": reports}, separators=(",", ":")))
+else:
+    for report in reports:
+        print(report["path"])
+PY

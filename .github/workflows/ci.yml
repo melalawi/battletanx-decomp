@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      reports: ${{ steps.reports.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: ci/check
+      - id: reports
+        run: printf 'matrix=%s\n' "$(ci/report config.toml --matrix)" >> "$GITHUB_OUTPUT"
+  report:
+    needs: check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.check.outputs.reports) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.path }}
+          if-no-files-found: error

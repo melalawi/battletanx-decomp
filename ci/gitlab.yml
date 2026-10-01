@@ -1,0 +1,11 @@
+image: python:3.11-bookworm
+check:
+  before_script:
+    - apt-get update
+    - apt-get install -y --no-install-recommends git
+  script:
+    - ci/check
+    - ci/report config.toml
+  artifacts:
+    paths:
+      - versions/*/report.json

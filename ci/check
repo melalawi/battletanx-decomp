@@ -1,0 +1,69 @@
+#!/bin/sh
+set -eu
+
+# Only tracked-file hygiene and saved reports are checked. No game build runs.
+if [ "$#" -ne 0 ]; then echo 'usage: ci/check' >&2; exit 1; fi
+for tool in python3 git dirname; do
+    command -v "$tool" >/dev/null 2>&1 || { echo "missing tool: $tool" >&2; exit 1; }
+done
+cd "$(dirname "$0")/.."
+ci/report config.toml
+python3 - <<'PY'
+import re
+import subprocess
+import sys
+import tomllib
+from pathlib import Path, PurePosixPath
+
+with Path("config.toml").open("rb") as stream:
+    config = tomllib.load(stream)
+entries = subprocess.check_output(["git", "ls-files", "--stage", "-z"]).split(b"\0")
+tracked = []
+errors = []
+generated = {"build", "asm", "dist", ".unbake", ".splat", ".venv", "__pycache__"}
+compiler_dirs = {f"tools/{name}" for name in config["compilers"]}
+machine_path = re.compile(r"/(?:home|mnt|Users|opt|tmp)/|(?<![A-Za-z0-9])[A-Za-z]:[\\/]")
+for entry in entries:
+    if not entry:
+        continue
+    metadata, raw_name = entry.split(b"\t", 1)
+    mode, object_id, stage = metadata.split()
+    name = raw_name.decode("utf-8")
+    path = PurePosixPath(name)
+    if stage != b"0":
+        errors.append(f"{name}: unresolved index entry")
+    if mode == b"120000" or any(p.is_symlink() for p in (Path(name), *Path(name).parents)):
+        errors.append(f"{name}: tracked symlink")
+        continue
+    if (generated.intersection(path.parts)
+            or path.suffix.lower() in {".z64", ".n64", ".v64", ".rom", ".o", ".a", ".elf", ".map", ".pyc"}
+            or (path.name.startswith("baserom.") and path.suffix not in {".sha1", ".sha256"})
+            or any(name.startswith(directory + "/") for directory in compiler_dirs)):
+        errors.append(f"{name}: tracked ROM, compiler or build file")
+    tracked.append((name, object_id))
+
+# Inspect the working copy of tracked files so local edits receive the same checks.
+checked = 0
+for name, _ in tracked:
+    path = Path(name)
+    if not path.exists():
+        continue  # A tracked file deleted in the working copy will not be published.
+    if not path.is_file():
+        errors.append(f"{name}: tracked entry is not a regular file")
+        continue
+    data = path.read_bytes()
+    checked += 1
+    if b"\0" in data:
+        continue
+    for number, line in enumerate(data.decode("utf-8", errors="replace").splitlines(), 1):
+        if machine_path.search(line):
+            errors.append(f"{name}:{number}: absolute machine path")
+names = {name for name, _ in tracked}
+for version in config["project"]["versions"]:
+    name = f"versions/{version}/report.json"
+    if name not in names:
+        errors.append(f"{name}: report is not tracked")
+if errors:
+    sys.exit("\n".join(errors))
+print(f"hygiene: {checked} tracked files checked")
+PY
