@@ -1,25 +1,5 @@
-# Everything this project reads or writes that is not committed lives here: the ROM you supply,
-# the toolchain you supply, every build output, cache, environment, queue, lock and scratch tree.
-/artifacts/
-
-# Python
+baserom.*
+build/
+asm/
 __pycache__/
 *.py[cod]
-
-# Editors and operating systems
-.idea/
-.vscode/
-*.swp
-.DS_Store
-Thumbs.db
-
-# Agent worktrees and local session state
-.claude/
-
-# Credentials. Never committed. Stated here rather than left to a machine's global excludes,
-# which a clone does not carry.
-.env
-.env.*
-*.env
-*.pem
-*.key

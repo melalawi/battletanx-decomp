@@ -1,124 +1,185 @@
-# BattleTanx Metadata
-
 [project]
-slug = "battletanx"
-repo = "https://github.com/melalawi/battletanx-decomp"
-title = "BattleTanx"
-tracker_title = "BattleTanx"
-reference = "us"
+name = "battletanx"
+title = "BATTLETANX"
+names_from = "us"
+versions = ["us"]
+default_compiler = "gcc-2.7.2-kmc"
 
-# The one part of the cartridge a [[split.segments]] entry names: the whole loaded program,
-# one contiguous run from ROM 0x001000 to 0x0D7040.
-[[region]]
-name = "main"
+[paths]
+src = "src"
+include = ["include"]
+asm = "asm"
+tools = "tools"
 
-[split]
-# True: nothing in this project's build graph writes the two tables [split].generated_symbols names
-# (the toolkit's convention). They were produced once
-# and are carried in the repository, so they are the only copy there is -- a clone that did not
-# have them would link nothing, and there is no extraction step to regenerate them from. That
-# also means the hazard the false setting guards against does not exist here: no extraction
-# comes along to erase an edit, so an edit to one of these is durable.
-generated_symbols_tracked = true
-linker = "artifacts/{version}/extracted/{slug}.ld"
-include = "artifacts/{version}/extracted/include"
-assets = "artifacts/{version}/extracted/assets"
-empty_sections = ["artifacts/{version}/extracted/asm/data/bss.bss.s"]
-objects = "artifacts/{version}/extracted"
-c_objects = "artifacts/{version}/extracted/src"
-asm_objects = "artifacts/{version}/extracted/asm/nonmatchings"
-# Measured over this cartridge's own intervals; docs/filler.md records the sweep.
-filler_mirror_distance = 0xB8000
-subalign = 4
+[version."us"]
+baserom_sha1 = "535860d941738ac1210c20a9b80114fea0e0ff17"
+split = "versions/us/battletanx.yaml"
+symbols = "versions/us/symbol_addrs.txt"
+macros = []
 
-[[split.segments]]
-name = "main"
-source = "subsegments"
-region = "main"
-vram = 0x80071000
-rom = 0x1000
-
-[toolchain]
-# The build graph; the binutils it links and inspects every object with are the graph's (the toolkit's).
-graph = "ido"
-objdump_machine = "mips"
-asflags = ["-march=vr4300", "-mabi=32", "-EB", "--no-pad-sections"]
-# Two compilers built this cartridge, so its one split segment states no compiler of its own and
-# this table names each object's: IDO 7.1 for the libultra-shaped span 0x80110490..0x80124350 and
-# for every interval already landed under it, GCC 2.7.2 for the rest. See docs/pinned-compiler-reach.md.
-objects = "data/object-toolchains.json"
-
-# IDO 7.1, run with the N64 profile. Which release is measured, not chosen: func_800E3460 and
-# func_800E3470 reproduce under 7.1 and not under 5.3.
-[toolchains."ido-7.1"]
-kind = "ido"
-installed = "artifacts/ido/7.1"
-pins = "tools/ido/ido-7.1.sha256"
-cflags = ["-c", "-G0", "-non_shared", "-mips2", "-O2"]
-
-# GCC 2.7.2 (the KMC N64 build's code generator) with SN Systems' ASN64 2.81 assembler. Measured over
-# 24 intervals of different shapes compiled from C: 23 byte-identical and the 24th at 14 of 15 words,
-# where SN's own cc1n64 builds reproduced 9 and GNU as in place of ASN64 at most 19.
-[toolchains."gcc-2.7.2"]
-kind = "gcc272"
-cc = "{toolkit}/sn64/cc"
-as = "{toolkit}/sn64/as"
-assembler = "SN ASN64 version 2.81"
-installed = "artifacts/gcc-2.7.2"
-pins = "{toolkit}/gcc272/toolchain.sha256"
+[compilers."gcc-2.7.2-kmc"]
 cflags = ["-G0", "-mips3", "-mgp32", "-mfp32", "-O2"]
 
-# Where an authored object's .rdata goes: GCC 2.7.2 puts a function's jump tables and float literals
-# in .rdata, and this cartridge keeps them in two runs the split names, the data run ahead of the text
-# and the literal pools after it. Those runs stay assembled as they are, and each authored .rdata is
-# linked over them, unloaded, at the address the function's own text was relocated against; the
-# build proves its words are the cartridge's. Measured over the GCC-region functions: 1,414 literal and
-# table loads address the data run and 76 the pools after the text. The code runs where it is loaded,
-# so the blocks are addressed at their own link base (delta 0), and a jump-table entry is the absolute
-# address of its case (bias 0: func_800AB95C's table at 0x80073110 holds 0x800AB988, its own text plus
-# the entry's 0x2C). The quarantine address lies in no segment, so a trial whose .rdata cannot be
-# placed still links, with every use of it reading as a difference.
-[rodata]
-segment = "main"
-resident_blocks = ["data", "rodata"]
-resident_delta = 0
-table_entry_bias = 0
-quarantine = 0xB0000000
+[compilers."ido-7.1"]
+cflags = ["-c", "-G0", "-non_shared", "-mips2", "-O2"]
 
-[checks]
-inline_asm_keywords = ["asm", "__asm", "__asm__"]
-forbidden_labels = ["PAL"]
-# No note cites an upstream source tree.
-note_upstreams = []
-# No source form is forbidden beyond what the checks already refuse.
-forbidden_source_forms = {}
-# No inter-function alignment residue has been reviewed on this cartridge; an authored object
-# emitting any is a defect to repair, not residue to allow.
-allowed_text_residue = {}
+[units]
+"undecided" = "gcc-2.7.2-kmc"
+"main" = "gcc-2.7.2-kmc"
+"undecided_8007E138" = "gcc-2.7.2-kmc"
 
-# Where `make readme` writes each cartridge's progress report for decomp.dev, in objdiff's report
-# format, and the GitHub Actions workflow that uploads every one as the `<id>_report` artifact
-# decomp.dev reads. Both are rendered from the measurement README.md is rendered from, and `make check`
-# refuses either when it differs. CI builds nothing and never holds a cartridge: it uploads these.
-[tracker]
-report = "data/progress-report/{version}_report.json"
-workflow = ".github/workflows/progress-report.yml"
+"func_80076038" = "gcc-2.7.2-kmc"
+"func_8007627C" = "gcc-2.7.2-kmc"
+"func_80077930" = "gcc-2.7.2-kmc"
+"func_80077A38" = "gcc-2.7.2-kmc"
+"func_80078D90" = "gcc-2.7.2-kmc"
+"func_800793D0" = "gcc-2.7.2-kmc"
+"func_8007967C" = "ido-7.1"
+"func_80079684" = "ido-7.1"
+"func_80079A5C" = "gcc-2.7.2-kmc"
+"func_80079EFC" = "gcc-2.7.2-kmc"
+"func_8007AAC0" = "gcc-2.7.2-kmc"
+"func_8007C298" = "ido-7.1"
+"func_8007C33C" = "ido-7.1"
+"func_8007C6D8" = "gcc-2.7.2-kmc"
+"func_8007D384" = "gcc-2.7.2-kmc"
+"func_8007EC38" = "gcc-2.7.2-kmc"
+"func_8007ECE8" = "gcc-2.7.2-kmc"
+"func_8007ED98" = "gcc-2.7.2-kmc"
+"func_8007EE48" = "gcc-2.7.2-kmc"
+"func_8007FF68" = "gcc-2.7.2-kmc"
+"func_800805D0" = "ido-7.1"
+"func_800805DC" = "gcc-2.7.2-kmc"
+"func_80085330" = "gcc-2.7.2-kmc"
+"func_80085460" = "ido-7.1"
+"func_80085468" = "ido-7.1"
+"func_80090F10" = "gcc-2.7.2-kmc"
+"func_80091608" = "gcc-2.7.2-kmc"
+"func_800916B8" = "gcc-2.7.2-kmc"
+"func_800917C4" = "ido-7.1"
+"func_800917D8" = "gcc-2.7.2-kmc"
+"func_80091D04" = "gcc-2.7.2-kmc"
+"func_80093F34" = "ido-7.1"
+"func_800949B8" = "ido-7.1"
+"func_80096760" = "gcc-2.7.2-kmc"
+"func_80096784" = "gcc-2.7.2-kmc"
+"func_800968FC" = "gcc-2.7.2-kmc"
+"func_80097B7C" = "gcc-2.7.2-kmc"
+"func_80097C24" = "ido-7.1"
+"func_80099CD8" = "gcc-2.7.2-kmc"
+"func_8009E39C" = "ido-7.1"
+"func_800A2EA4" = "gcc-2.7.2-kmc"
+"func_800A3D30" = "gcc-2.7.2-kmc"
+"func_800A424C" = "ido-7.1"
+"func_800A4254" = "gcc-2.7.2-kmc"
+"func_800A42BC" = "ido-7.1"
+"func_800A4A64" = "gcc-2.7.2-kmc"
+"func_800A4D1C" = "ido-7.1"
+"func_800A51E8" = "gcc-2.7.2-kmc"
+"func_800A52AC" = "gcc-2.7.2-kmc"
+"func_800A59E8" = "gcc-2.7.2-kmc"
+"func_800A66C0" = "ido-7.1"
+"func_800A6E10" = "gcc-2.7.2-kmc"
+"func_800A72C8" = "gcc-2.7.2-kmc"
+"func_800A74AC" = "gcc-2.7.2-kmc"
+"func_800A7548" = "ido-7.1"
+"func_800A7550" = "gcc-2.7.2-kmc"
+"func_800A76A0" = "ido-7.1"
+"func_800A7D10" = "gcc-2.7.2-kmc"
+"func_800A81F0" = "gcc-2.7.2-kmc"
+"func_800A979C" = "gcc-2.7.2-kmc"
+"func_800A9B44" = "gcc-2.7.2-kmc"
+"func_800A9B70" = "gcc-2.7.2-kmc"
+"func_800AA280" = "gcc-2.7.2-kmc"
+"func_800AA328" = "gcc-2.7.2-kmc"
+"func_800AB200" = "ido-7.1"
+"func_800AB95C" = "gcc-2.7.2-kmc"
+"func_800ABFA0" = "ido-7.1"
+"func_800ABFD0" = "gcc-2.7.2-kmc"
+"func_800B8750" = "gcc-2.7.2-kmc"
+"func_800CE4B0" = "gcc-2.7.2-kmc"
+"func_800DDCA4" = "gcc-2.7.2-kmc"
+"func_800E0B00" = "gcc-2.7.2-kmc"
+"func_800E3460" = "ido-7.1"
+"func_800E3470" = "ido-7.1"
+"func_800E3480" = "ido-7.1"
+"func_800E349C" = "ido-7.1"
+"func_800E34B4" = "gcc-2.7.2-kmc"
+"func_800E3C18" = "ido-7.1"
+"func_800E480C" = "ido-7.1"
+"func_800E4D44" = "gcc-2.7.2-kmc"
+"func_800E5198" = "ido-7.1"
+"func_800E566C" = "ido-7.1"
+"func_800E6C14" = "gcc-2.7.2-kmc"
+"func_800E6CA4" = "gcc-2.7.2-kmc"
+"func_800E9894" = "gcc-2.7.2-kmc"
+"func_800E9DA4" = "gcc-2.7.2-kmc"
+"func_800EA1B0" = "ido-7.1"
+"func_800EA1FC" = "gcc-2.7.2-kmc"
+"func_800ED810" = "gcc-2.7.2-kmc"
+"func_800EEBEC" = "gcc-2.7.2-kmc"
+"func_800EECA0" = "gcc-2.7.2-kmc"
+"func_800F3014" = "gcc-2.7.2-kmc"
+"func_800F5128" = "gcc-2.7.2-kmc"
+"func_800F5178" = "gcc-2.7.2-kmc"
+"func_80106D00" = "ido-7.1"
+"func_80109354" = "ido-7.1"
+"func_8010BC08" = "ido-7.1"
+"func_8010DCD0" = "gcc-2.7.2-kmc"
+"func_80110480" = "ido-7.1"
+"func_80110CA0" = "ido-7.1"
+"func_801145D0" = "ido-7.1"
+"func_801147A0" = "ido-7.1"
+"func_80114828" = "ido-7.1"
+"func_80115474" = "ido-7.1"
+"func_8011588C" = "ido-7.1"
+"func_80115C80" = "ido-7.1"
+"func_8011954C" = "ido-7.1"
+"func_80119B60" = "ido-7.1"
+"func_80119BB4" = "ido-7.1"
+"func_80119C34" = "ido-7.1"
+"func_80119F70" = "ido-7.1"
+"func_8011A134" = "ido-7.1"
+"func_8011B1A0" = "ido-7.1"
+"func_8011B2A4" = "ido-7.1"
+"func_8011B7BC" = "ido-7.1"
+"func_8011B8F0" = "ido-7.1"
+"func_8011B9E0" = "ido-7.1"
+"func_8011BDE4" = "ido-7.1"
+"func_8011BFD0" = "ido-7.1"
+"func_8011C150" = "ido-7.1"
+"func_8011C180" = "ido-7.1"
+"func_8011C300" = "ido-7.1"
+"func_8011D0D0" = "ido-7.1"
+"func_8011D0E0" = "ido-7.1"
+"func_8011D100" = "ido-7.1"
+"func_8011D3DC" = "ido-7.1"
+"func_8011D6D0" = "ido-7.1"
+"func_8011DC60" = "ido-7.1"
+"func_8011DC98" = "ido-7.1"
+"func_8011E3F0" = "ido-7.1"
+"func_8011E434" = "ido-7.1"
+"func_8011E488" = "ido-7.1"
+"func_8011E564" = "ido-7.1"
+"func_8011ECA4" = "ido-7.1"
+"func_8011F7F0" = "ido-7.1"
+"func_80121F10" = "ido-7.1"
 
-[[cartridge]]
-id = "us"
-name = "North America"
-region = "North America"
-cartridge = "NUS-NBXE-0"
-code = "NBXE"
-revision = 0
-bytes = 8388608
-sha1 = "535860d941738ac1210c20a9b80114fea0e0ff17"
-sha256 = "c5b7cf3523de025e3f18e2c8df2deb0eced5613e7c46cb8c6c5a4f22644ead3f"
-crc1 = "6AA4DDE7"
-crc2 = "E3E2F4E7"
-buildable = true
-note = "NTSC release."
+[build]
+ld = "/usr/bin/mips-linux-gnu-ld"
+objcopy = "/usr/bin/mips-linux-gnu-objcopy"
+splat = "splat"
+as = "/usr/bin/mips-linux-gnu-as"
+cpp = "/usr/bin/cpp"
+asflags = ["-march=vr4300", "-mabi=32", "-EB", "--no-pad-sections"]
+cppflags = ["-P", "-undef", "-nostdinc", "-D_LANGUAGE_C", "-DF3DEX_GBI_2", "-D__GNUC__=2"]
+sn64_asflags = ["-mips3"]
 
-[source]
-# Best non-matching drafts, scored for the progress report only; never linked or landed.
-nonmatching = "nonmatching"
+[build.unit_cflags]
+"func_801145D0" = ["-O1"]
+"func_80115474" = ["-O1"]
+"func_8011588C" = ["-O1"]
+"func_80115C80" = ["-O1"]
+"func_8011BFD0" = ["-O1"]
+"func_8011D100" = ["-O1"]
+"func_80121F10" = ["-O1"]
