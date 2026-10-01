@@ -1135,7 +1135,7 @@ segments:
       - [497792, asm, func_800E9880]
       - [497812, c, func_800E9894]
       - [497984, asm, func_800E9940]
-      - [498132, asm, func_800E99D4]
+      - [498132, c, func_800E99D4]
       - [498144, asm, func_800E99E0]
       - [498176, asm, func_800E9A00]
       - [498208, asm, func_800E9A20]
