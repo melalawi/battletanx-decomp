@@ -1,7 +1,8 @@
-baserom.*
-build/
-asm/
 __pycache__/
 *.py[cod]
-tools/gcc-2.7.2-kmc/
-tools/ido-7.1/
+baserom.*
+/build/
+/asm/
+/.splat/
+/tools/gcc-2.7.2-kmc/
+/tools/ido-7.1/

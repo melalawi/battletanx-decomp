@@ -14,6 +14,8 @@ import sys
 import tempfile
 from pathlib import Path
 
+from rodata import defer_bss
+
 
 def prepare_build(build: Path) -> None:
     """Publish a standalone build through the numbered generation directory."""
@@ -297,7 +299,14 @@ def extract(args: argparse.Namespace) -> None:
     recipe = json.loads(args.recipe.read_text())
     compiler = recipe["compilers"][recipe["assembly_compiler"]]["kind"] if recipe["assembly_compiler"] else "ido"
     digest = hashlib.sha256()
-    for path in (args.baserom, args.split, args.symbols, args.recipe, Path(__file__)):
+    for path in (
+        args.baserom,
+        args.split,
+        args.symbols,
+        args.recipe,
+        Path(__file__),
+        Path(__file__).with_name("rodata.py"),
+    ):
         content = path.read_bytes()
         digest.update(len(content).to_bytes(8, "big"))
         digest.update(content)
@@ -343,7 +352,7 @@ def extract(args: argparse.Namespace) -> None:
         if result.returncode:
             sys.stderr.write(result.stdout.decode(errors="replace"))
             raise subprocess.CalledProcessError(result.returncode, result.args)
-        script = (staging / "layout.ld").read_text()
+        script = defer_bss((staging / "layout.ld").read_text())
         rewritten, graph = inventory(script, staging, args.asm, args.src, compiler)
         rewritten = render_alignment(rewritten, alignments)
         for directory in ("asm", "assets", "include"):

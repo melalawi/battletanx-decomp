@@ -13,4 +13,16 @@ struct Unknown800A42A4 {
     s32 value;
 };
 
+struct State {
+    int type;
+    int pad[2];
+    int ids[0x72];
+    int values[1];
+};
+
+struct Info {
+    unsigned char pad[0x3c];
+    unsigned char value;
+};
+
 #endif

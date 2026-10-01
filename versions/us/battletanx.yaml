@@ -40,7 +40,7 @@ segments:
     subsegments:
       - [4096, asm, entry]
       - [4152, data, data]
-      - [0x1350, rodata, jtbl_80071350]
+      - [0x1350, .rodata, "func_8007D1F8"]
       - [0x1378, data, data_after_jtbl_80071350]
       - [24576, asm, func_80076000]
       - [24632, c, func_80076038]
@@ -182,7 +182,7 @@ segments:
       - [51056, asm, func_8007C770]
       - [51300, asm, func_8007C864]
       - [52432, asm, func_8007CCD0]
-      - [53752, asm, func_8007D1F8]
+      - [53752, c, func_8007D1F8]
       - [53920, asm, func_8007D2A0]
       - [54148, c, func_8007D384]
       - [0xD42C, data, func_8007D42C]

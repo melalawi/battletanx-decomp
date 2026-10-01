@@ -150,3 +150,45 @@ def insert_fragment(script: str, sections: str) -> str:
     if marker is None:
         raise ValueError("linker script: /DISCARD/ missing")
     return script[: marker.start()] + sections + "\n" + script[marker.start() :]
+
+
+def defer_bss(script: str) -> str:
+    """Move a premature Splat NOLOAD transition after its remaining load inputs.
+
+    Local constant rows can make Splat insert automatic BSS before later text.
+    The legacy writer switches to NOLOAD permanently at that first BSS entry.
+    Preserve the load input order and place those BSS selectors with trailing BSS.
+    """
+    transition = re.compile(
+        r"(?P<header>^    }\n"
+        r"    (?P<name>\w+)_bss_VRAM = ADDR\(\.(?P=name)_bss\);\n"
+        r"    \.(?P=name)_bss \(NOLOAD\)[^\n]*\n    \{\n"
+        r"        FILL\([^\n]*\n        (?P=name)_BSS_START = \.;\n)"
+        r"(?P<selectors>(?:        [^\n]+\(\.bss(?: COMMON)?\);\n)+)",
+        re.M,
+    )
+    cursor = 0
+    while match := transition.search(script, cursor):
+        body_end = script.find("\n    }", match.end())
+        if body_end < 0:
+            raise ValueError("linker script: NOLOAD block terminator missing")
+        body = script[match.end() : body_end]
+        loaded = re.search(r"^        [^\n]+\(\.(?:text|data|rodata|rdata)\);", body, re.M)
+        if loaded is None:
+            cursor = match.end()
+            continue
+        tail = re.search(r"^        [^\n]+\(\.bss(?: COMMON)?\);", body, re.M)
+        if tail is None:
+            raise ValueError("linker script: trailing BSS selector missing")
+        if tail.start() < loaded.start():
+            raise ValueError("linker script: interleaved load and BSS inputs")
+        script = (
+            script[: match.start()]
+            + body[: tail.start()]
+            + match["header"]
+            + match["selectors"]
+            + body[tail.start() :]
+            + script[body_end:]
+        )
+        cursor = match.start() + len(body[: tail.start()]) + len(match[0])
+    return script
