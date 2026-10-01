@@ -166,11 +166,11 @@ cflags = ["-c", "-G0", "-non_shared", "-mips2", "-O2"]
 "func_80121F10" = "ido-7.1"
 
 [build]
-ld = "/usr/bin/mips-linux-gnu-ld"
-objcopy = "/usr/bin/mips-linux-gnu-objcopy"
-splat = "splat"
-as = "/usr/bin/mips-linux-gnu-as"
-cpp = "/usr/bin/cpp"
+ld = "policy:mips_ld"
+objcopy = "policy:mips_objcopy"
+splat = "policy:splat"
+as = "policy:mips_as"
+cpp = "policy:cpp"
 asflags = ["-march=vr4300", "-mabi=32", "-EB", "--no-pad-sections"]
 cppflags = ["-P", "-undef", "-nostdinc", "-D_LANGUAGE_C", "-DF3DEX_GBI_2", "-D__GNUC__=2"]
 sn64_asflags = ["-mips3"]

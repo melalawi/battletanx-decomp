@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import csv
 import hashlib
 import json
 import re
@@ -165,6 +166,21 @@ def symbols_from(paths: list[Path]) -> dict[str, int]:
     return found
 
 
+def discovered_symbols(path: Path, committed: dict[str, int]) -> dict[str, int]:
+    """Retain Splat's explicit addresses even for labels omitted by compiled C."""
+    found = dict(committed)
+    with path.open(newline="") as stream:
+        for row in csv.DictReader(stream):
+            name = row["name"]
+            if not re.fullmatch(r"[A-Za-z_.$][\w.$]*", name):
+                raise ValueError(f"invalid discovered symbol {name}")
+            address = int(row["vram_start"], 16)
+            if name in found and found[name] != address:
+                raise ValueError(f"conflicting discovered symbol {name}")
+            found[name] = address
+    return found
+
+
 def external_labels(directory: Path) -> str:
     labels = set()
     for path in directory.rglob("*.s"):
@@ -184,9 +200,10 @@ def inventory(script: str, staging: Path, asm: Path, src: Path, compiler: str) -
 
     def replace(match: re.Match[str]) -> str:
         original = Path(match.group(2))
-        # Resolve from the project working directory, where splat ran.
+        # Resolve from the isolated Splat base directory.
         try:
-            relative = original.resolve().relative_to(staging.resolve())
+            source_path = original if original.is_absolute() else staging / original
+            relative = source_path.resolve().relative_to(staging.resolve())
         except ValueError as error:
             raise ValueError(f"linker object outside extraction: {original}") from error
         spelling = str(relative)
@@ -280,7 +297,7 @@ def extract(args: argparse.Namespace) -> None:
     with tempfile.TemporaryDirectory(prefix=".extract-", dir=build) as temporary:
         staging = Path(temporary)
         options = {
-            "base_path": str(root),
+            "base_path": str(staging),
             "target_path": str(args.baserom.resolve()),
             "asm_path": str(staging / "asm"),
             "src_path": str(staging / "src"),
@@ -294,12 +311,14 @@ def extract(args: argparse.Namespace) -> None:
             "generated_asm_macros_directory": str(staging / "include"),
             "ld_legacy_generation": True,
             "create_asm_dependencies": False,
+            "dump_symbols": True,
+            "extensions_path": str(root / "tools" / "splat_ext"),
             "compiler": "SN64" if compiler == "sn64" else "IDO",
         }
         overlay = staging / "outputs.yaml"
         config = staging / "input.yaml"
         config.write_text(text)
-        options["base_path"] = str(root)
+        options["base_path"] = str(staging)
         overlay.write_text("options:\n" + "".join(f"  {key}: {json.dumps(value)}\n" for key, value in options.items()))
         subprocess.run([args.splat, "split", str(config), str(overlay)], check=True)
         script = (staging / "layout.ld").read_text()
@@ -314,7 +333,9 @@ def extract(args: argparse.Namespace) -> None:
                         destination = args.asm / (directory if directory != "asm" else "") / relative
                         publish(destination, path.read_bytes())
         tables = [args.symbols]
-        committed = symbols_from(tables)
+        symbol_dump = staging / ".splat" / "splat_symbols.csv"
+        publish(args.build / "splat_symbols.csv", symbol_dump.read_bytes())
+        committed = discovered_symbols(symbol_dump, symbols_from(tables))
         definitions = "".join(f"PROVIDE({name} = 0x{address:08X});\n" for name, address in sorted(committed.items()))
         publish(args.build / "committed_symbols.ld", definitions.encode())
         link_scripts = ["$(BUILD)/committed_symbols.ld"]

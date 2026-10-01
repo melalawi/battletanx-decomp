@@ -24,12 +24,13 @@ LD_SCRIPT := $(BUILD)/battletanx.ld
 TOOLS := tools
 SRC := src
 ASM := asm/$(VERSION)
-LD := $(abspath /usr/bin/mips-linux-gnu-ld)
-OBJCOPY := /usr/bin/mips-linux-gnu-objcopy
-SPLAT := splat
+resolve-tool = $(or $(shell python3 $(TOOLS)/host.py $(1)),$(error HELD(build): missing tool $(1)))
+LD = $(call resolve-tool,policy:mips_ld)
+OBJCOPY = $(call resolve-tool,policy:mips_objcopy)
+SPLAT = $(call resolve-tool,policy:splat)
 PINS := tools/compiler.sha256
 RECIPE := $(TOOLS)/build.json
-DRIVERS := $(TOOLS)/compile.py $(TOOLS)/cache.py $(TOOLS)/elf.py $(TOOLS)/sn64_cc.py $(TOOLS)/asn64.py $(TOOLS)/resolve_external_branches.py
+DRIVERS := $(TOOLS)/compile.py $(TOOLS)/cache.py $(TOOLS)/elf.py $(TOOLS)/host.py $(TOOLS)/sn64_cc.py $(TOOLS)/asn64.py $(TOOLS)/resolve_external_branches.py
 ifeq ($(strip $(VERSION)),)
 ifneq ($(origin BUILD),file)
 $(error HELD(build): BUILD requires VERSION)

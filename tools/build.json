@@ -1,5 +1,5 @@
 {
-  "as": "/usr/bin/mips-linux-gnu-as",
+  "as": "policy:mips_as",
   "asflags": [
     "-march=vr4300",
     "-mabi=32",
@@ -38,7 +38,7 @@
       "wibo": null
     }
   },
-  "cpp": "/usr/bin/cpp",
+  "cpp": "policy:cpp",
   "cppflags": [
     "-P",
     "-undef",

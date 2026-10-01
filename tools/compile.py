@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import TypedDict
 
 from cache import Cache, key
+from host import resolve_tool
 
 Compiler = TypedDict(
     "Compiler", {"kind": str, "cc": str, "cflags": list[str], "as": str, "wibo": str, "obj_parser": str}
@@ -108,6 +109,10 @@ def compile_object(args: argparse.Namespace) -> None:
     ident = data["assembly_compiler"] if assembly else compiler_for(data, args.unit)
     compiler = data["compilers"][ident] if ident else None
     sn64 = compiler is not None and compiler["kind"] == "sn64"
+    if sn64:
+        data["cpp"] = resolve_tool(data["cpp"])
+    elif assembly:
+        data["as"] = resolve_tool(data["as"])
     asflags = [
         *(data["sn64_asflags"] if sn64 and not assembly else data["asflags"]),
         "-I" + str(Path(data["asm"]) / version / "include"),
