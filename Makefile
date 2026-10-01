@@ -113,7 +113,7 @@ $(BUILD)/obj/assets/%.bin.o: $(ASM)/assets/%.bin
 
 $(ELF): $(OBJECTS) $(LD_SCRIPT) $(LINK_SCRIPTS) $(TOOLS)/layout.py $(TOOLS)/rodata.py
 	@mkdir -p $(@D)
-	python3 $(TOOLS)/layout.py --script $(LD_SCRIPT) --output $(BUILD)/battletanx.link.ld --build $(BUILD) --ranges $(BUILD)/unit-ranges.json --baserom $(BASEROM) --non-matching $(NON_MATCHING)
+	python3 $(TOOLS)/layout.py --script $(LD_SCRIPT) --output $(BUILD)/battletanx.link.ld --build $(BUILD) --ranges $(BUILD)/unit-ranges.json --recipe $(RECIPE) --version $(VERSION) --baserom $(BASEROM) --non-matching $(NON_MATCHING)
 	cd $(BUILD) && LC_ALL=C $(LD) $$(cat battletanx.link.flags) -T battletanx.link.ld $(addprefix -T ,$(abspath $(LINK_SCRIPTS))) -Map battletanx.map -o battletanx.elf $(patsubst $(BUILD)/%,%,$(OBJECTS))
 
 $(ROM): $(ELF)

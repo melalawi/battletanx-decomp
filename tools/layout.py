@@ -16,7 +16,13 @@ def signed(value: int) -> int:
     return value - 65536 if value & 32768 else value
 
 
-def resident(obj: Object, interval: dict[str, int], image: bytes, section_name: str) -> int | None:
+def resident(
+    obj: Object,
+    interval: dict[str, int],
+    image: bytes,
+    section_name: str,
+    mappings: list[dict[str, int]] | None = None,
+) -> int | None:
     section = obj.section(section_name)
     if section is None or not obj.sections[section][5]:
         return None
@@ -48,22 +54,53 @@ def resident(obj: Object, interval: dict[str, int], image: bytes, section_name: 
     if pending or not bases or len(set(bases)) != 1:
         raise ValueError(f"{obj.path}: {section_name} placement has missing or conflicting HI16/LO16 evidence {bases}")
     base = bases[0]
-    offset = interval["start"] + base - interval["address"]
     content = bytearray(obj.content(section))
+    matches = [
+        row
+        for row in mappings or []
+        if row["address"] <= base and base + len(content) <= row["address"] + row["end"] - row["start"]
+    ]
+    if len(matches) > 1:
+        raise ValueError(f"{obj.path}: {section_name} has ambiguous resident ROM mappings at 0x{base:08X}")
+    mapping = matches[0] if matches else interval
+    offset = mapping["start"] + base - mapping["address"]
+    pointer_bias = mapping.get("table_entry_bias", 0)
     for at, kind, symbol in obj.relocations(section):
         if kind != 2 or symbol["section"] != text:
             raise ValueError(f"{obj.path}: {section_name} relocation {kind} needs explicit placement")
-        value = struct.unpack_from(">I", content, at)[0] + interval["address"] + symbol["value"]
+        value = (
+            struct.unpack_from(">I", content, at)[0] + interval["address"] + symbol["value"] - pointer_bias
+        ) & 0xFFFFFFFF
         struct.pack_into(">I", content, at, value)
     if offset < 0 or offset + len(content) > len(image) or content != image[offset : offset + len(content)]:
         raise ValueError(f"{obj.path}: {section_name} bytes disagree with resident ROM at 0x{base:08X}")
     return base
 
 
+def resident_mappings(value: object) -> list[dict[str, int]]:
+    """Validate explicit runtime-address to ROM spans; never infer aliases from bytes."""
+    if not isinstance(value, list):
+        raise ValueError("resident_mappings: expected an array")
+    result = []
+    for index, row in enumerate(value):
+        if not isinstance(row, dict) or set(row) != {"address", "start", "end", "table_entry_bias"}:
+            raise ValueError(f"resident_mappings[{index}]: requires address, start, end, table_entry_bias")
+        if any(isinstance(v, bool) or not isinstance(v, int) or not 0 <= v <= 0xFFFFFFFF for v in row.values()):
+            raise ValueError(f"resident_mappings[{index}]: expected unsigned 32-bit integers")
+        if row["end"] <= row["start"] or row["address"] + row["end"] - row["start"] > 0x100000000:
+            raise ValueError(f"resident_mappings[{index}]: invalid span")
+        result.append(row)
+    return result
+
+
 def place(args: argparse.Namespace) -> None:
     script = args.script.read_text()
     intervals = json.loads(args.ranges.read_text())
     image = args.baserom.read_bytes()
+    mappings = []
+    if args.recipe is not None:
+        configured = json.loads(args.recipe.read_text()).get("resident_mappings", {})
+        mappings = resident_mappings(configured.get(args.version, []))
     sections = []
     partial = args.non_matching == "1"
     objects = sorted(set(re.findall(r"(obj/src/[^\s()]+\.o)\(", script)))
@@ -82,7 +119,7 @@ def place(args: argparse.Namespace) -> None:
             for section in (".rdata", ".rodata"):
                 if re.search(re.escape(name) + r"\s*\(" + re.escape(section) + r"\)", script):
                     continue
-                base = resident(obj, intervals[unit], image, section)
+                base = resident(obj, intervals[unit], image, section, mappings)
                 if base is not None:
                     sections.append(fragment([{"object": name, "section": section, "address": base}]))
     script = insert_fragment(script, "\n".join(sections))
@@ -94,6 +131,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     for name in ("script", "output", "build", "ranges", "baserom"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--recipe", type=Path)
+    parser.add_argument("--version")
     parser.add_argument("--non-matching", choices=("0", "1"), required=True)
     try:
         place(parser.parse_args())
