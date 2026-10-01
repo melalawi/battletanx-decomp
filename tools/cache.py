@@ -4,6 +4,7 @@ import hashlib
 import os
 import re
 import shutil
+import stat
 import tempfile
 from collections.abc import Callable
 from pathlib import Path
@@ -47,11 +48,15 @@ class Cache:
 
     def get(self, kind: str, key: str) -> Path | None:
         path = self.path(kind, key)
-        if path.is_file():
+        # One observation: publication between is_file() and exists() used to
+        # misclassify a newly renamed regular file as a corrupt cache entry.
+        try:
+            mode = path.stat().st_mode
+        except FileNotFoundError:
+            return None
+        if stat.S_ISREG(mode):
             return path
-        if path.exists():
-            raise Held("cache", f"{path}: expected cached file")
-        return None
+        raise Held("cache", f"{path}: expected cached file")
 
     def _temporary(self, path: Path) -> Path:
         path.parent.mkdir(parents=True, exist_ok=True)
