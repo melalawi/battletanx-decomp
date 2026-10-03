@@ -193,7 +193,12 @@ def arrange(
     replace(obj, index, result)
     if obj.path.is_symlink():
         raise ValueError(f"{obj.path}: cannot rewrite a symlink object")
-    obj.path.write_bytes(obj.data)
+    temporary = obj.path.with_name(obj.path.name + ".partial")
+    try:
+        temporary.write_bytes(obj.data)
+        temporary.replace(obj.path)
+    finally:
+        temporary.unlink(missing_ok=True)
     return base
 
 

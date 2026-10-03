@@ -175,7 +175,12 @@ def split_pool(obj: Object, section: str, base: int, slices: list[dict[str, Any]
             replace(obj, rel_index, data)
     replace(obj, text, code)
     replace(obj, index, b"")
-    obj.path.write_bytes(obj.data)
+    temporary = obj.path.with_name(obj.path.name + ".partial")
+    try:
+        temporary.write_bytes(obj.data)
+        temporary.replace(obj.path)
+    finally:
+        temporary.unlink(missing_ok=True)
     # Text relocations now reference inserted section symbols. Keep the parser's
     # symbol table in sync when another compiler section is split next.
     obj.symbols = Object(obj.path).symbols
