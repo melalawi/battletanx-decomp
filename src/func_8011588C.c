@@ -1,3 +1,4 @@
+#include "shared/func_8011588c.h"
 /* NOTE: byte-identical only when compiled at -O1.
  *
  * func_8011588C -- reprobes a display device: it first flushes any pending change, then walks the
@@ -7,26 +8,16 @@
  * mode list and the two readback values as unsigned halfwords and the lbu/sb at 0x65 fixes the
  * dirty flag as one byte.
  */
-typedef struct Target {
-    char pad0[0x1C];
-    unsigned short unk_1C;
-    unsigned short unk_1E;
-} Target;
 
-typedef struct Obj {
-    char pad0[0x4];
-    void *unk_4;
-    void *unk_8;
-    char pad0C[0x65 - 0x0C];
-    unsigned char unk_65;
-} Obj;
 
-extern int func_8011609C(Obj *);
-extern int func_80114190(void *, void *, unsigned short, Target *);
-extern void func_8011540C(Target *, unsigned short *, unsigned short *);
-extern int func_80113E10(void *, void *, unsigned short, Target *, int);
 
-int func_8011588C(Obj *obj, Target *target) {
+
+extern int func_8011609C(Obj_func_8011588C *);
+extern int func_80114190(void *, void *, unsigned short, Target_func_8011588C *);
+extern void func_8011540C(Target_func_8011588C *, unsigned short *, unsigned short *);
+extern int func_80113E10(void *, void *, unsigned short, Target_func_8011588C *, int);
+
+int func_8011588C(Obj_func_8011588C *obj, Target_func_8011588C *target) {
     unsigned short modes[4];
     int result;
     unsigned short h1;

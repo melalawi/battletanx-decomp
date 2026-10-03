@@ -1,10 +1,12 @@
+#include "shared/func_800a72c8.h"
+#include "shared/func_800a6e10.h"
 /* func_800A72C8 -- hands every node of the list at 0x98 to func_800A6E30 with the byte at 0xC of the second argument, then empties the list. */
 
-typedef struct N { char pad[0x2C]; struct N *next; } N;
-typedef struct { char pad[0x98]; N *head; } L;
-typedef struct { char pad[0xC]; unsigned char c; } C;
+
+
+
 extern void func_800A6E30(N *, unsigned char);
-void func_800A72C8(L *l, C *c) {
+void func_800A72C8(Shape_func_800A72C8 *l, C *c) {
     N *n = l->head;
     N *next;
     while (n != 0) {

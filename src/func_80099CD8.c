@@ -1,14 +1,14 @@
+#include "shared/func_80099cd8.h"
+#include "types.h"
+
+
+
+
+
+
+
+#include "types.h"
 /* checks field conditions and calls handler with scaled float parameter */
-typedef signed char s8;
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef signed long long s64;
-typedef unsigned long long u64;
-typedef float f32;
-typedef double f64;
 #define NULL ((void *)0)
 
 
@@ -16,86 +16,37 @@ typedef double f64;
 #define M2C_MACROS_H
 
 /* Unknown types */
-typedef s32 M2C_UNK;
-typedef s8  M2C_UNK8;
-typedef s16 M2C_UNK16;
-typedef s32 M2C_UNK32;
-typedef s64 M2C_UNK64;
 
 /* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-#define M2C_FIELD(expr, type_ptr, offset) (*(type_ptr)((s8 *)(expr) + (offset)))
 
 /* Bitwise (reinterpret) cast */
-#define M2C_BITWISE(type, expr) ((type)(expr))
 
 /* Unaligned reads */
-#define M2C_LWL(expr) (expr)
-#define M2C_FIRST3BYTES(expr) (expr)
-#define M2C_UNALIGNED32(expr) (expr)
 
 /* Unhandled instructions */
-#define M2C_ERROR(desc) (0)
-#define M2C_TRAP_IF(cond) (0)
-#define M2C_BREAK() (0)
-#define M2C_SYNC() (0)
-#define M2C_DCACHE_CLEAN(addr) (0)
-#define M2C_DCACHE_INVALIDATE(addr) (0)
-#define M2C_DCACHE_CLEAN_INVALIDATE(addr) (0)
-#define M2C_DCACHE_BLOCK_SETZERO(addr) (0)
-#define M2C_DCACHE_BLOCK_SETZERO_LOCKED(addr) (0)
-#define M2C_ICACHE_INVALIDATE(addr) (0)
-#define M2C_PREFETCH(addr) (0)
-#define M2C_PREFETCH_STORE(addr) (0)
-
-#define GLUE_F64(a, b) (0.0)
-#define MULT_HI(a, b) (0)
-#define MULTU_HI(a, b) (0)
-#define DMULT_HI(a, b) (0)
-#define DMULTU_HI(a, b) (0)
-#define CLZ(x) (0)
-#define REVERSE_BITS(x) (0)
-#define ROTATE_RIGHT(x, shift) (0)
-#define ARM_RRX(x, carry) (0)
-#define BSWAP32(x) (0)
-#define BSWAP16(x) (0)
-#define BSWAP16X2(x) (0)
 
 /* Carry/overflow bits from partially-implemented instructions */
-#define M2C_CARRY 0
-#define M2C_OVERFLOW(a) (0)
 
 /* Memcpy patterns */
-#define M2C_MEMCPY_ALIGNED memcpy
-#define M2C_MEMCPY_UNALIGNED memcpy
-#define M2C_STRUCT_COPY memcpy
 
 /* Sh2 control register loads/stores */
-#define M2C_LOAD_SR() (0)
-#define M2C_LOAD_GBR() (0)
-#define M2C_LOAD_VBR() (0)
-#define M2C_STORE_SR(a)
-#define M2C_STORE_GBR(a)
-#define M2C_STORE_VBR(a)
-
-#define M2C_CMP_STR(a, b) (0)
-#define M2C_TAS_B(a) (0)
 
 #endif
 s32 func_800796F0();                /* extern */
-M2C_UNK func_800799D0();                    /* extern */
+s32 func_800799D0();                    /* extern */
 s32 func_800E3470();                                /* extern */
-extern f64 D_800723B0;
-extern f32 D_800723B8;
-extern f32 D_800723BC;
+const f64 D_800723B0 = 0.3;
+const f32 D_800723B8 = 0.5f;
+const f32 D_800723BC = 28672.0f;
 
-void func_80099CD8(void *arg0, M2C_UNK arg1) {
+void func_80099CD8(void *arg0, s32 arg1) {
     s32 temp_a0;
 
-    if ((M2C_FIELD(arg0, u8 *, 0x464) == 0) && (D_800723B0 < (f64) M2C_FIELD(arg0, f32 *, 0x3B4)) && (func_800E3470() != 0)) {
+    if ((((struct Func_80099CD8_View0 *)arg0)->field_464 == 0) && (D_800723B0 < (f64) ((struct Func_80099CD8_View0 *)arg0)->field_3b4) && (func_800E3470() != 0)) {
         temp_a0 = func_800796F0(arg1, 0);
-        if (M2C_FIELD(arg0, f32 *, 0x3B4) < D_800723B8) {
-            func_800799D0(temp_a0, (s16) (s32) (2.0f * M2C_FIELD(arg0, f32 *, 0x3B4) * D_800723BC));
+        if (((struct Func_80099CD8_View0 *)arg0)->field_3b4 < D_800723B8) {
+            func_800799D0(temp_a0, (s16) (s32) (2.0f * ((struct Func_80099CD8_View0 *)arg0)->field_3b4 * D_800723BC));
         }
-        M2C_FIELD(arg0, u8 *, 0x464) = 0x20U;
+        ((struct Func_80099CD8_View0 *)arg0)->field_464 = 0x20U;
     }
 }

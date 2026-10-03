@@ -1,17 +1,13 @@
+#include "shared/func_800a76a0.h"
 /*
  * Copies three consecutive floats into the fields at offsets 0x30, 0x34 and
  * 0x38 of the destination structure.  Every load is `lwc1` and every store
  * `swc1`, so both sides are single-precision floats, and the one
  * floating-point register reused for all three copies is what a named float
- * scratch variable produces.
+ * temporary variable produces.
  */
 
-typedef struct Unknown800A76A0 {
-    unsigned char pad0[0x30];
-    float unk30;
-    float unk34;
-    float unk38;
-} Unknown800A76A0;
+
 
 void func_800A76A0(Unknown800A76A0 *dst, float *src) {
     float value;

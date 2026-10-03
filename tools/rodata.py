@@ -71,7 +71,7 @@ def placement(obj: Object, section: str, target_words: Mapping[int, int | None])
     if text is None:
         raise ValueError(".text: missing section")
     code = obj.content(text)
-    pending: dict[tuple[str, int, int], list[tuple[int, int | None]]] = {}
+    pending: dict[tuple[int, int], list[tuple[int, int | None]]] = {}
     votes: Counter[int] = Counter()
     for offset, kind, symbol in obj.relocations(text):
         if symbol["section"] != index:
@@ -79,7 +79,7 @@ def placement(obj: Object, section: str, target_words: Mapping[int, int | None])
         if offset not in target_words:
             raise ValueError(f"target_words[{offset}]: missing aligned instruction")
         word, target = _word(code, offset, ".text"), target_words[offset]
-        key = symbol["name"], symbol["value"], symbol["section"]
+        key = symbol["table"], symbol["index"]
         if kind == 5:
             pending.setdefault(key, []).append((word, target))
         elif kind == 6:
@@ -97,7 +97,7 @@ def placement(obj: Object, section: str, target_words: Mapping[int, int | None])
         else:
             raise ValueError(f"{section}.relocation[{offset}]: unsupported type {kind}")
     if pending:
-        raise ValueError(f"{section}.LO16: missing pair for {next(iter(pending))[0]}")
+        raise ValueError(f"{section}.LO16: missing pair for symbol {next(iter(pending))}")
     ranked = votes.most_common()
     if not ranked:
         raise ValueError(f"{section}.base: no relocated text reference")

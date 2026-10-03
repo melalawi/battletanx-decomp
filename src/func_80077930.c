@@ -1,7 +1,6 @@
-typedef signed char s8;
-typedef signed int s32;
-typedef unsigned int u32;
-typedef struct { s32 pad[6]; } InitArgs;
+#include "shared/func_80077930.h"
+#include "types.h"
+
 extern void func_80110C00(void *, s32);
 extern void func_801124C0(s32, s32);
 extern void func_801185D0(void *, s32, s32, s32, s32, s32, s32 *);

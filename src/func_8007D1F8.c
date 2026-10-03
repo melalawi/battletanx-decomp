@@ -1,4 +1,8 @@
-#include "structs.h"
+#include "shared/func_8007d1f8.h"
+#include "types.h"
+
+
+
 
 
 extern struct Info *func_800A68C0(int);

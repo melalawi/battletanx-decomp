@@ -1,3 +1,4 @@
+#include "shared/func_8011b1a0.h"
 /* func_8011B1A0 -- unhooks every node of the owner's list at 0x50 that belongs to one target and is
  * of kind 0x16 or 0x17: it calls the owner's callback at 0x78 with the node's 0x14 word, retires the
  * node through func_8011C150, folds the node's 0x8 count into its successor's, returns it to the
@@ -5,36 +6,18 @@
  * according to the kind, and stops early once that byte reaches zero. The lh at 0xC fixes the kind
  * as a signed short and the lbu/sb at 0x37 fixes the flag as one unsigned byte.
  */
-typedef struct Target {
-    char pad0[0x37];
-    unsigned char unk_37;
-} Target;
 
-typedef struct Node {
-    struct Node *next;
-    char pad04[0x08 - 0x04];
-    int unk_8;
-    short unk_C;
-    char pad0E[0x10 - 0x0E];
-    Target *unk_10;
-    void *unk_14;
-} Node;
 
-typedef struct Owner {
-    char pad0[0x48];
-    int unk_48;
-    char pad4C[0x50 - 0x4C];
-    Node *unk_50;
-    char pad54[0x78 - 0x54];
-    void (*unk_78)(void *);
-} Owner;
 
-extern void func_8011C150(Node *);
-extern void func_8011C180(Node *, int *);
 
-void func_8011B1A0(Owner *owner, Target *target) {
-    Node *node;
-    Node *next;
+
+
+extern void func_8011C150(Shape_func_8011B1A0_2 *);
+extern void func_8011C180(Shape_func_8011B1A0_2 *, int *);
+
+void func_8011B1A0(Shape_func_8011B1A0 *owner, Target *target) {
+    Shape_func_8011B1A0_2 *node;
+    Shape_func_8011B1A0_2 *next;
     short kind;
 
     for (node = owner->unk_50; node != 0; node = next) {

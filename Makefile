@@ -17,10 +17,9 @@ BUILD ?= build/$(VERSION).nonmatching
 else
 BUILD ?= build/$(VERSION)
 endif
-BASEROM := baserom.$(VERSION).z64
-ROM := $(BUILD)/battletanx.$(VERSION).z64
-ELF := $(BUILD)/battletanx.elf
-LD_SCRIPT := $(BUILD)/battletanx.ld
+ROM := $(BUILD)/BattleTanx.$(VERSION).z64
+ELF := $(BUILD)/BattleTanx.elf
+LD_SCRIPT := $(BUILD)/BattleTanx.ld
 TOOLS := tools
 SRC := src
 ASM := asm/$(VERSION)
@@ -53,13 +52,14 @@ ifeq ($(filter $(VERSION),$(VERSIONS)),)
 $(error HELD(build): unknown VERSION=$(VERSION))
 endif
 ifeq ($(VERSION),us)
-SPLIT := versions/us/battletanx.yaml
+SPLIT := versions/us/BattleTanx.yaml
 SYMBOLS := versions/us/symbol_addrs.txt
+BASEROM := roms/baserom.us.z64
 endif
 
 all: $(ROM)
 ifeq ($(COMPARE),1)
-	@sed 's|  .*|  $(ROM)|' versions/$(VERSION)/battletanx.sha1 | sha1sum -c -
+	@sed 's|  .*|  $(ROM)|' versions/$(VERSION)/BattleTanx.sha1 | sha1sum -c -
 endif
 
 verify:
@@ -84,19 +84,19 @@ endif
 
 $(BUILD)/.split.mk: $(wildcard $(SRC)/*.c) $(BASEROM) $(SPLIT) $(SYMBOLS) $(TOOLS)/extract.py $(TOOLS)/rodata.py $(RECIPE)
 	@mkdir -p $(BUILD)
-	python3 $(TOOLS)/extract.py --split $(SPLIT) --symbols $(SYMBOLS) --baserom $(BASEROM) --build $(BUILD) --asm $(ASM) --src $(SRC) --name battletanx --splat $(SPLAT) --recipe $(RECIPE) --non-matching $(NON_MATCHING)
+	python3 $(TOOLS)/extract.py --split $(SPLIT) --symbols $(SYMBOLS) --baserom $(BASEROM) --build $(BUILD) --asm $(ASM) --src $(SRC) --name BattleTanx --splat $(SPLAT) --recipe $(RECIPE) --non-matching $(NON_MATCHING)
 
 $(BUILD)/.split: $(BUILD)/.split.mk
 	@touch $@
 
-$(LD_SCRIPT) $(LINK_SCRIPTS) $(BUILD)/symbol-addresses.txt: | $(BUILD)/.split
+$(LD_SCRIPT) $(LINK_SCRIPTS) $(BUILD)/symbol-addresses.txt $(BUILD)/unit-ranges.json: | $(BUILD)/.split
 	@test -f $@ || { printf '%s\n' 'HELD(extract): missing $@; remove $(BUILD)/.split.mk and make extract'; exit 1; }
 
 # Group only missing receipts. Existing objects retain their individual rules,
 # including header dependency tracking and unchanged-object timestamp behavior.
 C_COLD := $(filter-out $(wildcard $(C_OBJECTS:.o=.built)),$(C_OBJECTS:.o=.built))
 define compile-chunk
-$(1) &: $(patsubst $(BUILD)/obj/src/%.built,$(SRC)/%.c,$(1)) $(RECIPE) $(DRIVERS) | verify
+$(1) &: $(patsubst $(BUILD)/obj/src/%.built,$(SRC)/%.c,$(1)) $(RECIPE) $(DRIVERS) $(BUILD)/unit-ranges.json | verify
 	python3 $(TOOLS)/compile.py --kind cc --non-matching $(NON_MATCHING) --recipe $(RECIPE) --version $(VERSION) --unit batch --source $(SRC) --output $(BUILD)/obj/src --batch $(patsubst $(BUILD)/obj/src/%.built,$(SRC)/%.c,$(1))
 endef
 define compile-chunks
@@ -104,7 +104,17 @@ $(if $(strip $(1)),$(eval $(call compile-chunk,$(wordlist 1,128,$(1))))$(call co
 endef
 $(call compile-chunks,$(C_COLD))
 
-$(BUILD)/obj/src/%.built: $(SRC)/%.c $(RECIPE) $(DRIVERS) | verify
+ASM_COLD := $(filter-out $(wildcard $(ASM_OBJECTS:.o=.built)),$(ASM_OBJECTS:.o=.built))
+define assemble-chunk
+$(1) &: $(patsubst $(BUILD)/obj/asm/%.built,$(ASM)/%.s,$(1)) $(RECIPE) $(DRIVERS) $(BUILD)/symbol-addresses.txt | verify
+	python3 $(TOOLS)/compile.py --kind as --non-matching $(NON_MATCHING) --recipe $(RECIPE) --version $(VERSION) --unit batch --source $(ASM) --output $(BUILD)/obj/asm --symbols $(BUILD)/symbol-addresses.txt --batch $(patsubst $(BUILD)/obj/asm/%.built,$(ASM)/%.s,$(1))
+endef
+define assemble-chunks
+$(if $(strip $(1)),$(eval $(call assemble-chunk,$(wordlist 1,128,$(1))))$(call assemble-chunks,$(wordlist 129,$(words $(1)),$(1))))
+endef
+$(call assemble-chunks,$(ASM_COLD))
+
+$(BUILD)/obj/src/%.built: $(SRC)/%.c $(RECIPE) $(DRIVERS) $(BUILD)/unit-ranges.json | verify
 	@mkdir -p $(@D)
 	python3 $(TOOLS)/compile.py --kind cc --non-matching $(NON_MATCHING) --recipe $(RECIPE) --version $(VERSION) --unit $(SRC)/$*.c --source $< --output $(@:.built=.o) --depfile $(@:.built=.d) --dep-target='$$(BUILD)/obj/src/$*.built'
 	@touch $@
@@ -124,10 +134,10 @@ $(BUILD)/obj/assets/%.bin.o: $(ASM)/assets/%.bin
 	@mkdir -p $(@D)
 	$(OBJCOPY) -I binary -O elf32-tradbigmips -B mips $< $@
 
-$(ELF): $(OBJECTS) $(LD_SCRIPT) $(LINK_SCRIPTS) $(TOOLS)/layout.py $(TOOLS)/rodata.py
+$(ELF): $(OBJECTS) $(LD_SCRIPT) $(LINK_SCRIPTS) $(TOOLS)/layout.py $(TOOLS)/rodata.py $(TOOLS)/literal_layout.py $(TOOLS)/pool_slices.py
 	@mkdir -p $(@D)
-	python3 $(TOOLS)/layout.py --script $(LD_SCRIPT) --output $(BUILD)/battletanx.link.ld --build $(BUILD) --ranges $(BUILD)/unit-ranges.json --recipe $(RECIPE) --version $(VERSION) --baserom $(BASEROM) --non-matching $(NON_MATCHING)
-	cd $(BUILD) && LC_ALL=C $(LD) $$(cat battletanx.link.flags) -T battletanx.link.ld $(addprefix -T ,$(abspath $(LINK_SCRIPTS))) -Map battletanx.map -o battletanx.elf $(patsubst $(BUILD)/%,%,$(OBJECTS))
+	python3 $(TOOLS)/layout.py --script $(LD_SCRIPT) --output $(BUILD)/BattleTanx.link.ld --build $(BUILD) --ranges $(BUILD)/unit-ranges.json --recipe $(RECIPE) --version $(VERSION) --baserom $(BASEROM) --non-matching $(NON_MATCHING)
+	cd $(BUILD) && LC_ALL=C $(LD) $$(cat BattleTanx.link.flags) -T BattleTanx.link.ld $(addprefix -T ,$(abspath $(LINK_SCRIPTS))) -Map BattleTanx.map -o BattleTanx.elf $(patsubst $(BUILD)/%,%,$(OBJECTS))
 
 $(ROM): $(ELF)
 	$(OBJCOPY) -O binary --pad-to $(ROM_BYTES) $< $@
@@ -146,7 +156,7 @@ check: $(ROM)
 ifeq ($(NON_MATCHING),1)
 	@printf '%s\n' 'HELD(check): NON_MATCHING=1 cannot verify a matching cartridge'; exit 1
 else
-	@sed 's|  .*|  $(ROM)|' versions/$(VERSION)/battletanx.sha1 | sha1sum -c -
+	@sed 's|  .*|  $(ROM)|' versions/$(VERSION)/BattleTanx.sha1 | sha1sum -c -
 endif
 
 .PHONY: all check verify setup extract clean distclean

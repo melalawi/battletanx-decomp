@@ -1,25 +1,62 @@
 # Contributing to BATTLETANX
 
-Install Python 3, splat, GNU Make, SHA checksum utilities, and the MIPS binutils
-named in the Makefile. Supply the compiler files under `tools` and verify them
-against `tools/compiler.sha256`.
+## Install
 
-Place your own big-endian cartridge dump at `baserom.<version>.z64` in this
-repository. Supported versions: us.
+```sh
+python3 -m pip install git+https://github.com/melalawi/abu-cake-unbake-64@952cffe232b2584de3dbc07d8e054baf71eb0e67
+```
 
-Plain `make` and `make check` build and verify every VERSION. Pass
-`VERSION=<version>` to build just one.
+## New project
 
-- `make setup VERSION=<version>` verifies your dump and compiler.
-- `make extract VERSION=<version>` splits the dump once.
-- `make VERSION=<version>` builds and checks the cartridge SHA-1.
-- `make check VERSION=<version>` checks the rebuilt cartridge SHA-1.
-- `make clean VERSION=<version>` removes that version's build.
-- `make distclean` removes every build and the extracted assembly.
+Run these commands inside this repo.
+Put your own ROM dumps at these paths.
 
-`BUILD=<directory>` selects a separate output directory. `COMPARE=0` skips
-comparison; use the default `COMPARE=1` to prove a match. Each function has its
-own C or assembly object, selected by that version's split file.
+- `roms/baserom.us.z64`
 
-Unmatched drafts live in `src/` under `#ifdef NON_MATCHING`. Run
-`make NON_MATCHING=1` to build those drafts with comparison disabled.
+```sh
+unbake setup
+```
+
+Setup shows compiler evidence and asks for one confirmation of the whole proposal.
+Try measures compiler candidates and records exact equivalence.
+It prints the policy path and names any missing input.
+It checks every ROM before the project is ready.
+
+```sh
+make check
+```
+
+Plain `make` and `make check` cover every version.
+Use `VERSION=<version>` to select one version.
+Compiler files live in `tools`.
+Their hashes are recorded in `tools/compiler.sha256`.
+
+## Next command
+
+```sh
+unbake map
+unbake solve
+unbake next
+unbake draft FUNCTION
+unbake try FILE
+unbake submit FILE
+```
+
+Map reads the whole program across every version.
+Solve builds shared types from the measured facts.
+Use the item suggested by `next`.
+Use the file printed by `draft`.
+Draft states which containing version it uses.
+It uses the shared type context.
+Edit that file and run `try` again.
+Submit the tried file after it matches every holding version or passes the owner fuzzy bar.
+The fuzzy bar requires at least 90% exact words in every containing version.
+It accepts register and order differences or relocations.
+Source must pass the checks.
+Passing drafts publish under `NON_MATCHING` while their assembly rows remain.
+Submit proves the ROMs before it publishes the C.
+Exact matches feed proven facts back into solve.
+Affected neighbours are marked for another draft.
+
+Every command ends with the next command to run.
+`unbake next` prints it again.

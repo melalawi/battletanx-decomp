@@ -1,3 +1,7 @@
-int func_800E3460(unsigned char *state) {
-    return state[848] == 2;
+#include "types.h"
+
+              /* size 0x0 */
+
+s32 func_800E3460(const u8 *arg0) {
+    return arg0[0x350] == 2;
 }

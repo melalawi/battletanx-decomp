@@ -1,4 +1,4 @@
-"""Atomic file artifacts shared by content key across projects."""
+"""Content-keyed reuse: atomic file artifacts across projects, parsed inputs within a process."""
 
 import hashlib
 import os
@@ -6,12 +6,53 @@ import re
 import shutil
 import stat
 import tempfile
-from collections.abc import Callable
+from collections import OrderedDict
+from collections.abc import Callable, Hashable, Sequence
 from pathlib import Path
+from typing import Any, TypeVar
 
 class Held(Exception):
     def __init__(self, phase, reason):
         super().__init__(f"HELD({phase}): {reason}")
+
+T = TypeVar("T")
+_parsed: dict[tuple[str, tuple[Path, ...], Hashable], tuple[tuple[bytes, ...], Any]] = {}
+
+
+def parsed(kind: str, paths: Path | Sequence[Path], parse: Callable[[], T], *, extra: Hashable = None) -> T:
+    """Parse project inputs once per process while their bytes are unchanged.
+
+    Every call reads and digests the inputs, so an edit is always observed.
+    Callers treat the returned value as read-only; it is shared.
+    """
+    files = (Path(paths),) if isinstance(paths, (str, Path)) else tuple(Path(path) for path in paths)
+    index = kind, tuple(path.absolute() for path in files), extra
+    try:
+        digests = tuple(hashlib.blake2b(path.read_bytes(), digest_size=20).digest() for path in files)
+    except OSError:
+        return parse()
+    cached = _parsed.get(index)
+    if cached is not None and cached[0] == digests:
+        return cached[1]  # type: ignore[no-any-return]
+    value = parse()
+    _parsed[index] = digests, value
+    return value
+
+
+_remembered: dict[str, OrderedDict[Hashable, Any]] = {}
+
+
+def remembered(kind: str, content: Hashable, compute: Callable[[], T], *, keep: int = 4) -> T:
+    """Reuse a value derived from in-memory content; each kind keeps its latest few."""
+    values = _remembered.setdefault(kind, OrderedDict())
+    if content in values:
+        values.move_to_end(content)
+        return values[content]  # type: ignore[no-any-return]
+    value = compute()
+    values[content] = value
+    while len(values) > keep:
+        values.popitem(last=False)
+    return value
 
 
 def key(*parts: str | bytes | Path) -> str:

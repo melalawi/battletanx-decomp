@@ -6,6 +6,8 @@ from typing import TypedDict
 
 
 class Symbol(TypedDict):
+    table: int
+    index: int
     name: str
     value: int
     size: int
@@ -31,8 +33,18 @@ class Object:
             if section[1] == 2:
                 strings = self.content(section[6])
                 self.symbols[index] = [
-                    {"name": self.string(strings, name), "value": value, "size": size, "info": info, "section": shndx}
-                    for name, value, size, info, other, shndx in struct.iter_unpack(">IIIBBH", self.content(index))
+                    {
+                        "table": index,
+                        "index": number,
+                        "name": self.string(strings, name),
+                        "value": value,
+                        "size": size,
+                        "info": info,
+                        "section": shndx,
+                    }
+                    for number, (name, value, size, info, other, shndx) in enumerate(
+                        struct.iter_unpack(">IIIBBH", self.content(index))
+                    )
                 ]
 
     @staticmethod

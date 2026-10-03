@@ -1,3 +1,4 @@
+/* FAKEMATCH: The volatile return local preserves the target stack stores of overwritten intermediate results; these stores are compiler-shape preservation, not required hardware semantics. */
 /*
  * Shuts one screen down: it always calls func_8011BDA0 first, and when the byte
  * flag D_803C4DC0 is set it also tears down the active view -- func_801112A8(0),

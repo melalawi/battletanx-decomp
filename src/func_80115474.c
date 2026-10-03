@@ -1,30 +1,15 @@
+#include "shared/func_80115474.h"
 /* Sizes a memory card by writing a marked, inverted page pattern to page after page
  * and reading it back, stops at the first page that does not read back or that
  * aliases page 0, then fills in the caller's header from the template, writes it to
  * four pages and verifies the first 0x20 bytes of the readback.
- * lbu/sb fix 0x65 of the context, 0x1A and 0x1B of the header and both scratch
+ * lbu/sb fix 0x65 of the context, 0x1A and 0x1B of the header and both temporary
  * buffers as unsigned bytes; lhu/sh with the andi 0xFFFE mask fixes 0x18 as an
  * unsigned short; every other field is a word. */
 
-typedef struct Ctx {
-    char pad_0[4];
-    int unk_4;
-    int unk_8;
-    char pad_c[0x65 - 0xC];
-    unsigned char unk_65;
-} Ctx;
 
-typedef struct Header {
-    int unk_0;
-    int unk_4;
-    unsigned long long unk_8;
-    unsigned long long unk_10;
-    unsigned short unk_18;
-    unsigned char unk_1A;
-    unsigned char unk_1B;
-    short unk_1C;
-    short unk_1E;
-} Header;
+
+
 
 extern int func_8011609C(Ctx *ctx);
 extern int func_80112130(void);

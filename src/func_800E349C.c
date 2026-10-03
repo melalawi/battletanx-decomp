@@ -1,3 +1,4 @@
+#include "shared/func_800e349c.h"
 /* func_800E349C -- clears five fields of the object it is handed and returns nothing.
  *
  * Every store is of `$zero`, so this writes zeros and reads nothing back; the widths the
@@ -9,17 +10,7 @@
  * names each field for its width and leaves the gaps between them opaque.
  */
 
-struct Unknown800E349C {
-    unsigned char unk_000[0x9C];
-    int word_09C;              /* 0x09C */
-    int word_0A0;              /* 0x0A0 */
-    unsigned char unk_0A4[0x344 - 0xA4];
-    short half_344;            /* 0x344 */
-    unsigned char unk_346[2];
-    unsigned char byte_348;    /* 0x348 */
-    unsigned char unk_349;
-    unsigned char byte_34A;    /* 0x34A */
-};
+
 
 void func_800E349C(struct Unknown800E349C *self) {
     self->word_09C = 0;

@@ -1,3 +1,4 @@
+#include "shared/func_80115c80.h"
 /* NOTE: byte-identical only when compiled at -O1.
  *
  * func_80115C80 -- reloads a device's 0x20-byte register block: after flushing any pending change
@@ -5,19 +6,12 @@
  * bytes against the copy the device holds at 0xC and returns 2 on the first mismatch. The lbu loads
  * fix both the held copy and the readback buffer as unsigned char arrays of 0x20.
  */
-typedef struct Obj {
-    char pad0[0x4];
-    void *unk_4;
-    void *unk_8;
-    unsigned char unk_C[0x20];
-    char pad2C[0x65 - 0x2C];
-    unsigned char unk_65;
-} Obj;
 
-extern int func_8011609C(Obj *);
+
+extern int func_8011609C(Obj_func_80115C80 *);
 extern int func_80114190(void *, void *, unsigned short, unsigned char *);
 
-int func_80115C80(Obj *obj) {
+int func_80115C80(Obj_func_80115C80 *obj) {
     int i;
     unsigned char buf[0x20];
     int result;

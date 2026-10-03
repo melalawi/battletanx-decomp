@@ -1,10 +1,6 @@
+#include "types.h"
 /* func_800A4A64 -- appends arg1's two floats to the looked-up object's pair list (count at 0x1AF,
  * stopping at one entry) and keeps the first entry's id from func_800A6AB4 at 0x1B8. */
-
-typedef signed char s8;
-typedef unsigned char u8;
-typedef signed int s32;
-typedef float f32;
 
 #define FIELD(expr, type_ptr, offset) (*(type_ptr)((s8 *)(expr) + (offset)))
 

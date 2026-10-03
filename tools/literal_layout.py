@@ -36,6 +36,7 @@ def arrange(
     read_table: Callable[[int, int], bytes] | None = None,
     *,
     emit_resident: bool = False,
+    slices: list[dict[str, int]] | None = None,
 ) -> int:
     """Expand shared literal uses and preserve resident gaps, proving each emitted word.
 
@@ -51,8 +52,8 @@ def arrange(
     source = bytearray(obj.content(index))
     material = relocated(obj, section, text_address)
     tables = pools(obj, section, True)
-    pending: dict[tuple[str, int], list[tuple[int, int]]] = {}
-    uses: list[tuple[int, int, int, int, int, int]] = []
+    pending: dict[tuple[int, int], list[tuple[int, int]]] = {}
+    uses: list[tuple[int, int, int, int, int, int, bool]] = []
     normalized: set[int] = set()
     anchors = storage(obj, index)
     for own, address, size in anchors:
@@ -63,7 +64,7 @@ def arrange(
     for offset, kind, symbol in obj.relocations(text):
         if symbol["section"] != index:
             continue
-        key = symbol["name"], symbol["value"]
+        key = symbol["table"], symbol["index"]
         word = int(struct.unpack_from(">I", code, offset)[0])
         if kind == 5:
             pending.setdefault(key, []).append((offset, word))
@@ -107,10 +108,10 @@ def arrange(
                     )
                     addend = int.from_bytes(source[own + entry : own + entry + 4], "big")
                     struct.pack_into(">I", source, own + entry, (addend + delta) & 0xFFFFFFFF)
-            uses.append((at, offset, own, address, size, symbol["value"]))
+            uses.append((at, offset, own, address, size, symbol["value"], symbol["info"] & 15 != 3))
     if pending or not (uses or anchors):
         raise ValueError(f"{section}: missing complete pool reference pairs")
-    chunks = [(own, address, size) for _, _, own, address, size, _ in uses] + anchors
+    chunks = [(own, address, size) for _, _, own, address, size, _, _ in uses] + anchors
     covered = {i for own, _, size in chunks for i in range(own, own + size)}
     if any(value and i not in covered for i, value in enumerate(source)):
         raise ValueError(f"{section}: unreferenced non-padding pool bytes")
@@ -118,9 +119,32 @@ def arrange(
     end = max(address + size for _, address, size in chunks)
     if not anchors:
         end = (end + 3) & ~3
-    if end - base > max(0x10000, len(source) * 16):
+    if slices:
+        for _, address, size in chunks:
+            if not any(
+                row["address"] <= address < address + size <= row["address"] + row["end"] - row["start"]
+                for row in slices
+            ):
+                raise ValueError(f"layout.pool_owner: {section}: unassigned compiler bytes at 0x{address:08X}")
+        base = min(row["address"] for row in slices)
+        end = max(row["address"] + row["end"] - row["start"] for row in slices)
+    if not slices and end - base > max(0x10000, len(source) * 16):
         raise ValueError(f"{section}: pool references cross unrelated resident spans")
-    result = bytearray(read_memory(base, end - base))
+    if slices:
+        result = bytearray(end - base)
+        for row in slices:
+            size = row["end"] - row["start"]
+            content = read_memory(row["address"], size)
+            if len(content) != size:
+                raise ValueError(f"layout.pool_span: {section}: incomplete private slice")
+            result[row["address"] - base : row["address"] - base + size] = content
+        # Every nonzero resident byte needs compiler-owned material; padding may
+        # be retained only after the slice's complete bytes have been proved.
+        supplied = {address + i for _, address, size in chunks for i in range(size)}
+        if any(value and base + i not in supplied for i, value in enumerate(result)):
+            raise ValueError(f"layout.pool_span: {section}: unaccounted private slice bytes")
+    else:
+        result = bytearray(read_memory(base, end - base))
     if len(result) != end - base:
         raise ValueError(f"{section}: incomplete resident pool words")
     moved: dict[int, int] = {}
@@ -128,10 +152,10 @@ def arrange(
         destination = address - base
         result[destination : destination + size] = source[own : own + size]
         moved.update((old, destination + old - own) for old in range(own, own + size))
-    for at, low, own, address, size, value in uses:
+    for _, _, own, address, size, _, _ in uses:
         destination = address - base
         result[destination : destination + size] = source[own : own + size]
-        for old in range(own, own + size, 4):
+        for old in range(own, own + size):
             new = destination + old - own
             if (
                 old in moved
@@ -140,7 +164,10 @@ def arrange(
             ):
                 raise ValueError(f"{section}: duplicated jump table")
             moved[old] = new
-        addend = (destination - value) & 0xFFFFFFFF
+    for at, low, _, address, _, value, named in uses:
+        destination = address - base
+        symbol_value = moved.get(value, value) if named else value
+        addend = (destination - symbol_value) & 0xFFFFFFFF
         for pos, immediate in ((at, (addend + 0x8000) >> 16), (low, addend)):
             previous = int(struct.unpack_from(">I", code, pos)[0])
             struct.pack_into(">I", code, pos, previous & 0xFFFF0000 | immediate & 0xFFFF)
@@ -157,7 +184,7 @@ def arrange(
     for sym_index, symbols in obj.symbols.items():
         data = bytearray(obj.content(sym_index))
         for number, symbol in enumerate(symbols):
-            if symbol["section"] == index and symbol["value"] in moved and ANCHOR.fullmatch(symbol["name"]):
+            if symbol["section"] == index and symbol["value"] in moved and symbol["info"] & 15 != 3:
                 value = moved[symbol["value"]]
                 struct.pack_into(">I", data, number * 16 + 4, value)
                 symbol["value"] = value

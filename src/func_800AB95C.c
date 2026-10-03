@@ -1,6 +1,7 @@
+#include "shared/func_800ab95c.h"
 /* func_800AB95C -- selects one of five modes, taking the mode's value from a five-entry table as the current value, and returns the mode that was set before. */
 
-typedef struct { int mode; int cur; int pad; int tbl[5]; } M;
+
 extern M D_803275F0;
 int func_800AB95C(unsigned int a) {
     int old = D_803275F0.mode;

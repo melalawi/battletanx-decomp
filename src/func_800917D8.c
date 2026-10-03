@@ -1,6 +1,7 @@
+#include "shared/func_800917d8.h"
 /* func_800917D8 -- copies the pair of halfwords at 0x8 and 0xA from each of n 16-byte records to another array. */
 
-typedef struct { char pad[8]; unsigned short a; unsigned short b; char pad2[4]; } E;
+
 void func_800917D8(int n, E *src, E *dst) {
     int i;
     for (i = 0; i < n; i++) {

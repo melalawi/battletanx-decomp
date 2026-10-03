@@ -1,3 +1,4 @@
+#include "shared/func_800a4d1c.h"
 /* func_800A4D1C -- the first function in this cartridge matched byte for byte.
  *
  * A saturating countdown on one field: decrement it, but never below zero. The field sits at
@@ -12,10 +13,7 @@
  * byte check, and `tools/ido/verify-function.sh func_800A4D1C` to rerun it.
  */
 
-struct Unknown800A4D1C {
-    int unk_000[130];
-    int countdown; /* 0x208 */
-};
+
 
 void func_800A4D1C(struct Unknown800A4D1C *self) {
     int remaining = self->countdown;

@@ -1,26 +1,11 @@
+#include "shared/func_80097c24.h"
 /* func_80097C24 -- clears a 0x3C-byte record reached through the first argument by
  * storing $zero into all fifteen words from 0x0 to 0x38. Every store is `sw`, so
  * every field is a 32-bit word; the cartridge writes them in the order 0,4,8,
  * 0x14,0x18,0x20,0xC,0x10,0x1C,0x2C,0x30,0x24,0x28,0x34,0x38, which is the order
  * kept here.
  */
-typedef struct Block {
-    int unk_0;
-    int unk_4;
-    int unk_8;
-    int unk_C;
-    int unk_10;
-    int unk_14;
-    int unk_18;
-    int unk_1C;
-    int unk_20;
-    int unk_24;
-    int unk_28;
-    int unk_2C;
-    int unk_30;
-    int unk_34;
-    int unk_38;
-} Block;
+
 
 void func_80097C24(Block *b) {
     b->unk_0 = 0;

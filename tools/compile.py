@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -51,11 +52,7 @@ def run(command: list[str]) -> bytes:
 
 
 def compiler_for(data: Recipe, unit: str) -> str:
-    direct = data["units"].get(unit)
-    stem = data["units"].get(Path(unit).stem)
-    if direct and stem and direct != stem:
-        raise ValueError(f"[units].{unit}: conflicts with [units].{Path(unit).stem}")
-    ident = direct or stem or data["default_compiler"]
+    ident = data["units"].get(Path(unit).stem, data["default_compiler"])
     if ident not in data["compilers"]:
         raise ValueError(f"[units].{unit}: unknown compiler {ident}")
     return ident
@@ -146,6 +143,18 @@ def assembly_inputs(asflags: list[str]) -> tuple[list[str], list[str | bytes]]:
     return flags, inputs
 
 
+def dependency_paths(text: str) -> list[str]:
+    """Combine compiler dependency rules, including IDO's separate header rule."""
+    return list(
+        dict.fromkeys(
+            word
+            for line in text.replace("\\\n", " ").splitlines()
+            if ":" in line
+            for word in line.split(":", 1)[1].split()
+        )
+    )
+
+
 def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None:
     if data is None:
         data = read_recipe(args.recipe)
@@ -170,8 +179,8 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
     if not assembly:
         assert compiler is not None
         flags = [
-            *compiler["cflags"],
             *("-I" + p for p in data["include"]),
+            *compiler["cflags"],
             *("-D" + macro for macro in data["macros"][version]),
         ]
         if args.non_matching == "1":
@@ -201,7 +210,16 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
                     text = args.depfile.read_text().replace(temporary.name, str(args.source))
                     args.depfile.write_text(text)
         else:
-            content = run([data["cpp"], *cppflags, *preprocess, *dependencies, str(args.source)])
+            content = run(
+                [
+                    data["cpp"],
+                    *("-I" + p for p in data["include"]),
+                    *cppflags,
+                    *preprocess,
+                    *dependencies,
+                    str(args.source),
+                ]
+            )
         if assembly:
             from resolve_external_branches import read_symbols, resolve
 
@@ -218,7 +236,7 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
         if args.depfile:
             text = run([cc, *[f for f in flags if f != "-c"], "-M", str(args.source)]).decode()
             target = args.dep_target or str(out)
-            args.depfile.write_text(target + ":" + text.split(":", 1)[1])
+            args.depfile.write_text(target + ": " + " ".join(dependency_paths(text)) + "\n")
         content = run([cc, *[f for f in flags if f != "-c"], "-E", str(args.source)])
 
     manifest = args.recipe.parent / "compiler.sha256"
@@ -322,10 +340,16 @@ def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None
     if assembly and args.depfile and not args.depfile.exists():
         args.depfile.write_text((args.dep_target or str(out)) + ": " + str(args.source) + "\n")
 
+    if args.kind == "cc" and args.depfile and args.depfile.is_file():
+        words = dependency_paths(args.depfile.read_text())
+        dependency_hashes = {str(Path(word)): hashlib.sha256(Path(word).read_bytes()).hexdigest() for word in words}
+        out.with_suffix(".inputs.json").write_text(json.dumps(dependency_hashes, sort_keys=True))
+
 
 def compile_batch(args: argparse.Namespace) -> None:
     """Compile a cold graph chunk in one interpreter, sequentially per Make job."""
     data = read_recipe(args.recipe)
+    failures = []
     for source in args.batch:
         relative = source.relative_to(args.source)
         output = args.output / relative.with_suffix(".o")
@@ -334,9 +358,16 @@ def compile_batch(args: argparse.Namespace) -> None:
         item.unit = str(source)
         item.output = output
         item.depfile = output.with_suffix(".d")
-        item.dep_target = "$(BUILD)/obj/src/" + str(relative.with_suffix(".built"))
-        compile_object(item, data)
-        output.with_suffix(".built").touch()
+        item.dep_target = (
+            "$(BUILD)/obj/" + ("asm/" if args.kind == "as" else "src/") + str(relative.with_suffix(".built"))
+        )
+        try:
+            compile_object(item, data)
+            output.with_suffix(".built").touch()
+        except (OSError, ValueError, KeyError) as error:
+            failures.append(f"{source}: {error}")
+    if failures:
+        raise ValueError("batch objects failed:\n" + "\n".join(failures))
 
 
 def main() -> None:
