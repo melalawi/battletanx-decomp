@@ -3032,7 +3032,7 @@ segments:
       - [0x769A4, asm, "func_800E69A4_us"]
       - [0x769D4, asm, "func_800E69D4_us"]
       - [0x76A30, asm, "func_800E6A30_us"]
-      - [0x76A70, asm, "func_800E6A70_us"]
+      - [0x76A70, c, "func_800E6A70_us"]
       - [0x76A78, asm, "func_800E6A78_us"]
       - [0x76AAC, asm, "func_800E6AAC_us"]
       - [0x76B14, asm, "func_800E6B14_us"]

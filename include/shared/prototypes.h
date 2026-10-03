@@ -230,7 +230,7 @@ extern struct Rec * func_800E52A0(signed short arg0, signed short arg1);
 extern void func_800E566C(struct Rec *r);
 extern int func_800E5AB0_us(void);
 extern int func_800E6A30_us(struct Shape_func_800E3F90_us * arg0);
-extern int func_800E6A70_us(void);
+extern s32 func_800E6A70_us(void);
 extern int func_800E6FA0_us(void);
 extern int func_800E6FA8_us(void);
 extern int func_800E73BC_us(struct Shape_func_800E73BC_us * arg0);
