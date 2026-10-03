@@ -49,6 +49,7 @@
 #include "shared/func_800aa280.h"
 #include "shared/func_800aa328.h"
 #include "shared/func_800ab95c.h"
+#include "shared/func_800dd9e8.h"
 #include "shared/func_800ddca4.h"
 #include "shared/func_800e0b00.h"
 #include "shared/func_800e3480.h"
