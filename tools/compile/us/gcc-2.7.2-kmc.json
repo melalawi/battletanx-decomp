@@ -1,1 +1,0 @@
-{"asflags": ["-mips3"], "compiler": {"as": "policy:mips_as", "cc": "tools/gcc-2.7.2-kmc/cc1", "cflags": ["-G0", "-mips3", "-mgp32", "-mfp32", "-O2"], "kind": "sn64"}, "cpp": "policy:cpp", "cppflags": ["-P", "-undef", "-nostdinc", "-D_LANGUAGE_C", "-DF3DEX_GBI_2", "-D__GNUC__=2"], "include": ["include"], "macros": ["VERSION_US"]}

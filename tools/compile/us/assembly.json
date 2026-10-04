@@ -1,1 +1,0 @@
-{"asflags": ["-march=vr4300", "-mabi=32", "-EB", "--no-pad-sections"], "assembler": "policy:mips_as", "compiler": null}
