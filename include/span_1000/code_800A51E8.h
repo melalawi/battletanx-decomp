@@ -2,8 +2,12 @@
 #define UNBAKE_SPAN_1000_CODE_800A51E8_H
 #include "common/types.h"
 extern int func_800A5CD0_us(void * arg0);
+extern int func_800A5D5C_us(void);
 extern int func_800A5FF0_us(struct Shape_func_8007AAC0 * arg0);
+extern int func_800A6688(int arg0);
 extern void func_800A66C0(void);
 extern void * func_800A68C0(int arg0);
 extern void func_800A68E0_us(void);
+extern int func_800A68F0_us(void);
+extern unsigned char func_800A70BC_us(int arg0);
 #endif

@@ -1,18 +1,18 @@
 {
   "measures": {
-    "fuzzy_match_percent": 2.4961474,
+    "fuzzy_match_percent": 2.5029461,
     "total_code": 706016,
-    "matched_code": 17400,
-    "matched_code_percent": 2.4645333,
+    "matched_code": 17448,
+    "matched_code_percent": 2.471332,
     "matched_data_percent": 100.0,
     "total_functions": 1768,
-    "matched_functions": 202,
-    "matched_functions_percent": 11.42534,
-    "complete_code": 17400,
-    "complete_code_percent": 2.4645333,
+    "matched_functions": 205,
+    "matched_functions_percent": 11.595022,
+    "complete_code": 17448,
+    "complete_code_percent": 2.471332,
     "complete_data_percent": 100.0,
     "total_units": 1754,
-    "complete_units": 202
+    "complete_units": 205
   },
   "units": [
     {
@@ -4150,24 +4150,25 @@
     {
       "name": "func_8007B1DC_us",
       "measures": {
+        "fuzzy_match_percent": 100.0,
         "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "complete_code": "16",
+        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
-        "total_units": 1
+        "total_units": 1,
+        "complete_units": 1
       },
       "sections": [
         {
-          "name": ".bss",
-          "metadata": {}
-        },
-        {
-          "name": ".data",
-          "metadata": {}
-        },
-        {
           "name": ".text",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {}
         }
       ],
@@ -4175,12 +4176,14 @@
         {
           "name": "func_8007B1DC_us",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {},
           "address": "0"
         }
       ],
       "metadata": {
-        "complete": false
+        "complete": true,
+        "source_path": "src/func_8007B1DC_us.c"
       }
     },
     {
@@ -5311,24 +5314,25 @@
     {
       "name": "func_8007E140_us",
       "measures": {
+        "fuzzy_match_percent": 100.0,
         "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "complete_code": "16",
+        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
-        "total_units": 1
+        "total_units": 1,
+        "complete_units": 1
       },
       "sections": [
         {
-          "name": ".bss",
-          "metadata": {}
-        },
-        {
-          "name": ".data",
-          "metadata": {}
-        },
-        {
           "name": ".text",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {}
         }
       ],
@@ -5336,12 +5340,14 @@
         {
           "name": "func_8007E140_us",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {},
           "address": "0"
         }
       ],
       "metadata": {
-        "complete": false
+        "complete": true,
+        "source_path": "src/func_8007E140_us.c"
       }
     },
     {
@@ -6367,24 +6373,25 @@
     {
       "name": "func_8007F030_us",
       "measures": {
+        "fuzzy_match_percent": 100.0,
         "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "complete_code": "16",
+        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
-        "total_units": 1
+        "total_units": 1,
+        "complete_units": 1
       },
       "sections": [
         {
-          "name": ".bss",
-          "metadata": {}
-        },
-        {
-          "name": ".data",
-          "metadata": {}
-        },
-        {
           "name": ".text",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {}
         }
       ],
@@ -6392,12 +6399,14 @@
         {
           "name": "func_8007F030_us",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {},
           "address": "0"
         }
       ],
       "metadata": {
-        "complete": false
+        "complete": true,
+        "source_path": "src/func_8007F030_us.c"
       }
     },
     {

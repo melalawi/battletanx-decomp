@@ -6,4 +6,8 @@ extern int func_80120858_us(void * arg0, int arg1, int arg2, void * arg3);
 extern void * func_80120C24_us(void * arg0, void * arg1, int arg2, int arg3, void * arg4);
 extern void func_801215A0_us(void);
 extern void func_8012162C_us(void);
+extern void func_801219A0_us(int arg0);
+extern void func_801219B0_us(int arg0);
+extern int func_80121B60_us(void);
+extern void func_80121BA0_us(int arg0);
 #endif

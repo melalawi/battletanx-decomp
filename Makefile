@@ -209,7 +209,10 @@ $(BUILD)/obj/src/func_80079A5C.built: tools/compile/units/func_80079A5C.json
 $(BUILD)/obj/src/func_80079EFC.built: tools/compile/units/func_80079EFC.json
 $(BUILD)/obj/src/func_8007A26C_us.built: tools/compile/units/func_8007A26C_us.json
 $(BUILD)/obj/src/func_8007AAA0.built: tools/compile/units/func_8007AAA0.json
+$(BUILD)/obj/src/func_8007AAB0.built: tools/compile/units/func_8007AAB0.json
 $(BUILD)/obj/src/func_8007AAC0.built: tools/compile/units/func_8007AAC0.json
+$(BUILD)/obj/src/func_8007AAE4_us.built: tools/compile/units/func_8007AAE4_us.json
+$(BUILD)/obj/src/func_8007AAF4_us.built: tools/compile/units/func_8007AAF4_us.json
 $(BUILD)/obj/src/func_8007C298.built: tools/compile/units/func_8007C298.json
 $(BUILD)/obj/src/func_8007C33C.built: tools/compile/units/func_8007C33C.json
 $(BUILD)/obj/src/func_8007C6D8.built: tools/compile/units/func_8007C6D8.json

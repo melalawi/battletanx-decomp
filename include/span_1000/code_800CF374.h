@@ -1,6 +1,8 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800CF374_H
 #define UNBAKE_SPAN_1000_CODE_800CF374_H
+extern int func_800CF374_us(void);
 extern int func_800CF454_us(void);
+extern int func_800CF4C0_us(void);
 extern int func_800D05DC_us(void);
 extern int func_800D0BD4_us(void);
 extern int func_800D0CB4_us(int arg0);
