@@ -23,6 +23,234 @@ struct QueryDispatch { QueryCallback callback; int tail[2]; };
 struct QueryRecord;
 struct QueryRecord { QueryBox box; char tail[22]; };
 struct Shape_D_80146100_2;
+struct Shape_D_801B6C00;
+struct Shape_D_803276D4;
+struct Shape_D_8037A174;
+struct Shape_D_803AAD98;
+struct Shape_func_8007AAC0;
+struct Shape_func_8007B280_us;
+struct Shape_func_8007BD24_us;
+struct Shape_func_8007D850_us;
+struct Shape_func_8007D998_us_2;
+struct Shape_func_8007E150_us;
+struct Shape_func_8007E41C_us;
+struct Shape_func_8007E4F4_us;
+struct Shape_func_8008001C_us;
+struct Shape_func_800827AC_us_2;
+struct Shape_func_80085470_us;
+struct Shape_func_80085D84_us;
+struct Shape_func_8008785C_us;
+struct Shape_func_8008785C_us_2;
+struct Shape_func_80088360_us;
+struct Shape_func_8008D768_us;
+struct Shape_func_80092734_us;
+struct Shape_func_80092734_us_3;
+struct Shape_func_80093A5C_us_2;
+struct Shape_func_80093D50_us;
+struct Shape_func_80097DD0_us;
+struct Shape_func_8009E3A4_us_4;
+struct Shape_func_8009E3A4_us_5;
+struct Shape_func_8009E3A4_us_6;
+struct Shape_func_800A0134_us;
+struct Shape_func_800A0218_us;
+struct Shape_func_800A0B8C_us_3;
+struct Shape_func_800A0B8C_us_4;
+struct Shape_func_800A16C0_us;
+struct Shape_func_800A31C0_us_2;
+struct Shape_func_800A4D10_us;
+struct Shape_func_800A9850_us;
+struct Shape_func_800ABAB8_us;
+struct Shape_func_800AD340_us;
+struct Shape_func_800B8804_us;
+struct Shape_func_800D1BA0_us;
+struct Shape_func_800DDA08_us;
+struct Shape_func_800DEE8C_us;
+struct Shape_func_800DF6F4_us;
+struct Shape_func_800E3CF0_us;
+struct Shape_func_800E3F90_us;
+struct Shape_func_800E4AA4_us;
+struct Shape_func_800E6970_us;
+struct Shape_func_800E6A30_us;
+struct Shape_func_800E73A4_us;
+struct Shape_func_800E73BC_us;
+struct Shape_func_800EB440_us_2;
+struct Shape_func_800EEE58_us_2;
+struct Shape_func_800EFFC8_us_4;
+struct Shape_func_800F0CF0_us_4;
+struct Shape_func_800F2478_us_3;
+struct Shape_func_800F6934_us;
+struct Shape_func_800F8120_us;
+struct Shape_func_800F8120_us_2;
+struct Shape_func_800F8120_us_3;
+struct Shape_func_800F9F34_us;
+struct Shape_func_800F9F34_us_2;
+struct Shape_func_80105584_us;
+struct Shape_func_80106010_us;
+struct Shape_func_8010CAE8_us_2;
+struct Shape_func_8010D388_us_2;
+struct Shape_func_80111690_us;
+struct Shape_func_801125F0_us;
+struct Shape_func_801130A0_us;
+struct Shape_func_80118AF0_us;
+struct Shape_func_80119748_us;
+struct Shape_func_80119FE0_us_2;
+struct Shape_func_8011B9E0;
+struct Shape_func_8011BC70_us;
+struct Shape_func_8011C210_us;
+struct Shape_func_8011D450_us;
+struct Shape_func_8011D4A0_us;
+struct Shape_func_8011D6D0;
+struct Shape_func_8011E2E0;
+struct Shape_func_8011E434;
+struct Shape_func_8011E750_us_2;
+struct Shape_func_8011F29C_us_2;
+struct Shape_func_8012162C_us;
+struct Shape_func_801219B0_us;
+struct Shape_func_80121A20_us;
+struct Shape_func_80121A20_us_2;
+struct Shape_func_801220C0_us;
+struct Shape_func_80122750_us_2;
+struct Shape_typemap;
+struct Shape_typemap_10;
+struct Shape_typemap_11;
+struct Shape_typemap_12;
+struct Shape_typemap_13;
+struct Shape_typemap_14;
+struct Shape_typemap_15;
+struct Shape_typemap_16;
+struct Shape_typemap_17;
+struct Shape_typemap_18;
+struct Shape_typemap_19;
+struct Shape_typemap_2;
+struct Shape_typemap_20;
+struct Shape_typemap_21;
+struct Shape_typemap_22;
+struct Shape_typemap_23;
+struct Shape_typemap_24;
+struct Shape_typemap_25;
+struct Shape_typemap_3;
+struct Shape_typemap_4;
+struct Shape_typemap_5;
+struct Shape_typemap_6;
+struct Shape_typemap_7;
+struct Shape_typemap_8;
+struct Shape_typemap_9;
+struct Shape_D_80146100_2;
+struct Shape_D_801B6C00;
+struct Shape_D_803276D4;
+struct Shape_D_8037A174;
+struct Shape_D_803AAD98;
+struct Shape_func_8007AAC0;
+struct Shape_func_8007B280_us;
+struct Shape_func_8007BD24_us;
+struct Shape_func_8007D850_us;
+struct Shape_func_8007D998_us_2;
+struct Shape_func_8007E150_us;
+struct Shape_func_8007E41C_us;
+struct Shape_func_8007E4F4_us;
+struct Shape_func_8008001C_us;
+struct Shape_func_800827AC_us_2;
+struct Shape_func_80085470_us;
+struct Shape_func_80085D84_us;
+struct Shape_func_8008785C_us;
+struct Shape_func_8008785C_us_2;
+struct Shape_func_80088360_us;
+struct Shape_func_8008D768_us;
+struct Shape_func_80092734_us;
+struct Shape_func_80092734_us_3;
+struct Shape_func_80093A5C_us_2;
+struct Shape_func_80093D50_us;
+struct Shape_func_80097DD0_us;
+struct Shape_func_8009E3A4_us_4;
+struct Shape_func_8009E3A4_us_5;
+struct Shape_func_8009E3A4_us_6;
+struct Shape_func_800A0134_us;
+struct Shape_func_800A0218_us;
+struct Shape_func_800A0B8C_us_3;
+struct Shape_func_800A0B8C_us_4;
+struct Shape_func_800A16C0_us;
+struct Shape_func_800A31C0_us_2;
+struct Shape_func_800A4D10_us;
+struct Shape_func_800A9850_us;
+struct Shape_func_800ABAB8_us;
+struct Shape_func_800AD340_us;
+struct Shape_func_800B8804_us;
+struct Shape_func_800D1BA0_us;
+struct Shape_func_800DDA08_us;
+struct Shape_func_800DEE8C_us;
+struct Shape_func_800DF6F4_us;
+struct Shape_func_800E3CF0_us;
+struct Shape_func_800E3F90_us;
+struct Shape_func_800E4AA4_us;
+struct Shape_func_800E6970_us;
+struct Shape_func_800E6A30_us;
+struct Shape_func_800E73A4_us;
+struct Shape_func_800E73BC_us;
+struct Shape_func_800EB440_us_2;
+struct Shape_func_800EEE58_us_2;
+struct Shape_func_800EFFC8_us_4;
+struct Shape_func_800F0CF0_us_4;
+struct Shape_func_800F2478_us_3;
+struct Shape_func_800F6934_us;
+struct Shape_func_800F8120_us;
+struct Shape_func_800F8120_us_2;
+struct Shape_func_800F8120_us_3;
+struct Shape_func_800F9F34_us;
+struct Shape_func_800F9F34_us_2;
+struct Shape_func_80105584_us;
+struct Shape_func_80106010_us;
+struct Shape_func_8010CAE8_us_2;
+struct Shape_func_8010D388_us_2;
+struct Shape_func_80111690_us;
+struct Shape_func_801125F0_us;
+struct Shape_func_801130A0_us;
+struct Shape_func_80118AF0_us;
+struct Shape_func_80119748_us;
+struct Shape_func_80119FE0_us_2;
+struct Shape_func_8011B9E0;
+struct Shape_func_8011BC70_us;
+struct Shape_func_8011C210_us;
+struct Shape_func_8011D450_us;
+struct Shape_func_8011D4A0_us;
+struct Shape_func_8011D6D0;
+struct Shape_func_8011E2E0;
+struct Shape_func_8011E434;
+struct Shape_func_8011E750_us_2;
+struct Shape_func_8011F29C_us_2;
+struct Shape_func_8012162C_us;
+struct Shape_func_801219B0_us;
+struct Shape_func_80121A20_us;
+struct Shape_func_80121A20_us_2;
+struct Shape_func_801220C0_us;
+struct Shape_func_80122750_us_2;
+struct Shape_typemap;
+struct Shape_typemap_10;
+struct Shape_typemap_11;
+struct Shape_typemap_12;
+struct Shape_typemap_13;
+struct Shape_typemap_14;
+struct Shape_typemap_15;
+struct Shape_typemap_16;
+struct Shape_typemap_17;
+struct Shape_typemap_18;
+struct Shape_typemap_19;
+struct Shape_typemap_2;
+struct Shape_typemap_20;
+struct Shape_typemap_21;
+struct Shape_typemap_22;
+struct Shape_typemap_23;
+struct Shape_typemap_24;
+struct Shape_typemap_25;
+struct Shape_typemap_3;
+struct Shape_typemap_4;
+struct Shape_typemap_5;
+struct Shape_typemap_6;
+struct Shape_typemap_7;
+struct Shape_typemap_8;
+struct Shape_typemap_9;
+struct Shape_func_8011B9E0 {
+    int field_0;
+};
 struct Shape_D_80146100_2 {
     unsigned char padding_0[16];
     int field_10;
@@ -35,12 +263,10 @@ struct Shape_D_80146100_2 {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
-struct Shape_D_801B6C00;
 struct Shape_D_801B6C00 {
     int field_0;
     unsigned char unknown_4[4];
 };
-struct Shape_D_803276D4;
 struct Shape_D_803276D4 {
     int field_0;
     unsigned char unknown_4[4];
@@ -79,7 +305,6 @@ struct Shape_D_803276D4 {
     int field_88;
     unsigned char unknown_8C[4];
 };
-struct Shape_D_8037A174;
 struct Shape_D_8037A174 {
     int field_0;
     unsigned char unknown_4[4];
@@ -156,7 +381,6 @@ struct Shape_D_8037A174 {
     int field_120;
     int field_124;
 };
-struct Shape_D_803AAD98;
 struct Shape_D_803AAD98 {
     unsigned char padding_0[4];
     int field_4;
@@ -165,7 +389,6 @@ struct Shape_D_803AAD98 {
     unsigned char padding_10[4];
     int field_14;
 };
-struct Shape_func_8007AAC0;
 struct Shape_func_8007AAC0 {
     int field_0;
     int field_4;
@@ -180,7 +403,6 @@ struct Shape_func_8007AAC0 {
     unsigned char field_217;
     int field_218;
 };
-struct Shape_func_8007B280_us;
 struct Shape_func_8007B280_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -198,7 +420,6 @@ struct Shape_func_8007B280_us {
     int field_1C;
     int field_20;
 };
-struct Shape_func_8007BD24_us;
 struct Shape_func_8007BD24_us {
     unsigned char padding_0[16];
     int field_10;
@@ -208,7 +429,6 @@ struct Shape_func_8007BD24_us {
     int field_210;
 };
 /* Shape_func_8007C770_us: partial shape; common base value:func_800A31C0_us:us:33; size unknown; common base is not a global or a known-signature parameter/return */
-struct Shape_func_8007D850_us;
 struct Shape_func_8007D850_us {
     unsigned char padding_0[192];
     short field_C0;
@@ -236,7 +456,6 @@ struct Shape_func_8007D850_us {
     unsigned char unknown_104[2];
 };
 /* Shape_func_8007D998_us: partial shape; common base value:func_8007D998_us:us:23; size unknown; common base is not a global or a known-signature parameter/return */
-struct Shape_func_8007D998_us_2;
 struct Shape_func_8007D998_us_2 {
     unsigned char padding_0[4];
     int field_4;
@@ -267,7 +486,6 @@ struct Shape_func_8007D998_us_2 {
     unsigned char padding_70[4];
     int field_74;
 };
-struct Shape_func_8007E150_us;
 struct Shape_func_8007E150_us {
     unsigned char padding_0[192];
     short field_C0;
@@ -285,23 +503,19 @@ struct Shape_func_8007E150_us {
     unsigned char padding_E4[4];
     void * field_E8;
 };
-struct Shape_func_8007E41C_us;
 struct Shape_func_8007E41C_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
 };
-struct Shape_func_8007E4F4_us;
 struct Shape_func_8007E4F4_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
 };
-struct Shape_func_8008001C_us;
 struct Shape_func_8008001C_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
 };
 /* Shape_func_800827AC_us: partial shape; common base address:address:us:00000000; size unknown; overlapping, negative or inconsistent observed storage intervals */
-struct Shape_func_800827AC_us_2;
 struct Shape_func_800827AC_us_2 {
     unsigned char padding_0[1380];
     int field_564;
@@ -316,7 +530,6 @@ struct Shape_func_800827AC_us_2 {
     int field_634;
     int field_638;
 };
-struct Shape_func_80085470_us;
 struct Shape_func_80085470_us {
     unsigned char padding_0[1384];
     int field_568;
@@ -324,7 +537,6 @@ struct Shape_func_80085470_us {
     int field_570;
 };
 /* Shape_func_80085470_us_2: partial shape; common base value:func_80092734_us:us:559; size unknown; common base is not a global or a known-signature parameter/return */
-struct Shape_func_80085D84_us;
 struct Shape_func_80085D84_us {
     float field_0;
     float field_4;
@@ -333,7 +545,6 @@ struct Shape_func_80085D84_us {
     unsigned char padding_10[1376];
     int field_570;
 };
-struct Shape_func_8008785C_us;
 struct Shape_func_8008785C_us {
     int field_0;
     int field_4;
@@ -358,7 +569,6 @@ struct Shape_func_8008785C_us {
     unsigned char unknown_11408[4];
     unsigned char unknown_1140C[4];
 };
-struct Shape_func_8008785C_us_2;
 struct Shape_func_8008785C_us_2 {
     void * field_0;
     int field_4;
@@ -387,7 +597,6 @@ struct Shape_func_8008785C_us_2 {
     unsigned char padding_A3A4[28804];
     int field_11428;
 };
-struct Shape_func_80088360_us;
 struct Shape_func_80088360_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -412,7 +621,6 @@ struct Shape_func_80088360_us {
     int field_634;
     int field_638;
 };
-struct Shape_func_8008D768_us;
 struct Shape_func_8008D768_us {
     unsigned char padding_0[68];
     unsigned short field_44;
@@ -428,7 +636,6 @@ struct Shape_func_8008D768_us {
     int field_1C4;
 };
 /* Shape_func_80092534_us: partial shape; common base param:func_80092734_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_80092734_us;
 struct Shape_func_80092734_us {
     unsigned char padding_0[36];
     float field_24;
@@ -438,7 +645,6 @@ struct Shape_func_80092734_us {
     float field_3E0;
     float field_3E4;
 };
-struct Shape_func_80092734_us_3;
 struct Shape_func_80092734_us_3 {
     unsigned char padding_0[60];
     int field_3C;
@@ -447,19 +653,16 @@ struct Shape_func_80092734_us_3 {
 };
 /* Shape_func_80093080_us: partial shape; common base param:func_8009345C_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_80093590_us: partial shape; common base param:func_80093A5C_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_80093A5C_us_2;
 struct Shape_func_80093A5C_us_2 {
     unsigned char padding_0[4];
     int field_4;
 };
-struct Shape_func_80093D50_us;
 struct Shape_func_80093D50_us {
     unsigned char padding_0[32];
     int field_20;
     unsigned char padding_24[4];
     int field_28;
 };
-struct Shape_func_80097DD0_us;
 struct Shape_func_80097DD0_us {
     unsigned char padding_0[32];
     unsigned char unknown_20[2];
@@ -485,7 +688,6 @@ struct Shape_func_80097DD0_us {
 /* Shape_func_8009BBC0_us_2: partial shape; common base field:field:param:func_8009E3A4_us:r4:12:1140; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_8009BBC0_us_3: partial shape; common base field:param:func_8009E3A4_us:r4:12; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_8009D4B4_us: partial shape; common base field:param:func_800EEE58_us:r4:60; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_8009E3A4_us_4;
 struct Shape_func_8009E3A4_us_4 {
     int field_0;
     int field_4;
@@ -503,14 +705,12 @@ struct Shape_func_8009E3A4_us_4 {
     int field_1C;
     int field_20;
 };
-struct Shape_func_8009E3A4_us_5;
 struct Shape_func_8009E3A4_us_5 {
     unsigned char padding_0[32];
     int field_20;
     unsigned char padding_24[4];
     int field_28;
 };
-struct Shape_func_8009E3A4_us_6;
 struct Shape_func_8009E3A4_us_6 {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -525,14 +725,12 @@ struct Shape_func_8009E3A4_us_6 {
     unsigned char padding_38[1228];
     int field_504;
 };
-struct Shape_func_800A0134_us;
 struct Shape_func_800A0134_us {
     unsigned char padding_0[1];
     unsigned char field_1;
     unsigned char padding_2[2];
     unsigned char field_4;
 };
-struct Shape_func_800A0218_us;
 struct Shape_func_800A0218_us {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -549,7 +747,6 @@ struct Shape_func_800A0218_us {
 };
 /* Shape_func_800A06F8_us: partial shape; common base param:func_800A0B8C_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800A0930_us: partial shape; common base param:func_800A0B8C_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800A0B8C_us_3;
 struct Shape_func_800A0B8C_us_3 {
     unsigned char unknown_0[4];
     int field_4;
@@ -559,14 +756,12 @@ struct Shape_func_800A0B8C_us_3 {
     unsigned char padding_14[6];
     short field_1A;
 };
-struct Shape_func_800A0B8C_us_4;
 struct Shape_func_800A0B8C_us_4 {
     unsigned char padding_0[1];
     unsigned char field_1;
     unsigned char padding_2[2];
     unsigned char field_4;
 };
-struct Shape_func_800A16C0_us;
 struct Shape_func_800A16C0_us {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -582,7 +777,6 @@ struct Shape_func_800A16C0_us {
 /* Shape_func_800A27D0: partial shape; common base param:func_800A2EA4:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800A2A44: partial shape; common base param:func_800A2EA4:r4; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800A2A44_2: partial shape; common base param:func_800A2EA4:r7; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800A31C0_us_2;
 struct Shape_func_800A31C0_us_2 {
     void * field_0;
     void * field_4;
@@ -594,7 +788,15 @@ struct Shape_func_800A31C0_us_2 {
     unsigned char unknown_1C[4];
 };
 /* Shape_func_800A3DE0_us: partial shape; common base param:func_800A3DE0_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800ABAB8_us;
+struct Shape_func_800A4D10_us {
+    unsigned char padding_0[35];
+    unsigned char field_23;
+    unsigned char padding_24[484];
+    int field_208;
+};
+struct Shape_func_800A9850_us {
+    int field_0;
+};
 struct Shape_func_800ABAB8_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -633,7 +835,6 @@ struct Shape_func_800ABAB8_us {
     unsigned char unknown_88[4];
     unsigned char unknown_8C[4];
 };
-struct Shape_func_800AD340_us;
 struct Shape_func_800AD340_us {
     unsigned char padding_0[4];
     int field_4;
@@ -664,7 +865,9 @@ struct Shape_func_800AD340_us {
     unsigned char padding_70[4];
     int field_74;
 };
-struct Shape_func_800D1BA0_us;
+struct Shape_func_800B8804_us {
+    void * field_0;
+};
 struct Shape_func_800D1BA0_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -741,7 +944,6 @@ struct Shape_func_800D1BA0_us {
     unsigned char unknown_120[4];
     unsigned char unknown_124[4];
 };
-struct Shape_func_800DDA08_us;
 struct Shape_func_800DDA08_us {
     unsigned char unknown_0[4];
     int field_4;
@@ -754,7 +956,6 @@ struct Shape_func_800DDA08_us {
     void * field_1C;
     unsigned char unknown_20[4];
 };
-struct Shape_func_800DEE8C_us;
 struct Shape_func_800DEE8C_us {
     unsigned char padding_0[72000];
     float field_11940;
@@ -770,7 +971,6 @@ struct Shape_func_800DEE8C_us {
     int field_11960;
     int field_11964;
 };
-struct Shape_func_800DF6F4_us;
 struct Shape_func_800DF6F4_us {
     unsigned char padding_0[72000];
     float field_11940;
@@ -786,7 +986,6 @@ struct Shape_func_800DF6F4_us {
     unsigned char unknown_11960[4];
     unsigned char unknown_11964[4];
 };
-struct Shape_func_800E3CF0_us;
 struct Shape_func_800E3CF0_us {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -797,7 +996,13 @@ struct Shape_func_800E3CF0_us {
     unsigned char padding_9C[692];
     unsigned char field_350;
 };
-struct Shape_func_800E4AA4_us;
+struct Shape_func_800E3F90_us {
+    void * field_0;
+    unsigned char padding_4[8];
+    void * field_C;
+    unsigned char padding_10[8];
+    unsigned char unknown_18[2];
+};
 struct Shape_func_800E4AA4_us {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -806,7 +1011,12 @@ struct Shape_func_800E4AA4_us {
     unsigned char padding_5[843];
     unsigned char field_350;
 };
-struct Shape_func_800E6A30_us;
+struct Shape_func_800E6970_us {
+    unsigned char padding_0[8];
+    void * field_8;
+    unsigned char padding_C[20];
+    float field_20;
+};
 struct Shape_func_800E6A30_us {
     void * field_0;
     unsigned char padding_4[8];
@@ -814,29 +1024,16 @@ struct Shape_func_800E6A30_us {
     unsigned char padding_10[8];
     unsigned char unknown_18[2];
 };
-struct Shape_func_800E6B14_us;
-struct Shape_func_800E6B14_us {
-    unsigned char padding_0[8];
-    void * field_8;
-    int field_C;
-    unsigned char padding_10[8];
-    short field_18;
-};
-struct Shape_func_800E73A4_us;
 struct Shape_func_800E73A4_us {
     unsigned char padding_0[864];
     unsigned char unknown_360[4];
     unsigned char padding_364[408];
     void * field_4FC;
 };
-struct Shape_func_800E73A4_us_2;
-struct Shape_func_800E73A4_us_2 {
+struct Shape_func_800E73BC_us {
     unsigned char padding_0[8];
     void * field_8;
-    unsigned char padding_C[20];
-    float field_20;
 };
-struct Shape_func_800EB440_us_2;
 struct Shape_func_800EB440_us_2 {
     unsigned char padding_0[192];
     unsigned char unknown_C0[2];
@@ -857,7 +1054,6 @@ struct Shape_func_800EB440_us_2 {
 /* Shape_func_800ECE4C: partial shape; common base param:func_800ED810:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800ED380: partial shape; common base param:func_800ED810:r4; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800ED380_2: partial shape; common base param:func_800ED810:r7; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800EEE58_us_2;
 struct Shape_func_800EEE58_us_2 {
     unsigned char padding_0[32];
     unsigned char unknown_20[2];
@@ -882,7 +1078,6 @@ struct Shape_func_800EEE58_us_2 {
 /* Shape_func_800EFAD8_us: partial shape; common base param:func_800EFFC8_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800EFAD8_us_2: partial shape; common base param:func_800EFFC8_us:r7; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800EFAD8_us_3: partial shape; common base param:func_800EFFC8_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800EFFC8_us_4;
 struct Shape_func_800EFFC8_us_4 {
     int field_0;
     int field_4;
@@ -900,7 +1095,6 @@ struct Shape_func_800EFFC8_us_4 {
 /* Shape_func_800F0738_us: partial shape; common base param:func_800F0CF0_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800F09D0_us: partial shape; common base param:func_800F0CF0_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800F09D0_us_2: partial shape; common base param:func_800F0CF0_us:r7; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800F0CF0_us_4;
 struct Shape_func_800F0CF0_us_4 {
     int field_0;
     unsigned char padding_4[16];
@@ -918,14 +1112,12 @@ struct Shape_func_800F0CF0_us_4 {
 };
 /* Shape_func_800F2270_us: partial shape; common base param:func_800F2478_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800F2270_us_2: partial shape; common base param:func_800F2478_us:r7; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800F2478_us_3;
 struct Shape_func_800F2478_us_3 {
     unsigned char padding_0[864];
     unsigned char unknown_360[4];
     unsigned char padding_364[408];
     void * field_4FC;
 };
-struct Shape_func_800F6934_us;
 struct Shape_func_800F6934_us {
     unsigned char padding_0[16];
     int field_10;
@@ -938,7 +1130,6 @@ struct Shape_func_800F6934_us {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
-struct Shape_func_800F8120_us;
 struct Shape_func_800F8120_us {
     unsigned char padding_0[28];
     int field_1C;
@@ -953,7 +1144,6 @@ struct Shape_func_800F8120_us {
     unsigned char padding_46C[10];
     unsigned short field_476;
 };
-struct Shape_func_800F8120_us_2;
 struct Shape_func_800F8120_us_2 {
     unsigned char padding_0[28];
     int field_1C;
@@ -968,7 +1158,6 @@ struct Shape_func_800F8120_us_2 {
     unsigned char padding_46C[10];
     unsigned short field_476;
 };
-struct Shape_func_800F8120_us_3;
 struct Shape_func_800F8120_us_3 {
     unsigned char padding_0[16];
     int field_10;
@@ -981,7 +1170,6 @@ struct Shape_func_800F8120_us_3 {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
-struct Shape_func_800F9F34_us;
 struct Shape_func_800F9F34_us {
     unsigned char padding_0[28];
     int field_1C;
@@ -996,7 +1184,6 @@ struct Shape_func_800F9F34_us {
     unsigned char padding_46C[10];
     unsigned short field_476;
 };
-struct Shape_func_800F9F34_us_2;
 struct Shape_func_800F9F34_us_2 {
     unsigned char padding_0[16];
     int field_10;
@@ -1009,11 +1196,9 @@ struct Shape_func_800F9F34_us_2 {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
-struct Shape_func_80105584_us;
 struct Shape_func_80105584_us {
     void * field_0;
 };
-struct Shape_func_80106010_us;
 struct Shape_func_80106010_us {
     unsigned char padding_0[4];
     int field_4;
@@ -1023,7 +1208,6 @@ struct Shape_func_80106010_us {
     int field_14;
 };
 /* Shape_func_8010BFDC_us: partial shape; common base param:func_8010CAE8_us:r4; size unknown; common-base owner return type is incomplete or conflicting */
-struct Shape_func_8010CAE8_us_2;
 struct Shape_func_8010CAE8_us_2 {
     unsigned char padding_0[28];
     int field_1C;
@@ -1039,20 +1223,17 @@ struct Shape_func_8010CAE8_us_2 {
     unsigned short field_476;
 };
 /* Shape_func_8010CE24_us: partial shape; common base param:func_8010D388_us:r4; size unknown; common-base owner return type is incomplete or conflicting */
-struct Shape_func_8010D388_us_2;
 struct Shape_func_8010D388_us_2 {
     unsigned char padding_0[1384];
     int field_568;
     int field_56C;
     int field_570;
 };
-struct Shape_func_80111690_us;
 struct Shape_func_80111690_us {
     unsigned char padding_0[4];
     int field_4;
 };
 /* Shape_func_80111690_us_2: partial shape; common base global:D_80146100; size unknown; overlapping, negative or inconsistent observed storage intervals */
-struct Shape_func_801125F0_us;
 struct Shape_func_801125F0_us {
     unsigned char padding_0[5];
     unsigned char field_5;
@@ -1080,7 +1261,6 @@ struct Shape_func_801125F0_us {
     unsigned char padding_58[4];
     int field_5C;
 };
-struct Shape_func_801130A0_us;
 struct Shape_func_801130A0_us {
     unsigned char padding_0[5];
     unsigned char unknown_5[1];
@@ -1108,8 +1288,22 @@ struct Shape_func_801130A0_us {
     unsigned char padding_58[4];
     int field_5C;
 };
+struct Shape_func_80118AF0_us {
+    unsigned char padding_0[4];
+    unsigned char field_4;
+    unsigned char padding_5[7];
+    int field_C;
+    unsigned char padding_10[4];
+    int field_14;
+    unsigned short field_18;
+    unsigned short field_1A;
+    unsigned char unknown_1C[4];
+    unsigned char padding_20[4];
+    int field_24;
+    unsigned char padding_28[4];
+    int field_2C;
+};
 /* Shape_func_8011954C: partial shape; common base field:param:func_80119FE0_us:r4:24; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_80119748_us;
 struct Shape_func_80119748_us {
     unsigned char unknown_0[4];
     int field_4;
@@ -1119,9 +1313,7 @@ struct Shape_func_80119748_us {
     unsigned char padding_14[6];
     short field_1A;
 };
-/* Shape_func_80119B60: partial shape; common base param:func_80119C34:r4; size unknown; common-base owner return type is incomplete or conflicting */
 /* Shape_func_80119D9C_us: partial shape; common base param:func_80119D9C_us:r5; size unknown; common-base owner return type is incomplete or conflicting */
-struct Shape_func_80119FE0_us_2;
 struct Shape_func_80119FE0_us_2 {
     unsigned char padding_0[16];
     int field_10;
@@ -1130,7 +1322,6 @@ struct Shape_func_80119FE0_us_2 {
     unsigned char padding_3C[468];
     int field_210;
 };
-struct Shape_func_8011BC70_us;
 struct Shape_func_8011BC70_us {
     void * field_0;
     void * field_4;
@@ -1141,14 +1332,12 @@ struct Shape_func_8011BC70_us {
     unsigned char unknown_18[4];
     unsigned char unknown_1C[4];
 };
-struct Shape_func_8011C210_us;
 struct Shape_func_8011C210_us {
     unsigned char padding_0[60];
     int field_3C;
     int field_40;
     int field_44;
 };
-struct Shape_func_8011D450_us;
 struct Shape_func_8011D450_us {
     int field_0;
     unsigned char padding_4[16];
@@ -1164,7 +1353,12 @@ struct Shape_func_8011D450_us {
     int field_44;
     int field_48;
 };
-struct Shape_func_8011D6D0;
+struct Shape_func_8011D4A0_us {
+    unsigned char padding_0[20];
+    unsigned char unknown_14[4];
+    unsigned char padding_18[4];
+    int field_1C;
+};
 struct Shape_func_8011D6D0 {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -1187,14 +1381,12 @@ struct Shape_func_8011D6D0 {
     unsigned char unknown_48[4];
 };
 /* Shape_func_8011DCF8_us: partial shape; common base field:param:func_8011F29C_us:r4:60; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_8011E2E0;
 struct Shape_func_8011E2E0 {
     unsigned char padding_0[20];
     int field_14;
     unsigned char unknown_18[4];
     int field_1C;
 };
-struct Shape_func_8011E434;
 struct Shape_func_8011E434 {
     unsigned char padding_0[20];
     int field_14;
@@ -1202,7 +1394,6 @@ struct Shape_func_8011E434 {
     int field_1C;
 };
 /* Shape_func_8011E6B0_us: partial shape; common base field:value:func_8011E750_us:us:118:32; size unknown; common base is not a global or a known-signature parameter/return */
-struct Shape_func_8011E750_us_2;
 struct Shape_func_8011E750_us_2 {
     unsigned char padding_0[36];
     float field_24;
@@ -1212,7 +1403,6 @@ struct Shape_func_8011E750_us_2 {
     float field_3E0;
     float field_3E4;
 };
-struct Shape_func_8011F29C_us_2;
 struct Shape_func_8011F29C_us_2 {
     unsigned char padding_0[20];
     int field_14;
@@ -1220,7 +1410,6 @@ struct Shape_func_8011F29C_us_2 {
     int field_1C;
 };
 /* Shape_func_80120910_us: partial shape; common base param:func_801210BC_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_8012162C_us;
 struct Shape_func_8012162C_us {
     int field_0;
     int field_4;
@@ -1231,7 +1420,6 @@ struct Shape_func_8012162C_us {
     int field_18;
     int field_1C;
 };
-struct Shape_func_801219B0_us;
 struct Shape_func_801219B0_us {
     unsigned short field_0;
     unsigned char unknown_2[2];
@@ -1247,13 +1435,22 @@ struct Shape_func_801219B0_us {
     unsigned char padding_2A[2];
     int field_2C;
 };
-struct Shape_func_80121A20_us_2;
+struct Shape_func_80121A20_us {
+    unsigned char padding_0[4];
+    int field_4;
+    int field_8;
+    int field_C;
+    int field_10;
+    int field_14;
+    int field_18;
+    int field_1C;
+    int field_20;
+};
 struct Shape_func_80121A20_us_2 {
     unsigned char padding_0[2];
     unsigned char unknown_2[2];
     int field_4;
 };
-struct Shape_func_801220C0_us;
 struct Shape_func_801220C0_us {
     unsigned char padding_0[4];
     int field_4;
@@ -1266,7 +1463,6 @@ struct Shape_func_801220C0_us {
     int field_20;
 };
 /* Shape_func_80122750_us: partial shape; common base param:func_80122750_us:r16; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_80122750_us_2;
 struct Shape_func_80122750_us_2 {
     unsigned char padding_0[4];
     unsigned char field_4;
@@ -1282,7 +1478,6 @@ struct Shape_func_80122750_us_2 {
     unsigned char padding_28[4];
     int field_2C;
 };
-struct Shape_typemap;
 struct Shape_typemap {
     unsigned char padding_0[16];
     int field_10;
@@ -1295,7 +1490,6 @@ struct Shape_typemap {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
-struct Shape_typemap_10;
 struct Shape_typemap_10 {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -1317,7 +1511,6 @@ struct Shape_typemap_10 {
     unsigned char unknown_44[4];
     unsigned char unknown_48[4];
 };
-struct Shape_typemap_11;
 struct Shape_typemap_11 {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -1342,7 +1535,6 @@ struct Shape_typemap_11 {
     int field_634;
     int field_638;
 };
-struct Shape_typemap_12;
 struct Shape_typemap_12 {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -1374,14 +1566,12 @@ struct Shape_typemap_12 {
     unsigned char unknown_80[4];
     unsigned char unknown_84[4];
 };
-struct Shape_typemap_13;
 struct Shape_typemap_13 {
     unsigned char padding_0[35];
     unsigned char field_23;
     unsigned char padding_24[484];
     int field_208;
 };
-struct Shape_typemap_14;
 struct Shape_typemap_14 {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -1390,12 +1580,10 @@ struct Shape_typemap_14 {
     unsigned char padding_5[843];
     unsigned char field_350;
 };
-struct Shape_typemap_15;
 struct Shape_typemap_15 {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
 };
-struct Shape_typemap_16;
 struct Shape_typemap_16 {
     unsigned char padding_0[28];
     int field_1C;
@@ -1410,7 +1598,6 @@ struct Shape_typemap_16 {
     unsigned char padding_46C[10];
     unsigned short field_476;
 };
-struct Shape_typemap_17;
 struct Shape_typemap_17 {
     unsigned char padding_0[1380];
     int field_564;
@@ -1425,7 +1612,6 @@ struct Shape_typemap_17 {
     int field_634;
     int field_638;
 };
-struct Shape_typemap_18;
 struct Shape_typemap_18 {
     unsigned short field_0;
     unsigned char unknown_2[2];
@@ -1441,7 +1627,6 @@ struct Shape_typemap_18 {
     unsigned char padding_2A[2];
     int field_2C;
 };
-struct Shape_typemap_19;
 struct Shape_typemap_19 {
     void * field_0;
     int field_4;
@@ -1470,7 +1655,6 @@ struct Shape_typemap_19 {
     unsigned char padding_A3A4[28804];
     int field_11428;
 };
-struct Shape_typemap_2;
 struct Shape_typemap_2 {
     int field_0;
     int field_4;
@@ -1495,7 +1679,6 @@ struct Shape_typemap_2 {
     unsigned char unknown_11408[4];
     unsigned char unknown_1140C[4];
 };
-struct Shape_typemap_20;
 struct Shape_typemap_20 {
     int field_0;
     int field_4;
@@ -1506,7 +1689,6 @@ struct Shape_typemap_20 {
     int field_18;
     int field_1C;
 };
-struct Shape_typemap_21;
 struct Shape_typemap_21 {
     unsigned char padding_0[192];
     short field_C0;
@@ -1533,7 +1715,6 @@ struct Shape_typemap_21 {
     unsigned char unknown_100[4];
     unsigned char unknown_104[2];
 };
-struct Shape_typemap_22;
 struct Shape_typemap_22 {
     unsigned char unknown_0[4];
     int field_4;
@@ -1546,7 +1727,6 @@ struct Shape_typemap_22 {
     void * field_1C;
     unsigned char unknown_20[4];
 };
-struct Shape_typemap_23;
 struct Shape_typemap_23 {
     unsigned char padding_0[28];
     int field_1C;
@@ -1561,7 +1741,6 @@ struct Shape_typemap_23 {
     unsigned char padding_46C[10];
     unsigned short field_476;
 };
-struct Shape_typemap_24;
 struct Shape_typemap_24 {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -1572,7 +1751,6 @@ struct Shape_typemap_24 {
     unsigned char padding_9C[692];
     unsigned char field_350;
 };
-struct Shape_typemap_25;
 struct Shape_typemap_25 {
     unsigned char padding_0[1];
     unsigned char field_1;
@@ -1585,7 +1763,6 @@ struct Shape_typemap_25 {
     unsigned char padding_350[8];
     unsigned char unknown_358[1];
 };
-struct Shape_typemap_3;
 struct Shape_typemap_3 {
     unsigned char padding_0[16];
     int field_10;
@@ -1598,12 +1775,10 @@ struct Shape_typemap_3 {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
-struct Shape_typemap_4;
 struct Shape_typemap_4 {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
 };
-struct Shape_typemap_5;
 struct Shape_typemap_5 {
     float field_0;
     float field_4;
@@ -1612,14 +1787,12 @@ struct Shape_typemap_5 {
     unsigned char padding_10[1376];
     int field_570;
 };
-struct Shape_typemap_6;
 struct Shape_typemap_6 {
     unsigned char padding_0[20];
     int field_14;
     unsigned char unknown_18[4];
     int field_1C;
 };
-struct Shape_typemap_7;
 struct Shape_typemap_7 {
     unsigned char padding_0[68];
     unsigned short field_44;
@@ -1634,19 +1807,57 @@ struct Shape_typemap_7 {
     int field_1C0;
     int field_1C4;
 };
-struct Shape_typemap_8;
 struct Shape_typemap_8 {
     unsigned char unknown_0[4];
     unsigned char padding_4[16];
     unsigned char unknown_14[4];
     unsigned char unknown_18[4];
 };
-struct Shape_typemap_9;
 struct Shape_typemap_9 {
     unsigned char padding_0[2];
     unsigned char unknown_2[2];
     int field_4;
 };
+
+/* unbake evidence input: c3RydWN0IFNoYXBlX0RfODAxNDYxMDBfMjsKc3RydWN0IFNoYXBlX0RfODAxQjZDMDA7CnN0cnVjdCBTaGFwZV9EXzgwMzI3NkQ0OwpzdHJ1Y3QgU2hhcGVfRF84MDM3QTE3NDsKc3RydWN0IFNoYXBlX0RfODAzQUFEOTg7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdBQUMwOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA3QjI4MF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwN0JEMjRfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdEODUwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA3RDk5OF91c18yOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA3RTE1MF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwN0U0MUNfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdFNEY0X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA4MDAxQ191czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODI3QUNfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODU0NzBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDg1RDg0X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA4Nzg1Q191czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODc4NUNfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODgzNjBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDhENzY4X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA5MjczNF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwOTI3MzRfdXNfMzsKc3RydWN0IFNoYXBlX2Z1bmNfODAwOTNBNUNfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAwOTNENTBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDk3REQwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA5RTNBNF91c180OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA5RTNBNF91c181OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA5RTNBNF91c182OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBMDEzNF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwQTAyMThfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEEwQjhDX3VzXzM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEEwQjhDX3VzXzQ7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEExNkMwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBMzFDMF91c18yOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBNEQxMF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwQTk4NTBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEFCQUI4X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBRDM0MF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwQjg4MDRfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEQxQkEwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBEREEwOF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwREVFOENfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMERGNkY0X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBFM0NGMF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRTNGOTBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEU0QUE0X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBFNjk3MF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRTZBMzBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEU3M0E0X3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBFNzNCQ191czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRUI0NDBfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRUVFNThfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRUZGQzhfdXNfNDsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRjBDRjBfdXNfNDsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRjI0NzhfdXNfMzsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRjY5MzRfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEY4MTIwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBGODEyMF91c18yOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBGODEyMF91c18zOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBGOUYzNF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRjlGMzRfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMDU1ODRfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTA2MDEwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEwQ0FFOF91c18yOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEwRDM4OF91c18yOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExMTY5MF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMTI1RjBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTEzMEEwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExOEFGMF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMTk3NDhfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTE5RkUwX3VzXzI7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTFCOUUwOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExQkM3MF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUMyMTBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTFENDUwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExRDRBMF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUQ2RDA7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTFFMkUwOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExRTQzNDsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUU3NTBfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUYyOUNfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMjE2MkNfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTIxOUIwX3VzOwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEyMUEyMF91czsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMjFBMjBfdXNfMjsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMjIwQzBfdXM7CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTIyNzUwX3VzXzI7CnN0cnVjdCBTaGFwZV90eXBlbWFwOwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8xMDsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMTE7CnN0cnVjdCBTaGFwZV90eXBlbWFwXzEyOwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8xMzsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMTQ7CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE1OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8xNjsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMTc7CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE4OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8xOTsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMjsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMjA7CnN0cnVjdCBTaGFwZV90eXBlbWFwXzIxOwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8yMjsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMjM7CnN0cnVjdCBTaGFwZV90eXBlbWFwXzI0OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8yNTsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMzsKc3RydWN0IFNoYXBlX3R5cGVtYXBfNDsKc3RydWN0IFNoYXBlX3R5cGVtYXBfNTsKc3RydWN0IFNoYXBlX3R5cGVtYXBfNjsKc3RydWN0IFNoYXBlX3R5cGVtYXBfNzsKc3RydWN0IFNoYXBlX3R5cGVtYXBfODsKc3RydWN0IFNoYXBlX3R5cGVtYXBfOTsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUI5RTAgewogICAgaW50IGZpZWxkXzA7Cn07CnN0cnVjdCBTaGFwZV9EXzgwMTQ2MTAwXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMTZdOwogICAgaW50IGZpZWxkXzEwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzE0WzE0XTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMjI7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjNbMjNdOwogICAgc2hvcnQgZmllbGRfM0E7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfM0NbMzg0XTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUJDOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQkQ7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFCRTsKfTsKc3RydWN0IFNoYXBlX0RfODAxQjZDMDAgewogICAgaW50IGZpZWxkXzA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNFs0XTsKfTsKc3RydWN0IFNoYXBlX0RfODAzMjc2RDQgewogICAgaW50IGZpZWxkXzA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNFs0XTsKICAgIGludCBmaWVsZF84OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0NbNF07CiAgICBpbnQgZmllbGRfMTA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTRbNF07CiAgICBpbnQgZmllbGRfMTg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMUNbNF07CiAgICBpbnQgZmllbGRfMjA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMjRbNF07CiAgICBpbnQgZmllbGRfMjg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMkNbNF07CiAgICBpbnQgZmllbGRfMzA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMzRbNF07CiAgICBpbnQgZmllbGRfMzg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fM0NbNF07CiAgICBpbnQgZmllbGRfNDA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNDRbNF07CiAgICBpbnQgZmllbGRfNDg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNENbNF07CiAgICBpbnQgZmllbGRfNTA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNTRbNF07CiAgICBpbnQgZmllbGRfNTg7CiAgICBpbnQgZmllbGRfNUM7CiAgICBpbnQgZmllbGRfNjA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNjRbNF07CiAgICBpbnQgZmllbGRfNjg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNkNbNF07CiAgICBpbnQgZmllbGRfNzA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNzRbNF07CiAgICBpbnQgZmllbGRfNzg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fN0NbNF07CiAgICBpbnQgZmllbGRfODA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fODRbNF07CiAgICBpbnQgZmllbGRfODg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fOENbNF07Cn07CnN0cnVjdCBTaGFwZV9EXzgwMzdBMTc0IHsKICAgIGludCBmaWVsZF8wOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07CiAgICBpbnQgZmllbGRfODsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DWzRdOwogICAgaW50IGZpZWxkXzEwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzRdOwogICAgaW50IGZpZWxkXzE4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzFDWzRdOwogICAgaW50IGZpZWxkXzIwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI0WzRdOwogICAgaW50IGZpZWxkXzI4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzJDWzRdOwogICAgaW50IGZpZWxkXzMwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM0WzRdOwogICAgaW50IGZpZWxkXzM4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzNDWzRdOwogICAgaW50IGZpZWxkXzQwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQ0WzRdOwogICAgaW50IGZpZWxkXzQ4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRDWzRdOwogICAgaW50IGZpZWxkXzUwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzU0WzRdOwogICAgaW50IGZpZWxkXzU4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzVDWzRdOwogICAgaW50IGZpZWxkXzYwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzY0WzRdOwogICAgaW50IGZpZWxkXzY4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzZDWzRdOwogICAgaW50IGZpZWxkXzcwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzc0WzRdOwogICAgaW50IGZpZWxkXzc4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzdDWzRdOwogICAgaW50IGZpZWxkXzgwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzg0WzRdOwogICAgaW50IGZpZWxkXzg4OwogICAgaW50IGZpZWxkXzhDOwogICAgaW50IGZpZWxkXzkwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzk0WzRdOwogICAgaW50IGZpZWxkXzk4OwogICAgaW50IGZpZWxkXzlDOwogICAgaW50IGZpZWxkX0EwOwogICAgaW50IGZpZWxkX0E0OwogICAgaW50IGZpZWxkX0E4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0FDWzRdOwogICAgaW50IGZpZWxkX0IwOwogICAgaW50IGZpZWxkX0I0OwogICAgaW50IGZpZWxkX0I4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0JDWzRdOwogICAgaW50IGZpZWxkX0MwOwogICAgaW50IGZpZWxkX0M0OwogICAgaW50IGZpZWxkX0M4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0NDWzRdOwogICAgaW50IGZpZWxkX0QwOwogICAgaW50IGZpZWxkX0Q0OwogICAgaW50IGZpZWxkX0Q4OwogICAgaW50IGZpZWxkX0RDOwogICAgaW50IGZpZWxkX0UwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0U0WzRdOwogICAgaW50IGZpZWxkX0U4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0VDWzRdOwogICAgaW50IGZpZWxkX0YwOwogICAgaW50IGZpZWxkX0Y0OwogICAgaW50IGZpZWxkX0Y4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0ZDWzRdOwogICAgaW50IGZpZWxkXzEwMDsKICAgIGludCBmaWVsZF8xMDQ7CiAgICBpbnQgZmllbGRfMTA4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEwQ1s0XTsKICAgIGludCBmaWVsZF8xMTA7CiAgICBpbnQgZmllbGRfMTE0OwogICAgaW50IGZpZWxkXzExODsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMUNbNF07CiAgICBpbnQgZmllbGRfMTIwOwogICAgaW50IGZpZWxkXzEyNDsKfTsKc3RydWN0IFNoYXBlX0RfODAzQUFEOTggewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbNF07CiAgICBpbnQgZmllbGRfNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ184WzRdOwogICAgaW50IGZpZWxkX0M7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTBbNF07CiAgICBpbnQgZmllbGRfMTQ7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdBQUMwIHsKICAgIGludCBmaWVsZF8wOwogICAgaW50IGZpZWxkXzQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOFs0NTZdOwogICAgaW50IGZpZWxkXzFEMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xRDRbNDhdOwogICAgaW50IGZpZWxkXzIwNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yMDhbMTJdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMTQ7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzIxNTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMjE2OwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMTc7CiAgICBpbnQgZmllbGRfMjE4Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA3QjI4MF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80WzRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF84OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzlbM107CiAgICBpbnQgZmllbGRfQzsKICAgIGludCBmaWVsZF8xMDsKICAgIHNob3J0IGZpZWxkXzE0OwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xNjsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTc7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzE4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE5WzFdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUI7CiAgICBpbnQgZmllbGRfMUM7CiAgICBpbnQgZmllbGRfMjA7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdCRDI0X3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzE2XTsKICAgIGludCBmaWVsZF8xMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xNFszOF07CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF8zQTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQ1s0NjhdOwogICAgaW50IGZpZWxkXzIxMDsKfTsKLyogU2hhcGVfZnVuY184MDA3Qzc3MF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgdmFsdWU6ZnVuY184MDBBMzFDMF91czp1czozMzsgc2l6ZSB1bmtub3duOyBjb21tb24gYmFzZSBpcyBub3QgYSBnbG9iYWwgb3IgYSBrbm93bi1zaWduYXR1cmUgcGFyYW1ldGVyL3JldHVybiAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA3RDg1MF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxOTJdOwogICAgc2hvcnQgZmllbGRfQzA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQzJbMTRdOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfRDA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRDJbMl07CiAgICBpbnQgZmllbGRfRDQ7CiAgICB2b2lkICogZmllbGRfRDg7CiAgICB2b2lkICogZmllbGRfREM7CiAgICB2b2lkICogZmllbGRfRTA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRTRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRThbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRUNbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRUVbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjBbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjJbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjRbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjZbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjdbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjhbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjlbMV07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRkFbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRkNbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTAwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEwNFsyXTsKfTsKLyogU2hhcGVfZnVuY184MDA3RDk5OF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgdmFsdWU6ZnVuY184MDA3RDk5OF91czp1czoyMzsgc2l6ZSB1bmtub3duOyBjb21tb24gYmFzZSBpcyBub3QgYSBnbG9iYWwgb3IgYSBrbm93bi1zaWduYXR1cmUgcGFyYW1ldGVyL3JldHVybiAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA3RDk5OF91c18yIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzRdOwogICAgaW50IGZpZWxkXzQ7CiAgICBpbnQgZmllbGRfODsKICAgIGludCBmaWVsZF9DOwogICAgaW50IGZpZWxkXzEwOwogICAgaW50IGZpZWxkXzE0OwogICAgaW50IGZpZWxkXzE4OwogICAgaW50IGZpZWxkXzFDOwogICAgaW50IGZpZWxkXzIwOwogICAgaW50IGZpZWxkXzI0OwogICAgaW50IGZpZWxkXzI4OwogICAgaW50IGZpZWxkXzJDOwogICAgaW50IGZpZWxkXzMwOwogICAgaW50IGZpZWxkXzM0OwogICAgaW50IGZpZWxkXzM4OwogICAgaW50IGZpZWxkXzNDOwogICAgaW50IGZpZWxkXzQwOwogICAgaW50IGZpZWxkXzQ0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzQ4WzRdOwogICAgaW50IGZpZWxkXzRDOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzUwWzEyXTsKICAgIGludCBmaWVsZF81QzsKICAgIGludCBmaWVsZF82MDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ182NFs0XTsKICAgIGludCBmaWVsZF82ODsKICAgIGludCBmaWVsZF82QzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ183MFs0XTsKICAgIGludCBmaWVsZF83NDsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwN0UxNTBfdXMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMTkyXTsKICAgIHNob3J0IGZpZWxkX0MwOwogICAgc2hvcnQgZmllbGRfQzI7CiAgICBzaG9ydCBmaWVsZF9DNDsKICAgIHNob3J0IGZpZWxkX0M2OwogICAgaW50IGZpZWxkX0M4OwogICAgaW50IGZpZWxkX0NDOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfRDA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRDJbMl07CiAgICBpbnQgZmllbGRfRDQ7CiAgICB2b2lkICogZmllbGRfRDg7CiAgICB2b2lkICogZmllbGRfREM7CiAgICB2b2lkICogZmllbGRfRTA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRTRbNF07CiAgICB2b2lkICogZmllbGRfRTg7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdFNDFDX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDdFNEY0X3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDgwMDFDX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07Cn07Ci8qIFNoYXBlX2Z1bmNfODAwODI3QUNfdXM6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIGFkZHJlc3M6YWRkcmVzczp1czowMDAwMDAwMDsgc2l6ZSB1bmtub3duOyBvdmVybGFwcGluZywgbmVnYXRpdmUgb3IgaW5jb25zaXN0ZW50IG9ic2VydmVkIHN0b3JhZ2UgaW50ZXJ2YWxzICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMDgyN0FDX3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMTM4MF07CiAgICBpbnQgZmllbGRfNTY0OwogICAgaW50IGZpZWxkXzU2ODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ181NkNbNF07CiAgICBpbnQgZmllbGRfNTcwOwogICAgaW50IGZpZWxkXzU3NDsKICAgIGludCBmaWVsZF81Nzg7CiAgICBpbnQgZmllbGRfNTdDOwogICAgaW50IGZpZWxkXzU4MDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ181ODRbMTc2XTsKICAgIGludCBmaWVsZF82MzQ7CiAgICBpbnQgZmllbGRfNjM4Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA4NTQ3MF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxMzg0XTsKICAgIGludCBmaWVsZF81Njg7CiAgICBpbnQgZmllbGRfNTZDOwogICAgaW50IGZpZWxkXzU3MDsKfTsKLyogU2hhcGVfZnVuY184MDA4NTQ3MF91c18yOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSB2YWx1ZTpmdW5jXzgwMDkyNzM0X3VzOnVzOjU1OTsgc2l6ZSB1bmtub3duOyBjb21tb24gYmFzZSBpcyBub3QgYSBnbG9iYWwgb3IgYSBrbm93bi1zaWduYXR1cmUgcGFyYW1ldGVyL3JldHVybiAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA4NUQ4NF91cyB7CiAgICBmbG9hdCBmaWVsZF8wOwogICAgZmxvYXQgZmllbGRfNDsKICAgIGZsb2F0IGZpZWxkXzg7CiAgICBmbG9hdCBmaWVsZF9DOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzEwWzEzNzZdOwogICAgaW50IGZpZWxkXzU3MDsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODc4NUNfdXMgewogICAgaW50IGZpZWxkXzA7CiAgICBpbnQgZmllbGRfNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ184WzM2MDBdOwogICAgaW50IGZpZWxkX0UxODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19FMUNbNTEyXTsKICAgIGludCBmaWVsZF8xMDFDOwogICAgaW50IGZpZWxkXzEwMjA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTAyNFs0ODAwXTsKICAgIGludCBmaWVsZF8yMkU0OwogICAgaW50IGZpZWxkXzIyRTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjJFQ1syODgwMF07CiAgICBpbnQgZmllbGRfOTM2QzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ185MzcwWzQwOTZdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0EzNzBbNF07CiAgICBpbnQgZmllbGRfQTM3NDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19BMzc4WzI4ODAwXTsKICAgIGludCBmaWVsZF8xMTNGODsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMTNGQ1s0XTsKICAgIGludCBmaWVsZF8xMTQwMDsKICAgIGludCBmaWVsZF8xMTQwNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMTQwOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMTQwQ1s0XTsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODc4NUNfdXNfMiB7CiAgICB2b2lkICogZmllbGRfMDsKICAgIGludCBmaWVsZF80OwogICAgaW50IGZpZWxkXzg7CiAgICBpbnQgZmllbGRfQzsKICAgIGludCBmaWVsZF8xMDsKICAgIGludCBmaWVsZF8xNDsKICAgIGludCBmaWVsZF8xODsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xQ1s0XTsKICAgIGludCBmaWVsZF8yMDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yNFs0XTsKICAgIHZvaWQgKiBmaWVsZF8yODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yQ1s0XTsKICAgIGludCBmaWVsZF8zMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zNFszNjAwXTsKICAgIGludCBmaWVsZF9FNDQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRTQ4WzUxNl07CiAgICBpbnQgZmllbGRfMTA0QzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xMDUwWzQ4MDRdOwogICAgaW50IGZpZWxkXzIzMTQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjMxOFsyODgwMF07CiAgICBpbnQgZmllbGRfOTM5ODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ185MzlDWzQwOTZdOwogICAgaW50IGZpZWxkX0EzOUM7CiAgICBpbnQgZmllbGRfQTNBMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19BM0E0WzI4ODA0XTsKICAgIGludCBmaWVsZF8xMTQyODsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwODgzNjBfdXMgewogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl84WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0NbNF07CiAgICBmbG9hdCBmaWVsZF8xMDsKICAgIGZsb2F0IGZpZWxkXzE0OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzFDWzRdOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzIwWzE2NF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fQzRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQzhbMTE4MF07CiAgICBpbnQgZmllbGRfNTY0OwogICAgaW50IGZpZWxkXzU2ODsKICAgIGludCBmaWVsZF81NkM7CiAgICBpbnQgZmllbGRfNTcwOwogICAgaW50IGZpZWxkXzU3NDsKICAgIGludCBmaWVsZF81Nzg7CiAgICBpbnQgZmllbGRfNTdDOwogICAgaW50IGZpZWxkXzU4MDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ181ODRbMTc2XTsKICAgIGludCBmaWVsZF82MzQ7CiAgICBpbnQgZmllbGRfNjM4Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA4RDc2OF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs2OF07CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF80NDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180NlsyNl07CiAgICBpbnQgZmllbGRfNjA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNjRbMTM2XTsKICAgIHZvaWQgKiBmaWVsZF9FQzsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfRjA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRjFbMTgxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUE2OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzFBN1syNV07CiAgICBpbnQgZmllbGRfMUMwOwogICAgaW50IGZpZWxkXzFDNDsKfTsKLyogU2hhcGVfZnVuY184MDA5MjUzNF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDA5MjczNF91czpyNDsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA5MjczNF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFszNl07CiAgICBmbG9hdCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yOFs0XTsKICAgIGZsb2F0IGZpZWxkXzJDOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzMwWzk0NF07CiAgICBmbG9hdCBmaWVsZF8zRTA7CiAgICBmbG9hdCBmaWVsZF8zRTQ7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDkyNzM0X3VzXzMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbNjBdOwogICAgaW50IGZpZWxkXzNDOwogICAgaW50IGZpZWxkXzQwOwogICAgaW50IGZpZWxkXzQ0Owp9OwovKiBTaGFwZV9mdW5jXzgwMDkzMDgwX3VzOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMDkzNDVDX3VzOnN0YWNrMTY7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDA5MzU5MF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDA5M0E1Q191czpzdGFjazE2OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMDkzQTVDX3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbNF07CiAgICBpbnQgZmllbGRfNDsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwOTNENTBfdXMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMzJdOwogICAgaW50IGZpZWxkXzIwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI0WzRdOwogICAgaW50IGZpZWxkXzI4Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDA5N0REMF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFszMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMjBbMl07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzIyOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzIzWzFdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI0WzFdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI1WzFdOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI2WzZdOwogICAgaW50IGZpZWxkXzJDOwogICAgaW50IGZpZWxkXzMwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzM0WzRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8zODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zOVsxXTsKICAgIHNob3J0IGZpZWxkXzNBOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzNDWzM2Ml07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFBNjsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xQTdbN107CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFBRTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xQUZbMzQ1XTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMzA4Owp9OwovKiBTaGFwZV9mdW5jXzgwMDlCQkMwX3VzOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBmaWVsZDpmaWVsZDpwYXJhbTpmdW5jXzgwMDlFM0E0X3VzOnI0OjEyOjExMjg7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDA5QkJDMF91c18yOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBmaWVsZDpmaWVsZDpwYXJhbTpmdW5jXzgwMDlFM0E0X3VzOnI0OjEyOjExNDA7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDA5QkJDMF91c18zOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBmaWVsZDpwYXJhbTpmdW5jXzgwMDlFM0E0X3VzOnI0OjEyOyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCi8qIFNoYXBlX2Z1bmNfODAwOUQ0QjRfdXM6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIGZpZWxkOnBhcmFtOmZ1bmNfODAwRUVFNThfdXM6cjQ6NjA7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAwOUUzQTRfdXNfNCB7CiAgICBpbnQgZmllbGRfMDsKICAgIGludCBmaWVsZF80OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzhbMV07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOVszXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DWzRdOwogICAgaW50IGZpZWxkXzEwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzJdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE2WzFdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xNzsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTlbMV07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFBOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQjsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwOUUzQTRfdXNfNSB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFszMl07CiAgICBpbnQgZmllbGRfMjA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjRbNF07CiAgICBpbnQgZmllbGRfMjg7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMDlFM0E0X3VzXzYgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMV07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzE7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMlsyMl07CiAgICBpbnQgZmllbGRfMTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMUNbOF07CiAgICBmbG9hdCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yOFs0XTsKICAgIGZsb2F0IGZpZWxkXzJDOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzMwWzRdOwogICAgZmxvYXQgZmllbGRfMzQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzhbMTIyOF07CiAgICBpbnQgZmllbGRfNTA0Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBMDEzNF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzJdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF80Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBMDIxOF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzIyXTsKICAgIGludCBmaWVsZF8xODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xQ1s4XTsKICAgIGZsb2F0IGZpZWxkXzI0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI4WzRdOwogICAgZmxvYXQgZmllbGRfMkM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzBbNF07CiAgICBmbG9hdCBmaWVsZF8zNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zOFsxMjI4XTsKICAgIGludCBmaWVsZF81MDQ7Cn07Ci8qIFNoYXBlX2Z1bmNfODAwQTA2RjhfdXM6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwQTBCOENfdXM6c3RhY2sxNjsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwovKiBTaGFwZV9mdW5jXzgwMEEwOTMwX3VzOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMEEwQjhDX3VzOnI0OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMEEwQjhDX3VzXzMgewogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzBbNF07CiAgICBpbnQgZmllbGRfNDsKICAgIGludCBmaWVsZF84OwogICAgaW50IGZpZWxkX0M7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTRbNl07CiAgICBzaG9ydCBmaWVsZF8xQTsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwQTBCOENfdXNfNCB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzJdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF80Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBMTZDMF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzM0XTsKICAgIGZsb2F0IGZpZWxkXzI0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI4WzRdOwogICAgZmxvYXQgZmllbGRfMkM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzBbNzk2XTsKICAgIGludCBmaWVsZF8zNEM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzUwWzhdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM1OFsxXTsKfTsKLyogU2hhcGVfZnVuY184MDBBMjdEMDogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDBBMkVBNDpzdGFjazE2OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCi8qIFNoYXBlX2Z1bmNfODAwQTJBNDQ6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwQTJFQTQ6cjQ7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDBBMkE0NF8yOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMEEyRUE0OnI3OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMEEzMUMwX3VzXzIgewogICAgdm9pZCAqIGZpZWxkXzA7CiAgICB2b2lkICogZmllbGRfNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl84WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duX0NbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMThbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMUNbNF07Cn07Ci8qIFNoYXBlX2Z1bmNfODAwQTNERTBfdXM6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwQTNERTBfdXM6cjQ7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAwQTREMTBfdXMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMzVdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNFs0ODRdOwogICAgaW50IGZpZWxkXzIwODsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwQTk4NTBfdXMgewogICAgaW50IGZpZWxkXzA7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEFCQUI4X3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzFDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzIwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzJDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzMwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzNDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQ0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQ4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzUwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzU0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzU4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzVDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzYwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzY0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzY4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzZDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzcwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzc0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzc4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzdDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzgwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzg0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzg4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzhDWzRdOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBBRDM0MF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs0XTsKICAgIGludCBmaWVsZF80OwogICAgaW50IGZpZWxkXzg7CiAgICBpbnQgZmllbGRfQzsKICAgIGludCBmaWVsZF8xMDsKICAgIGludCBmaWVsZF8xNDsKICAgIGludCBmaWVsZF8xODsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKICAgIGludCBmaWVsZF8yNDsKICAgIGludCBmaWVsZF8yODsKICAgIGludCBmaWVsZF8yQzsKICAgIGludCBmaWVsZF8zMDsKICAgIGludCBmaWVsZF8zNDsKICAgIGludCBmaWVsZF8zODsKICAgIGludCBmaWVsZF8zQzsKICAgIGludCBmaWVsZF80MDsKICAgIGludCBmaWVsZF80NDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180OFs0XTsKICAgIGludCBmaWVsZF80QzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ181MFsxMl07CiAgICBpbnQgZmllbGRfNUM7CiAgICBpbnQgZmllbGRfNjA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNjRbNF07CiAgICBpbnQgZmllbGRfNjg7CiAgICBpbnQgZmllbGRfNkM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNzBbNF07CiAgICBpbnQgZmllbGRfNzQ7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEI4ODA0X3VzIHsKICAgIHZvaWQgKiBmaWVsZF8wOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBEMUJBMF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzhbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80OFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80Q1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl81MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl81NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl81OFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl81Q1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl82MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl82NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl82OFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl82Q1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl83MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl83NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl83OFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl83Q1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl84MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl84NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl84OFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl84Q1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl85MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl85NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl85OFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl85Q1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9BMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9BNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9BOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9BQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9CMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9CNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9COFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9CQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9EMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9ENFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9EOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9EQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9FMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9FNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9FOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9FQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9GMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9GNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9GOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9GQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMDBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTA0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEwOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMENbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTEwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMThbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTFDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEyMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMjRbNF07Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEREQTA4X3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgaW50IGZpZWxkXzQ7CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF84OwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfQTsKICAgIGludCBmaWVsZF9DOwogICAgaW50IGZpZWxkXzEwOwogICAgaW50IGZpZWxkXzE0OwogICAgaW50IGZpZWxkXzE4OwogICAgdm9pZCAqIGZpZWxkXzFDOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzIwWzRdOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBERUU4Q191cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs3MjAwMF07CiAgICBmbG9hdCBmaWVsZF8xMTk0MDsKICAgIGZsb2F0IGZpZWxkXzExOTQ0OwogICAgdm9pZCAqIGZpZWxkXzExOTQ4OwogICAgaW50IGZpZWxkXzExOTRDOwogICAgaW50IGZpZWxkXzExOTUwOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfMTE5NTQ7CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF8xMTk1NjsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzExOTU4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzExOTVBWzJdOwogICAgdm9pZCAqIGZpZWxkXzExOTVDOwogICAgaW50IGZpZWxkXzExOTYwOwogICAgaW50IGZpZWxkXzExOTY0Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBERjZGNF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs3MjAwMF07CiAgICBmbG9hdCBmaWVsZF8xMTk0MDsKICAgIGZsb2F0IGZpZWxkXzExOTQ0OwogICAgdm9pZCAqIGZpZWxkXzExOTQ4OwogICAgaW50IGZpZWxkXzExOTRDOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExOTUwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExOTU0WzJdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExOTU2WzJdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExOTU4WzJdOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzExOTVBWzJdOwogICAgdm9pZCAqIGZpZWxkXzExOTVDOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExOTYwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzExOTY0WzRdOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBFM0NGMF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzE4XTsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzE0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzE2WzEzMF07CiAgICBpbnQgZmllbGRfOTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOUNbNjkyXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMzUwOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBFM0Y5MF91cyB7CiAgICB2b2lkICogZmllbGRfMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180WzhdOwogICAgdm9pZCAqIGZpZWxkX0M7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTBbOF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMThbMl07Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEU0QUE0X3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzFdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzJbMl07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNVs4NDNdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8zNTA7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEU2OTcwX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzhdOwogICAgdm9pZCAqIGZpZWxkXzg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQ1syMF07CiAgICBmbG9hdCBmaWVsZF8yMDsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRTZBMzBfdXMgewogICAgdm9pZCAqIGZpZWxkXzA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNFs4XTsKICAgIHZvaWQgKiBmaWVsZF9DOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzEwWzhdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzJdOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBFNzNBNF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs4NjRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM2MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zNjRbNDA4XTsKICAgIHZvaWQgKiBmaWVsZF80RkM7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEU3M0JDX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzhdOwogICAgdm9pZCAqIGZpZWxkXzg7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEVCNDQwX3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMTkyXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DMFsyXTsKICAgIHNob3J0IGZpZWxkX0MyOwogICAgc2hvcnQgZmllbGRfQzQ7CiAgICBzaG9ydCBmaWVsZF9DNjsKICAgIGludCBmaWVsZF9DODsKICAgIGludCBmaWVsZF9DQzsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9EMFsyXTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19EMlsyXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9ENFs0XTsKICAgIHZvaWQgKiBmaWVsZF9EODsKICAgIHZvaWQgKiBmaWVsZF9EQzsKICAgIHZvaWQgKiBmaWVsZF9FMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19FNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9FOFs0XTsKfTsKLyogU2hhcGVfZnVuY184MDBFQ0U0QzogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDBFRDgxMDpzdGFjazE2OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCi8qIFNoYXBlX2Z1bmNfODAwRUQzODA6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwRUQ4MTA6cjQ7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDBFRDM4MF8yOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMEVEODEwOnI3OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMEVFRTU4X3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMzJdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzIwWzJdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMjsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yM1sxXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yNFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yNVsxXTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNls2XTsKICAgIGludCBmaWVsZF8yQzsKICAgIGludCBmaWVsZF8zMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMzg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzlbMV07CiAgICBzaG9ydCBmaWVsZF8zQTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQ1szNjJdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQTY7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMUE3WzddOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQUU7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMUFGWzM0NV07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzMwODsKfTsKLyogU2hhcGVfZnVuY184MDBFRkFEOF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDBFRkZDOF91czpyNDsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwovKiBTaGFwZV9mdW5jXzgwMEVGQUQ4X3VzXzI6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwRUZGQzhfdXM6cjc7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDBFRkFEOF91c18zOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMEVGRkM4X3VzOnN0YWNrMTY7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAwRUZGQzhfdXNfNCB7CiAgICBpbnQgZmllbGRfMDsKICAgIGludCBmaWVsZF80OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzhbNDU2XTsKICAgIGludCBmaWVsZF8xRDA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMUQ0WzQ4XTsKICAgIGludCBmaWVsZF8yMDQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjA4WzEyXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMjE0OwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMTU7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzIxNjsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yMTdbMV07CiAgICBpbnQgZmllbGRfMjE4Owp9OwovKiBTaGFwZV9mdW5jXzgwMEYwNzM4X3VzOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMEYwQ0YwX3VzOnN0YWNrMTY7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8KLyogU2hhcGVfZnVuY184MDBGMDlEMF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDBGMENGMF91czpyNDsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwovKiBTaGFwZV9mdW5jXzgwMEYwOUQwX3VzXzI6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwRjBDRjBfdXM6cjc7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAwRjBDRjBfdXNfNCB7CiAgICBpbnQgZmllbGRfMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180WzE2XTsKICAgIGludCBmaWVsZF8xNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xOFs0XTsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNFs4XTsKICAgIGludCBmaWVsZF8yQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zMFs4XTsKICAgIHZvaWQgKiBmaWVsZF8zODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQ1s4XTsKICAgIGludCBmaWVsZF80NDsKICAgIGludCBmaWVsZF80ODsKfTsKLyogU2hhcGVfZnVuY184MDBGMjI3MF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDBGMjQ3OF91czpyNDsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwovKiBTaGFwZV9mdW5jXzgwMEYyMjcwX3VzXzI6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAwRjI0NzhfdXM6cjc7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAwRjI0NzhfdXNfMyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs4NjRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM2MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zNjRbNDA4XTsKICAgIHZvaWQgKiBmaWVsZF80RkM7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEY2OTM0X3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzE2XTsKICAgIGludCBmaWVsZF8xMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xNFsxNF07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzIyOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzIzWzIzXTsKICAgIHNob3J0IGZpZWxkXzNBOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzNDWzM4NF07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFCQzsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUJEOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQkU7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEY4MTIwX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzI4XTsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNFsxMTZdOwogICAgaW50IGZpZWxkXzk4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzlDWzg3Nl07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzQwODsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfNDA5OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzQwQVs5NF07CiAgICBpbnQgZmllbGRfNDY4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzQ2Q1sxMF07CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF80NzY7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMEY4MTIwX3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMjhdOwogICAgaW50IGZpZWxkXzFDOwogICAgaW50IGZpZWxkXzIwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI0WzExNl07CiAgICBpbnQgZmllbGRfOTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOUNbODc2XTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfNDA4OwogICAgdW5zaWduZWQgY2hhciBmaWVsZF80MDk7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNDBBWzk0XTsKICAgIGludCBmaWVsZF80Njg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNDZDWzEwXTsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzQ3NjsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAwRjgxMjBfdXNfMyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxNl07CiAgICBpbnQgZmllbGRfMTA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTRbMTRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMjsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yM1syM107CiAgICBzaG9ydCBmaWVsZF8zQTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQ1szODRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQkM7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFCRDsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUJFOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBGOUYzNF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsyOF07CiAgICBpbnQgZmllbGRfMUM7CiAgICBpbnQgZmllbGRfMjA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjRbMTE2XTsKICAgIGludCBmaWVsZF85ODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ185Q1s4NzZdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF80MDg7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzQwOTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180MEFbOTRdOwogICAgaW50IGZpZWxkXzQ2ODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180NkNbMTBdOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfNDc2Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDBGOUYzNF91c18yIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzE2XTsKICAgIGludCBmaWVsZF8xMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xNFsxNF07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzIyOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzIzWzIzXTsKICAgIHNob3J0IGZpZWxkXzNBOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzNDWzM4NF07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFCQzsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUJEOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQkU7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTA1NTg0X3VzIHsKICAgIHZvaWQgKiBmaWVsZF8wOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEwNjAxMF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs0XTsKICAgIGludCBmaWVsZF80OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzhbNF07CiAgICBpbnQgZmllbGRfQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xMFs0XTsKICAgIGludCBmaWVsZF8xNDsKfTsKLyogU2hhcGVfZnVuY184MDEwQkZEQ191czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDEwQ0FFOF91czpyNDsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciByZXR1cm4gdHlwZSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMTBDQUU4X3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMjhdOwogICAgaW50IGZpZWxkXzFDOwogICAgaW50IGZpZWxkXzIwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI0WzExNl07CiAgICBpbnQgZmllbGRfOTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOUNbODc2XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80MDhbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNDA5WzFdOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzQwQVs5NF07CiAgICBpbnQgZmllbGRfNDY4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzQ2Q1sxMF07CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF80NzY7Cn07Ci8qIFNoYXBlX2Z1bmNfODAxMENFMjRfdXM6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIHBhcmFtOmZ1bmNfODAxMEQzODhfdXM6cjQ7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgcmV0dXJuIHR5cGUgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEwRDM4OF91c18yIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzEzODRdOwogICAgaW50IGZpZWxkXzU2ODsKICAgIGludCBmaWVsZF81NkM7CiAgICBpbnQgZmllbGRfNTcwOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExMTY5MF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs0XTsKICAgIGludCBmaWVsZF80Owp9OwovKiBTaGFwZV9mdW5jXzgwMTExNjkwX3VzXzI6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIGdsb2JhbDpEXzgwMTQ2MTAwOyBzaXplIHVua25vd247IG92ZXJsYXBwaW5nLCBuZWdhdGl2ZSBvciBpbmNvbnNpc3RlbnQgb2JzZXJ2ZWQgc3RvcmFnZSBpbnRlcnZhbHMgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAxMTI1RjBfdXMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbNV07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzU7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzY7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzc7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzg7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzk7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQVsyXTsKICAgIGludCBmaWVsZF9DOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzEwWzRdOwogICAgaW50IGZpZWxkXzE0OwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfMTg7CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF8xQTsKICAgIGludCBmaWVsZF8xQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yMFs0XTsKICAgIGludCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zMFs0XTsKICAgIHZvaWQgKiBmaWVsZF8zNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zOFs0XTsKICAgIGludCBmaWVsZF8zQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180MFsyMF07CiAgICBpbnQgZmllbGRfNTQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNThbNF07CiAgICBpbnQgZmllbGRfNUM7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTEzMEEwX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzVdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzVbMV07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzY7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzc7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzg7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzk7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQVsyXTsKICAgIGludCBmaWVsZF9DOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzEwWzRdOwogICAgaW50IGZpZWxkXzE0OwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfMTg7CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF8xQTsKICAgIGludCBmaWVsZF8xQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yMFs0XTsKICAgIGludCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zMFs0XTsKICAgIHZvaWQgKiBmaWVsZF8zNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zOFs0XTsKICAgIGludCBmaWVsZF8zQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180MFsyMF07CiAgICBpbnQgZmllbGRfNTQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNThbNF07CiAgICBpbnQgZmllbGRfNUM7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTE4QUYwX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF80OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzVbN107CiAgICBpbnQgZmllbGRfQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xMFs0XTsKICAgIGludCBmaWVsZF8xNDsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzE4OwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfMUE7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMUNbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjBbNF07CiAgICBpbnQgZmllbGRfMjQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjhbNF07CiAgICBpbnQgZmllbGRfMkM7Cn07Ci8qIFNoYXBlX2Z1bmNfODAxMTk1NEM6IHBhcnRpYWwgc2hhcGU7IGNvbW1vbiBiYXNlIGZpZWxkOnBhcmFtOmZ1bmNfODAxMTlGRTBfdXM6cjQ6MjQ7IHNpemUgdW5rbm93bjsgY29tbW9uLWJhc2Ugb3duZXIgQUJJIGlzIGluY29tcGxldGUgb3IgY29uZmxpY3RpbmcgKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAxMTk3NDhfdXMgewogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzBbNF07CiAgICBpbnQgZmllbGRfNDsKICAgIGludCBmaWVsZF84OwogICAgaW50IGZpZWxkX0M7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTRbNl07CiAgICBzaG9ydCBmaWVsZF8xQTsKfTsKLyogU2hhcGVfZnVuY184MDExOUQ5Q191czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgcGFyYW06ZnVuY184MDExOUQ5Q191czpyNTsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciByZXR1cm4gdHlwZSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMTE5RkUwX3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMTZdOwogICAgaW50IGZpZWxkXzEwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzE0WzM4XTsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzNBOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzNDWzQ2OF07CiAgICBpbnQgZmllbGRfMjEwOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExQkM3MF91cyB7CiAgICB2b2lkICogZmllbGRfMDsKICAgIHZvaWQgKiBmaWVsZF80OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzhbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fQ1s0XTsKICAgIGludCBmaWVsZF8xMDsKICAgIGludCBmaWVsZF8xNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xQ1s0XTsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUMyMTBfdXMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbNjBdOwogICAgaW50IGZpZWxkXzNDOwogICAgaW50IGZpZWxkXzQwOwogICAgaW50IGZpZWxkXzQ0Owp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExRDQ1MF91cyB7CiAgICBpbnQgZmllbGRfMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180WzE2XTsKICAgIGludCBmaWVsZF8xNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xOFs0XTsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNFs4XTsKICAgIGludCBmaWVsZF8yQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zMFs4XTsKICAgIHZvaWQgKiBmaWVsZF8zODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQ1s4XTsKICAgIGludCBmaWVsZF80NDsKICAgIGludCBmaWVsZF80ODsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMUQ0QTBfdXMgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMjBdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzRdOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzE4WzRdOwogICAgaW50IGZpZWxkXzFDOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExRDZEMCB7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzhbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yMFs0XTsKICAgIGludCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yOFs0XTsKICAgIGludCBmaWVsZF8yQzsKICAgIGludCBmaWVsZF8zMDsKICAgIGludCBmaWVsZF8zNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zQ1s0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80MFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80NFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80OFs0XTsKfTsKLyogU2hhcGVfZnVuY184MDExRENGOF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgZmllbGQ6cGFyYW06ZnVuY184MDExRjI5Q191czpyNDo2MDsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDExRTJFMCB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsyMF07CiAgICBpbnQgZmllbGRfMTQ7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMThbNF07CiAgICBpbnQgZmllbGRfMUM7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTFFNDM0IHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzIwXTsKICAgIGludCBmaWVsZF8xNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xOFs0XTsKICAgIGludCBmaWVsZF8xQzsKfTsKLyogU2hhcGVfZnVuY184MDExRTZCMF91czogcGFydGlhbCBzaGFwZTsgY29tbW9uIGJhc2UgZmllbGQ6dmFsdWU6ZnVuY184MDExRTc1MF91czp1czoxMTg6MzI7IHNpemUgdW5rbm93bjsgY29tbW9uIGJhc2UgaXMgbm90IGEgZ2xvYmFsIG9yIGEga25vd24tc2lnbmF0dXJlIHBhcmFtZXRlci9yZXR1cm4gKi8Kc3RydWN0IFNoYXBlX2Z1bmNfODAxMUU3NTBfdXNfMiB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFszNl07CiAgICBmbG9hdCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yOFs0XTsKICAgIGZsb2F0IGZpZWxkXzJDOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzMwWzk0NF07CiAgICBmbG9hdCBmaWVsZF8zRTA7CiAgICBmbG9hdCBmaWVsZF8zRTQ7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTFGMjlDX3VzXzIgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMjBdOwogICAgaW50IGZpZWxkXzE0OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwogICAgaW50IGZpZWxkXzFDOwp9OwovKiBTaGFwZV9mdW5jXzgwMTIwOTEwX3VzOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMTIxMEJDX3VzOnI0OyBzaXplIHVua25vd247IGNvbW1vbi1iYXNlIG93bmVyIEFCSSBpcyBpbmNvbXBsZXRlIG9yIGNvbmZsaWN0aW5nICovCnN0cnVjdCBTaGFwZV9mdW5jXzgwMTIxNjJDX3VzIHsKICAgIGludCBmaWVsZF8wOwogICAgaW50IGZpZWxkXzQ7CiAgICBpbnQgZmllbGRfODsKICAgIGludCBmaWVsZF9DOwogICAgaW50IGZpZWxkXzEwOwogICAgaW50IGZpZWxkXzE0OwogICAgaW50IGZpZWxkXzE4OwogICAgaW50IGZpZWxkXzFDOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEyMTlCMF91cyB7CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF8wOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzJbMl07CiAgICBpbnQgZmllbGRfNDsKICAgIHZvaWQgKiBmaWVsZF84OwogICAgaW50IGZpZWxkX0M7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMThbOF07CiAgICBpbnQgZmllbGRfMjA7CiAgICBmbG9hdCBmaWVsZF8yNDsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzI4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzJBWzJdOwogICAgaW50IGZpZWxkXzJDOwp9OwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEyMUEyMF91cyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFs0XTsKICAgIGludCBmaWVsZF80OwogICAgaW50IGZpZWxkXzg7CiAgICBpbnQgZmllbGRfQzsKICAgIGludCBmaWVsZF8xMDsKICAgIGludCBmaWVsZF8xNDsKICAgIGludCBmaWVsZF8xODsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKfTsKc3RydWN0IFNoYXBlX2Z1bmNfODAxMjFBMjBfdXNfMiB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsyXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8yWzJdOwogICAgaW50IGZpZWxkXzQ7Cn07CnN0cnVjdCBTaGFwZV9mdW5jXzgwMTIyMEMwX3VzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzRdOwogICAgaW50IGZpZWxkXzQ7CiAgICBpbnQgZmllbGRfODsKICAgIGludCBmaWVsZF9DOwogICAgaW50IGZpZWxkXzEwOwogICAgaW50IGZpZWxkXzE0OwogICAgaW50IGZpZWxkXzE4OwogICAgaW50IGZpZWxkXzFDOwogICAgaW50IGZpZWxkXzIwOwp9OwovKiBTaGFwZV9mdW5jXzgwMTIyNzUwX3VzOiBwYXJ0aWFsIHNoYXBlOyBjb21tb24gYmFzZSBwYXJhbTpmdW5jXzgwMTIyNzUwX3VzOnIxNjsgc2l6ZSB1bmtub3duOyBjb21tb24tYmFzZSBvd25lciBBQkkgaXMgaW5jb21wbGV0ZSBvciBjb25mbGljdGluZyAqLwpzdHJ1Y3QgU2hhcGVfZnVuY184MDEyMjc1MF91c18yIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF80OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzVbN107CiAgICBpbnQgZmllbGRfQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xMFs0XTsKICAgIGludCBmaWVsZF8xNDsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzE4OwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfMUE7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMUNbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjBbNF07CiAgICBpbnQgZmllbGRfMjQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjhbNF07CiAgICBpbnQgZmllbGRfMkM7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzE2XTsKICAgIGludCBmaWVsZF8xMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xNFsxNF07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzIyOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzIzWzIzXTsKICAgIHNob3J0IGZpZWxkXzNBOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzNDWzM4NF07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFCQzsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUJEOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQkU7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzEwIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzFDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzIwWzRdOwogICAgaW50IGZpZWxkXzI0OwogICAgdm9pZCAqIGZpZWxkXzI4OwogICAgaW50IGZpZWxkXzJDOwogICAgaW50IGZpZWxkXzMwOwogICAgaW50IGZpZWxkXzM0OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzNDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQ0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQ4WzRdOwp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8xMSB7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl80WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzhbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fQ1s0XTsKICAgIGZsb2F0IGZpZWxkXzEwOwogICAgZmxvYXQgZmllbGRfMTQ7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMThbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMUNbNF07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjBbMTY0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9DNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19DOFsxMTgwXTsKICAgIGludCBmaWVsZF81NjQ7CiAgICBpbnQgZmllbGRfNTY4OwogICAgaW50IGZpZWxkXzU2QzsKICAgIGludCBmaWVsZF81NzA7CiAgICBpbnQgZmllbGRfNTc0OwogICAgaW50IGZpZWxkXzU3ODsKICAgIGludCBmaWVsZF81N0M7CiAgICBpbnQgZmllbGRfNTgwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzU4NFsxNzZdOwogICAgaW50IGZpZWxkXzYzNDsKICAgIGludCBmaWVsZF82Mzg7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzEyIHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fOFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19DWzhdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzFDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzIwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI4WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzJDWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzMwWzJdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzMyWzJdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8zNDsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zNVsxXTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zNlsyXTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8zOFsyXTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQVszNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNUNbNF07CiAgICBpbnQgZmllbGRfNjA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNjRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNjhbNF07CiAgICBpbnQgZmllbGRfNkM7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNzBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNzRbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNzhbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fN0NbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fODBbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fODRbNF07Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzEzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzM1XTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMjM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMjRbNDg0XTsKICAgIGludCBmaWVsZF8yMDg7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE0IHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzFdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzJbMl07CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfNVs4NDNdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8zNTA7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE1IHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE2IHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzI4XTsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNFsxMTZdOwogICAgaW50IGZpZWxkXzk4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzlDWzg3Nl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNDA4WzFdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQwOVsxXTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180MEFbOTRdOwogICAgaW50IGZpZWxkXzQ2ODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180NkNbMTBdOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfNDc2Owp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8xNyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxMzgwXTsKICAgIGludCBmaWVsZF81NjQ7CiAgICBpbnQgZmllbGRfNTY4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzU2Q1s0XTsKICAgIGludCBmaWVsZF81NzA7CiAgICBpbnQgZmllbGRfNTc0OwogICAgaW50IGZpZWxkXzU3ODsKICAgIGludCBmaWVsZF81N0M7CiAgICBpbnQgZmllbGRfNTgwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzU4NFsxNzZdOwogICAgaW50IGZpZWxkXzYzNDsKICAgIGludCBmaWVsZF82Mzg7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE4IHsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzA7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMlsyXTsKICAgIGludCBmaWVsZF80OwogICAgdm9pZCAqIGZpZWxkXzg7CiAgICBpbnQgZmllbGRfQzsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xMFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8xNFs0XTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xOFs4XTsKICAgIGludCBmaWVsZF8yMDsKICAgIGZsb2F0IGZpZWxkXzI0OwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfMjg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMkFbMl07CiAgICBpbnQgZmllbGRfMkM7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzE5IHsKICAgIHZvaWQgKiBmaWVsZF8wOwogICAgaW50IGZpZWxkXzQ7CiAgICBpbnQgZmllbGRfODsKICAgIGludCBmaWVsZF9DOwogICAgaW50IGZpZWxkXzEwOwogICAgaW50IGZpZWxkXzE0OwogICAgaW50IGZpZWxkXzE4OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzFDWzRdOwogICAgaW50IGZpZWxkXzIwOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzI0WzRdOwogICAgdm9pZCAqIGZpZWxkXzI4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzJDWzRdOwogICAgaW50IGZpZWxkXzMwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzM0WzM2MDBdOwogICAgaW50IGZpZWxkX0U0NDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19FNDhbNTE2XTsKICAgIGludCBmaWVsZF8xMDRDOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzEwNTBbNDgwNF07CiAgICBpbnQgZmllbGRfMjMxNDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yMzE4WzI4ODAwXTsKICAgIGludCBmaWVsZF85Mzk4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzkzOUNbNDA5Nl07CiAgICBpbnQgZmllbGRfQTM5QzsKICAgIGludCBmaWVsZF9BM0EwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nX0EzQTRbMjg4MDRdOwogICAgaW50IGZpZWxkXzExNDI4Owp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8yIHsKICAgIGludCBmaWVsZF8wOwogICAgaW50IGZpZWxkXzQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOFszNjAwXTsKICAgIGludCBmaWVsZF9FMTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRTFDWzUxMl07CiAgICBpbnQgZmllbGRfMTAxQzsKICAgIGludCBmaWVsZF8xMDIwOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzEwMjRbNDgwMF07CiAgICBpbnQgZmllbGRfMjJFNDsKICAgIGludCBmaWVsZF8yMkU4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzIyRUNbMjg4MDBdOwogICAgaW50IGZpZWxkXzkzNkM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOTM3MFs0MDk2XTsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl9BMzcwWzRdOwogICAgaW50IGZpZWxkX0EzNzQ7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQTM3OFsyODgwMF07CiAgICBpbnQgZmllbGRfMTEzRjg7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTEzRkNbNF07CiAgICBpbnQgZmllbGRfMTE0MDA7CiAgICBpbnQgZmllbGRfMTE0MDQ7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTE0MDhbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTE0MENbNF07Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzIwIHsKICAgIGludCBmaWVsZF8wOwogICAgaW50IGZpZWxkXzQ7CiAgICBpbnQgZmllbGRfODsKICAgIGludCBmaWVsZF9DOwogICAgaW50IGZpZWxkXzEwOwogICAgaW50IGZpZWxkXzE0OwogICAgaW50IGZpZWxkXzE4OwogICAgaW50IGZpZWxkXzFDOwp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8yMSB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxOTJdOwogICAgc2hvcnQgZmllbGRfQzA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfQzJbMTRdOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfRDA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRDJbMl07CiAgICBpbnQgZmllbGRfRDQ7CiAgICB2b2lkICogZmllbGRfRDg7CiAgICB2b2lkICogZmllbGRfREM7CiAgICB2b2lkICogZmllbGRfRTA7CiAgICBpbnQgZmllbGRfRTQ7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRThbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRUNbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRUVbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjBbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjJbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjRbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjZbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjdbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjhbMV07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRjlbMV07CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfRkFbMl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fRkNbNF07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMTAwWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzEwNFsyXTsKfTsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMjIgewogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzBbNF07CiAgICBpbnQgZmllbGRfNDsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzg7CiAgICB1bnNpZ25lZCBzaG9ydCBmaWVsZF9BOwogICAgaW50IGZpZWxkX0M7CiAgICBpbnQgZmllbGRfMTA7CiAgICBpbnQgZmllbGRfMTQ7CiAgICBpbnQgZmllbGRfMTg7CiAgICB2b2lkICogZmllbGRfMUM7CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fMjBbNF07Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzIzIHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzI4XTsKICAgIGludCBmaWVsZF8xQzsKICAgIGludCBmaWVsZF8yMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yNFsxMTZdOwogICAgaW50IGZpZWxkXzk4OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzlDWzg3Nl07CiAgICB1bnNpZ25lZCBjaGFyIHVua25vd25fNDA4WzFdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzQwOVsxXTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180MEFbOTRdOwogICAgaW50IGZpZWxkXzQ2ODsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ180NkNbMTBdOwogICAgdW5zaWduZWQgc2hvcnQgZmllbGRfNDc2Owp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8yNCB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzE4XTsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzE0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzE2WzEzMF07CiAgICBpbnQgZmllbGRfOTg7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfOUNbNjkyXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMzUwOwp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF8yNSB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxXTsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yWzM0XTsKICAgIGZsb2F0IGZpZWxkXzI0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzI4WzRdOwogICAgZmxvYXQgZmllbGRfMkM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzBbNzk2XTsKICAgIGludCBmaWVsZF8zNEM7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMzUwWzhdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzM1OFsxXTsKfTsKc3RydWN0IFNoYXBlX3R5cGVtYXBfMyB7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMFsxNl07CiAgICBpbnQgZmllbGRfMTA7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMTRbMTRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8yMjsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18yM1syM107CiAgICBzaG9ydCBmaWVsZF8zQTsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18zQ1szODRdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQkM7CiAgICB1bnNpZ25lZCBjaGFyIGZpZWxkXzFCRDsKICAgIHVuc2lnbmVkIGNoYXIgZmllbGRfMUJFOwp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF80IHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzRbNF07Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzUgewogICAgZmxvYXQgZmllbGRfMDsKICAgIGZsb2F0IGZpZWxkXzQ7CiAgICBmbG9hdCBmaWVsZF84OwogICAgZmxvYXQgZmllbGRfQzsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18xMFsxMzc2XTsKICAgIGludCBmaWVsZF81NzA7Cn07CnN0cnVjdCBTaGFwZV90eXBlbWFwXzYgewogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzBbMjBdOwogICAgaW50IGZpZWxkXzE0OwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwogICAgaW50IGZpZWxkXzFDOwp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF83IHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzY4XTsKICAgIHVuc2lnbmVkIHNob3J0IGZpZWxkXzQ0OwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzQ2WzI2XTsKICAgIGludCBmaWVsZF82MDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ182NFsxMzZdOwogICAgdm9pZCAqIGZpZWxkX0VDOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF9GMDsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ19GMVsxODFdOwogICAgdW5zaWduZWQgY2hhciBmaWVsZF8xQTY7CiAgICB1bnNpZ25lZCBjaGFyIHBhZGRpbmdfMUE3WzI1XTsKICAgIGludCBmaWVsZF8xQzA7CiAgICBpbnQgZmllbGRfMUM0Owp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF84IHsKICAgIHVuc2lnbmVkIGNoYXIgdW5rbm93bl8wWzRdOwogICAgdW5zaWduZWQgY2hhciBwYWRkaW5nXzRbMTZdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE0WzRdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzE4WzRdOwp9OwpzdHJ1Y3QgU2hhcGVfdHlwZW1hcF85IHsKICAgIHVuc2lnbmVkIGNoYXIgcGFkZGluZ18wWzJdOwogICAgdW5zaWduZWQgY2hhciB1bmtub3duXzJbMl07CiAgICBpbnQgZmllbGRfNDsKfTsK */
+
+/* Shape_func_8007C770_us: partial shape; common base value:func_800A31C0_us:us:33; size unknown; common base is not a global or a known-signature parameter/return */
+/* Shape_func_8007D998_us: partial shape; common base value:func_8007D998_us:us:23; size unknown; common base is not a global or a known-signature parameter/return */
+/* Shape_func_800827AC_us: partial shape; common base address:address:us:00000000; size unknown; overlapping, negative or inconsistent observed storage intervals */
+/* Shape_func_80085470_us_2: partial shape; common base value:func_80092734_us:us:559; size unknown; common base is not a global or a known-signature parameter/return */
+/* Shape_func_80092534_us: partial shape; common base param:func_80092734_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_80093080_us: partial shape; common base param:func_8009345C_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_80093590_us: partial shape; common base param:func_80093A5C_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_8009BBC0_us: partial shape; common base field:field:param:func_8009E3A4_us:r4:12:1128; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_8009BBC0_us_2: partial shape; common base field:field:param:func_8009E3A4_us:r4:12:1140; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_8009BBC0_us_3: partial shape; common base field:param:func_8009E3A4_us:r4:12; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_8009D4B4_us: partial shape; common base field:param:func_800EEE58_us:r4:60; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800A06F8_us: partial shape; common base param:func_800A0B8C_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800A0930_us: partial shape; common base param:func_800A0B8C_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800A27D0: partial shape; common base param:func_800A2EA4:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800A2A44: partial shape; common base param:func_800A2EA4:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800A2A44_2: partial shape; common base param:func_800A2EA4:r7; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800A3DE0_us: partial shape; common base param:func_800A3DE0_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800ECE4C: partial shape; common base param:func_800ED810:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800ED380: partial shape; common base param:func_800ED810:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800ED380_2: partial shape; common base param:func_800ED810:r7; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800EFAD8_us: partial shape; common base param:func_800EFFC8_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800EFAD8_us_2: partial shape; common base param:func_800EFFC8_us:r7; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800EFAD8_us_3: partial shape; common base param:func_800EFFC8_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800F0738_us: partial shape; common base param:func_800F0CF0_us:stack16; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800F09D0_us: partial shape; common base param:func_800F0CF0_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800F09D0_us_2: partial shape; common base param:func_800F0CF0_us:r7; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800F2270_us: partial shape; common base param:func_800F2478_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_800F2270_us_2: partial shape; common base param:func_800F2478_us:r7; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_8010BFDC_us: partial shape; common base param:func_8010CAE8_us:r4; size unknown; common-base owner return type is incomplete or conflicting */
+/* Shape_func_8010CE24_us: partial shape; common base param:func_8010D388_us:r4; size unknown; common-base owner return type is incomplete or conflicting */
+/* Shape_func_80111690_us_2: partial shape; common base global:D_80146100; size unknown; overlapping, negative or inconsistent observed storage intervals */
+/* Shape_func_8011954C: partial shape; common base field:param:func_80119FE0_us:r4:24; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_80119D9C_us: partial shape; common base param:func_80119D9C_us:r5; size unknown; common-base owner return type is incomplete or conflicting */
+/* Shape_func_8011DCF8_us: partial shape; common base field:param:func_8011F29C_us:r4:60; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_8011E6B0_us: partial shape; common base field:value:func_8011E750_us:us:118:32; size unknown; common base is not a global or a known-signature parameter/return */
+/* Shape_func_80120910_us: partial shape; common base param:func_801210BC_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
+/* Shape_func_80122750_us: partial shape; common base param:func_80122750_us:r16; size unknown; common-base owner ABI is incomplete or conflicting */
 extern int D_80000000;
 extern int D_80000004;
 extern int D_80000008;
@@ -1654,7 +1865,7 @@ extern int D_8000000C;
 extern int D_80000300;
 extern int D_80000308;
 extern int D_8000030C;
-extern int D_80071070;
+extern float D_80071070;
 extern int D_80071074;
 extern float D_80071084;
 extern float D_80071088;
@@ -1666,7 +1877,7 @@ extern float D_800710A4;
 extern float D_800710A8;
 extern float D_800710AC;
 extern float D_800710B0;
-extern int D_800710B4;
+extern float D_800710B4;
 extern float D_800710B8;
 extern float D_800710BC;
 extern float D_800710E0;
@@ -1838,7 +2049,7 @@ extern float D_80072230;
 extern float D_80072234;
 extern double D_80072378;
 extern double D_80072380;
-extern int D_80072388;
+extern float D_80072388;
 extern float D_8007238C;
 extern float D_80072390;
 extern float D_80072394;
@@ -2117,8 +2328,8 @@ extern float D_8007309C;
 extern float D_800730A0;
 extern float D_800730A4;
 extern float D_800730B0;
-extern int D_800730B4;
-extern int D_800730B8;
+extern float D_800730B4;
+extern float D_800730B8;
 extern float D_800730BC;
 extern float D_800730C0;
 extern float D_800730C4;
@@ -2652,9 +2863,9 @@ extern float D_80074950;
 extern float D_80074954;
 extern float D_80074958;
 extern float D_8007495C;
-extern int D_800749A0;
-extern int D_800749A4;
-extern int D_800749A8;
+extern float D_800749A0;
+extern float D_800749A4;
+extern float D_800749A8;
 extern float D_800749E0;
 extern float D_800749E4;
 extern float D_800749F0;
@@ -2764,7 +2975,7 @@ extern float D_80074F7C;
 extern float D_80074F80;
 extern float D_80074F84;
 extern float D_80074FD4;
-extern int D_80074FD8;
+extern float D_80074FD8;
 extern float D_80074FDC;
 extern float D_80074FE0;
 extern float D_80074FE4;
@@ -2856,11 +3067,11 @@ extern float D_8007557C;
 extern float D_80075580;
 extern float D_80075584;
 extern float D_80075588;
-extern int D_8007558C;
+extern float D_8007558C;
 extern float D_80075590;
 extern float D_80075594;
-extern int D_80075598;
-extern int D_8007559C;
+extern float D_80075598;
+extern float D_8007559C;
 extern float D_800755A0;
 extern float D_800755B0;
 extern float D_800755C0;
@@ -2905,32 +3116,32 @@ extern float D_80075E60;
 extern int D_80075EAC[];
 extern double D_80075FF8;
 extern int D_80125558;
-extern int D_80125710;
+extern float D_80125710;
 extern int D_80125718[];
-extern int D_80125764;
-extern int D_80125768;
-extern int D_8012576C;
-extern int D_80125770;
-extern int D_80125778;
-extern int D_80125780;
-extern int D_80125784;
-extern int D_80125788;
-extern int D_8012578C;
+extern float D_80125764;
+extern float D_80125768;
+extern float D_8012576C;
+extern float D_80125770;
+extern float D_80125778;
+extern float D_80125780;
+extern float D_80125784;
+extern float D_80125788;
+extern float D_8012578C;
 extern int D_80125790;
 extern int D_80125794;
-extern int D_80125798;
-extern int D_80125799;
+extern float D_80125798;
+extern float D_80125799;
 extern unsigned char D_8012579B;
-extern int D_8012579D;
+extern float D_8012579D;
 extern float D_801257B0;
-extern int D_801257B4;
-extern int D_801257C0;
+extern float D_801257B4;
+extern float D_801257C0;
 extern void * D_801257C8;
-extern int D_801257F0;
-extern int D_801257F1;
-extern int D_801257F2;
-extern int D_801257F3;
-extern int D_801257F4;
+extern float D_801257F0;
+extern float D_801257F1;
+extern float D_801257F2;
+extern float D_801257F3;
+extern float D_801257F4;
 extern int D_80125850;
 extern float D_8012585C;
 extern short D_80125A30[];
@@ -3014,12 +3225,12 @@ extern int D_80125C08;
 extern int D_80125C0C;
 extern int D_80125C18;
 extern int D_80125C1C;
-extern int D_80125C40;
+extern float D_80125C40;
 extern int D_80125CD0[];
 extern int D_80125CE0[];
-extern int D_80125D40;
-extern int D_80125D44;
-extern int D_80125D48;
+extern float D_80125D40;
+extern float D_80125D44;
+extern float D_80125D48;
 extern int D_80125E60[];
 extern int D_80125E64[];
 extern int D_80125E68[];
@@ -3053,26 +3264,26 @@ extern unsigned char D_801260A5;
 extern unsigned char D_801260A6;
 extern unsigned char D_801260A7;
 extern int D_801260F8;
-extern int D_8012610E;
-extern int D_80126114;
-extern int D_80126116;
+extern float D_8012610E;
+extern float D_80126114;
+extern float D_80126116;
 extern void * D_80126154[];
 extern int D_801262C4;
-extern int D_801262D0;
+extern float D_801262D0;
 extern int D_801262D4;
 extern unsigned char D_801266F0;
 extern int D_801266F4;
 extern float D_80126700;
 extern float D_80126704;
-extern int D_80126710;
-extern int D_80126714;
+extern float D_80126710;
+extern float D_80126714;
 extern unsigned short D_8012672C;
-extern int D_80126730;
+extern float D_80126730;
 extern int D_8013229C[];
 extern int D_801322C0[];
 extern int D_801322D0[];
 extern int D_801322F4[];
-extern int D_80132EF0;
+extern float D_80132EF0;
 extern unsigned short D_80133FE0;
 extern int D_80133FE4[];
 extern int D_80134010[];
@@ -3080,7 +3291,7 @@ extern int D_80134020;
 extern int D_80134024;
 extern int D_80134028;
 extern int D_8013402C;
-extern int D_80134030[];
+extern float D_80134030[];
 extern int D_80134080[];
 extern void * D_80134960[];
 extern int D_80134A28[];
@@ -3092,31 +3303,31 @@ extern int D_80134AFC[];
 extern int D_80134B24[];
 extern int D_80134BB0[];
 extern void * D_80134E40[];
-extern int D_80134E54;
-extern int D_80134E58;
-extern int D_80134E60;
-extern int D_80134E64;
+extern float D_80134E54;
+extern float D_80134E58;
+extern int D_80134E5C;
+extern float D_80134E60;
+extern float D_80134E64;
 extern unsigned char D_80134E65;
 extern unsigned char D_80134E66;
 extern unsigned char D_80134E67;
-extern int D_80134E68;
+extern float D_80134E68;
 extern unsigned char D_80134E69;
 extern int D_80134E70;
 extern unsigned char D_80134E74;
-extern int D_80134E75;
+extern float D_80134E75;
 extern struct Shape_func_8007B280_us * D_80134E78;
 extern int D_80134FD4;
 extern int D_80135034[];
 extern int D_80135044[];
 extern void * D_80135210[];
 extern void * D_80135224[];
-extern int D_801352A4;
+extern float D_801352A4;
 extern void * D_801354EC[];
 extern int D_8013555C[];
 extern int D_80135570[];
 extern int D_801355F4[];
 extern void * D_8013566C;
-extern unsigned char D_80135674;
 extern void * D_80135724[];
 extern unsigned char D_80135760;
 extern unsigned char D_80135761;
@@ -3134,19 +3345,19 @@ extern unsigned char D_80135772;
 extern unsigned char D_80135773;
 extern unsigned char D_80135775;
 extern unsigned char D_80135776;
-extern int D_80135820;
+extern float D_80135820;
 extern struct Shape_func_800DEE8C_us * D_80135830;
 extern float D_80135840[];
-extern int D_80135894;
+extern float D_80135894;
 extern short D_80135896;
-extern int D_8013589E;
+extern float D_8013589E;
 extern int D_801358C0[];
 extern int D_80135920[];
 extern int D_80135980[];
 extern void * D_80135CF8[];
-extern int D_80137900;
-extern int D_80137904;
-extern int D_80137908;
+extern float D_80137900;
+extern float D_80137904;
+extern float D_80137908;
 extern int D_8013790C[];
 extern void * D_80137940[];
 extern int D_80138F3C[];
@@ -3158,8 +3369,8 @@ extern float D_80139724[];
 extern unsigned char D_80141120;
 extern unsigned char D_80141121;
 extern unsigned char D_80141122;
-extern int D_80141310;
-extern int D_80141314;
+extern float D_80141310;
+extern float D_80141314;
 extern int D_80141560[];
 extern unsigned short D_8014160C[];
 extern unsigned char D_8014160F;
@@ -3176,110 +3387,110 @@ extern unsigned short D_8014164C[];
 extern unsigned short D_80141654[];
 extern int D_8014165C[];
 extern int D_801416A0[];
-extern int D_801416EC;
+extern float D_801416EC;
 extern int D_801416F0;
-extern int D_801416F4;
+extern float D_801416F4;
 extern int D_801416F8[];
 extern void * D_801427C8[];
 extern void * D_80142894[];
 extern int D_801428D8;
 extern int D_801428DC;
 extern int D_801428E0;
-extern int D_801428E4[];
-extern int D_801428F4[];
+extern float D_801428E4[];
+extern float D_801428F4[];
 extern unsigned short D_80142CC0;
 extern unsigned char D_80142CD4;
 extern unsigned char D_80142CD5;
 extern unsigned char D_80142CD6;
-extern int D_80145D60;
+extern float D_80145D60;
 extern int D_80145D70;
-extern int D_80145DA0;
+extern float D_80145DA0;
 extern int D_80145DA8;
 extern int D_80145DB0;
 extern int D_80145DC0;
-extern int D_80145DC4;
-extern int D_80145DC8;
-extern int D_80145DCC;
-extern int D_80145DD0;
+extern float D_80145DC4;
+extern float D_80145DC8;
+extern float D_80145DCC;
+extern float D_80145DD0;
 extern int D_80145DD4;
 extern int D_80145DD8;
 extern struct Shape_func_801125F0_us * D_80145DDC;
 extern void * D_80145DE0[];
 extern int D_80145DF0;
 extern int D_80145E00;
-extern int D_80145E10;
+extern float D_80145E10;
 extern short D_80145FB0[];
-extern int D_801460F8;
-extern int D_801460FC;
-extern int D_80146100;
-extern int D_80146104;
+extern float D_801460F8;
+extern float D_801460FC;
+extern float D_80146100;
+extern float D_80146104;
 extern void * D_80146110;
-extern int D_80146180;
-extern int D_80146184;
+extern float D_80146180;
+extern float D_80146184;
 extern int D_80146190;
-extern int D_80146194;
-extern int D_80146198;
-extern int D_8014619C;
-extern int D_801461A0;
-extern int D_801461A4;
-extern int D_801461A8;
-extern int D_80147040;
+extern float D_80146194;
+extern float D_80146198;
+extern float D_8014619C;
+extern float D_801461A0;
+extern float D_801461A4;
+extern float D_801461A8;
+extern float D_80147040;
 extern int D_801471C8;
 extern unsigned char D_80147372;
 extern int D_80147388;
 extern int D_8014E2BC;
-extern int D_801502E0;
-extern int D_80150350;
-extern int D_80150354;
-extern int D_80150380;
-extern int D_80150384;
-extern int D_80150388;
-extern int D_8015038C;
+extern float D_801502E0;
+extern float D_80150350;
+extern float D_80150354;
+extern float D_80150380;
+extern float D_80150384;
+extern float D_80150388;
+extern float D_8015038C;
 extern int D_80150390;
-extern int D_80150398;
-extern int D_8015039C;
-extern int D_80152A10;
+extern float D_80150398;
+extern float D_8015039C;
+extern float D_80152A10;
 extern int D_80152EF0[];
 extern int D_80152EF8;
-extern int D_80152F80;
-extern int D_80152F84;
-extern int D_80152F88;
+extern float D_80152F80;
+extern float D_80152F84;
+extern float D_80152F88;
 extern int D_801B4A40;
 extern short D_801B4A58[];
-extern int D_801B4AA0;
-extern int D_801B4AA4;
-extern int D_801B4AA8;
+extern float D_801B4AA0;
+extern float D_801B4AA4;
 extern int D_801B4AAC;
-extern int D_801B4AB4;
+extern float D_801B4AB4;
 extern int D_801B4AB8;
-extern struct Shape_func_8007AAC0 * D_801B4ABC;
 extern int D_801B4AC0;
 extern int D_801B4AD0;
-extern int D_801B4AD4;
-extern int D_801B4AE0;
-extern int D_801B4AE4;
-extern int D_801B4AE8;
-extern int D_801B4BF8;
-extern int D_801B4BF9;
+extern float D_801B4AD4;
+extern float D_801B4AE0;
+extern float D_801B4AE4;
+extern float D_801B4AE8;
+extern float D_801B4BF8;
+extern float D_801B4BF9;
 extern struct Shape_func_8008001C_us * D_801B6C00;
-extern int D_801B6C10;
-extern int D_801B6C14;
-extern int D_801B6C18;
-extern int D_801B6C1C;
-extern int D_801C9170;
+extern float D_801B6C10;
+extern float D_801B6C14;
+extern float D_801B6C18;
+extern float D_801B6C1C;
+extern float D_801C9170;
 extern int D_801C9188;
-extern int D_801C918C;
-extern int D_802C13E0;
-extern int D_802C13E2;
-extern int D_802C13E4;
+extern float D_801C918C;
+extern float D_802C13E0;
+extern float D_802C13E2;
+extern float D_802C13E4;
 extern float D_802C13E8;
 extern float D_802C13EC;
-extern int D_802C13F6;
+extern float D_802C13F6;
 extern int D_802C1400[];
-extern int D_802C37F8;
-extern int D_802C37FC;
+extern float D_802C37F8;
+extern float D_802C37FC;
 extern int D_802C3800[];
-extern int D_802C3804[];
+extern QueryDispatch D_802C3804[];
+extern QueryRecord D_803B8254[];
+extern void func_80107A14_us(struct QueryBox *, int, struct QueryResult **, int *);
 extern int D_802C3808[];
 extern int D_802C380C;
 extern int D_802C3810;
@@ -3305,8 +3516,8 @@ extern int D_802C3870;
 extern int D_802C3878;
 extern int D_802C3880;
 extern int D_802C3884;
-extern int D_802C3888;
-extern int D_802C388C;
+extern float D_802C3888;
+extern float D_802C388C;
 extern int D_802C3890;
 extern int D_802C3898;
 extern int D_802C389C;
@@ -3370,108 +3581,108 @@ extern int D_802C39F8;
 extern int D_802C3A00;
 extern int D_802C3A04;
 extern int D_802C3A0C;
-extern int D_802C3A10;
-extern int D_802C3A18;
+extern float D_802C3A10;
+extern float D_802C3A18;
 extern int D_802C3A1C;
 extern int D_802C3A24;
-extern int D_802D5A32;
-extern int D_802D5A34;
-extern int D_802D5A36;
-extern int D_802D5A42;
-extern int D_802D5A44;
-extern int D_802D5A46;
-extern int D_802D5A48;
-extern int D_802D5A4A;
-extern int D_802D5A4C;
-extern int D_802D5A4E;
-extern int D_802D5A50;
-extern int D_802D5A52;
-extern int D_802D5A54;
-extern int D_802D5A56;
-extern int D_802D5A58;
-extern int D_802D5A5A;
-extern int D_802D5A5C;
-extern int D_802D5A5E;
-extern int D_802D5A60;
-extern int D_802D5A62;
-extern int D_802D5A64;
-extern int D_802D5A66;
-extern int D_802D5A68;
-extern int D_802D5A6A;
-extern int D_802D5A6C;
-extern int D_802D5A6E;
-extern int D_802D5A70;
-extern int D_802D5A72;
-extern int D_802D5A74;
-extern int D_802D5A76;
-extern int D_802D5A78;
-extern int D_802D5A7A;
-extern int D_802D5A7C;
-extern int D_802D5A7E;
-extern int D_802D5A80;
-extern int D_802D5A82;
-extern int D_802D5A84;
-extern int D_802D5A86;
-extern int D_802D5A88;
-extern int D_802D5A8A;
-extern int D_802D5A8C;
-extern int D_802D5A8E;
-extern int D_802D5AAC;
-extern int D_802D5AAE;
-extern int D_802D5AB0;
-extern int D_802D5AB2;
-extern int D_802D5AB4;
-extern int D_802D5AB6;
-extern int D_802D5AB8;
-extern int D_802D5ABA;
-extern int D_802D5ABC;
-extern int D_802D5ABE;
-extern int D_802D5AC0;
-extern int D_802D5AC2;
-extern int D_802D5AC8;
-extern int D_802D5ACA;
-extern int D_802D5ACC;
-extern int D_802D5ACE;
-extern int D_802D5AD0;
-extern int D_802D5AD4;
-extern int D_802D5AD6;
-extern int D_802D5AD8;
-extern int D_802D5ADA;
-extern int D_802D5ADC;
-extern int D_802D5ADE;
-extern int D_802D5AE0;
-extern int D_802D5AE2;
-extern int D_802D5AE4;
-extern int D_802D5AE8;
-extern int D_802D5AEA;
-extern int D_802D5AEC;
-extern int D_802D5AEE;
-extern int D_802D5AF2;
-extern int D_802D5AF4;
-extern int D_802D5B96;
-extern int D_802D5B98;
-extern int D_802D5B9A;
-extern int D_802D5BB7;
-extern int D_802D8140;
-extern int D_802D8141;
+extern float D_802D5A32;
+extern float D_802D5A34;
+extern float D_802D5A36;
+extern float D_802D5A42;
+extern float D_802D5A44;
+extern float D_802D5A46;
+extern float D_802D5A48;
+extern float D_802D5A4A;
+extern float D_802D5A4C;
+extern float D_802D5A4E;
+extern float D_802D5A50;
+extern float D_802D5A52;
+extern float D_802D5A54;
+extern float D_802D5A56;
+extern float D_802D5A58;
+extern float D_802D5A5A;
+extern float D_802D5A5C;
+extern float D_802D5A5E;
+extern float D_802D5A60;
+extern float D_802D5A62;
+extern float D_802D5A64;
+extern float D_802D5A66;
+extern float D_802D5A68;
+extern float D_802D5A6A;
+extern float D_802D5A6C;
+extern float D_802D5A6E;
+extern float D_802D5A70;
+extern float D_802D5A72;
+extern float D_802D5A74;
+extern float D_802D5A76;
+extern float D_802D5A78;
+extern float D_802D5A7A;
+extern float D_802D5A7C;
+extern float D_802D5A7E;
+extern float D_802D5A80;
+extern float D_802D5A82;
+extern float D_802D5A84;
+extern float D_802D5A86;
+extern float D_802D5A88;
+extern float D_802D5A8A;
+extern float D_802D5A8C;
+extern float D_802D5A8E;
+extern float D_802D5AAC;
+extern float D_802D5AAE;
+extern float D_802D5AB0;
+extern float D_802D5AB2;
+extern float D_802D5AB4;
+extern float D_802D5AB6;
+extern float D_802D5AB8;
+extern float D_802D5ABA;
+extern float D_802D5ABC;
+extern float D_802D5ABE;
+extern float D_802D5AC0;
+extern float D_802D5AC2;
+extern float D_802D5AC8;
+extern float D_802D5ACA;
+extern float D_802D5ACC;
+extern float D_802D5ACE;
+extern float D_802D5AD0;
+extern float D_802D5AD4;
+extern float D_802D5AD6;
+extern float D_802D5AD8;
+extern float D_802D5ADA;
+extern float D_802D5ADC;
+extern float D_802D5ADE;
+extern float D_802D5AE0;
+extern float D_802D5AE2;
+extern float D_802D5AE4;
+extern float D_802D5AE8;
+extern float D_802D5AEA;
+extern float D_802D5AEC;
+extern float D_802D5AEE;
+extern float D_802D5AF2;
+extern float D_802D5AF4;
+extern float D_802D5B96;
+extern float D_802D5B98;
+extern float D_802D5B9A;
+extern float D_802D5BB7;
+extern float D_802D8140;
+extern float D_802D8141;
 extern int D_802D8148;
 extern int D_802D814C;
 extern float D_802D8150;
 extern float D_802D8154;
-extern int D_802DF340;
+extern float D_802DF340;
 extern int D_802DF348;
-extern int D_802DF350;
+extern float D_802DF350;
 extern int D_802DF540[];
 extern int D_802E17A8[];
-extern int D_802E17D0;
-extern int D_803275F0;
-extern int D_803275F4;
-extern int D_803275F8;
-extern int D_803275FC;
-extern int D_80327604;
-extern int D_80327610;
-extern int D_80327614;
-extern int D_8032761C;
+extern float D_802E17D0;
+extern float D_803275F0;
+extern float D_803275F4;
+extern float D_803275F8;
+extern float D_803275FC;
+extern float D_80327604;
+extern float D_80327610;
+extern float D_80327614;
+extern float D_8032761C;
 extern int D_80327628;
 extern int D_8032762C;
 extern int D_80327634;
@@ -3479,7 +3690,7 @@ extern int D_80327638;
 extern int D_80327640;
 extern int D_80327644;
 extern int D_80327648;
-extern int D_80327674;
+extern float D_80327674;
 extern int D_80327678[];
 extern int D_80327680;
 extern int D_80327684;
@@ -3491,229 +3702,229 @@ extern int D_803276A0;
 extern int D_803276CC;
 extern int D_803276D0;
 extern struct Shape_func_800ABAB8_us * D_803276D4;
-extern int D_803276D8;
-extern int D_803276E0;
-extern int D_803276E1;
-extern int D_803276F0;
-extern int D_80327708;
-extern int D_8032770C;
-extern int D_80327718;
-extern int D_80327730;
-extern int D_80327734;
+extern float D_803276D8;
+extern float D_803276E0;
+extern float D_803276E1;
+extern float D_803276F0;
+extern float D_80327708;
+extern float D_8032770C;
+extern float D_80327718;
+extern float D_80327730;
+extern float D_80327734;
 extern int D_80327738;
-extern int D_8032775C;
-extern int D_80327760;
-extern int D_80327764;
-extern int D_8032777C;
-extern int D_80327790;
-extern int D_80327794;
-extern int D_80327795;
-extern int D_80327796;
+extern float D_8032775C;
+extern float D_80327760;
+extern float D_80327764;
+extern float D_8032777C;
+extern float D_80327790;
+extern float D_80327794;
+extern float D_80327795;
+extern float D_80327796;
 extern int D_80327798;
-extern int D_803277A4;
-extern int D_803277AC;
+extern float D_803277A4;
+extern float D_803277AC;
 extern int D_803277B0;
 extern int D_803277B8;
 extern int D_803277C0;
-extern int D_803277C8;
-extern int D_803277C9;
-extern int D_803277CA;
-extern int D_803277CB;
-extern int D_803277CC;
+extern float D_803277C8;
+extern float D_803277C9;
+extern float D_803277CA;
+extern float D_803277CB;
+extern float D_803277CC;
 extern int D_803277D0;
 extern int D_803277D4;
 extern int D_803277D8;
-extern int D_803277DC;
-extern int D_803277EC;
-extern int D_80327808;
-extern int D_80327809;
-extern int D_8032780A;
-extern int D_8032780B;
-extern int D_8032780C;
+extern float D_803277DC;
+extern float D_803277EC;
+extern float D_80327808;
+extern float D_80327809;
+extern float D_8032780A;
+extern float D_8032780B;
+extern float D_8032780C;
 extern int D_80327810;
 extern int D_80327814;
 extern int D_80327818;
-extern int D_8032782C;
-extern int D_80327849;
-extern int D_8032784A;
-extern int D_8032784B;
-extern int D_8032784C;
+extern float D_8032782C;
+extern float D_80327849;
+extern float D_8032784A;
+extern float D_8032784B;
+extern float D_8032784C;
 extern int D_80327850;
 extern int D_80327854;
 extern int D_80327858;
-extern int D_8032786C;
+extern float D_8032786C;
 extern int D_80327878;
 extern int D_8032787C;
-extern int D_80327880;
-extern int D_80327894;
-extern int D_8032789C;
-extern int D_803278B9;
-extern int D_803278BA;
-extern int D_803278BB;
-extern int D_803278BC;
-extern int D_803278C4;
+extern float D_80327880;
+extern float D_80327894;
+extern float D_8032789C;
+extern float D_803278B9;
+extern float D_803278BA;
+extern float D_803278BB;
+extern float D_803278BC;
+extern float D_803278C4;
 extern int D_803278C8;
 extern int D_803278CC;
 extern int D_803278D0;
 extern int D_803278D4;
-extern int D_803278D8;
-extern int D_803278EC;
-extern int D_803278F0;
+extern float D_803278D8;
+extern float D_803278EC;
+extern float D_803278F0;
 extern int D_803278F4;
 extern int D_803278F8;
-extern int D_80327904;
-extern int D_80327920;
-extern int D_80327921;
-extern int D_80327922;
-extern int D_80327923;
-extern int D_80327934;
-extern int D_80327948;
+extern float D_80327904;
+extern float D_80327920;
+extern float D_80327921;
+extern float D_80327922;
+extern float D_80327923;
+extern float D_80327934;
+extern float D_80327948;
 extern int D_8032794C;
 extern int D_80327950;
-extern int D_8032795C;
-extern int D_80327970;
-extern int D_80327971;
-extern int D_80327972;
-extern int D_80327974;
-extern int D_80327978;
+extern float D_8032795C;
+extern float D_80327970;
+extern float D_80327971;
+extern float D_80327972;
+extern float D_80327974;
+extern float D_80327978;
 extern int D_803279B8;
-extern int D_803279C4;
-extern int D_803279D8;
-extern int D_803279D9;
-extern int D_803279DA;
-extern int D_803279DB;
-extern int D_803279DC;
-extern int D_803279E4;
-extern int D_803279E8;
-extern int D_803279E9;
-extern int D_80327A08;
-extern int D_80327A0C;
-extern int D_80327A10;
-extern int D_80327A1C;
-extern int D_80327A38;
-extern int D_80327A50;
-extern int D_80327A54;
-extern int D_80327A64;
-extern int D_80327A68;
+extern float D_803279C4;
+extern float D_803279D8;
+extern float D_803279D9;
+extern float D_803279DA;
+extern float D_803279DB;
+extern float D_803279DC;
+extern float D_803279E4;
+extern float D_803279E8;
+extern float D_803279E9;
+extern float D_80327A08;
+extern float D_80327A0C;
+extern float D_80327A10;
+extern float D_80327A1C;
+extern float D_80327A38;
+extern float D_80327A50;
+extern float D_80327A54;
+extern float D_80327A64;
+extern float D_80327A68;
 extern int D_80327A6C;
 extern int D_80327A70;
-extern int D_80327A7C;
-extern int D_80327A90;
-extern int D_80327A91;
-extern int D_80327A92;
-extern int D_80327AA0;
-extern int D_80327AA1;
-extern int D_80327AB0;
-extern int D_80327ABC;
-extern int D_80327AD8;
-extern int D_80327AD9;
-extern int D_80327ADA;
-extern int D_80327AF8;
-extern int D_80327AFC;
-extern int D_80327B00;
+extern float D_80327A7C;
+extern float D_80327A90;
+extern float D_80327A91;
+extern float D_80327A92;
+extern float D_80327AA0;
+extern float D_80327AA1;
+extern float D_80327AB0;
+extern float D_80327ABC;
+extern float D_80327AD8;
+extern float D_80327AD9;
+extern float D_80327ADA;
+extern float D_80327AF8;
+extern float D_80327AFC;
+extern float D_80327B00;
 extern int D_80327B04;
 extern int D_80327B08;
-extern int D_80327B14;
-extern int D_80327B20;
-extern int D_80327B21;
-extern int D_80327B22;
-extern int D_80327B23;
-extern int D_80327B24;
-extern int D_80327B2C;
-extern int D_80327B30;
+extern float D_80327B14;
+extern float D_80327B20;
+extern float D_80327B21;
+extern float D_80327B22;
+extern float D_80327B23;
+extern float D_80327B24;
+extern float D_80327B2C;
+extern float D_80327B30;
 extern int D_80327B34;
 extern int D_80327B38;
-extern int D_80327B44;
-extern int D_80327B4C;
-extern int D_80327B50;
-extern int D_80327B51;
-extern int D_80327B60;
-extern int D_80327B78;
-extern int D_80327BA4;
-extern int D_80327BB8;
-extern int D_80327BBC;
-extern int D_80327BBD;
-extern int D_80327BBE;
-extern int D_80327BE0;
-extern int D_80327BF4;
+extern float D_80327B44;
+extern float D_80327B4C;
+extern float D_80327B50;
+extern float D_80327B51;
+extern float D_80327B60;
+extern float D_80327B78;
+extern float D_80327BA4;
+extern float D_80327BB8;
+extern float D_80327BBC;
+extern float D_80327BBD;
+extern float D_80327BBE;
+extern float D_80327BE0;
+extern float D_80327BF4;
 extern int D_80327BF8;
 extern int D_80327C00;
-extern int D_80327C08;
-extern int D_80327C0C;
-extern int D_80327C0D;
-extern int D_80327C0E;
-extern int D_80327C0F;
-extern int D_80327C10;
-extern int D_80327C11;
-extern int D_80327C12;
-extern int D_80327C1C;
+extern float D_80327C08;
+extern float D_80327C0C;
+extern float D_80327C0D;
+extern float D_80327C0E;
+extern float D_80327C0F;
+extern float D_80327C10;
+extern float D_80327C11;
+extern float D_80327C12;
+extern float D_80327C1C;
 extern int D_80327C20;
-extern int D_80327C30;
-extern int D_80327C32;
-extern int D_80327C33;
-extern int D_80327C34;
-extern int D_80327C35;
-extern int D_80327C50;
-extern int D_80327C58;
-extern int D_80327C68;
-extern int D_80327C80;
-extern int D_80327C94;
-extern int D_80327CA8;
-extern int D_80327CAD;
-extern int D_80327CAE;
-extern int D_80327CAF;
-extern int D_80327CC0;
-extern int D_80327CD4;
-extern int D_80327CE8;
-extern int D_80327CEC;
-extern int D_80327D00;
+extern float D_80327C30;
+extern float D_80327C32;
+extern float D_80327C33;
+extern float D_80327C34;
+extern float D_80327C35;
+extern float D_80327C50;
+extern float D_80327C58;
+extern float D_80327C68;
+extern float D_80327C80;
+extern float D_80327C94;
+extern float D_80327CA8;
+extern float D_80327CAD;
+extern float D_80327CAE;
+extern float D_80327CAF;
+extern float D_80327CC0;
+extern float D_80327CD4;
+extern float D_80327CE8;
+extern float D_80327CEC;
+extern float D_80327D00;
 extern int D_80327D10;
-extern int D_80327D28;
-extern int D_80327D2C;
-extern int D_80327D2D;
-extern int D_80327D34;
+extern float D_80327D28;
+extern float D_80327D2C;
+extern float D_80327D2D;
+extern float D_80327D34;
 extern int D_80327D38;
-extern int D_80327D40;
+extern float D_80327D40;
 extern unsigned char D_80327D41;
-extern int D_80327D42;
-extern int D_80327D60;
+extern float D_80327D42;
+extern float D_80327D60;
 extern int D_80327D70;
-extern int D_80327D78;
+extern float D_80327D78;
 extern int D_80327D80;
 extern int D_80327D88;
-extern int D_80327D90;
+extern float D_80327D90;
 extern int D_80327DC8;
 extern int D_80327DF0;
-extern int D_80327DFC;
+extern float D_80327DFC;
 extern int D_80327E00;
 extern int D_80327E08;
-extern int D_80327E10;
-extern int D_80327E15;
-extern int D_80327E16;
-extern int D_80327E30;
-extern int D_80327E31;
+extern float D_80327E10;
+extern float D_80327E15;
+extern float D_80327E16;
+extern float D_80327E30;
+extern float D_80327E31;
 extern int D_80327E40;
-extern int D_80327E50;
-extern int D_80327E60;
-extern int D_80327E74;
-extern int D_80327E88;
-extern int D_80327E8D;
-extern int D_80327E8E;
-extern int D_80327E98;
-extern int D_80327EB0;
-extern int D_80327EB1;
-extern int D_80327EB2;
-extern int D_80327EB3;
-extern int D_80327EBC;
-extern int D_80327EC0;
-extern int D_80327ED0;
-extern int D_80327ED4;
+extern float D_80327E50;
+extern float D_80327E60;
+extern float D_80327E74;
+extern float D_80327E88;
+extern float D_80327E8D;
+extern float D_80327E8E;
+extern float D_80327E98;
+extern float D_80327EB0;
+extern float D_80327EB1;
+extern float D_80327EB2;
+extern float D_80327EB3;
+extern float D_80327EBC;
+extern float D_80327EC0;
+extern float D_80327ED0;
+extern float D_80327ED4;
 extern int D_80327ED8;
-extern int D_80327EDC;
-extern int D_80327EE0;
+extern float D_80327EDC;
+extern float D_80327EE0;
 extern int D_80327EE4;
-extern int D_80327EE8;
-extern int D_80327EEC;
+extern float D_80327EE8;
+extern float D_80327EEC;
 extern int D_80327EF0;
 extern int D_80327F00;
 extern int D_80327F04;
@@ -3723,96 +3934,93 @@ extern int D_80327F10[];
 extern int D_80327F14;
 extern int D_80327F18;
 extern int D_80327F1C;
-extern int D_80327F20;
-extern int D_80327F21;
-extern int D_80327F22;
-extern int D_80327F23;
-extern int D_80327F3C;
-extern int D_80327F40;
-extern int D_80328150;
-extern int D_80328154;
-extern int D_80328158;
-extern int D_80328159;
-extern int D_8032815A;
+extern float D_80327F20;
+extern float D_80327F21;
+extern float D_80327F22;
+extern float D_80327F23;
+extern float D_80327F3C;
+extern float D_80327F40;
+extern float D_80328150;
+extern float D_80328154;
+extern float D_80328158;
+extern float D_80328159;
+extern float D_8032815A;
 extern int D_8032815C;
-extern int D_80328160;
+extern float D_80328160;
 extern int D_80328164;
 extern int D_80328168;
 extern int D_8032816C;
-extern int D_80328170;
-extern int D_80328280;
+extern float D_80328170;
+extern float D_80328280;
 extern int D_80328290;
 extern int D_80328294;
 extern int D_80328298;
 extern int D_8032829C;
 extern int D_803282A8[];
-extern int D_803283B8;
+extern float D_803283B8;
 extern int D_803283C0;
-extern int D_803283C4;
+extern float D_803283C4;
 extern int D_803283C8;
 extern int D_803283D8[];
-extern int D_803283DC;
-extern int D_803283E8;
-extern int D_80328400;
-extern int D_80328404;
+extern float D_803283DC;
+extern float D_803283E8;
+extern float D_80328400;
+extern float D_80328404;
 extern int D_80328408;
 extern int D_8032840C;
 extern int D_80328410;
-extern int D_80328420;
-extern int D_80328424;
-extern int D_80328428;
-extern int D_8032843A;
-extern int D_8032843C;
-extern int D_80328440;
+extern float D_80328420;
+extern float D_80328424;
+extern float D_80328428;
+extern float D_8032843A;
+extern float D_8032843C;
+extern float D_80328440;
 extern int D_8033AAC8[];
-extern int D_8033AAE0;
-extern int D_8033B448;
+extern float D_8033AAE0;
+extern float D_8033B448;
 extern unsigned char D_8033B449;
-extern int D_8033B44C;
-extern int D_8033B5E0;
-extern int D_8033B5F0;
+extern float D_8033B44C;
+extern float D_8033B5E0;
+extern float D_8033B5F0;
 extern int D_8033B5F4;
 extern int D_8033B600;
 extern int D_8033B604;
 extern int D_8033B608;
 extern int D_8033B60C;
 extern int D_8033B610[];
-extern int D_8033B618;
-extern int D_8033B61C;
+extern float D_8033B618;
+extern float D_8033B61C;
 extern int D_8033B620;
-extern int D_8033B624;
-extern int D_8033B628;
+extern float D_8033B624;
+extern float D_8033B628;
 extern int D_8033B62C;
-extern int D_8033B630;
-extern int D_8033B631;
+extern float D_8033B630;
+extern float D_8033B631;
 extern float D_8035BC68;
 extern float D_8035BC6C;
-extern int D_8035BC72;
+extern float D_8035BC72;
 extern unsigned char D_8035BC73;
-extern int D_8035BC76;
+extern float D_8035BC76;
 extern unsigned short D_8035BC78;
-extern int D_8035BCC0;
-extern int D_8035CD1C;
-extern int D_8035CD24;
-extern int D_8035D220[];
-extern int D_8035D710[];
-extern int D_8035E0E8;
-extern int D_803620F0;
-extern int D_803620F4;
-extern int D_803620FC;
-extern int D_80362100;
-extern int D_80362104;
-extern int D_80362108;
+extern float D_8035BCC0;
+extern float D_8035CD1C;
+extern float D_8035E0E8;
+extern float D_803620F0;
+extern float D_803620F4;
+extern float D_803620FC;
+extern float D_80362100;
+extern float D_80362104;
+extern float D_80362108;
 extern int D_80362110;
 extern void * D_8037A120;
 extern void * D_8037A124;
 extern void * D_8037A128;
 extern void * D_8037A12C;
-extern int D_8037A130;
-extern int D_8037A134;
-extern int D_8037A138;
-extern int D_8037A13C;
-extern int D_8037A140;
+extern float D_8037A130;
+extern float D_8037A134;
+extern float D_8037A138;
+extern float D_8037A13C;
+extern float D_8037A140;
 extern int D_8037A150[];
 extern int D_8037A160;
 extern int D_8037A164;
@@ -3829,7 +4037,7 @@ extern int D_8037ADB4;
 extern int D_8037ADBC;
 extern int D_8037ADC0;
 extern int D_8037ADCC;
-extern int D_8037FD78;
+extern float D_8037FD78;
 extern int D_8037FD84;
 extern int D_8037FD88;
 extern int D_8037FD8C;
@@ -3844,63 +4052,63 @@ extern int D_80382DA0;
 extern int D_80382DA4;
 extern int D_80382DAC;
 extern int D_803AAD80;
-extern int D_803AAD84;
-extern int D_803AAD88;
-extern int D_803AAD8C;
+extern float D_803AAD84;
+extern float D_803AAD88;
+extern float D_803AAD8C;
 extern float D_803AAD90;
 extern float D_803AAD94;
 extern struct Shape_func_80106010_us * D_803AAD98;
-extern int D_803AAD9C;
+extern float D_803AAD9C;
 extern int D_803AADA0;
 extern int D_803AADA4;
 extern int D_803B75A0;
-extern int D_803B75A4;
-extern int D_803B75A5;
-extern int D_803B75A6;
-extern int D_803B75A7;
-extern int D_803B75A8;
-extern int D_803B75A9;
-extern int D_803B75AC;
-extern int D_803B8230;
-extern int D_803B8234;
+extern float D_803B75A4;
+extern float D_803B75A5;
+extern float D_803B75A6;
+extern float D_803B75A7;
+extern float D_803B75A8;
+extern float D_803B75A9;
+extern float D_803B75AC;
+extern float D_803B8230;
+extern float D_803B8234;
 extern int D_803B8238;
 extern int D_803B823C;
-extern int D_803B8240;
+extern float D_803B8240;
 extern int D_803C4D68;
-extern int D_803C4D70;
-extern int D_803C4DBC;
-extern int D_803C4DC0;
-extern int D_803C4DC1;
+extern float D_803C4D70;
+extern float D_803C4DBC;
+extern float D_803C4DC0;
+extern float D_803C4DC1;
 extern int D_803C4E10;
 extern struct Shape_func_801125F0_us * D_803C5FD0;
 extern unsigned char D_803C5FD6;
 extern unsigned char D_803C5FD8;
 extern int D_803C5FDC;
-extern int D_803C5FE0;
+extern float D_803C5FE0;
 extern struct Shape_func_801125F0_us * D_803C6044;
 extern int D_803C62CC;
 extern struct Shape_func_801125F0_us * D_803C74A0;
-extern int D_803C74A4;
+extern float D_803C74A4;
 extern int D_803C74A5;
 extern int D_803C74A6;
 extern int D_803C74A7;
 extern int D_803C74A8;
-extern int D_803C74A9;
+extern float D_803C74A9;
 extern int D_803C74AC;
-extern int D_803C74B0;
-extern int D_803C7640;
-extern int D_803C7644;
-extern int D_803C7648;
-extern int D_803C764C;
-extern int D_803C7650;
-extern int D_803C8842;
-extern int D_803C8844;
-extern int D_803C885A;
-extern int D_803C885C;
+extern float D_803C74B0;
+extern float D_803C7640;
+extern float D_803C7644;
+extern float D_803C7648;
+extern float D_803C764C;
+extern float D_803C7650;
+extern float D_803C8842;
+extern float D_803C8844;
+extern float D_803C885A;
+extern float D_803C885C;
 extern unsigned short D_803C8870;
-extern int D_A4040004;
+extern float D_A4040004;
 extern int D_A4040010;
-extern int D_A4400000;
+extern float D_A4400000;
 extern int D_A4400008;
 extern int D_A440000C;
 extern int D_A4400010;
@@ -3911,12 +4119,12 @@ extern int D_A4400020;
 extern int D_A4400028;
 extern int D_A440002C;
 extern int D_A4400030;
-extern int D_A4400034;
-extern int D_A4500000;
+extern float D_A4400034;
+extern float D_A4500000;
 extern int D_A4500004;
 extern int D_A4500008;
 extern int D_A450000C;
-extern int D_A4600000;
+extern float D_A4600000;
 extern int D_A4600004;
 extern int D_A4600010;
 extern unsigned char D_A4600018;
@@ -3925,7 +4133,7 @@ extern unsigned char D_A4600020;
 extern unsigned char D_A4600028;
 extern unsigned char D_A460002C;
 extern unsigned char D_A4600030;
-extern int D_A4800000;
+extern float D_A4800000;
 extern int D_A4800004;
 extern int D_A4800010;
 extern int D_A4800018;

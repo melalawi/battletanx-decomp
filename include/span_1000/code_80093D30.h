@@ -3,9 +3,6 @@
 extern void func_80093D30_us(void);
 extern int func_80093EF8_us(void * arg0, void * arg1);
 extern void func_80093F34(void);
+extern float func_80094704_us(void * arg0, void * arg1, void * arg2);
 extern int func_8009491C_us(void);
-extern int func_80096760(void);
-extern void * func_80096784(int arg0);
-extern int func_80096834_us(int arg0);
-extern int func_80096920(int arg0, int arg1);
 #endif
