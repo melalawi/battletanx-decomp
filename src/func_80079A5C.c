@@ -1,3 +1,4 @@
+#include "span_1000/code_800794C8.h"
 /* func_80079A5C -- unless the handle is -1, sets it and then the float value on the object D_80150380 holds. */
 
 extern int D_80150380;

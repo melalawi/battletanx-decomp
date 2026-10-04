@@ -1,4 +1,14 @@
-#include "shared/func_800a42bc.h"
+#include "span_1000/code_800A2A28.h"
+#include "types.h"
+
+struct Unknown800A42BC;
+
+
+struct Unknown800A42BC {
+    int unk_000[4];
+    int value;
+};
+
 /* func_800A42BC -- writes the word at 0x010.
  *
  * The write half of the pair whose read half is func_800A42B0, twelve bytes earlier. The store

@@ -1,4 +1,17 @@
-#include "shared/func_800a979c.h"
+#include "span_1000/code_800A8940.h"
+#include "types.h"
+
+struct Func_800A979C_View0;
+
+
+struct Func_800A979C_View0 {
+    char pad_0[0x4];
+    s32 field_4;
+    u16 field_8;
+    s8 field_a[4];
+    s8 field_e[1];
+};
+
 
 #include "types.h"
 #define NULL ((void *)0)

@@ -1,4 +1,21 @@
-#include "shared/func_8007ff68.h"
+#include "span_1000/code_8007EB64.h"
+#include "types.h"
+
+struct Func_8007FF68_View0;
+struct Func_8007FF68_View1;
+
+
+
+
+struct Func_8007FF68_View0 {
+    char pad_0[0x88];
+    s32 field_88;
+};
+struct Func_8007FF68_View1 {
+    char pad_0[0x140];
+    s32 field_140;
+};
+
 
 
 #include "types.h"

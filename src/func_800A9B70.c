@@ -1,3 +1,4 @@
+#include "span_1000/code_800A8940.h"
 #include "types.h"
 #define NULL ((void *)0)
 

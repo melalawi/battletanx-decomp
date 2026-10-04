@@ -1,4 +1,16 @@
-#include "shared/func_8011c150.h"
+#include "span_1000/code_8011B830.h"
+#include "types.h"
+
+struct Shape_func_8011C150;
+typedef struct Shape_func_8011C150 Shape_func_8011C150;
+
+
+
+struct Shape_func_8011C150 {
+    struct Shape_func_8011C150 *prev;
+    struct Shape_func_8011C150 *next;
+};
+
 /* func_8011C150 -- unlinks one node from a doubly linked list, skipping either update when that
  * neighbour is absent. The two words the cartridge loads from the node are its previous and next
  * pointers, and each neighbour's opposite link is written back through the other.

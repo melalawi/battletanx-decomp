@@ -1,4 +1,16 @@
-#include "shared/func_800805dc.h"
+#include "span_1000/code_8007EB64.h"
+#include "types.h"
+
+struct func_800805DC_S1;
+typedef struct func_800805DC_S1 func_800805DC_S1;
+
+
+
+struct func_800805DC_S1 {
+    char pad0[0x2680];
+    s8 unk2680;
+};
+
 #include "types.h"
 #define NULL ((void *)0)
 

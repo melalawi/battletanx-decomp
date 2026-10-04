@@ -1,4 +1,16 @@
-#include "shared/func_800a59e8.h"
+#include "span_1000/code_800A51E8.h"
+#include "types.h"
+
+struct FuncA59E8State;
+typedef struct FuncA59E8State FuncA59E8State;
+
+
+
+struct FuncA59E8State {
+    char pad0[0x210];
+    s32 unk210;
+};
+
 #include "types.h"
 /* Adds to the counter at offset 0x210 and, when its 50000-unit quotient increases and the mode check succeeds, calls func_800A5DD8 with the new quotient scaled by 50000. */
 #define NULL ((void *)0)

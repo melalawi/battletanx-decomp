@@ -1,4 +1,35 @@
-#include "shared/func_800eeca0.h"
+#include "span_1000/code_800EECA0.h"
+#include "types.h"
+
+struct FuncEECA0Object;
+typedef struct FuncEECA0Object FuncEECA0Object;
+typedef struct FuncEECA0Output FuncEECA0Output;
+typedef struct FuncEECA0Status FuncEECA0Status;
+
+struct FuncEECA0Output;
+
+struct FuncEECA0Status;
+
+
+
+
+
+
+
+struct FuncEECA0Object {
+    char pad0[0x24];
+    f32 unk24;
+};
+struct FuncEECA0Output {
+    s32 code;
+    s32 *data;
+};
+struct FuncEECA0Status {
+    char pad_0[8];
+    s32 field_8;
+    s32 field_c;
+};
+
 #include "types.h"
 /* When arg2 and the status field at offset 8 are zero, sets output code 10 and sign-specific data if func_800E3470 succeeds and the corresponding flag is set, otherwise setting code 1. */
 #define NULL ((void *)0)

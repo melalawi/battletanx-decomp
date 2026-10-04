@@ -1,4 +1,15 @@
-#include "shared/func_80077930.h"
+#include "span_1000/code_80077620.h"
+#include "types.h"
+
+struct InitArgs;
+typedef struct InitArgs InitArgs;
+
+
+
+struct InitArgs {
+    s32 pad[6];
+};
+
 #include "types.h"
 
 extern void func_80110C00(void *, s32);

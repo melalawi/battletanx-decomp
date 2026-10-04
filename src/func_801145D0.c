@@ -1,3 +1,4 @@
+#include "span_1000/code_80114190.h"
 /* func_801145D0 -- eight-bit CRC over 0x20 bytes plus one all-zero flush byte, using the
  * polynomial 0x85. The store widths in the cartridge fix the types: the running value and the
  * polynomial term are single bytes, the byte counter and the bit counter are words.

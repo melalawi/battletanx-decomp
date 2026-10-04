@@ -1,4 +1,18 @@
-#include "shared/func_800ab95c.h"
+#include "span_1000/code_800A9FC4.h"
+#include "types.h"
+
+struct M;
+typedef struct M M;
+
+
+
+struct M {
+    int mode;
+    int cur;
+    int pad;
+    int tbl[5];
+};
+
 /* func_800AB95C -- selects one of five modes, taking the mode's value from a five-entry table as the current value, and returns the mode that was set before. */
 
 

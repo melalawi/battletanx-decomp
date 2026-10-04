@@ -1,4 +1,18 @@
-#include "shared/func_8011f7f0.h"
+#include "span_1000/code_8011F1EC.h"
+#include "types.h"
+
+struct Shape_func_8011F7F0;
+
+
+struct Shape_func_8011F7F0 {
+    int unk0;
+    int unk4;
+    int unk8;
+    short unkC;
+    short unkE;
+    int unk10;
+};
+
 /* func_8011F7F0 -- fills six fields of the record it is handed from three of its arguments and zero.
  * The store widths in the cartridge fix the types: four words at 0x0, 0x4, 0x8 and 0x10, and two
  * halfwords at 0xC and 0xE. The first word and both halfwords take $zero; the other three take the

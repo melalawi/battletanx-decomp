@@ -1,4 +1,4 @@
-#include "shared/prototypes.h"
+#include "span_1000/code_8011B830.h"
 
               /* size 0x0 */
 

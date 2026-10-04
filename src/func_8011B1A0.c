@@ -1,4 +1,43 @@
-#include "shared/func_8011b1a0.h"
+#include "span_1000/code_801199A0.h"
+#include "types.h"
+
+struct Shape_func_8011B1A0;
+typedef struct Shape_func_8011B1A0 Shape_func_8011B1A0;
+typedef struct Shape_func_8011B1A0_2 Shape_func_8011B1A0_2;
+typedef struct Target Target;
+
+struct Shape_func_8011B1A0_2;
+
+struct Target;
+
+
+
+
+
+
+
+struct Shape_func_8011B1A0 {
+    char pad0[0x48];
+    int unk_48;
+    char pad4C[0x50 - 0x4C];
+    struct Shape_func_8011B1A0_2 *unk_50;
+    char pad54[0x78 - 0x54];
+    void (*unk_78)(void *);
+};
+struct Shape_func_8011B1A0_2 {
+    struct Shape_func_8011B1A0_2 *next;
+    char pad04[0x08 - 0x04];
+    int unk_8;
+    short unk_C;
+    char pad0E[0x10 - 0x0E];
+    struct Target *unk_10;
+    void *unk_14;
+};
+struct Target {
+    char pad0[0x37];
+    unsigned char unk_37;
+};
+
 /* func_8011B1A0 -- unhooks every node of the owner's list at 0x50 that belongs to one target and is
  * of kind 0x16 or 0x17: it calls the owner's callback at 0x78 with the node's 0x14 word, retires the
  * node through func_8011C150, folds the node's 0x8 count into its successor's, returns it to the

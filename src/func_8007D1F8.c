@@ -1,4 +1,23 @@
-#include "shared/func_8007d1f8.h"
+#include "span_1000/code_8007C6D8.h"
+#include "types.h"
+
+struct Info;
+struct State;
+
+
+
+
+struct Info {
+    unsigned char pad[0x3c];
+    unsigned char value;
+};
+struct State {
+    int type;
+    int pad[2];
+    int ids[0x72];
+    int values[1];
+};
+
 #include "types.h"
 
 

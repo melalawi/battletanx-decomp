@@ -1,6 +1,7 @@
 schema = 1
 
 [project]
+layout_cap = 32
 id = "0f342a96-54f7-425f-b9b3-052d53c072b1"
 state = "ready"
 name = "BattleTanx"
@@ -13,6 +14,7 @@ default_compiler = "gcc-2.7.2-kmc"
 id = "efd53fbc-45c2-4ea2-ba79-55aa90347428"
 
 [paths]
+declaration_evidence = []
 roms = "roms"
 build = "build"
 work = "build/work"

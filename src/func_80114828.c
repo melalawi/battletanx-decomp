@@ -1,3 +1,4 @@
+#include "span_1000/code_80114190.h"
 /* Builds a 4x4 identity matrix in a stack buffer and hands it, with the
    caller's argument, to the routine that consumes it. The 0x58 frame with
    $ra at 0x14 fixed the buffer as the 0x40 bytes at 0x18, which the identity

@@ -1,4 +1,14 @@
-#include "shared/func_800a424c.h"
+#include "span_1000/code_800A2A28.h"
+#include "types.h"
+
+struct Unknown800A424C;
+
+
+struct Unknown800A424C {
+    unsigned char unk_000[0x48];
+    unsigned char member[4];
+};
+
 /* func_800A424C -- the address of the member at 0x048.
  *
  * No load: the cartridge adds 0x48 to the argument and returns it, which is a pointer into the

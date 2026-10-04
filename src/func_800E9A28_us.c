@@ -1,4 +1,4 @@
-#include "shared/prototypes.h"
+#include "span_1000/code_800E9538.h"
 
               /* size 0x0 */
 

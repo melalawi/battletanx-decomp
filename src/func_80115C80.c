@@ -1,4 +1,20 @@
-#include "shared/func_80115c80.h"
+#include "span_1000/code_80114190.h"
+#include "types.h"
+
+struct Obj_func_80115C80;
+typedef struct Obj_func_80115C80 Obj_func_80115C80;
+
+
+
+struct Obj_func_80115C80 {
+    char pad0[0x4];
+    void *unk_4;
+    void *unk_8;
+    unsigned char unk_C[0x20];
+    char pad2C[0x65 - 0x2C];
+    unsigned char unk_65;
+};
+
 /* NOTE: byte-identical only when compiled at -O1.
  *
  * func_80115C80 -- reloads a device's 0x20-byte register block: after flushing any pending change

@@ -1,3 +1,4 @@
+#include "span_1000/code_8011D790.h"
 /* func_8011E488 -- initialises one object by handing func_8011F7F0 the object, its two handler
  * entry points and the count 6, then clearing the field at 0x14 and storing the two incoming
  * arguments at 0x18 and 0x1C. All three stores are sw, so the fields are words; the two handler

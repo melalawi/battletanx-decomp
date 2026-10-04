@@ -1,4 +1,20 @@
-#include "shared/func_800e6ca4.h"
+#include "span_1000/code_800E5FA8.h"
+#include "types.h"
+
+struct func_800E6CA4_S1;
+typedef struct func_800E6CA4_S1 func_800E6CA4_S1;
+
+
+
+struct func_800E6CA4_S1 {
+    char pad0[0x4D0];
+    f32 unk4D0;
+    f32 unk4D4;
+    f32 unk4D8;
+    f32 unk4DC;
+    f32 unk4E0;
+};
+
 #include "types.h"
 #define NULL ((void *)0)
 

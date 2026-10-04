@@ -1,4 +1,29 @@
-#include "shared/func_800e9da4.h"
+#include "span_1000/code_800E9538.h"
+#include "types.h"
+
+struct Ent;
+typedef struct Ent Ent;
+typedef struct Shape_func_800E9DA4 Shape_func_800E9DA4;
+
+struct Shape_func_800E9DA4;
+
+
+
+
+
+struct Ent {
+    char pad0[4];
+    struct Shape_func_800E9DA4 *obj;
+};
+struct Shape_func_800E9DA4 {
+    char pad0[0x24];
+    f32 x24;
+    char pad28[4];
+    f32 x2C;
+    char pad30[0x6C];
+    s32 x9C;
+};
+
 #include "types.h"
 /* Returns an entity weight: 0 when func_800E3470 rejects its object, else 0.5 if the object state is 8 or 9, plus 0.5 - func_800E0BC4(position) / 16000 when that is positive. */
 

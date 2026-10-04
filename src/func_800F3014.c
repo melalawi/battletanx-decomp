@@ -1,4 +1,23 @@
-#include "shared/func_800f3014.h"
+#include "span_1000/code_800F1708.h"
+#include "types.h"
+
+struct Func_800F3014_View0;
+
+
+struct Func_800F3014_View0 {
+    char pad_0[0xc];
+    s8 field_c;
+    s8 field_d;
+    s8 field_e;
+    s8 field_f;
+    u8 field_10;
+    u8 field_11;
+    char pad_12[0x2];
+    s32 field_14;
+    s32 field_18;
+    s32 field_1c;
+};
+
 
 #include "types.h"
 #define NULL ((void *)0)

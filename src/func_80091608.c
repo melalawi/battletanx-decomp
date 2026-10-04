@@ -1,4 +1,39 @@
-#include "shared/func_80091608.h"
+#include "span_1000/code_80090F94.h"
+#include "types.h"
+
+struct func_80091608_Object;
+typedef struct func_80091608_Object func_80091608_Object;
+typedef struct func_80091608_Output func_80091608_Output;
+typedef struct func_80091608_Status func_80091608_Status;
+
+struct func_80091608_Output;
+
+struct func_80091608_Status;
+
+
+
+
+
+
+
+struct func_80091608_Object {
+    char pad0[0x18];
+    s32 unk18;
+    char pad18[4];
+    u8 unk20;
+    char pad20[0xB];
+    s32 unk2C;
+};
+struct func_80091608_Output {
+    s32 code;
+    s32 value;
+};
+struct func_80091608_Status {
+    char pad0[8];
+    s32 unk8;
+    s32 unkC;
+};
+
 #include "types.h"
 #define NULL ((void *)0)
 

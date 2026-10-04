@@ -1,5 +1,19 @@
-#include "shared/typemap.h"
-#include "shared/func_8011dc98.h"
+#include "common/types.h"
+#include "span_1000/code_8011D790.h"
+#include "types.h"
+
+struct Shape_func_8011DC98;
+
+
+struct Shape_func_8011DC98 {
+    int unk_00;
+    int unk_04;
+    int unk_08;
+    int unk_0C;
+    int unk_10;
+    struct Shape_func_8011B9E0 *first;
+};
+
 /* func_8011DC98 -- drains the owner's single-entry list at 0x14: while that word is non-zero it
  * hands the entry to func_8011C150, then to func_8011C180 together with the address of the owner's
  * field at 0x04, and re-reads 0x14. The lw/sw widths make every field a word, and the loop keeping

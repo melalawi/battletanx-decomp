@@ -1,4 +1,16 @@
-#include "shared/func_800e4d44.h"
+#include "span_1000/code_800E3F90.h"
+#include "types.h"
+
+struct Func_800E4D44_Lists;
+
+
+struct Func_800E4D44_Lists {
+    s16 initial_ids[3];
+    u16 initial_count;
+    s16 extra_ids[15];
+    u16 extra_count;
+};
+
 
 #include "types.h"
 #define NULL ((void *)0)

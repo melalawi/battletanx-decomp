@@ -1,4 +1,14 @@
-#include "shared/func_800a4d1c.h"
+#include "span_1000/code_800A2A28.h"
+#include "types.h"
+
+struct Unknown800A4D1C;
+
+
+struct Unknown800A4D1C {
+    int unk_000[130];
+    int countdown;
+};
+
 /* func_800A4D1C -- the first function in this cartridge matched byte for byte.
  *
  * A saturating countdown on one field: decrement it, but never below zero. The field sits at

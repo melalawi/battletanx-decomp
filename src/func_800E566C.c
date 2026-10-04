@@ -1,4 +1,19 @@
-#include "shared/func_800e566c.h"
+#include "span_1000/code_800E3F90.h"
+#include "types.h"
+
+struct Rec;
+
+
+struct Rec {
+    char pad0[3];
+    unsigned char a;
+    unsigned char b;
+    unsigned char c;
+    unsigned char d;
+    unsigned char e;
+    int f;
+};
+
 /* Clears five bytes and one word of a record: the bytes at 0x4..0x7, the word at
  * 0x8, and last the byte at 0x3.
  * sb fixes 0x3..0x7 as single bytes and sw fixes 0x8 as a 32-bit field. */

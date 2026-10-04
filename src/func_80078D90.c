@@ -1,4 +1,29 @@
-#include "shared/func_80078d90.h"
+#include "span_1000/code_80077620.h"
+#include "types.h"
+
+struct func_80078D90_S1;
+typedef struct func_80078D90_S1 func_80078D90_S1;
+typedef struct func_80078D90_S2 func_80078D90_S2;
+
+struct func_80078D90_S2;
+
+
+
+
+
+struct func_80078D90_S1 {
+    char pad0[0xC];
+    u8 unkC;
+    char padC[1];
+    u16 unkE;
+    s32 unk10;
+    s32 unk14;
+};
+struct func_80078D90_S2 {
+    char pad0[4];
+    s32 unk4;
+};
+
 #include "types.h"
 #define NULL ((void *)0)
 s32 func_800A7650();

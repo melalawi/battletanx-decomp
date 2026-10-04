@@ -1,4 +1,25 @@
-#include "shared/func_8007d384.h"
+#include "span_1000/code_8007C6D8.h"
+#include "types.h"
+
+struct func_8007D384_S1;
+typedef struct func_8007D384_S1 func_8007D384_S1;
+typedef struct func_8007D384_S2 func_8007D384_S2;
+
+struct func_8007D384_S2;
+
+
+
+
+
+struct func_8007D384_S1 {
+    char pad0[0x218];
+    s32 unk218;
+};
+struct func_8007D384_S2 {
+    char pad0[0x10];
+    s32 unk10;
+};
+
 #include "types.h"
 #define NULL ((void *)0)
 

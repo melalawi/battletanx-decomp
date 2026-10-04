@@ -1,3 +1,4 @@
+#include "span_1000/code_8007EB64.h"
 /*
  * Returns the constant 0x12320.  The value is built with lui plus ori into
  * $v0, which is how a 32-bit integer constant too large for one immediate is

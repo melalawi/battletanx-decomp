@@ -19,11 +19,14 @@ T = TypeVar("T")
 _parsed: dict[tuple[str, tuple[Path, ...], Hashable], tuple[tuple[bytes, ...], Any]] = {}
 
 
-def parsed(kind: str, paths: Path | Sequence[Path], parse: Callable[[], T], *, extra: Hashable = None) -> T:
+def parsed(
+    kind: str, paths: Path | Sequence[Path], parse: Callable[[], T], *, extra: Hashable = None, share: bool = False
+) -> T:
     """Parse project inputs once per process while their bytes are unchanged.
 
     Every call reads and digests the inputs, so an edit is always observed.
     Callers treat the returned value as read-only; it is shared.
+    share opts path-independent results into reuse across byte-identical copies.
     """
     files = (Path(paths),) if isinstance(paths, (str, Path)) else tuple(Path(path) for path in paths)
     index = kind, tuple(path.absolute() for path in files), extra
@@ -31,6 +34,8 @@ def parsed(kind: str, paths: Path | Sequence[Path], parse: Callable[[], T], *, e
         digests = tuple(hashlib.blake2b(path.read_bytes(), digest_size=20).digest() for path in files)
     except OSError:
         return parse()
+    if share:
+        return remembered("parsed." + kind, (digests, extra), parse, keep=16)
     cached = _parsed.get(index)
     if cached is not None and cached[0] == digests:
         return cached[1]  # type: ignore[no-any-return]

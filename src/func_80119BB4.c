@@ -1,4 +1,32 @@
-#include "shared/func_80119bb4.h"
+#include "span_1000/code_801199A0.h"
+#include "types.h"
+
+struct Entry;
+typedef struct Entry Entry;
+typedef struct Shape_func_80119BB4 Shape_func_80119BB4;
+
+struct Shape_func_80119BB4;
+
+
+
+
+
+struct Entry {
+    char unk0[4];
+    short unk4;
+    unsigned char unk6;
+    unsigned char unk7;
+    unsigned char unk8;
+    unsigned char unk9;
+    unsigned char unkA;
+    unsigned char unkB;
+    float unkC;
+};
+struct Shape_func_80119BB4 {
+    char unk0[0x60];
+    struct Entry *entries;
+};
+
 /* Resets one 16-byte entry of the array hanging off offset 0x60 of the
    object to its default field values, ending with a 1.0f scale. The sb/sh/
    swc1 widths fixed the entry fields as bytes, a short at 0x4 and a float

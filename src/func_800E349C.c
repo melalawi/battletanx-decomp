@@ -1,4 +1,21 @@
-#include "shared/func_800e349c.h"
+#include "span_1000/code_800E2640.h"
+#include "types.h"
+
+struct Unknown800E349C;
+
+
+struct Unknown800E349C {
+    unsigned char unk_000[0x9C];
+    int word_09C;
+    int word_0A0;
+    unsigned char unk_0A4[0x344 - 0xA4];
+    short half_344;
+    unsigned char unk_346[2];
+    unsigned char byte_348;
+    unsigned char unk_349;
+    unsigned char byte_34A;
+};
+
 /* func_800E349C -- clears five fields of the object it is handed and returns nothing.
  *
  * Every store is of `$zero`, so this writes zeros and reads nothing back; the widths the

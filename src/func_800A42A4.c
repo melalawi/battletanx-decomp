@@ -1,4 +1,14 @@
-#include "shared/func_800a42a4.h"
+#include "span_1000/code_800A2A28.h"
+#include "types.h"
+
+struct Unknown800A42A4;
+
+
+struct Unknown800A42A4 {
+    u8 padding[0xF4];
+    s32 value;
+};
+
 /* func_800A42A4 -- returns the word at offset 0xF4 of its argument. */
 #include "types.h"
 

@@ -1,4 +1,17 @@
-#include "shared/func_8011e3f0.h"
+#include "span_1000/code_8011D790.h"
+#include "types.h"
+
+struct Shape_func_8011E3F0;
+typedef struct Shape_func_8011E3F0 Shape_func_8011E3F0;
+
+
+
+struct Shape_func_8011E3F0 {
+    char unk0[0x14];
+    int unk14;
+    int unk18;
+};
+
 /* Registers a pair of callbacks for the object with kind 3, then clears the
    object's word at 0x14 and sets the one at 0x18 to 1. The two lui/addiu
    pairs on function symbols fixed arguments two and three as function

@@ -1,3 +1,4 @@
+#include "span_1000/code_800E9538.h"
 /* func_800EA1B0 -- clears the word the argument points at.
  *
  * The whole function is the store, which rides the return's delay slot. Nothing says the target

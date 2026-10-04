@@ -1,3 +1,4 @@
+#include "span_1000/code_800E2640.h"
 #include "types.h"
 
               /* size 0x0 */

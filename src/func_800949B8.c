@@ -1,4 +1,16 @@
-#include "shared/func_800949b8.h"
+#include "span_1000/code_80093D30.h"
+#include "types.h"
+
+struct Best;
+typedef struct Best Best;
+
+
+
+struct Best {
+    int value;
+    void *owner;
+};
+
 /* func_800949B8 -- keeps the smallest value seen: it loads the current best from
  * the third argument with lw, compares the second argument against it with a
  * signed slt, and on a smaller value writes the value and the first argument

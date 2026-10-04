@@ -1,3 +1,4 @@
+#include "span_1000/code_8011B830.h"
 /*
  * Sets up one 16-byte request block on the stack with 0xF in its leading halfword
  * and hands it, together with the sub-object 0x48 bytes into arg0, to

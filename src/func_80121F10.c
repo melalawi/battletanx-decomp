@@ -1,3 +1,4 @@
+#include "span_1000/code_80121D28.h"
 /* func_80121F10 -- turns a virtual address into a physical one. An address in KSEG0
  * (0x80000000..0x9FFFFFFF) or KSEG1 (0xA0000000..0xBFFFFFFF) is masked with 0x1FFFFFFF;
  * anything else is handed to func_80121F90. The `sltu` comparisons fix the address and the

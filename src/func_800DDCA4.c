@@ -1,4 +1,20 @@
-#include "shared/func_800ddca4.h"
+#include "span_1000/code_800DADBC.h"
+#include "types.h"
+
+struct Shape_func_800DDCA4;
+typedef struct Shape_func_800DDCA4 Shape_func_800DDCA4;
+
+
+
+struct Shape_func_800DDCA4 {
+    void *unk0;
+    short unk4;
+    short unk6;
+    short unk8;
+    short unkA;
+    short unkC;
+};
+
 /* func_800DDCA4 -- initialises a header in place: its data pointer to just past the header, four halfwords to zero and the last to 0xF8; returns the header. */
 
 

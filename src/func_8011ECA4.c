@@ -1,5 +1,50 @@
-#include "shared/func_8011eca4.h"
-#include "shared/func_80119f70.h"
+#include "span_1000/code_8011D790.h"
+#include "types.h"
+#include "types.h"
+
+struct Heap;
+struct Shape_func_80119F70;
+
+
+
+
+struct Heap {
+    unsigned char unk_000[0x64];
+    struct Shape_func_80119F70 *used;
+    struct Shape_func_80119F70 *last;
+    struct Shape_func_80119F70 *free;
+};
+struct Shape_func_80119F70 {
+    struct Shape_func_80119F70 *next;
+};
+
+
+struct Shape_func_8011ECA4;
+typedef struct Shape_func_8011ECA4 Shape_func_8011ECA4;
+typedef struct Shape_func_8011ECA4_2 Shape_func_8011ECA4_2;
+
+struct Shape_func_8011ECA4_2;
+
+
+
+
+
+struct Shape_func_8011ECA4 {
+    struct Shape_func_8011ECA4_2 *owner;
+    char pad04[0x1A - 0x04];
+    short unk_1A;
+    char pad1C[0x38 - 0x1C];
+    int unk_38;
+    struct Shape_func_80119F70 *head;
+    struct Shape_func_80119F70 *tail;
+    char pad44[0x48 - 0x44];
+    int unk_48;
+};
+struct Shape_func_8011ECA4_2 {
+    char pad0[0x8];
+    void (*unk_8)(struct Shape_func_8011ECA4_2 *, int, void *);
+};
+
 /* func_8011ECA4 -- dispatches a command code on one object: code 3 appends the argument to the
  * object's node list (tail at 0x40, head at 0x3C), code 4 and code 9 set status fields and forward
  * the literal code to the parent's handler at parent+0x8, code 1 replaces the parent pointer, and

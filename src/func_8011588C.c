@@ -1,4 +1,29 @@
-#include "shared/func_8011588c.h"
+#include "span_1000/code_80114190.h"
+#include "types.h"
+
+struct Obj_func_8011588C;
+typedef struct Obj_func_8011588C Obj_func_8011588C;
+typedef struct Target_func_8011588C Target_func_8011588C;
+
+struct Target_func_8011588C;
+
+
+
+
+
+struct Obj_func_8011588C {
+    char pad0[0x4];
+    void *unk_4;
+    void *unk_8;
+    char pad0C[0x65 - 0x0C];
+    unsigned char unk_65;
+};
+struct Target_func_8011588C {
+    char pad0[0x1C];
+    unsigned short unk_1C;
+    unsigned short unk_1E;
+};
+
 /* NOTE: byte-identical only when compiled at -O1.
  *
  * func_8011588C -- reprobes a display device: it first flushes any pending change, then walks the

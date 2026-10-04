@@ -1,4 +1,16 @@
-#include "shared/func_8007aac0.h"
+#include "span_1000/code_8007A3D8.h"
+#include "types.h"
+
+struct S;
+typedef struct S S;
+
+
+
+struct S {
+    char pad[0x204];
+    int unk204;
+};
+
 /* func_8007AAC0 -- returns the field at 0x204 of the object D_801B4ABC points to, or 0 when there is none. */
 
 

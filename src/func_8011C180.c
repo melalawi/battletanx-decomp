@@ -1,4 +1,16 @@
-#include "shared/func_8011c150.h"
+#include "span_1000/code_8011B830.h"
+#include "types.h"
+
+struct Shape_func_8011C150;
+typedef struct Shape_func_8011C150 Shape_func_8011C150;
+
+
+
+struct Shape_func_8011C150 {
+    struct Shape_func_8011C150 *prev;
+    struct Shape_func_8011C150 *next;
+};
+
 /* Links a node in ahead of a list node: the new node takes the list node's
  * predecessor as its own and becomes that predecessor's successor.
  * Both links are words, at 0x0 for the predecessor and 0x4 for the successor. The

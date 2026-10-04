@@ -1,4 +1,5 @@
-#include "shared/prototypes.h"
+#include "types.h"
+#include "span_1000/code_800EB840.h"
 
               /* size 0x0 */
 

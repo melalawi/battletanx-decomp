@@ -1,4 +1,18 @@
-#include "shared/func_800aa328.h"
+#include "span_1000/code_800A9FC4.h"
+#include "types.h"
+
+struct func_800AA328_S1;
+typedef struct func_800AA328_S1 func_800AA328_S1;
+
+
+
+struct func_800AA328_S1 {
+    char pad0[0x4];
+    void * unk4;
+    char pad4[0x14 - 0x4 - sizeof(void*)];
+    u16 unk14;
+};
+
 /* Original packets use the classic F3DEX command encoding. */
 #undef F3DEX_GBI_2
 #define F3DEX_GBI

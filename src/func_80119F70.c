@@ -1,4 +1,22 @@
-#include "shared/func_80119f70.h"
+#include "span_1000/code_801199A0.h"
+#include "types.h"
+
+struct Heap;
+struct Shape_func_80119F70;
+
+
+
+
+struct Heap {
+    unsigned char unk_000[0x64];
+    struct Shape_func_80119F70 *used;
+    struct Shape_func_80119F70 *last;
+    struct Shape_func_80119F70 *free;
+};
+struct Shape_func_80119F70 {
+    struct Shape_func_80119F70 *next;
+};
+
 /* func_80119F70 -- unlinks one allocation from a heap's in-use list and pushes it onto the free
  * list. The caller hands over the payload address, so the block header is the four bytes ahead of
  * it, which is what the cartridge's `addiu $a2, $a1, -0x4` says. Every field touched is a word, so
