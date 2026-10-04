@@ -4,7 +4,6 @@
 extern void func_801121E0_us(void);
 extern int func_80112470_us(void);
 extern int func_80112480_us(void);
-extern void func_801124A0_us(int arg0);
 extern void func_80112C94_us(void);
 extern void func_80112D7C_us(void);
 extern struct Shape_func_801125F0_us * func_801130A0_us(void);

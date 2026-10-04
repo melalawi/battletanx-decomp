@@ -3,5 +3,4 @@
 extern void func_8009F544_us(void * arg0);
 extern void * func_8009F5BC_us(void * arg0, void * arg1);
 extern int func_800A0380_us(void);
-extern int func_800A04F0_us(void * arg0, void * arg1);
 #endif
