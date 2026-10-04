@@ -16,7 +16,7 @@ from typing import IO, Any
 
 
 @contextmanager
-def staging(path: Path) -> Iterator[Path]:
+def staging(path: Path, *, durable: bool = True) -> Iterator[Path]:
     """Yield a nonexistent private path on the destination filesystem."""
     path.parent.mkdir(parents=True, exist_ok=True)
     descriptor, name = tempfile.mkstemp(prefix=".publish-", suffix=path.suffix, dir=path.parent)
@@ -25,15 +25,16 @@ def staging(path: Path) -> Iterator[Path]:
     temporary.unlink()
     try:
         yield temporary
-        publish(temporary, path)
+        publish(temporary, path, durable=durable)
     finally:
         temporary.unlink(missing_ok=True)
 
 
-def publish(temporary: Path, path: Path) -> None:
+def publish(temporary: Path, path: Path, *, durable: bool = True) -> None:
     """Sync a private file, then replace the destination directory entry."""
-    with temporary.open("rb") as source:
-        os.fsync(source.fileno())
+    if durable:
+        with temporary.open("rb") as source:
+            os.fsync(source.fileno())
     os.replace(temporary, path)
 
 
@@ -84,11 +85,11 @@ def copyfile(source: Path, destination: Path, *, follow_symlinks: bool = True) -
     return destination
 
 
-def copy2(source: Path, destination: Path, *, follow_symlinks: bool = True) -> Path:
+def copy2(source: Path, destination: Path, *, follow_symlinks: bool = True, durable: bool = True) -> Path:
     destination = Path(destination)
     if destination.is_dir():
         destination /= Path(source).name
-    with staging(destination) as temporary:
+    with staging(destination, durable=durable) as temporary:
         shutil.copy2(source, temporary, follow_symlinks=follow_symlinks)
     return destination
 
@@ -111,7 +112,13 @@ def copytree(source: Path, destination: Path, **kwargs: Any) -> Path:
 
 def receipt(path: Path) -> None:
     """Advance a receipt's timestamp by replacing its inode, preserving bytes."""
-    write(path, path.read_bytes() if path.exists() else b"")
+    # Proved outputs are durable already; this replacement advances only a timestamp.
+    with staging(path, durable=False) as temporary:
+        if path.exists():
+            shutil.copyfile(path, temporary)
+            temporary.chmod(path.stat().st_mode & 0o777)
+        else:
+            temporary.touch()
 
 
 def command(outputs: list[Path], argv: list[str]) -> None:
