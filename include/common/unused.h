@@ -257,15 +257,6 @@ struct Shape_func_8007B280_us {
     int field_1C;
     int field_20;
 };
-struct Shape_func_8007BD24_us;
-struct Shape_func_8007BD24_us {
-    unsigned char padding_0[16];
-    int field_10;
-    unsigned char padding_14[38];
-    unsigned short field_3A;
-    unsigned char padding_3C[468];
-    int field_210;
-};
 /* Shape_func_8007C770_us: partial shape; common base value:func_800A31C0_us:us:33; size unknown; common base is not a global or a known-signature parameter/return */
 struct Shape_func_8007D850_us;
 struct Shape_func_8007D850_us {
@@ -474,10 +465,6 @@ struct Shape_func_80097DD0_us {
 /* Shape_func_800A16C0_us: partial shape; common base return:func_800A16C0_us:us:155:r2; size unknown; common-base callee ABI is incomplete or conflicting */
 /* Shape_func_800A2A44_2: partial shape; common base param:func_800A2EA4:r7; size unknown; common-base owner ABI is incomplete or conflicting */
 /* Shape_func_800A3DE0_us: partial shape; common base param:func_800A3DE0_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_800A9850_us;
-struct Shape_func_800A9850_us {
-    int field_0;
-};
 struct Shape_func_800AD340_us;
 struct Shape_func_800AD340_us {
     unsigned char padding_0[4];
@@ -777,43 +764,7 @@ struct Shape_func_8011D450_us {
     int field_44;
     int field_48;
 };
-struct Shape_func_8011D6D0;
-struct Shape_func_8011D6D0 {
-    unsigned char unknown_0[4];
-    unsigned char unknown_4[4];
-    unsigned char unknown_8[4];
-    unsigned char unknown_C[4];
-    unsigned char unknown_10[4];
-    unsigned char unknown_14[4];
-    unsigned char unknown_18[4];
-    unsigned char unknown_1C[4];
-    unsigned char unknown_20[4];
-    int field_24;
-    unsigned char unknown_28[4];
-    int field_2C;
-    int field_30;
-    int field_34;
-    unsigned char unknown_38[4];
-    unsigned char unknown_3C[4];
-    unsigned char unknown_40[4];
-    unsigned char unknown_44[4];
-    unsigned char unknown_48[4];
-};
 /* Shape_func_8011DCF8_us: partial shape; common base field:param:func_8011F29C_us:r4:60; size unknown; common-base owner ABI is incomplete or conflicting */
-struct Shape_func_8011E2E0;
-struct Shape_func_8011E2E0 {
-    unsigned char padding_0[20];
-    int field_14;
-    unsigned char unknown_18[4];
-    int field_1C;
-};
-struct Shape_func_8011E434;
-struct Shape_func_8011E434 {
-    unsigned char padding_0[20];
-    int field_14;
-    unsigned char unknown_18[4];
-    int field_1C;
-};
 /* Shape_func_8011E6B0_us: partial shape; common base field:value:func_8011E750_us:us:118:32; size unknown; common base is not a global or a known-signature parameter/return */
 /* Shape_func_80120910_us: partial shape; common base param:func_801210BC_us:r4; size unknown; common-base owner ABI is incomplete or conflicting */
 struct Shape_func_8012162C_us;

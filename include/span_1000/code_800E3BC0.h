@@ -1,8 +1,10 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800E3BC0_H
 #define UNBAKE_SPAN_1000_CODE_800E3BC0_H
 #include "../types.h"
-extern void func_800E480C(void);
+/* unbake published declaration: published_b2709d88bb30d13eadbe73b9 */
 extern void func_800E4814_us(void);
+
+extern void func_800E480C(void);
 extern int func_800E481C_us(int arg0);
 extern void * func_800E4A38_us(void);
 extern void func_800E4D2C_us(void * arg0);

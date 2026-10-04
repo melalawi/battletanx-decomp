@@ -1,6 +1,9 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800F45C8_H
 #define UNBAKE_SPAN_1000_CODE_800F45C8_H
 #include "common/types_d507c48987bb.h"
+/* unbake published declaration: published_088de745f195192d427a0563 */
+extern void func_800F5178(void);
+
 /* unbake published declaration: published_4e5082b9ca7f34df547c84e9 */
 extern int func_800F58F0(void);
 
@@ -13,6 +16,4 @@ extern int D_8035CD24;
 
 extern float func_800F46C8_us(void * arg0, void * arg1, void * arg2);
 extern void func_800F5128(void);
-extern void func_800F5178(void);
-extern int func_80102F8C_us(void);
 #endif

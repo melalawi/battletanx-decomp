@@ -1,6 +1,5 @@
 #ifndef UNBAKE_COMMON_TYPES_D507C48987BB_H
 #define UNBAKE_COMMON_TYPES_D507C48987BB_H
-#include "../types.h"
 struct QueryResult;
 /* unbake published declaration: published_60778d2a829571a8ff1f9275 */
 struct QueryResult { int unused[2]; int kind; };
@@ -27,9 +26,6 @@ typedef struct QueryBox QueryBox;
 struct QueryBox;
 /* unbake published declaration: published_3d1e2993526d7186ea4bab56 */
 struct QueryBox { short values[9]; };
-
-/* unbake published declaration: published_503feea1c70ef59e77385c9f */
-extern s32 D_801B4AA8;
 
 struct Shape_func_800B8804_us;
 /* unbake published declaration: published_e35999cbb490e5ae38fc178e */

@@ -1,4 +1,3 @@
-#include "common/types_d507c48987bb.h"
 #include "span_1000/code_8010BFDC.h"
 #include "types.h"
 

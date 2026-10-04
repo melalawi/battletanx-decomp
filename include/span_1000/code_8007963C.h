@@ -4,6 +4,9 @@
 /* unbake published declaration: published_2c567e8374e526bc53cd5003 */
 extern s32 D_801B4A48;
 
+/* unbake published declaration: published_35751dc0f24ff36775b34a0f */
+extern void func_80079684(void);
+
 struct Measured_func_8007A26C_us_9f751e433327;
 /* unbake published declaration: published_3aec693d35da05bb14bb9a92 */
 struct Measured_func_8007A26C_us_9f751e433327 { unsigned char padding[72]; short value; };
@@ -26,7 +29,6 @@ struct Measured_func_8007A26C_us_07091f3fea0d;
 struct Measured_func_8007A26C_us_07091f3fea0d { int value; };
 
 extern void func_8007967C(void);
-extern void func_80079684(void);
 extern int func_80079948_us(void);
 extern void func_800799C0_us(int arg0);
 extern void func_80079A5C(int a, float b);

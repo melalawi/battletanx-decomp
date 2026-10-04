@@ -1,5 +1,5 @@
-#include "common/types_d507c48987bb.h"
 #include "span_1000/code_800A5050.h"
+#include "span_1000/code_8010BFDC.h"
 #include "types.h"
 
 struct FuncA51E8State;
@@ -108,7 +108,7 @@ struct func_800A52AC_S1 {
  * 0x80072DEC = 30.0 (float, unnamed in this cartridge's tables)
  */
 s32 func_8011CC84();  /* extern */
-extern s32 D_801B4AA8;
+
 extern s32 D_80072DE8;                          
 
 

@@ -9,7 +9,9 @@ extern s32 func_800E9A00_us(struct Shape_func_800E6970_us *, float);
 /* unbake published declaration: published_a3acf443b0a777207c1233d0 */
 extern s32 D_8033A980;
 
-extern float func_800E9200_us(void * arg0);
+/* unbake published declaration: published_f11d9f4905cb830923e28e02 */
+extern int func_800E9A28_us(void);
+
 extern float func_800E92B8_us(void * arg0);
 extern float func_800E9458_us(void * arg0);
 extern float func_800E94D8_us(void * arg0);

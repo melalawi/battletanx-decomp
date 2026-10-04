@@ -1,6 +1,9 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800A8940_H
 #define UNBAKE_SPAN_1000_CODE_800A8940_H
 #include "../types.h"
+/* unbake published declaration: published_329ddadca9e691f034c7b966 */
+extern int func_800A9B70(int arg0, int arg1);
+
 extern int func_800A8E9C_us(void);
 extern int func_800A9010_us(void);
 extern int func_800A942C_us(void);

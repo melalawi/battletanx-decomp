@@ -1,6 +1,9 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800A6864_H
 #define UNBAKE_SPAN_1000_CODE_800A6864_H
 #include "../types.h"
+/* unbake published declaration: published_536cddc363cce8847fb779a1 */
+extern int func_800A68F0_us(void);
+
 /* unbake published declaration: published_8529a198e05dd4a235fd95af */
 extern float func_800A7650(void * arg0);
 

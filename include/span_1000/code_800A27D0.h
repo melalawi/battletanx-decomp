@@ -12,6 +12,9 @@ struct Shape_func_800A4D10_us {
     int field_208;
 };
 
+/* unbake published declaration: published_a8e1d9bba9a984115808223b */
+extern int func_800A42B0(int arg0);
+
 extern int func_800A3070_us(void);
 extern int func_800A30A8_us(void);
 extern void func_800A3D30(void *arg0);

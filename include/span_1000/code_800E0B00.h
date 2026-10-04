@@ -15,12 +15,12 @@ extern float D_80074428;
 
 extern void func_800E0B00(int arg0, void * arg1);
 extern float func_800E0C44_us(void * arg0);
-extern float func_800E0D54_us(void *arg0, void *arg1);
+extern float func_800E0D54_us(void * arg0, void * arg1);
 extern int func_800E0E1C_us(int arg0);
-extern float func_800E16DC_us(void *arg0, void *arg1, void *arg2);
-extern float func_800E1710_us(void *arg0, void *arg1, float arg2, void *arg3);
+extern float func_800E16DC_us(void * arg0, void * arg1, void * arg2);
+extern float func_800E1710_us(void * arg0, void * arg1, float arg2, void * arg3);
 extern int func_800E1A08_us(int arg0, int arg1);
 extern float func_800E1ED0_us(void);
-extern float func_800E1EE0_us(void *arg0);
+extern float func_800E1EE0_us(void * arg0);
 extern float func_800E21B4_us(void);
 #endif

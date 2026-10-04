@@ -26,6 +26,9 @@ struct Shape_func_800E6970_us;
 /* unbake published declaration: published_5ee6370cc1a99c56e196f511 */
 extern s32 func_800E6BBC_us(struct Shape_func_800E6970_us *);
 
+/* unbake published declaration: published_72992eaf8769e8fced31b4e1 */
+extern int func_800E6FA8_us(void);
+
 struct Shape_func_800E6970_us;
 /* unbake published declaration: published_78e51ad1a99953001cc02a05 */
 extern s32 func_800E6A78_us(struct Shape_func_800E6970_us *);
@@ -58,5 +61,4 @@ extern int func_800E5AB0_us(void);
 extern int func_800E6A30_us(struct Shape_func_800E3F90_us * arg0);
 extern int func_800E6A70_us(void);
 extern int func_800E6FA0_us(void);
-extern int func_800E6FA8_us(void);
 #endif
