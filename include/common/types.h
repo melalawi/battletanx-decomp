@@ -35,6 +35,9 @@ struct Shape_func_8011B9E0 {
     int field_0;
 };
 
+/* unbake published declaration: published_0993fafdb99ebde0db51a6a7 */
+extern s32 D_801C9170;
+
 /* unbake published declaration: published_0fcd11a23121fd9b23dda456 */
 extern float D_80150380;
 
@@ -193,6 +196,9 @@ struct QueryRecord { QueryBox box; char tail[22]; };
 /* unbake published declaration: published_6ef35b8e4f5c986beebd3230 */
 extern s32 D_8014C0B0;
 
+/* unbake published declaration: published_72d0aa42125b7cfd84fba558 */
+extern u16 D_802DF34A;
+
 /* unbake published declaration: published_74f87bb4c7b05e212648b5c6 */
 extern float D_803275F0;
 
@@ -306,6 +312,9 @@ extern float D_802D5BB7;
 
 /* unbake published declaration: published_ef07876fccf06400e9fb4aab */
 extern s32 D_802E17A0;
+
+/* unbake published declaration: published_efb5be227a8f50d8d7854ef3 */
+extern s32 D_802C13F0;
 
 /* unbake published declaration: published_f0106488cf79262ad70d30f0 */
 extern unsigned char D_8014E0D0;
@@ -2474,7 +2483,6 @@ extern int D_801B4A40;
 extern short D_801B4A58[];
 extern int D_801B4AC0;
 extern int D_801B4AD0;
-extern s32 D_801C9170;
 extern int D_801C9188;
 extern float D_802C13E8;
 extern float D_802C13EC;
@@ -2573,6 +2581,7 @@ extern int D_802C3A24;
 extern float D_802D8150;
 extern float D_802D8154;
 extern int D_802DF348;
+extern s32 D_802DF350;
 extern int D_802DF540[];
 extern int D_80327628;
 extern int D_8032762C;

@@ -6,4 +6,5 @@ extern int func_80081A30(void);
 
 extern int func_80080EEC_us(void);
 extern int func_80081788_us(void);
+extern void func_80081A40_us(int arg0);
 #endif
