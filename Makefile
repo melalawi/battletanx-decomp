@@ -239,6 +239,7 @@ $(BUILD)/obj/src/func_80085330.built: tools/compile/units/func_80085330.json
 $(BUILD)/obj/src/func_80085460.built: tools/compile/units/func_80085460.json
 $(BUILD)/obj/src/func_80085468.built: tools/compile/units/func_80085468.json
 $(BUILD)/obj/src/func_8008C2DC_us.built: tools/compile/units/func_8008C2DC_us.json
+$(BUILD)/obj/src/func_800907CC_us.built: tools/compile/units/func_800907CC_us.json
 $(BUILD)/obj/src/func_80090F10.built: tools/compile/units/func_80090F10.json
 $(BUILD)/obj/src/func_80091608.built: tools/compile/units/func_80091608.json
 $(BUILD)/obj/src/func_800916B8.built: tools/compile/units/func_800916B8.json
@@ -272,6 +273,8 @@ $(BUILD)/obj/src/func_800A52AC.built: tools/compile/units/func_800A52AC.json
 $(BUILD)/obj/src/func_800A59E8.built: tools/compile/units/func_800A59E8.json
 $(BUILD)/obj/src/func_800A66B0_us.built: tools/compile/units/func_800A66B0_us.json
 $(BUILD)/obj/src/func_800A66C0.built: tools/compile/units/func_800A66C0.json
+$(BUILD)/obj/src/func_800A68E0_us.built: tools/compile/units/func_800A68E0_us.json
+$(BUILD)/obj/src/func_800A68F0_us.built: tools/compile/units/func_800A68F0_us.json
 $(BUILD)/obj/src/func_800A6E10.built: tools/compile/units/func_800A6E10.json
 $(BUILD)/obj/src/func_800A72C8.built: tools/compile/units/func_800A72C8.json
 $(BUILD)/obj/src/func_800A74AC.built: tools/compile/units/func_800A74AC.json
@@ -290,6 +293,7 @@ $(BUILD)/obj/src/func_800AB614.built: tools/compile/units/func_800AB614.json
 $(BUILD)/obj/src/func_800AB95C.built: tools/compile/units/func_800AB95C.json
 $(BUILD)/obj/src/func_800ABFA0.built: tools/compile/units/func_800ABFA0.json
 $(BUILD)/obj/src/func_800ABFD0.built: tools/compile/units/func_800ABFD0.json
+$(BUILD)/obj/src/func_800AC2D0_us.built: tools/compile/units/func_800AC2D0_us.json
 $(BUILD)/obj/src/func_800B8750.built: tools/compile/units/func_800B8750.json
 $(BUILD)/obj/src/func_800CE4B0.built: tools/compile/units/func_800CE4B0.json
 $(BUILD)/obj/src/func_800DD9E8_us.built: tools/compile/units/func_800DD9E8_us.json

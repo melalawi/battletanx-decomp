@@ -238,6 +238,9 @@ extern float D_80150350;
 /* unbake published declaration: published_903a35ed56c04ec960f3b099 */
 extern int D_802D8148;
 
+/* unbake published declaration: published_92a56c86cb4bb8d3d1419b0f */
+extern s32 D_802DF350;
+
 /* unbake published declaration: published_96b57ea7f95fd498bce6ba4a */
 extern int D_802E17A8[];
 
@@ -284,6 +287,9 @@ extern unsigned char D_803C75C8[];
 
 /* unbake published declaration: published_ca90412a9129beb2414bcd0e */
 extern double D_800723B0;
+
+/* unbake published declaration: published_ccb26345a6bfd46e7a068acb */
+extern s8 D_803276E0;
 
 /* unbake published declaration: published_d0a287c79d13d6d528157b0b */
 extern float D_800723B8;
@@ -2581,7 +2587,6 @@ extern int D_802C3A24;
 extern float D_802D8150;
 extern float D_802D8154;
 extern int D_802DF348;
-extern s32 D_802DF350;
 extern int D_802DF540[];
 extern int D_80327628;
 extern int D_8032762C;
