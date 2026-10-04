@@ -4,8 +4,9 @@ import re
 import struct
 from collections.abc import Callable, Mapping
 
+from atomic import write
 from elf import Object
-from rodata import pools, relocated
+from rodata import pools, relocated, table_pointer_bias
 
 ANCHOR = re.compile(r"unbake_rodata_([0-9A-F]{8})_([0-9A-F]+)$")
 
@@ -37,6 +38,8 @@ def arrange(
     *,
     emit_resident: bool = False,
     slices: list[dict[str, int]] | None = None,
+    provided: list[dict[str, int]] | None = None,
+    persist: bool = True,
 ) -> int:
     """Expand shared literal uses and preserve resident gaps, proving each emitted word.
 
@@ -45,6 +48,7 @@ def arrange(
     emitted byte must belong to a proved reference. The resulting object remains
     an ordinary relocatable ELF with its original symbols and relocation kinds.
     """
+    original_data = bytes(obj.data) if persist else None
     index, text = obj.section(section), obj.section(".text")
     if index is None or text is None:
         raise ValueError(f"{section}: missing constant or text section")
@@ -76,12 +80,7 @@ def arrange(
             raise ValueError(f"{section}: missing HI16 pair")
         for at, high in highs:
             original, target = target_words.get(at), target_words.get(offset)
-            if original is None or target is None:
-                raise ValueError(f"{section}: missing aligned pool reference at 0x{offset:X}")
-            if (high ^ original) & 0xFFFF0000 or (word ^ target) & 0xFFFF0000:
-                raise ValueError(f"{section}: pool reference instruction differs at 0x{offset:X}")
             own = ((high & 0xFFFF) << 16) + signed(word) + symbol["value"]
-            address = (((original & 0xFFFF) << 16) + signed(target)) & 0xFFFFFFFF
             table = next((pool for pool in tables if pool.offset == own), None)
             string = table is None and word >> 26 in (9, 13)
             if string:
@@ -95,10 +94,25 @@ def arrange(
                 raise ValueError(f"{section}: reference has no literal load or jump table")
             if own < 0 or (not string and own % 4) or own + size > len(source):
                 raise ValueError(f"{section}: reference outside pool words")
+            anchored = {
+                address + own - start
+                for start, address, extent in anchors
+                if start <= own < own + size <= start + extent
+            }
+            if original is None or target is None:
+                if len(anchored) != 1:
+                    raise ValueError(f"{section}: missing aligned pool reference at 0x{offset:X}")
+                address = anchored.pop()
+            else:
+                if (high ^ original) & 0xFFFF0000 or (word ^ target) & 0xFFFF0000:
+                    raise ValueError(f"{section}: pool reference instruction differs at 0x{offset:X}")
+                address = (((original & 0xFFFF) << 16) + signed(target)) & 0xFFFFFFFF
+                if anchored and anchored != {address}:
+                    raise ValueError(f"{section}: pool reference disagrees with explicit storage")
             expected = (read_table or read_memory)(address, size) if table else read_memory(address, size)
             actual = material[own : own + size]
             raw = read_memory(address, size)
-            if actual != expected and (table is None or actual != raw):
+            if actual != expected and (table is None or table_pointer_bias(actual, raw) is None):
                 raise ValueError(f"{section}.bytes: disagree at 0x{address:08X}")
             if emit_resident and table is not None and actual != raw and own not in normalized:
                 normalized.add(own)
@@ -120,17 +134,46 @@ def arrange(
     if not anchors:
         end = (end + 3) & ~3
     if slices:
-        for _, address, size in chunks:
-            if not any(
-                row["address"] <= address < address + size <= row["address"] + row["end"] - row["start"]
+        if provided is not None:
+            slices = [
+                row
                 for row in slices
-            ):
+                if any(
+                    address < row["address"] + row["end"] - row["start"] and row["address"] < address + size
+                    for _, address, size in chunks
+                )
+            ]
+        for _, address, size in chunks:
+            covered_span = sum(
+                max(0, min(address + size, row["address"] + row["end"] - row["start"]) - max(address, row["address"]))
+                for row in slices
+            )
+            if covered_span != size:
                 raise ValueError(f"layout.pool_owner: {section}: unassigned compiler bytes at 0x{address:08X}")
         base = min(row["address"] for row in slices)
         end = max(row["address"] + row["end"] - row["start"] for row in slices)
     if not slices and end - base > max(0x10000, len(source) * 16):
         raise ValueError(f"{section}: pool references cross unrelated resident spans")
-    if slices:
+    if slices and provided is not None:
+        # Only proved compiler bytes change providers. Unemitted resident bytes
+        # remain with assembly, including private constants referenced as externs.
+        result = bytearray(end - base)
+        for row in sorted(slices, key=lambda row: row["address"]):
+            ranges = sorted(
+                (max(address, row["address"]), min(address + size, row["address"] + row["end"] - row["start"]))
+                for _, address, size in chunks
+                if address < row["address"] + row["end"] - row["start"] and row["address"] < address + size
+            )
+            merged: list[tuple[int, int]] = []
+            for start, stop in ranges:
+                if merged and start <= merged[-1][1]:
+                    merged[-1] = merged[-1][0], max(merged[-1][1], stop)
+                else:
+                    merged.append((start, stop))
+            for start, stop in merged:
+                rom = row["start"] + start - row["address"]
+                provided.append(dict(address=start, start=rom, end=rom + stop - start))
+    elif slices:
         result = bytearray(end - base)
         for row in slices:
             size = row["end"] - row["start"]
@@ -193,12 +236,10 @@ def arrange(
     replace(obj, index, result)
     if obj.path.is_symlink():
         raise ValueError(f"{obj.path}: cannot rewrite a symlink object")
-    temporary = obj.path.with_name(obj.path.name + ".partial")
-    try:
-        temporary.write_bytes(obj.data)
-        temporary.replace(obj.path)
-    finally:
-        temporary.unlink(missing_ok=True)
+    if persist:
+        material = bytes(obj.data)
+        if material != original_data:
+            write(obj.path, material)
     return base
 
 
@@ -208,6 +249,8 @@ def signed(word: int) -> int:
 
 def replace(obj: Object, index: int, data: bytes | bytearray) -> None:
     """Append replacement contents without disturbing other ELF offsets."""
+    if obj.content(index) == data:
+        return
     obj.data.extend(bytes(-len(obj.data) % 4))
     obj.sections[index][4:6] = [len(obj.data), len(data)]
     obj.data.extend(data)

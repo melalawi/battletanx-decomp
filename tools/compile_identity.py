@@ -1,405 +1,262 @@
-"""Cache compatibility for the reviewed CPU-only driver optimization.
+"""Step-specific code generators and selected compiler companion files.
 
-The SHA is of the generated optimized driver, with its standalone imports.
-Only that exact revision may reuse the legacy fingerprint. Later edits use
-actual driver bytes until independently proved compatible.
+The global compiler.sha256 manifest verifies publication. Its unrelated rows and
+its own timestamp are deliberately absent from object identity.
 """
 
-OPTIMIZED_SHA256 = "15d4f0e8cbe92bccc06f9d77ef8dc4c439732310120cad814cfbc596659cc1dc"
-
-# Preserve the original length-prefixed key input, not merely its SHA.
-LEGACY_DRIVER = r'''#!/usr/bin/env python3
-"""Compile or assemble a content-keyed object with the declared project recipe."""
-
-from __future__ import annotations
-
 import argparse
+import ast
+import fcntl
 import hashlib
 import json
-import os
-import re
 import shutil
-import subprocess
-import tempfile
-import tomllib
-from functools import lru_cache
+from collections.abc import Mapping
 from pathlib import Path
-from typing import TypedDict, cast
+from typing import Any
 
-from cache import Cache, key
+from atomic import write
 from host import resolve_tool
 
-Compiler = TypedDict("Compiler", {"kind": str, "cc": str, "cflags": list[str], "as": str})
 
-
-Recipe = TypedDict(
-    "Recipe",
-    {
-        "units": dict[str, str],
-        "default_compiler": str,
-        "assembly_compiler": str | None,
-        "compilers": dict[str, Compiler],
-        "macros": dict[str, list[str]],
-        "sn64_asflags": list[str],
-        "asflags": list[str],
-        "asm": str,
-        "include": list[str],
-        "unit_cflags": dict[str, list[str]],
-        "cpp": str,
-        "cppflags": list[str],
-        "as": str,
-    },
-)
-
-
-def run(command: list[str]) -> bytes:
-    result = subprocess.run(command, capture_output=True)
-    if result.returncode:
-        raise ValueError(
-            f"{command[0]} exited {result.returncode}: " + (result.stdout + result.stderr).decode(errors="replace")
-        )
-    return result.stdout
-
-
-def compiler_for(data: Recipe, unit: str) -> str:
-    ident = data["units"].get(Path(unit).stem, data["default_compiler"])
-    if ident not in data["compilers"]:
-        raise ValueError(f"[units].{unit}: unknown compiler {ident}")
-    return ident
-
-
-def cache_root() -> Path:
-    explicit = os.environ.get("UNBAKE_POLICY")
-    base = Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
-    path = Path(explicit) if explicit else base / "unbake/policy.toml"
-    with path.open("rb") as source:
-        data = tomllib.load(source)
-    if "cache_root" not in data:
-        raise ValueError(f"{path} cache_root: missing value")
-    return Path(data["cache_root"]).expanduser()
-
-
-def external_branches(content: bytes) -> bytes:
-    text = content.decode()
-    labels = set(re.findall(r"^\s*([.\w]+):", text, re.M))
-    lines = []
-    for line in text.splitlines(keepends=True):
-        match = re.search(
-            r"/\*\s*[0-9A-Fa-f]+\s+[0-9A-Fa-f]+\s+([0-9A-Fa-f]{8})\s*\*/\s*(\w+)\s+.*?(\.L[0-9A-Fa-f]+)(?:\s*/\*.*?\*/)?\s*$",
-            line,
-        )
-        handwritten = (
-            re.search(r"/\*\s*[0-9A-Fa-f]+\s+[0-9A-Fa-f]+\s+([0-9A-Fa-f]{8})\s*\*/", line)
-            if "handwritten instruction" in line and not re.search(r"%(?:hi|lo)\(", line)
-            else None
-        )
-        if handwritten or (match and match[3] not in labels and match[2].startswith(("b", "j"))):
-            if handwritten:
-                word = handwritten[1]
-            else:
-                assert match is not None
-                word = match[1]
-            line = f"    .word 0x{word}" + ("\n" if line.endswith("\n") else "")
-        lines.append(line)
-    return "".join(lines).encode()
-
-
-def read_recipe(path: Path) -> Recipe:
-    return cast(Recipe, json.loads(path.read_text()))
-
-
-@lru_cache(maxsize=64)
-def tool_digest(paths: tuple[Path, ...]) -> str:
-    """Fingerprint immutable build tools once per compiler process."""
-    return key(*paths)
-
-
-def codegen_flags(flags: list[str]) -> list[str]:
-    """Remove preprocessing options from a compiler invocation on a .i file."""
-    result = []
-    previous = False
-    for flag in flags:
-        if previous:
-            previous = False
-        elif flag in {"-I", "-D", "-U", "-include", "-imacros", "-isystem", "-iquote"}:
-            previous = True
-        elif not flag.startswith(("-I", "-D", "-U")) and flag != "-c":
-            result.append(flag)
-    if previous:
-        raise ValueError("preprocessor option missing its value")
-    return result
-
-
-def assembly_inputs(asflags: list[str]) -> tuple[list[str], list[str | bytes]]:
-    """Identify assembler include contents, independently of directory spelling."""
-    flags: list[str] = []
-    inputs: list[str | bytes] = []
-    previous = False
-    for flag in asflags:
-        if previous or flag.startswith("-I"):
-            if flag == "-I" and not previous:
-                previous = True
-                continue
-            root = Path(flag if previous else flag[2:])
-            previous = False
-            files = sorted(path for path in root.rglob("*") if path.is_file())
-            inputs.append("include-directory")
-            for path in files:
-                inputs.extend((str(path.relative_to(root)), path.read_bytes()))
-        else:
-            flags.append(flag)
-    if previous:
-        raise ValueError("assembler include option missing its value")
-    return flags, inputs
-
-
-def dependency_paths(text: str) -> list[str]:
-    """Combine compiler dependency rules, including IDO's separate header rule."""
-    return list(
-        dict.fromkeys(
-            word
-            for line in text.replace("\\\n", " ").splitlines()
-            if ":" in line
-            for word in line.split(":", 1)[1].split()
-        )
-    )
-
-
-def compile_object(args: argparse.Namespace, data: Recipe | None = None) -> None:
-    if data is None:
-        data = read_recipe(args.recipe)
-    out = args.output.resolve()
-    out.parent.mkdir(parents=True, exist_ok=True)
-    version = args.version
-    if version not in data["macros"]:
-        raise ValueError(f"version.{version}: unknown VERSION")
-    assembly = args.kind == "as"
-    ident = data["assembly_compiler"] if assembly else compiler_for(data, args.unit)
-    compiler = data["compilers"][ident] if ident else None
-    sn64 = compiler is not None and compiler["kind"] == "sn64"
+def driver_names(kind: str, sn64: bool) -> tuple[str, ...]:
+    names: tuple[str, ...] = ("codegen.py",)
+    if kind == "cc":
+        names += ("elf.py",)
     if sn64:
-        data["cpp"] = resolve_tool(data["cpp"])
-    elif assembly:
-        data["as"] = resolve_tool(data["as"])
-    asflags = [
-        *(data["sn64_asflags"] if sn64 and not assembly else data["asflags"]),
+        names += ("sn64_cc.py",)
+        if kind == "as":
+            names += ("resolve_external_branches.py",)
+    return names
+
+
+def selected_pins(groups: dict[str, dict[str, str]], cc: Path, tools: Path, kind: str | None = None) -> dict[str, str]:
+    if cc.parent.absolute() == tools.absolute():
+        # A compiler directly in tools must not absorb generated helper pins.
+        return {str(cc): groups.get(str(cc.parent), {})[str(cc)]} if str(cc) in groups.get(str(cc.parent), {}) else {}
+    # IDO's C pipeline does not invoke Pascal/C++ frontends, diagnostic catalogs,
+    # target runtime libraries, or the bundled executable linker/report tools.
+    c_pipeline = {"acpp", "as0", "as1", "cc", "cfe", "copt", "ugen", "ujoin", "uld", "umerge", "uopt", "usplit"}
+    return {
+        name: digest
+        for parent, entries in groups.items()
+        if Path(parent).is_relative_to(cc.parent)
+        for name, digest in entries.items()
+        if kind != "ido" or Path(name).name in c_pipeline or Path(name) == cc
+    }
+
+
+class _Logic(ast.NodeTransformer):
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> ast.AST:
+        if node.module is not None:
+            node.module = node.module.removeprefix("unbake.project_tools.")
+            if node.module == "unbake.project.cache":
+                node.module = "cache"
+        return node
+
+    def visit_Expr(self, node: ast.Expr) -> ast.AST | None:
+        return None if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str) else node
+
+
+class _Scope(ast.NodeTransformer):
+    """Project branches whose conditions are fixed by the compile kind."""
+
+    def __init__(self, kind: str, sn64: bool):
+        self.values = {"assembly": kind == "as", "sn64": sn64}
+        self.unused = (
+            {"compiler_for", "codegen_flags", "preprocessed_dependencies"} if kind == "as" else {"external_branches"}
+        )
+        if kind == "cc" and not sn64:
+            self.unused.add("assembly_inputs")
+
+    def boolean(self, node: ast.expr) -> bool | None:
+        if isinstance(node, ast.Name):
+            return self.values.get(node.id)
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
+            value = self.boolean(node.operand)
+            return None if value is None else not value
+        if isinstance(node, ast.BoolOp):
+            values = [self.boolean(item) for item in node.values]
+            if isinstance(node.op, ast.And):
+                return False if False in values else True if all(value is True for value in values) else None
+            return True if True in values else False if all(value is False for value in values) else None
+        return None
+
+    def visit_If(self, node: ast.If) -> ast.AST | list[ast.AST]:
+        value = self.boolean(node.test)
+        if value is None:
+            return self.generic_visit(node)
+        result: list[ast.AST] = []
+        for item in node.body if value else node.orelse:
+            visited = self.visit(item)
+            if isinstance(visited, list):
+                result.extend(visited)
+            elif visited is not None:
+                result.append(visited)
+        return result
+
+    def visit_IfExp(self, node: ast.IfExp) -> ast.AST:
+        value = self.boolean(node.test)
+        return self.generic_visit(node) if value is None else self.visit(node.body if value else node.orelse)
+
+    def visit_FunctionDef(self, node: ast.FunctionDef) -> ast.AST | None:
+        return None if node.name in self.unused else self.generic_visit(node)
+
+
+def driver_stamp_name(name: str, kind: str, sn64: bool) -> str:
+    """Keep shared helpers shared, and project the mixed C/assembly generator."""
+    return f"codegen.{kind}.{'sn64' if sn64 else 'native'}.sha256" if name == "codegen.py" else name + ".sha256"
+
+
+def driver_content(path: Path, kind: str | None = None, sn64: bool = False) -> bytes:
+    """Hash executable generator logic, excluding comments and linker-only ELF methods."""
+    tree = ast.parse(path.read_text())
+    if path.name == "elf.py":
+        for node in tree.body:
+            if isinstance(node, ast.ClassDef) and node.name == "Object":
+                node.body = [
+                    item for item in node.body if not isinstance(item, ast.FunctionDef) or item.name != "relocations"
+                ]
+    if kind is not None and path.name == "codegen.py":
+        tree = _Scope(kind, sn64).visit(tree)
+    return ast.dump(_Logic().visit(tree), include_attributes=False).encode()
+
+
+def binary_content(path: Path) -> str:
+    """Read executable bytes, independently of timestamps or publication pins."""
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        while block := source.read(1024 * 1024):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def publish_stamp(path: Path, content: str) -> None:
+    """Replace only changed identity content, including on hardlinked copies."""
+    payload = (content + "\n").encode()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with (path.parent / ".identity.lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if not path.is_file() or path.read_bytes() != payload:
+            write(path, payload)
+
+
+def assembler_headers(data: Mapping[str, Any], version: str, kind: str = "as") -> list[str]:
+    """Track the same include-directory inputs that the assembly cache hashes."""
+    flags = [
+        *(data["sn64_asflags"] if kind == "cc" else data["asflags"]),
         "-I" + str(Path(data["asm"]) / version / "include"),
     ]
-    flags: list[str] = []
-    if not assembly:
-        assert compiler is not None
-        flags = [
-            *("-I" + p for p in data["include"]),
-            *compiler["cflags"],
-            *("-D" + macro for macro in data["macros"][version]),
-        ]
-        if args.non_matching == "1":
-            flags.append("-DNON_MATCHING=1")
-        direct = data["unit_cflags"].get(args.unit)
-        stem = data["unit_cflags"].get(Path(args.unit).stem)
-        if direct is not None and stem is not None and direct != stem:
-            raise ValueError(f"[build].unit_cflags.{args.unit}: conflicting stem flags")
-        flags.extend(direct if direct is not None else stem if stem is not None else [])
-    dependencies = []
-    if args.depfile:
-        args.depfile.parent.mkdir(parents=True, exist_ok=True)
-        dependencies = ["-MMD", "-MP", "-MF", str(args.depfile), "-MT", args.dep_target or str(out)]
-    if sn64:
-        from sn64_cc import partition_flags
+    headers: list[str] = []
+    previous = False
+    for flag in flags:
+        if flag == "-I" and not previous:
+            previous = True
+        elif previous or flag.startswith("-I"):
+            root = Path(flag if previous else flag[2:])
+            previous = False
+            headers.extend(str(path) for path in sorted(root.rglob("*")) if path.is_file())
+    if previous:
+        raise ValueError("assembler include option missing its value")
+    return list(dict.fromkeys(headers))
 
-        preprocess, codeflags = partition_flags(flags)
-        if assembly:
-            preprocess = [flag for flag in asflags if flag.startswith("-I")]
-        cppflags = ["-P", "-undef", "-nostdinc"] if assembly else data["cppflags"]
-        if assembly:
-            with tempfile.NamedTemporaryFile(prefix=".input-", suffix=".s", dir=out.parent) as temporary:
-                temporary.write(external_branches(args.source.read_bytes()))
-                temporary.flush()
-                content = run([data["cpp"], *cppflags, *preprocess, *dependencies, temporary.name])
-                if args.depfile:
-                    text = args.depfile.read_text().replace(temporary.name, str(args.source))
-                    args.depfile.write_text(text)
-        else:
-            content = run(
-                [
-                    data["cpp"],
-                    *("-I" + p for p in data["include"]),
-                    *cppflags,
-                    *preprocess,
-                    *dependencies,
-                    str(args.source),
-                ]
-            )
-        if assembly:
-            from resolve_external_branches import read_symbols, resolve
 
-            symbols, units = read_symbols(args.symbols)
-            content = resolve(content.decode(), args.source.stem, symbols, units).encode()
-    elif assembly:
-        # GNU assembly includes are dependency inputs, not preprocessor directives.
-        include_root = Path(data["asm"]) / version / "include"
-        includes = sorted(include_root.rglob("*")) if include_root.exists() else []
-        content = external_branches(args.source.read_bytes())
-    else:
-        assert compiler is not None
-        cc = compiler["cc"]
-        if args.depfile:
-            text = run([cc, *[f for f in flags if f != "-c"], "-M", str(args.source)]).decode()
-            target = args.dep_target or str(out)
-            args.depfile.write_text(target + ": " + " ".join(dependency_paths(text)) + "\n")
-        content = run([cc, *[f for f in flags if f != "-c"], "-E", str(args.source)])
+def repair_assembly_depfiles(recipe: Path, build: Path, version: str) -> None:
+    """Migrate assembler include metadata without rerunning either compiler."""
+    from codegen import dependency_paths
 
-    manifest = args.recipe.parent / "compiler.sha256"
-    pins = {}
-    if manifest.is_file():
-        for line in manifest.read_text().splitlines():
-            fields = line.split(maxsplit=1)
-            if len(fields) == 2 and not line.startswith("#"):
-                pins[fields[1].lstrip("*")] = fields[0]
-    selected = {
-        name: digest
-        for name, digest in pins.items()
-        if ident and compiler is not None and str(Path(name).parent) == str(Path(compiler["cc"]).parent)
-    }
-    driver_names = (
-        (
-            "compile.py",
-            "elf.py",
-            "sn64_cc.py",
-            "resolve_external_branches.py",
-        )
-        if sn64
-        else ("compile.py", "elf.py")
-    )
-    inputs = [args.recipe.parent / name for name in driver_names]
-    if sn64:
+    data = json.loads(recipe.read_text())
+    kinds = {ident: compiler["kind"] for ident, compiler in data["compilers"].items()}
+    sn64 = "sn64" in kinds.values()
+    headers = {"asm": assembler_headers(data, version), "src": assembler_headers(data, version, "cc") if sn64 else []}
+    marker = build / ".assembly-dependencies"
+    payload = (json.dumps([headers, kinds, data["default_compiler"], data["units"]], sort_keys=True) + "\n").encode()
+    if marker.is_file() and marker.read_bytes() == payload:
+        return
+    for category in ("asm", "src"):
+        if category == "src" and not sn64:
+            continue
+        base = build / "obj" / category
+        for path in base.rglob("*.d"):
+            if category == "src":
+                unit = path.relative_to(base).stem
+                ident = data["units"].get(unit, data["default_compiler"])
+                if kinds[ident] != "sn64":
+                    continue
+            text = path.read_text()
+            if ":" not in text:
+                continue
+            target = text.split(":", 1)[0]
+            dependencies = list(dict.fromkeys([*dependency_paths(text), *headers[category]]))
+            updated = target + ": " + " ".join(dependencies) + "\n"
+            if updated != text:
+                write(path, updated.encode())
+    write(marker, payload)
+
+
+def sync_drivers(recipe: Path) -> None:
+    """Use the cache's projection for installed driver logic, ignoring comments."""
+    from cache import key
+
+    for kind in ("cc", "as"):
+        for sn64 in (False, True):
+            for name in driver_names(kind, sn64):
+                path = recipe.parent / name
+                if path.is_file():
+                    content = key(driver_content(path, kind, sn64))
+                    stamp = recipe.parent / "compile/drivers" / driver_stamp_name(name, kind, sn64)
+                    publish_stamp(stamp, content)
+    data = json.loads(recipe.read_text())
+    if any(compiler["kind"] == "sn64" for compiler in data["compilers"].values()):
         import abumasn64
 
         assert abumasn64.__file__ is not None
-        inputs.extend(sorted(Path(abumasn64.__file__).parent.glob("*.py")))
-    if assembly and not sn64:
-        inputs.extend(p for p in includes if p.is_file())
-        assembler = shutil.which(data["as"]) if "/" not in data["as"] else data["as"]
-        if not assembler:
-            raise ValueError(f"[build].as: missing executable {data['as']}")
-        inputs.append(Path(assembler))
-    # A .i input is already preprocessed. Macro definitions, CPP options and
-    # include directory names cannot affect code generation at this point.
-    generation = codeflags if sn64 else codegen_flags(flags)
-    assembler_flags, assembler_inputs = assembly_inputs(asflags)
-    if compiler is not None:
-        inputs.append(Path(compiler["cc"]))
-        if sn64:
-            compiler["as"] = resolve_tool(compiler["as"])
-            inputs.append(Path(compiler["as"]))
-    digest = key(
-        content,
-        json.dumps([selected, generation, assembler_flags], sort_keys=True),
-        tool_digest(tuple(inputs)),
-        *assembler_inputs,
-    )
-
-    def produce(destination: Path) -> None:
-        with tempfile.TemporaryDirectory(prefix=".object-", dir=out.parent) as temporary:
-            work = Path(temporary)
-            source = work / ("source.s" if assembly else "source.i")
-            source.write_bytes(content)
-            if sn64:
-                assert compiler is not None
-                from abumasn64.assemble import assemble
-
-                from sn64_cc import gnu_as_flags
-
-                if not assembly:
-                    generated = work / "source.s"
-                    run([str(Path(compiler["cc"]).resolve()), "-quiet", *codeflags, str(source), "-o", str(generated)])
-                    text = generated.read_text()
-                else:
-                    text = content.decode()
-                assemble(
-                    text,
-                    destination,
-                    Path(compiler["as"]),
-                    gnu_as_flags(asflags),
-                    asn64_version="2.81",
-                )
-            elif assembly:
-                command = [data["as"], *asflags]
-                if args.depfile:
-                    command.extend(["--MD", str(args.depfile)])
-                run([*command, "-o", str(destination), str(source)])
-                if args.depfile:
-                    text = args.depfile.read_text()
-                    args.depfile.write_text(
-                        (args.dep_target or str(out))
-                        + ":"
-                        + text.split(":", 1)[1].replace(str(source), str(args.source))
-                    )
-            else:
-                assert compiler is not None
-                run([compiler["cc"], *generation, "-c", str(source), "-o", str(destination)])
-                from elf import Object
-
-                Object(destination).trim_text()
-
-    cached = Cache(args.cache_root or cache_root()).produce(args.kind, digest, produce)
-    if not out.exists() or out.read_bytes() != cached.read_bytes():
-        temporary = out.with_name(out.name + ".partial")
-        shutil.copyfile(cached, temporary)
-        temporary.replace(out)
-    if assembly and args.depfile and not args.depfile.exists():
-        args.depfile.write_text((args.dep_target or str(out)) + ": " + str(args.source) + "\n")
-
-    if args.kind == "cc" and args.depfile and args.depfile.is_file():
-        words = dependency_paths(args.depfile.read_text())
-        dependency_hashes = {str(Path(word)): hashlib.sha256(Path(word).read_bytes()).hexdigest() for word in words}
-        out.with_suffix(".inputs.json").write_text(json.dumps(dependency_hashes, sort_keys=True))
+        content = key(*(driver_content(path) for path in sorted(Path(abumasn64.__file__).parent.glob("*.py"))))
+        publish_stamp(recipe.parent / "compile/drivers/abumasn64.sha256", content)
 
 
-def compile_batch(args: argparse.Namespace) -> None:
-    """Compile a cold graph chunk in one interpreter, sequentially per Make job."""
-    data = read_recipe(args.recipe)
-    failures = []
-    for source in args.batch:
-        relative = source.relative_to(args.source)
-        output = args.output / relative.with_suffix(".o")
-        item = argparse.Namespace(**vars(args))
-        item.source = source
-        item.unit = str(source)
-        item.output = output
-        item.depfile = output.with_suffix(".d")
-        item.dep_target = (
-            "$(BUILD)/obj/" + ("asm/" if args.kind == "as" else "src/") + str(relative.with_suffix(".built"))
-        )
-        try:
-            compile_object(item, data)
-            output.with_suffix(".built").touch()
-        except (OSError, ValueError, KeyError) as error:
-            failures.append(f"{source}: {error}")
-    if failures:
-        raise ValueError("batch objects failed:\n" + "\n".join(failures))
+def sync_binaries(recipe: Path) -> None:
+    """Observe compiler bytes before Make compares object prerequisite times."""
+    data = json.loads(recipe.read_text())
+    groups: dict[str, dict[str, str]] = {}
+    manifest = recipe.parent / "compiler.sha256"
+    if manifest.is_file():
+        for row in manifest.read_text().splitlines():
+            fields = row.split(maxsplit=1)
+            if len(fields) == 2 and not row.startswith("#"):
+                name = fields[1].lstrip("*")
+                groups.setdefault(str(Path(name).parent), {})[name] = fields[0]
+    for ident, compiler in data["compilers"].items():
+        cc = Path(compiler["cc"])
+        paths = sorted({str(cc), *selected_pins(groups, cc, recipe.parent, compiler["kind"])})
+        content = json.dumps([binary_content(Path(name)) for name in paths])
+        publish_stamp(recipe.parent / "compile/binaries" / (ident + ".sha256"), content)
+    tools = {data["as"]} if data["as"] else set()
+    tools.update(compiler["as"] for compiler in data["compilers"].values() if compiler["kind"] == "sn64")
+    if data.get("cpp") and any(compiler["kind"] == "sn64" for compiler in data["compilers"].values()):
+        tools.add(data["cpp"])
+    for value in sorted(tools):
+        executable = resolve_tool(value)
+        path = Path(shutil.which(executable) or executable)
+        name = hashlib.sha256(value.encode()).hexdigest()
+        publish_stamp(recipe.parent / "compile/binaries" / (name + ".sha256"), binary_content(path))
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--kind", choices=("cc", "as"), required=True)
-    for name in ("recipe", "source", "output", "depfile", "symbols", "cache-root"):
-        parser.add_argument("--" + name, type=Path, required=name in ("recipe", "source", "output"))
-    parser.add_argument("--non-matching", choices=("0", "1"), required=True)
-    parser.add_argument("--version", required=True)
-    parser.add_argument("--unit", required=True)
-    parser.add_argument("--dep-target")
-    parser.add_argument("--batch", type=Path, nargs="+")
+    parser.add_argument("--recipe", type=Path, required=True)
+    parser.add_argument("--build", type=Path)
+    parser.add_argument("--version")
     args = parser.parse_args()
     try:
-        if args.batch:
-            compile_batch(args)
-        else:
-            compile_object(args)
+        sync_binaries(args.recipe)
+        sync_drivers(args.recipe)
+        if args.build is not None or args.version is not None:
+            if args.build is None or args.version is None:
+                raise ValueError("--build and --version are required together")
+            repair_assembly_depfiles(args.recipe, args.build, args.version)
     except (OSError, ValueError, KeyError) as error:
-        parser.exit(1, f"HELD(compile): {error}\n")
+        parser.exit(1, f"HELD(identity): {error}\n")
 
 
 if __name__ == "__main__":
     main()
-'''

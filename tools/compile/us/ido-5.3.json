@@ -1,0 +1,1 @@
+{"compiler": {"cc": "tools/ido-5.3/cc", "cflags": ["-c", "-G0", "-non_shared", "-mips2", "-O2"], "kind": "ido"}, "include": ["include"], "macros": ["VERSION_US"]}

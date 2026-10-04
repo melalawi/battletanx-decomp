@@ -20,6 +20,8 @@ from pathlib import Path
 from typing import Any
 
 from cache import Cache
+from atomic import receipt as refresh_receipt
+from atomic import write
 from compile import cache_root
 from rodata import defer_bss
 
@@ -68,9 +70,55 @@ def publish(path: Path, content: bytes) -> None:
     _WRITTEN[str(path)] = hashlib.sha256(content).hexdigest()
     path.parent.mkdir(parents=True, exist_ok=True)
     if not path.exists() or path.read_bytes() != content:
-        partial = path.with_name(path.name + ".partial")
-        partial.write_bytes(content)
-        partial.replace(path)
+        write(path, content)
+
+
+def assembly_symbols(
+    directory: Path, includes: Path, symbols: dict[str, int], units: dict[str, int], build: Path
+) -> None:
+    """Publish only each assembly source's named addresses, retaining unchanged mtimes.
+
+    Include closure tokens cover symbols supplied by assembler/preprocessor macros.
+    Unit placement is an input to SN64's external branch encoder even when the
+    source does not explicitly name its split unit.
+    """
+    token = re.compile(r"[A-Za-z_.$][\w.$]*")
+    include = re.compile(r'^\s*(?:#\s*include|\.include)\s*[<"]([^>"]+)[>"]', re.M)
+    memo: dict[Path, tuple[set[str], list[Path]]] = {}
+
+    def references(source: Path) -> set[str]:
+        names: set[str] = set()
+        pending, visited = [source], set()
+        while pending:
+            path = pending.pop().resolve()
+            if path in visited:
+                continue
+            visited.add(path)
+            if path not in memo:
+                text = re.sub(r"/\*.*?\*/", "", path.read_text(), flags=re.S)
+                headers = include.findall(text)
+                # Comments and string literals do not reference address definitions.
+                text = re.sub(r'"[^"\n]*"|(?<!\S)#(?!\s*(?:define|if|elif|ifdef|ifndef|include)\b)[^\n]*', "", text)
+                dependencies = []
+                for name in headers:
+                    candidates = (path.parent / name, includes / name, directory / name)
+                    header = next((candidate for candidate in candidates if candidate.is_file()), None)
+                    if header is None:
+                        raise ValueError(f"assembly include {name} missing for {path.name}")
+                    dependencies.append(header)
+                memo[path] = set(token.findall(text)), dependencies
+            tokens, headers_paths = memo[path]
+            names.update(tokens)
+            pending.extend(headers_paths)
+        return names
+
+    for source in sorted(directory.rglob("*.s")):
+        names = references(source) | {source.stem}
+        content = "".join(
+            f"{name} 0x{symbols[name]:08X}{' unit' if name in units else ''}\n"
+            for name in sorted(names & symbols.keys())
+        )
+        publish(build / "asm-symbols" / source.relative_to(directory).with_suffix(".txt"), content.encode())
 
 
 def scalar(text: str) -> str:
@@ -349,6 +397,10 @@ def inventory(script: str, staging: Path, asm: Path, src: Path, compiler: str) -
         if target not in seen:
             groups[group].append(target)
             edges.append(f"{target if group == 'ASSET' else target[:-2] + '.built'}: {source}")
+            if group == "ASM" and compiler == "sn64":
+                symbol_input = "$(BUILD)/asm-symbols/" + str(obj.relative_to("obj/asm").with_suffix(".txt"))
+                edges.append(f"{target[:-2] + '.built'}: {symbol_input}")
+                edges.append(f"{symbol_input}: | $(BUILD)/.split")
             if group != "C":
                 edges.append(f"{source}: | $(BUILD)/.split")
             seen.add(target)
@@ -494,14 +546,14 @@ def extract(args: argparse.Namespace) -> None:
     graph_path = build / ".split.mk"
     if receipt.exists() and receipt.read_text() == digest.hexdigest() and graph_path.exists():
         # Make needs a timestamp receipt when input mtimes changed but bytes did not.
-        graph_path.touch()
+        refresh_receipt(graph_path)
         return
     # A fresh generation reuses an identical extraction whose published
     # assembly is still present byte for byte.
     store = Cache(cache_root())
     cached = store.get("extract", digest.hexdigest())
     if cached is not None and _restore(json.loads(cached.read_bytes()), build):
-        receipt.write_text(digest.hexdigest())
+        write(receipt, digest.hexdigest().encode())
         return
     _WRITTEN.clear()
 
@@ -582,13 +634,15 @@ def extract(args: argparse.Namespace) -> None:
             f"{name} 0x{value:08X}{' unit' if name in units else ''}\n" for name, value in sorted(symbols.items())
         )
         publish(args.build / "symbol-addresses.txt", addresses.encode())
+        if compiler == "sn64":
+            assembly_symbols(staging / "asm", staging / "include", symbols, units, args.build)
         publish(args.build / "unit-ranges.json", json.dumps(unit_ranges(text), sort_keys=True).encode())
-        publish(args.build / "pool-providers.json", json.dumps(pool_rows(text), sort_keys=True).encode())
+        publish(args.build / "pool-providers.json", json.dumps(pool_rows(text, storage=True), sort_keys=True).encode())
         publish(args.build / (args.name + ".ld"), rewritten.encode())
         graph.extend(["LINK_SCRIPTS := " + " ".join(link_scripts), f"ROM_BYTES := {args.baserom.stat().st_size}"])
         # This file is the successful extraction receipt; replace it last.
         destination = args.build / ".split.mk"
-        destination.write_text("\n".join(graph) + "\n")
+        write(destination, ("\n".join(graph) + "\n").encode())
         outputs, published = {".split.mk": destination.read_text()}, {}
         for name, value in _WRITTEN.items():
             path = Path(name).resolve()
@@ -597,10 +651,10 @@ def extract(args: argparse.Namespace) -> None:
             else:
                 published[name] = value
         record = build / ".extract-record.json"
-        record.write_text(json.dumps({"outputs": outputs, "published": published}, sort_keys=True))
+        write(record, json.dumps({"outputs": outputs, "published": published}, sort_keys=True).encode())
         store.put("extract", digest.hexdigest(), record)
         record.unlink()
-        receipt.write_text(digest.hexdigest())
+        write(receipt, digest.hexdigest().encode())
 
 
 def _restore(record: dict[str, Any], build: Path) -> bool:
@@ -616,7 +670,7 @@ def _restore(record: dict[str, Any], build: Path) -> bool:
     for name, content in record["outputs"].items():
         publish(build / name, content.encode())
     # The graph is the extraction receipt Make reads; write it last.
-    (build / ".split.mk").write_text(graph)
+    write(build / ".split.mk", graph.encode())
     return True
 
 

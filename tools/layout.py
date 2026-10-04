@@ -5,13 +5,16 @@ import argparse
 import json
 import re
 import struct
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
+from atomic import write
 from elf import Object
 from extract import publish
+from link_inputs import Objects, Selectors, Spans, clone
 from literal_layout import arrange, signed, storage
-from pool_slices import split_pool
+from pool_slices import Provider, link_pools, split_pool
 from rodata import fragment, insert_fragment, placement, relocated
 
 
@@ -129,8 +132,14 @@ def resident_mappings(value: object) -> list[dict[str, int]]:
     return result
 
 
-def transfer_private(obj: Object, interval: dict[str, Any], image: bytes, slices: list[dict[str, Any]]) -> list[str]:
-    """Prove every slice and rehome compiler literals, strings and local tables."""
+def transfer_private(
+    obj: Object, interval: dict[str, Any], image: bytes, slices: list[dict[str, Any]], *, lookup: Spans | None = None
+) -> list[str]:
+    """Rehome only compiler-provided bytes; retain other owners in assembly."""
+    lookup = lookup if lookup is not None else Spans(slices)
+    original = obj
+    if any(obj.sections[index][5] for index in (obj.section(".rdata"), obj.section(".rodata")) if index is not None):
+        obj = clone(obj)
     text = obj.section(".text")
     if text is None:
         raise ValueError("layout.pool_span: missing compiler text")
@@ -140,33 +149,37 @@ def transfer_private(obj: Object, interval: dict[str, Any], image: bytes, slices
     }
 
     def read(address: int, size: int) -> bytes:
-        matches = [
-            row
-            for row in slices
-            if row["address"] <= address < address + size <= row["address"] + row["end"] - row["start"]
-        ]
-        if len(matches) != 1:
-            raise ValueError(f"layout.pool_owner: reference 0x{address:08X} is not in one private slice")
-        row = matches[0]
-        start = row["start"] + address - row["address"]
-        return image[start : start + size]
+        material = bytearray()
+        cursor = address
+        while cursor < address + size:
+            matches = lookup.containing(cursor)
+            if len(matches) != 1:
+                raise ValueError(f"layout.pool_owner: reference 0x{cursor:08X} is not in one ROM slice")
+            row = matches[0]
+            take = min(address + size - cursor, row["address"] + row["end"] - row["start"] - cursor)
+            start = row["start"] + cursor - row["address"]
+            part = image[start : start + take]
+            if len(part) != take:
+                raise ValueError(f"layout.pool_bytes: incomplete ROM at 0x{cursor:08X}")
+            material.extend(part)
+            cursor += take
+        return bytes(material)
 
     def table(address: int, size: int) -> bytes:
         raw = read(address, size)
-        row = next(row for row in slices if row["address"] <= address < row["address"] + row["end"] - row["start"])
+        row = lookup.containing(address)[0]
         return b"".join(
             struct.pack(">I", (word[0] + row.get("table_entry_bias", 0)) & 0xFFFFFFFF)
             for word in struct.iter_unpack(">I", raw)
         )
 
     sections: list[str] = []
-    allocated: set[int] = set()
     for section in (".rdata", ".rodata"):
         index = obj.section(section)
         if index is None or not obj.sections[index][5]:
             continue
         # The reference proof assigns bytes, rather than compiler section order.
-        # Both sections together may be present, but a slice has one provider.
+        # Both compiler sections may provide disjoint extents of a ROM slice.
         addresses = {address for _, address, _ in storage(obj, index)}
         pending: dict[tuple[int, int], list[int]] = {}
         for at, kind, symbol in obj.relocations(text):
@@ -179,31 +192,42 @@ def transfer_private(obj: Object, interval: dict[str, Any], image: bytes, slices
                 for high in pending.pop(key, []):
                     if high in target and at in target:
                         addresses.add((((target[high] & 65535) << 16) + signed(target[at])) & 0xFFFFFFFF)
-        matching = [
-            row
-            for row in slices
-            if any(row["address"] <= address < row["address"] + row["end"] - row["start"] for address in addresses)
-        ]
-        if not matching or any(row["address"] in allocated for row in matching):
-            raise ValueError("layout.pool_owner: compiler sections do not have disjoint private slices")
-        base = arrange(obj, section, target, interval["address"], read, table, emit_resident=True, slices=matching)
-        sections.extend(split_pool(obj, section, base, matching))
-        allocated.update(row["address"] for row in matching)
-    if not allocated:
-        existing = [f".unbake_pool_{row['address']:08X}" for row in slices]
-        if not all(obj.section(name) is not None for name in existing):
-            raise ValueError("layout.pool_span: compiler emitted no provider for private slices")
-        for row, name in zip(slices, existing, strict=True):
-            if relocated(obj, name, interval["address"]) != read(row["address"], row["end"] - row["start"]):
-                raise ValueError("layout.pool_span: existing compiler slice bytes disagree with ROM")
-        return existing
-    if allocated != {row["address"] for row in slices}:
-        raise ValueError("layout.pool_span: incomplete compiler pool transfer")
+        matching = any(lookup.containing(address) for address in addresses)
+        provided: list[dict[str, int]] = []
+        if not matching:
+            raise ValueError(f"layout.pool_owner: {section}: no mapped compiler constants")
+        base = arrange(
+            obj,
+            section,
+            target,
+            interval["address"],
+            read,
+            table,
+            emit_resident=True,
+            slices=slices,
+            provided=provided,
+            persist=False,
+        )
+        sections.extend(split_pool(obj, section, base, provided, persist=False))
+    if not sections:
+        sections = [name for name in obj.names if re.fullmatch(r"\.unbake_pool_[0-9A-F]{8}", name)]
+    for name in sections:
+        address = int(name.rsplit("_", 1)[1], 16)
+        index = obj.section(name)
+        assert index is not None
+        material = relocated(obj, name, interval["address"])
+        if material != read(address, len(material)):
+            raise ValueError(f"layout.pool_bytes: {name}: compiler bytes disagree at 0x{address:08X}")
+    if obj.data != original.data:
+        write(obj.path, bytes(obj.data))
+        original.__dict__.update(obj.__dict__)
     return sorted(sections)
 
 
 def transfer_selectors(script: str, objname: str, slices: list[dict[str, Any]], sections: list[str]) -> str:
-    for row, section in zip(sorted(slices, key=lambda item: item["address"]), sections, strict=True):
+    for section in sections:
+        address = int(section.rsplit("_", 1)[1], 16)
+        row = next(row for row in slices if row["address"] == address)
         # Structural pool rows are ordinary independent Splat assembly providers.
         pool = "obj/asm/data/" + row["path"] + ".rodata.o"
         pattern = re.escape(pool) + r"\s*\(\.rodata\)"
@@ -224,18 +248,85 @@ def place(args: argparse.Namespace) -> None:
     sections: list[str] = []
     partial = args.non_matching == "1"
     objects = sorted(set(re.findall(r"(obj/src/[^\s()]+\.o)\(", script)))
+    providers: list[Provider] = []
+    pool_path = args.ranges.with_name("pool-providers.json")
+    pools = json.loads(pool_path.read_text()) if pool_path.is_file() else []
+    pools = [row for row in pools if row["path"].startswith("rodata/")]
+    for row in pools:
+        mapped = [m for m in mappings if m["start"] <= row["start"] < row["end"] <= m["end"]]
+        if len(mapped) > 1:
+            raise ValueError("layout.pool_span: ambiguous pool mapping")
+        row["table_entry_bias"] = mapped[0]["table_entry_bias"] if mapped else 0
+    inventory = resident_slices(pools, mappings) if pools else None
     faults: list[str] = []
-    for name in objects:
-        try:
-            script = place_object(args, name, script, intervals, image, mappings, sections, partial)
-        except (OSError, ValueError, KeyError, struct.error) as error:
-            # Every failing object is named so one link attributes all culprits.
-            faults.append(f"{name}: {error}")
-    if faults:
-        raise ValueError("\n".join(faults))
+    selectors = Selectors(script)
+    lookup = Spans(inventory) if inventory is not None else None
+    with Objects(args.build / ".elf-metadata.sqlite") as load:
+        load.prefetch(args.build / name for name in sorted({name for name, _ in selectors.entries}))
+        for name in objects:
+            try:
+                script = place_object(
+                    args,
+                    name,
+                    script,
+                    intervals,
+                    image,
+                    mappings,
+                    sections,
+                    partial,
+                    pools=pools,
+                    providers=providers,
+                    load=load,
+                    selectors=selectors,
+                    inventory=inventory,
+                    lookup=lookup,
+                )
+            except (OSError, ValueError, KeyError, struct.error) as error:
+                # Every failing object is named so one link attributes all culprits.
+                faults.append(f"{name}: {error}")
+        if faults:
+            raise ValueError("\n".join(faults))
+        script = selectors.apply(script)
+        if providers:
+            pool_objects = [
+                args.build / ("obj/asm/data/" + row["path"] + row.get("section", ".rodata") + ".o") for row in pools
+            ]
+            load.prefetch([*(args.build / provider.object for provider in providers), *pool_objects])
+            script = link_pools(args.build, script, pools, providers, image, load=load)
     script = insert_fragment(script, "\n".join(sections))
     publish(args.output, script.encode())
     publish(args.output.with_suffix(".flags"), b"--no-check-sections" if sections else b"")
+
+
+def resident_slices(slices: list[dict[str, Any]], mappings: list[dict[str, int]]) -> list[dict[str, Any]]:
+    """Keep resident gaps distinct from structural assembly pool ownership."""
+    result = list(slices)
+    occupied = sorted((row["address"], row["address"] + row["end"] - row["start"]) for row in slices)
+    for mapping in mappings:
+        start = mapping["address"]
+        end = start + mapping["end"] - mapping["start"]
+        cursor = start
+        gaps = []
+        for left, right in occupied:
+            if right <= cursor or left >= end:
+                continue
+            if cursor < left:
+                gaps.append((cursor, left))
+            cursor = max(cursor, min(right, end))
+        if cursor < end:
+            gaps.append((cursor, end))
+        for left, right in gaps:
+            offset = mapping["start"] + left - start
+            result.append(
+                dict(
+                    address=left,
+                    start=offset,
+                    end=offset + right - left,
+                    table_entry_bias=mapping["table_entry_bias"],
+                    resident=True,
+                )
+            )
+    return result
 
 
 def place_object(
@@ -247,20 +338,47 @@ def place_object(
     mappings: list[dict[str, int]],
     sections: list[str],
     partial: bool,
+    *,
+    pools: list[dict[str, Any]] | None = None,
+    providers: list[Provider] | None = None,
+    inventory: list[dict[str, Any]] | None = None,
+    load: Callable[[Path], Object] = Object,
+    selectors: Selectors | None = None,
+    lookup: Spans | None = None,
 ) -> str:
     unit = Path(name).stem
     if unit not in intervals:
         raise ValueError(f"unit-ranges.{unit} missing")
-    obj = Object(args.build / name)
+    obj = load(args.build / name)
+    if not any(
+        obj.sections[index][5] for section in (".rdata", ".rodata") if (index := obj.section(section)) is not None
+    ) and not any(re.fullmatch(r"\.unbake_pool_[0-9A-F]{8}", section) for section in obj.names):
+        return script
     slices = [row for row in intervals[unit].get("rodata_slices", []) if row["path"].startswith("rodata/")]
-    if slices and not partial:
-        for row in slices:
-            mapped = [m for m in mappings if m["start"] <= row["start"] < row["end"] <= m["end"]]
-            if len(mapped) > 1:
-                raise ValueError("layout.pool_span: ambiguous private mapping")
-            row["table_entry_bias"] = mapped[0]["table_entry_bias"] if mapped else 0
-        placed = transfer_private(obj, intervals[unit], image, slices)
-        return transfer_selectors(script, name, slices, placed)
+    if (slices or pools) and not partial:
+        if inventory is not None:
+            slices = inventory
+        else:
+            slices = pools or slices
+            for row in slices:
+                mapped = [m for m in mappings if m["start"] <= row["start"] < row["end"] <= m["end"]]
+                if len(mapped) > 1:
+                    raise ValueError("layout.pool_span: ambiguous private mapping")
+                row["table_entry_bias"] = mapped[0]["table_entry_bias"] if mapped else 0
+            slices = resident_slices(slices, mappings)
+        placed = transfer_private(obj, intervals[unit], image, slices, lookup=lookup)
+        if providers is None and not mappings:
+            return transfer_selectors(script, name, slices, placed)
+        for section in placed:
+            address = int(section.rsplit("_", 1)[1], 16)
+            row = next(row for row in slices if row["address"] <= address < row["address"] + row["end"] - row["start"])
+            if row.get("resident"):
+                sections.append(fragment([dict(object=name, section=section, address=address)]))
+            elif providers is not None:
+                providers.append(Provider(name, section, address, intervals[unit]["address"]))
+            else:
+                script = transfer_selectors(script, name, slices, [section])
+        return script
     local = intervals[unit].get("rodata_address")
     if not partial and local is not None:
         for section in (".rdata", ".rodata"):
@@ -271,7 +389,10 @@ def place_object(
             if base != local:
                 raise ValueError(f"local {section} placement disagrees with split row")
             if section == ".rdata":
-                script = re.sub(re.escape(name) + r"\s*\(\.rodata\)", name + "(.rdata)", script)
+                if selectors is None:
+                    script = re.sub(re.escape(name) + r"\s*\(\.rodata\)", name + "(.rdata)", script)
+                else:
+                    selectors.replace(name, ".rodata", ".rdata")
     if partial:
         for section in (".rdata", ".rodata"):
             index = obj.section(section)
@@ -280,7 +401,12 @@ def place_object(
                 sections.append(f"  .partial_{unit}_{section[1:]} : {{ {name}({section}) }}")
     else:
         for section in (".rdata", ".rodata"):
-            if re.search(re.escape(name) + r"\s*\(" + re.escape(section) + r"\)", script):
+            selected = (
+                selectors.contains(name, section)
+                if selectors is not None
+                else re.search(re.escape(name) + r"\s*\(" + re.escape(section) + r"\)", script) is not None
+            )
+            if selected:
                 continue
             base = resident(obj, intervals[unit], image, section, mappings)
             if base is not None:

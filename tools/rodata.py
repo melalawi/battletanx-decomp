@@ -120,6 +120,71 @@ def relocated(obj: Object, section: str, text_address: int) -> bytes:
     return bytes(result)
 
 
+def table_addresses(obj: Object, section: str, target_words: Mapping[int, int]) -> dict[int, int]:
+    """Locate compiler table runs from their own instruction-identical references.
+
+    Literal section order and another version's owners supply no evidence here.
+    Callers must also prove the relocated table bytes against their ROM mapping.
+    """
+    index, text = obj.section(section), obj.section(".text")
+    if index is None or text is None:
+        return {}
+    starts = {pool.offset for pool in pools(obj, section, True)}
+    if not starts:
+        return {}
+    code = obj.content(text)
+    pending: dict[tuple[int, int], list[int]] = {}
+    result: dict[int, int] = {}
+    for offset, kind, symbol in obj.relocations(text):
+        if symbol["section"] != index:
+            continue
+        key = symbol["table"], symbol["index"]
+        if kind == 5:
+            pending.setdefault(key, []).append(offset)
+        elif kind == 6:
+            highs = pending.pop(key, [])
+            if not highs:
+                raise ValueError(f"{section}: table reference missing HI16")
+            low = _word(code, offset, ".text")
+            for at in highs:
+                high = _word(code, at, ".text")
+                own = ((high & 65535) << 16) + _signed(low) + symbol["value"]
+                if own not in starts:
+                    continue
+                original, target = target_words.get(at), target_words.get(offset)
+                if original is None or target is None:
+                    raise ValueError(f"{section}: missing aligned table reference at 0x{offset:X}")
+                if (high ^ original) & 0xFFFF0000 or (low ^ target) & 0xFFFF0000:
+                    raise ValueError(f"{section}: table reference instruction differs at 0x{offset:X}")
+                address = (((original & 65535) << 16) + _signed(target)) & 0xFFFFFFFF
+                if own in result and result[own] != address:
+                    raise ValueError(f"{section}: conflicting table placements")
+                result[own] = address
+        else:
+            raise ValueError(f"{section}: unsupported table reference relocation {kind}")
+    if pending:
+        raise ValueError(f"{section}: table reference missing LO16")
+    return result
+
+
+def table_pointer_bias(actual: bytes, resident: bytes) -> int | None:
+    """Prove the resident encoding of an already relocated local-text table.
+
+    Some ROMs store physical text pointers and others store KSEG0 pointers.
+    Require every relocated entry to agree exactly; this never maps pool bytes
+    to a different address or admits an arbitrary pointer delta.
+    """
+    if not actual or len(actual) != len(resident) or len(actual) % 4:
+        return None
+    for bias in (0, 0x80000000):
+        normalized = b"".join(
+            struct.pack(">I", (word[0] + bias) & 0xFFFFFFFF) for word in struct.iter_unpack(">I", resident)
+        )
+        if normalized == actual:
+            return bias
+    return None
+
+
 def fragment(rows: Iterable[Mapping[str, object]]) -> str:
     """Render proved shared-pool overlays from explicit split-row facts.
 
@@ -134,7 +199,9 @@ def fragment(rows: Iterable[Mapping[str, object]]) -> str:
         name, section, address = row["object"], row["section"], row["address"]
         if not isinstance(name, str) or not re.fullmatch(r"[\w./-]+\.o", name) or ".." in name.split("/"):
             raise ValueError("rodata.object: expected object path")
-        if section not in (".rdata", ".rodata"):
+        if section not in (".rdata", ".rodata") and not (
+            isinstance(section, str) and re.fullmatch(r"\.unbake_pool_[0-9A-F]{8}", section)
+        ):
             raise ValueError("rodata.section: expected .rdata or .rodata")
         if isinstance(address, bool) or not isinstance(address, int) or not 0 <= address <= 0xFFFFFFFF:
             raise ValueError("rodata.address: expected 32-bit address")

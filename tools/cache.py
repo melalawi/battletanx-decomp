@@ -1,6 +1,7 @@
 """Content-keyed reuse: atomic file artifacts across projects, parsed inputs within a process."""
 
 import hashlib
+import json
 import os
 import re
 import shutil
@@ -41,6 +42,8 @@ def parsed(
         return cached[1]  # type: ignore[no-any-return]
     value = parse()
     _parsed[index] = digests, value
+    while len(_parsed) > 64:
+        del _parsed[next(iter(_parsed))]
     return value
 
 
@@ -145,3 +148,20 @@ class Cache:
         finally:
             if temporary is not None:
                 temporary.unlink(missing_ok=True)
+
+
+_serialized: dict[str, tuple[Any, bytes]] = {}
+
+
+def serialized(kind: str, value: Any) -> bytes:
+    """Encode a mutable JSON value only when it differs from the retained snapshot.
+
+    Only bytes escape this cache. Decode the C encoder's bytes to retain an
+    independent comparison snapshot without recursively copying Python objects.
+    """
+    previous = _serialized.get(kind)
+    if previous is not None and previous[0] == value:
+        return previous[1]
+    content = json.dumps(value, sort_keys=True, separators=(",", ":")).encode()
+    _serialized[kind] = json.loads(content), content
+    return content

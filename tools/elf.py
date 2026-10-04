@@ -4,6 +4,8 @@ import struct
 from pathlib import Path
 from typing import TypedDict
 
+from atomic import write
+
 
 class Symbol(TypedDict):
     table: int
@@ -16,9 +18,9 @@ class Symbol(TypedDict):
 
 
 class Object:
-    def __init__(self, path: str | Path) -> None:
+    def __init__(self, path: str | Path, *, data: bytes | None = None) -> None:
         self.path = Path(path)
-        self.data = bytearray(self.path.read_bytes())
+        self.data = bytearray(self.path.read_bytes() if data is None else data)
         if self.data[:7] != b"\x7fELF\x01\x02\x01":
             raise ValueError(f"{path}: expected big-endian ELF32")
         header = struct.unpack_from(">HHIIIIIHHHHHH", self.data, 16)
@@ -87,4 +89,4 @@ class Object:
             return
         self.sections[index][5] = end
         struct.pack_into(">IIIIIIIIII", self.data, self.table + index * 40, *self.sections[index])
-        self.path.write_bytes(self.data)
+        write(self.path, bytes(self.data))
