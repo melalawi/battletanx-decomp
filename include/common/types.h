@@ -1,5 +1,27 @@
 #ifndef UNBAKE_COMMON_TYPES_H
 #define UNBAKE_COMMON_TYPES_H
+struct QueryBox;
+typedef struct QueryBox QueryBox;
+
+struct QueryDispatch;
+typedef struct QueryDispatch QueryDispatch;
+
+struct QueryRecord;
+typedef struct QueryRecord QueryRecord;
+
+struct QueryBox;
+struct QueryBox { short values[9]; };
+struct QueryObject;
+struct QueryObject { char prefix[0x18]; int index; };
+struct QueryResult;
+struct QueryResult { int unused[2]; int kind; };
+struct QueryObject;
+struct QueryResult;
+typedef void ( *QueryCallback)(struct QueryResult *, struct QueryObject *, int, void *, void *);
+struct QueryDispatch;
+struct QueryDispatch { QueryCallback callback; int tail[2]; };
+struct QueryRecord;
+struct QueryRecord { QueryBox box; char tail[22]; };
 struct Shape_D_80146100_2;
 struct Shape_D_801B6C00;
 struct Shape_D_803276D4;
@@ -3466,7 +3488,9 @@ extern int D_802C1400[];
 extern float D_802C37F8;
 extern float D_802C37FC;
 extern int D_802C3800[];
-extern int D_802C3804[];
+extern QueryDispatch D_802C3804[];
+extern QueryRecord D_803B8254[];
+extern void func_80107A14_us(QueryBox *, int, struct QueryResult **, int *);
 extern int D_802C3808[];
 extern int D_802C380C;
 extern int D_802C3810;
