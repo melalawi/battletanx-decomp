@@ -196,6 +196,7 @@ $(BUILD)/obj/src/func_8011F7F0.built: tools/compile/drivers/codegen.cc.native.sh
 $(BUILD)/obj/src/func_80121F10.built: tools/compile/drivers/codegen.cc.native.sha256 tools/compile/drivers/elf.py.sha256 tools/compile/$(VERSION)/ido-7.1.json tools/compile/binaries/ido-7.1.sha256
 $(BUILD)/obj/src/func_80076038.built: tools/compile/units/func_80076038.json
 $(BUILD)/obj/src/func_8007627C.built: tools/compile/units/func_8007627C.json
+$(BUILD)/obj/src/func_800767E4_us.built: tools/compile/units/func_800767E4_us.json
 $(BUILD)/obj/src/func_80077930.built: tools/compile/units/func_80077930.json
 $(BUILD)/obj/src/func_80077A38.built: tools/compile/units/func_80077A38.json
 $(BUILD)/obj/src/func_80078D90.built: tools/compile/units/func_80078D90.json
