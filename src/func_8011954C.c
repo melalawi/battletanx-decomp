@@ -1,5 +1,7 @@
 #include "span_1000/code_80119530.h"
 #include "types.h"
+#include "audio_callbacks.h"
+#include "callback_state.h"
 
 struct Dest;
 typedef struct Dest Dest;
@@ -36,4 +38,16 @@ void func_8011954C(Dest *dst, Src *src) {
     dst->unk8 = src->unk0;
     dst->unk1A = src->unkC;
     dst->unkC = src->unk4;
+}
+
+              /* size 0x0 */
+
+s32 func_80119568_us(s32 arg0) {
+    return ((CallbackValue *)arg0)->value;
+}
+
+              /* size 0x0 */
+
+void func_80119570_us(void) {
+
 }

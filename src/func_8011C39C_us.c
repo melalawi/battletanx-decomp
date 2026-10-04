@@ -5,3 +5,9 @@
 void func_8011C39C_us(void) {
 
 }
+
+              /* size 0x0 */
+
+void func_8011C3A4_us(void) {
+
+}

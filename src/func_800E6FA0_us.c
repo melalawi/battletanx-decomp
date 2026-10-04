@@ -3,3 +3,7 @@
 s32 func_800E6FA0_us(void) {
     return -1;
 }
+
+s32 func_800E6FA8_us(void) {
+    return -1;
+}

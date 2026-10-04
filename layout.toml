@@ -32,8 +32,8 @@ signals = ["callee", "cap"]
 [[group]]
 name = "code_8007963C"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_8007963C_us", "func_8007967C", "func_80079684", "func_8007968C_us", "func_800796B4_us", "func_800796F0", "func_800798C0", "func_80079948_us", "func_800799C0_us", "func_800799D0", "func_80079A5C", "func_80079AB4_us", "func_80079B08_us", "func_80079B80_us", "func_80079BB4_us", "func_80079BD4_us", "func_80079BF4_us", "func_80079C20_us", "func_80079D58_us", "func_80079D9C_us", "func_80079DC8_us", "func_80079EFC", "func_80079FA4_us", "func_8007A004_us", "func_8007A178_us", "func_8007A26C_us", "func_8007A36C_us", "func_8007A3D8_us"]
+evidence = "proven"
+members = ["func_8007963C_us", "func_8007967C", "func_8007968C_us", "func_800796B4_us", "func_800796F0", "func_800798C0", "func_80079948_us", "func_800799C0_us", "func_800799D0", "func_80079A5C", "func_80079AB4_us", "func_80079B08_us", "func_80079B80_us", "func_80079BB4_us", "func_80079BD4_us", "func_80079BF4_us", "func_80079C20_us", "func_80079D58_us", "func_80079D9C_us", "func_80079DC8_us", "func_80079EFC", "func_80079FA4_us", "func_8007A004_us", "func_8007A178_us", "func_8007A26C_us", "func_8007A36C_us", "func_8007A3D8_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -41,6 +41,7 @@ name = "code_8007A470"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_8007A470_us", "func_8007A5A4_us", "func_8007A758_us", "func_8007A79C_us", "func_8007A7E0_us", "func_8007A968_us", "func_8007AA70_us", "func_8007AAA0", "func_8007AAB0", "func_8007AAC0", "func_8007AAE4_us", "func_8007AAF4_us", "func_8007AB04_us", "func_8007AC20_us", "func_8007ACC4_us", "func_8007AD2C_us", "func_8007B1DC_us", "func_8007B1EC_us", "func_8007B208_us", "func_8007B268_us", "func_8007B280_us", "func_8007B590_us", "func_8007B9E4_us", "func_8007BD24_us", "func_8007C298", "func_8007C2A0_us", "func_8007C33C", "func_8007C344_us", "func_8007C58C_us", "func_8007C678_us", "func_8007C6C4_us", "func_8007C6D8"]
+split = ["func_8007AAB0", "func_8007AAC0", "func_8007AAE4_us", "func_8007AAF4_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -55,20 +56,21 @@ name = "code_8007EBA0"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_8007EBA0_us", "func_8007EBDC_us", "func_8007EC38", "func_8007ECE8", "func_8007ED98", "func_8007EE48", "func_8007EEF8_us", "func_8007EF1C_us", "func_8007EF40_us", "func_8007EF64_us", "func_8007EFB8_us", "func_8007F00C_us", "func_8007F030_us", "func_8007F040_us", "func_8007F060", "func_8007F070", "func_8007F204", "func_8007F29C_us", "func_8007F2A0_us", "func_8007FF68", "func_8008001C_us"]
+split = ["func_8007ECE8", "func_8007ED98", "func_8007EE48", "func_8008001C_us"]
 signals = ["cap"]
 
 [[group]]
 name = "code_8008011C"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_8008011C_us", "func_800803A4_us", "func_8008054C_us", "func_80080580_us", "func_800805C0_us", "func_800805D0", "func_800805DC", "func_8008067C_us", "func_80080728_us", "func_80080910_us", "func_80080AA8_us", "func_80080C60_us", "func_80080EEC_us", "func_80081788_us", "func_80081934_us", "func_80081A30", "func_80081A40_us", "func_80081A50_us", "func_80081A78_us", "func_80081AC0_us", "func_80081AD0_us", "func_800821C0", "func_800821D0_us", "func_8008228C", "func_80082458_us"]
+evidence = "proven"
+members = ["func_8008011C_us", "func_800803A4_us", "func_8008054C_us", "func_80080580_us", "func_800805C0_us", "func_800805D0", "func_800805DC", "func_8008067C_us", "func_80080728_us", "func_80080910_us", "func_80080AA8_us", "func_80080C60_us", "func_80080EEC_us", "func_80081788_us", "func_80081934_us", "func_80081A30", "func_80081A50_us", "func_80081A78_us", "func_80081AC0_us", "func_80081AD0_us", "func_800821C0", "func_800821D0_us", "func_8008228C", "func_80082458_us"]
 signals = ["callee", "cap"]
 
 [[group]]
 name = "code_800824E4"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800824E4_us", "func_800827AC_us", "func_80082AA8_us", "func_80082D60_us", "func_800830DC_us", "func_8008332C_us", "func_80083394", "func_80083F04", "func_8008463C_us", "func_80084778_us", "func_8008488C_us", "func_800849B0_us", "func_80084A74_us", "func_80084B90_us", "func_80084CC4_us", "func_80084DF4_us", "func_80084F4C_us", "func_80084F90_us", "func_80085290_us", "func_800852E0_us", "func_80085330", "func_800853C8_us", "func_80085460", "func_80085468", "func_80085470_us", "func_80085978_us", "func_80085B4C_us", "func_80085C68_us", "func_80085D84_us", "func_80085DE4_us", "func_80085E18_us", "func_800862B4_us"]
+evidence = "proven"
+members = ["func_800824E4_us", "func_800827AC_us", "func_80082AA8_us", "func_80082D60_us", "func_800830DC_us", "func_8008332C_us", "func_80083394", "func_80083F04", "func_8008463C_us", "func_80084778_us", "func_8008488C_us", "func_800849B0_us", "func_80084A74_us", "func_80084B90_us", "func_80084CC4_us", "func_80084DF4_us", "func_80084F4C_us", "func_80084F90_us", "func_80085290_us", "func_800852E0_us", "func_80085330", "func_800853C8_us", "func_80085460", "func_80085470_us", "func_80085978_us", "func_80085B4C_us", "func_80085C68_us", "func_80085D84_us", "func_80085DE4_us", "func_80085E18_us", "func_800862B4_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -88,8 +90,8 @@ signals = ["callee", "cap"]
 [[group]]
 name = "code_8008F248"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_8008F248_us", "func_8008F4EC_us", "func_8008F5D4_us", "func_8008F6F4_us", "func_8008FB1C_us", "func_8008FC9C_us", "func_8008FD6C_us", "func_800902BC_us", "func_80090428_us", "func_800905D8_us", "func_800907CC_us", "func_800908CC_us", "func_800908F0_us", "func_80090A0C_us", "func_80090B1C_us", "func_80090BE0_us", "func_80090EE0_us", "func_80090F10", "func_80090F94_us", "func_80091108_us", "func_800911A0_us", "func_800913AC_us", "func_80091608", "func_800916B8", "func_800917C4", "func_800917D8", "func_80091814_us", "func_8009189C_us", "func_8009196C_us"]
+evidence = "proven"
+members = ["func_8008F248_us", "func_8008F4EC_us", "func_8008F5D4_us", "func_8008F6F4_us", "func_8008FB1C_us", "func_8008FC9C_us", "func_8008FD6C_us", "func_800902BC_us", "func_80090428_us", "func_800905D8_us", "func_800907CC_us", "func_800908CC_us", "func_800908F0_us", "func_80090A0C_us", "func_80090B1C_us", "func_80090BE0_us", "func_80090EE0_us", "func_80090F10", "func_80090F94_us", "func_80091108_us", "func_800911A0_us", "func_800913AC_us", "func_80091608", "func_800917C4", "func_800917D8", "func_80091814_us", "func_8009189C_us", "func_8009196C_us"]
 signals = ["callee", "cap", "rodata"]
 
 [[group]]
@@ -123,22 +125,22 @@ signals = ["callee", "cap"]
 [[group]]
 name = "code_800A27D0"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800A27D0", "func_800A2A28_us", "func_800A2A44", "func_800A2C38", "func_800A2DC0_us", "func_800A2EA4", "func_800A3070_us", "func_800A30A8_us", "func_800A31C0_us", "func_800A3D30", "func_800A3DE0_us", "func_800A424C", "func_800A4254", "func_800A42A4", "func_800A42B0", "func_800A42BC", "func_800A42C4_us", "func_800A42D0_us", "func_800A4368_us", "func_800A4374_us", "func_800A4500_us", "func_800A4610_us", "func_800A47AC_us", "func_800A4A00_us", "func_800A4A64", "func_800A4B2C_us", "func_800A4D10_us", "func_800A4D1C", "func_800A4D34_us", "func_800A4D58_us", "func_800A4E40_us", "func_800A4F44_us"]
+evidence = "proven"
+members = ["func_800A27D0", "func_800A2A28_us", "func_800A2A44", "func_800A2C38", "func_800A2DC0_us", "func_800A2EA4", "func_800A3070_us", "func_800A30A8_us", "func_800A31C0_us", "func_800A3D30", "func_800A3DE0_us", "func_800A424C", "func_800A4254", "func_800A42BC", "func_800A42C4_us", "func_800A42D0_us", "func_800A4368_us", "func_800A4374_us", "func_800A4500_us", "func_800A4610_us", "func_800A47AC_us", "func_800A4A00_us", "func_800A4A64", "func_800A4B2C_us", "func_800A4D10_us", "func_800A4D1C", "func_800A4D34_us", "func_800A4D58_us", "func_800A4E40_us", "func_800A4F44_us"]
 signals = ["callee", "cap", "rodata"]
 
 [[group]]
 name = "code_800A5050"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800A5050_us", "func_800A51E8", "func_800A52AC", "func_800A5348_us", "func_800A5784_us", "func_800A59E8", "func_800A5AA4_us", "func_800A5B6C_us", "func_800A5CD0_us", "func_800A5D5C_us", "func_800A5DD8", "func_800A5EB0_us", "func_800A5FF0_us", "func_800A6688", "func_800A66B0_us", "func_800A66C0", "func_800A66C8_us", "func_800A6798_us"]
+evidence = "proven"
+members = ["func_800A5050_us", "func_800A51E8", "func_800A5348_us", "func_800A5784_us", "func_800A59E8", "func_800A5AA4_us", "func_800A5B6C_us", "func_800A5CD0_us", "func_800A5D5C_us", "func_800A5DD8", "func_800A5EB0_us", "func_800A5FF0_us", "func_800A6688", "func_800A66B0_us", "func_800A66C0", "func_800A66C8_us", "func_800A6798_us"]
 signals = ["cap"]
 
 [[group]]
 name = "code_800A6864"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800A6864_us", "func_800A6888_us", "func_800A68AC_us", "func_800A68C0", "func_800A68DC_us", "func_800A68E0_us", "func_800A68F0_us", "func_800A6900_us", "func_800A6958_us", "func_800A6AB4", "func_800A6BE0_us", "func_800A6E10", "func_800A6E30", "func_800A6FC0_us", "func_800A70BC_us", "func_800A70E0_us", "func_800A72C8", "func_800A7328_us", "func_800A739C_us", "func_800A7418_us", "func_800A74AC", "func_800A7548", "func_800A7550", "func_800A75EC_us", "func_800A7614_us", "func_800A7650", "func_800A76A0", "func_800A76BC_us", "func_800A7744", "func_800A77D4_us", "func_800A7800_us", "func_800A7964_us"]
+evidence = "proven"
+members = ["func_800A6864_us", "func_800A6888_us", "func_800A68AC_us", "func_800A68C0", "func_800A68DC_us", "func_800A68E0_us", "func_800A6900_us", "func_800A6958_us", "func_800A6AB4", "func_800A6BE0_us", "func_800A6E10", "func_800A6E30", "func_800A6FC0_us", "func_800A70BC_us", "func_800A70E0_us", "func_800A72C8", "func_800A7328_us", "func_800A739C_us", "func_800A7418_us", "func_800A74AC", "func_800A7548", "func_800A7550", "func_800A75EC_us", "func_800A7614_us", "func_800A7650", "func_800A76A0", "func_800A76BC_us", "func_800A7744", "func_800A77D4_us", "func_800A7800_us", "func_800A7964_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -151,8 +153,8 @@ signals = ["padding"]
 [[group]]
 name = "code_800A8940"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800A8940_us", "func_800A8C88_us", "func_800A8E9C_us", "func_800A8ECC_us", "func_800A8EE0_us", "func_800A8EF8", "func_800A8FB8_us", "func_800A9010_us", "func_800A90E0_us", "func_800A933C_us", "func_800A93C8_us", "func_800A942C_us", "func_800A9484_us", "func_800A9564_us", "func_800A95C0_us", "func_800A96CC_us", "func_800A979C", "func_800A9850_us", "func_800A9920_us", "func_800A9AB0_us", "func_800A9B44", "func_800A9B70", "func_800A9C20_us", "func_800A9C48_us", "func_800A9CC4_us", "func_800A9D40_us", "func_800A9DA8_us", "func_800A9E10_us", "func_800A9E78_us", "func_800A9EE0_us", "func_800A9F48_us", "func_800A9F80_us"]
+evidence = "proven"
+members = ["func_800A8940_us", "func_800A8C88_us", "func_800A8E9C_us", "func_800A8ECC_us", "func_800A8EE0_us", "func_800A8EF8", "func_800A8FB8_us", "func_800A9010_us", "func_800A90E0_us", "func_800A933C_us", "func_800A93C8_us", "func_800A942C_us", "func_800A9484_us", "func_800A9564_us", "func_800A95C0_us", "func_800A96CC_us", "func_800A979C", "func_800A9850_us", "func_800A9920_us", "func_800A9AB0_us", "func_800A9B44", "func_800A9C20_us", "func_800A9C48_us", "func_800A9CC4_us", "func_800A9D40_us", "func_800A9DA8_us", "func_800A9E10_us", "func_800A9E78_us", "func_800A9EE0_us", "func_800A9F48_us", "func_800A9F80_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -160,13 +162,14 @@ name = "code_800A9FC4"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_800A9FC4_us", "func_800AA098_us", "func_800AA168_us", "func_800AA280", "func_800AA328", "func_800AA3D0_us", "func_800AA518_us", "func_800AACCC_us", "func_800AB0A4_us", "func_800AB128_us", "func_800AB15C_us", "func_800AB1A0_us", "func_800AB200", "func_800AB208_us", "func_800AB24C_us", "func_800AB3C4_us", "func_800AB520_us", "func_800AB614", "func_800AB61C_us", "func_800AB634_us", "func_800AB65C_us", "func_800AB690_us", "func_800AB91C_us", "func_800AB93C_us", "func_800AB95C", "func_800AB9FC_us", "func_800ABAB8_us", "func_800ABF1C_us", "func_800ABF40_us", "func_800ABF70_us", "func_800ABFA0", "func_800ABFA8_us"]
+split = ["func_800AA328"]
 signals = ["callee", "cap"]
 
 [[group]]
 name = "code_800ABFD0"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800ABFD0", "func_800AC070_us", "func_800AC2C8_us", "func_800AC2D0_us", "func_800AC2E0_us", "func_800AD340_us", "func_800AD5A0_us", "func_800AD828_us", "func_800ADD70_us", "func_800AE2B8_us", "func_800AE800_us", "func_800AEA50_us", "func_800AEF98_us", "func_800AF534_us", "func_800AFB08_us", "func_800B0210_us", "func_800B0440_us", "func_800B098C_us", "func_800B0D1C_us", "func_800B1264_us", "func_800B1520_us", "func_800B850C_us", "func_800B8750", "func_800B87F4_us", "func_800B8804_us", "func_800B9C0C_us", "func_800B9C34_us", "func_800B9C80_us"]
+evidence = "proven"
+members = ["func_800ABFD0", "func_800AC070_us", "func_800AC2C8_us", "func_800AC2D0_us", "func_800AC2E0_us", "func_800AD340_us", "func_800AD5A0_us", "func_800AD828_us", "func_800ADD70_us", "func_800AE2B8_us", "func_800AE800_us", "func_800AEA50_us", "func_800AEF98_us", "func_800AF534_us", "func_800AFB08_us", "func_800B0210_us", "func_800B0440_us", "func_800B098C_us", "func_800B0D1C_us", "func_800B1264_us", "func_800B1520_us", "func_800B850C_us", "func_800B8750", "func_800B8804_us", "func_800B9C0C_us", "func_800B9C34_us", "func_800B9C80_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -221,8 +224,8 @@ signals = ["callee", "cap"]
 [[group]]
 name = "code_800DAD5C"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800DAD5C_us", "func_800DAD60_us", "func_800DADBC_us", "func_800DAE30_us", "func_800DC93C_us", "func_800DCA7C_us", "func_800DCCC0_us", "func_800DCFCC_us", "func_800DD0DC_us", "func_800DD200_us", "func_800DD244_us", "func_800DD2A8_us", "func_800DD310_us", "func_800DD544_us", "func_800DD970_us", "func_800DD9E8_us", "func_800DDA00_us", "func_800DDA08_us", "func_800DDB94_us", "func_800DDBCC_us", "func_800DDC3C_us", "func_800DDC5C_us", "func_800DDC68_us", "func_800DDCA4", "func_800DDCCC_us", "func_800DDD30_us", "func_800DDDA8_us", "func_800DDE88_us", "func_800DE098_us", "func_800DE0C0_us", "func_800DE1B4_us", "func_800DE280_us"]
+evidence = "proven"
+members = ["func_800DAD5C_us", "func_800DAD60_us", "func_800DADBC_us", "func_800DAE30_us", "func_800DC93C_us", "func_800DCA7C_us", "func_800DCCC0_us", "func_800DCFCC_us", "func_800DD0DC_us", "func_800DD200_us", "func_800DD244_us", "func_800DD2A8_us", "func_800DD310_us", "func_800DD544_us", "func_800DD970_us", "func_800DD9E8_us", "func_800DDA08_us", "func_800DDB94_us", "func_800DDBCC_us", "func_800DDC3C_us", "func_800DDC5C_us", "func_800DDC68_us", "func_800DDCA4", "func_800DDCCC_us", "func_800DDD30_us", "func_800DDDA8_us", "func_800DDE88_us", "func_800DE098_us", "func_800DE0C0_us", "func_800DE1B4_us", "func_800DE280_us"]
 signals = ["callee", "cap", "rodata"]
 
 [[group]]
@@ -242,22 +245,22 @@ signals = ["callee", "cap"]
 [[group]]
 name = "code_800E21E4"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800E21E4_us", "func_800E2614_us", "func_800E2620_us", "func_800E262C_us", "func_800E2640_us", "func_800E26DC_us", "func_800E27E4_us", "func_800E2820_us", "func_800E289C_us", "func_800E28DC_us", "func_800E2ACC_us", "func_800E2AF0_us", "func_800E2CFC_us", "func_800E2D40_us", "func_800E2DE8_us", "func_800E30F8_us", "func_800E3460", "func_800E3470", "func_800E3480", "func_800E349C", "func_800E34B4", "func_800E3554_us", "func_800E35CC_us", "func_800E35F0_us", "func_800E360C_us", "func_800E36FC_us", "func_800E377C_us", "func_800E3980_us", "func_800E3A38_us", "func_800E3A64_us", "func_800E3AB0_us", "func_800E3B38_us"]
+evidence = "proven"
+members = ["func_800E21E4_us", "func_800E2614_us", "func_800E262C_us", "func_800E2640_us", "func_800E26DC_us", "func_800E27E4_us", "func_800E2820_us", "func_800E289C_us", "func_800E28DC_us", "func_800E2ACC_us", "func_800E2AF0_us", "func_800E2CFC_us", "func_800E2D40_us", "func_800E2DE8_us", "func_800E30F8_us", "func_800E3460", "func_800E34B4", "func_800E3554_us", "func_800E35CC_us", "func_800E35F0_us", "func_800E360C_us", "func_800E36FC_us", "func_800E377C_us", "func_800E3980_us", "func_800E3A38_us", "func_800E3A64_us", "func_800E3AB0_us", "func_800E3B38_us"]
 signals = ["callee", "cap"]
 
 [[group]]
 name = "code_800E3BC0"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800E3BC0_us", "func_800E3C18", "func_800E3C34_us", "func_800E3CF0_us", "func_800E3F90_us", "func_800E4094_us", "func_800E4104_us", "func_800E4344_us", "func_800E445C_us", "func_800E4494_us", "func_800E44EC_us", "func_800E4584_us", "func_800E4660_us", "func_800E480C", "func_800E4814_us", "func_800E481C_us", "func_800E4A18_us", "func_800E4A38_us", "func_800E4AA4_us", "func_800E4D2C_us", "func_800E4D44", "func_800E4DF8_us", "func_800E5198", "func_800E51A0_us", "func_800E51B8_us", "func_800E51C0_us", "func_800E52A0"]
+evidence = "proven"
+members = ["func_800E3BC0_us", "func_800E3C18", "func_800E3C34_us", "func_800E3CF0_us", "func_800E3F90_us", "func_800E4094_us", "func_800E4104_us", "func_800E4344_us", "func_800E445C_us", "func_800E4494_us", "func_800E44EC_us", "func_800E4584_us", "func_800E4660_us", "func_800E480C", "func_800E481C_us", "func_800E4A18_us", "func_800E4A38_us", "func_800E4AA4_us", "func_800E4D2C_us", "func_800E4D44", "func_800E4DF8_us", "func_800E5198", "func_800E51A0_us", "func_800E51B8_us", "func_800E51C0_us", "func_800E52A0"]
 signals = ["callee", "cap"]
 
 [[group]]
 name = "code_800E5328"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800E5328_us", "func_800E566C", "func_800E5688_us", "func_800E56B0_us", "func_800E5A70_us", "func_800E5AB0_us", "func_800E5BA0_us", "func_800E5DE4_us", "func_800E5F30_us", "func_800E5FA8_us", "func_800E6340_us", "func_800E63F4_us", "func_800E66BC_us", "func_800E6754_us", "func_800E6970_us", "func_800E69A4_us", "func_800E69D4_us", "func_800E6A30_us", "func_800E6A70_us", "func_800E6A78_us", "func_800E6AAC_us", "func_800E6B14_us", "func_800E6B3C_us", "func_800E6BBC_us", "func_800E6BF0_us", "func_800E6C14", "func_800E6C5C_us", "func_800E6C80_us", "func_800E6CA4", "func_800E6D58_us", "func_800E6FA0_us", "func_800E6FA8_us"]
+evidence = "proven"
+members = ["func_800E5328_us", "func_800E566C", "func_800E5688_us", "func_800E56B0_us", "func_800E5A70_us", "func_800E5AB0_us", "func_800E5BA0_us", "func_800E5DE4_us", "func_800E5F30_us", "func_800E5FA8_us", "func_800E6340_us", "func_800E63F4_us", "func_800E66BC_us", "func_800E6754_us", "func_800E6970_us", "func_800E69A4_us", "func_800E69D4_us", "func_800E6A30_us", "func_800E6A70_us", "func_800E6A78_us", "func_800E6AAC_us", "func_800E6B14_us", "func_800E6B3C_us", "func_800E6BBC_us", "func_800E6BF0_us", "func_800E6C14", "func_800E6C5C_us", "func_800E6C80_us", "func_800E6CA4", "func_800E6D58_us", "func_800E6FA0_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -270,8 +273,8 @@ signals = ["callee", "cap"]
 [[group]]
 name = "code_800E78C8"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800E78C8_us", "func_800E78D4_us", "func_800E78E0_us", "func_800E78EC_us", "func_800E78F8_us", "func_800E7904_us", "func_800E7910_us", "func_800E791C_us", "func_800E7928_us", "func_800E7934_us", "func_800E7A50_us", "func_800E7B7C_us", "func_800E7CA8_us", "func_800E7DD4_us", "func_800E7E50_us", "func_800E7ED4_us", "func_800E7F58_us", "func_800E7FDC_us", "func_800E808C_us", "func_800E8148_us", "func_800E8204_us", "func_800E82C0_us", "func_800E831C_us", "func_800E837C_us", "func_800E83A4_us", "func_800E83F8_us", "func_800E8450_us", "func_800E84A8_us", "func_800E8500_us", "func_800E855C_us", "func_800E85BC_us", "func_800E861C_us"]
+evidence = "proven"
+members = ["func_800E78C8_us", "func_800E7934_us", "func_800E7A50_us", "func_800E7B7C_us", "func_800E7CA8_us", "func_800E7DD4_us", "func_800E7E50_us", "func_800E7ED4_us", "func_800E7F58_us", "func_800E7FDC_us", "func_800E808C_us", "func_800E8148_us", "func_800E8204_us", "func_800E82C0_us", "func_800E831C_us", "func_800E837C_us", "func_800E83A4_us", "func_800E83F8_us", "func_800E8450_us", "func_800E84A8_us", "func_800E8500_us", "func_800E855C_us", "func_800E85BC_us", "func_800E861C_us"]
 signals = ["cap"]
 
 [[group]]
@@ -284,8 +287,8 @@ signals = ["cap"]
 [[group]]
 name = "code_800E9200"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800E9200_us", "func_800E925C_us", "func_800E9288_us", "func_800E92B8_us", "func_800E92F0_us", "func_800E9318_us", "func_800E9458_us", "func_800E9480_us", "func_800E94D8_us", "func_800E9538_us", "func_800E9570_us", "func_800E95A8_us", "func_800E9600_us", "func_800E9660_us", "func_800E96C0_us", "func_800E9720_us", "func_800E97F0_us", "func_800E9820_us", "func_800E9854_us", "func_800E986C_us", "func_800E9880_us", "func_800E9894", "func_800E9940_us", "func_800E99D4", "func_800E99E0_us", "func_800E9A00_us", "func_800E9A20_us", "func_800E9A28_us", "func_800E9A30_us", "func_800E9A54_us", "func_800E9A9C_us", "func_800E9B24_us"]
+evidence = "proven"
+members = ["func_800E9200_us", "func_800E925C_us", "func_800E9288_us", "func_800E92B8_us", "func_800E92F0_us", "func_800E9318_us", "func_800E9458_us", "func_800E9480_us", "func_800E94D8_us", "func_800E9538_us", "func_800E9570_us", "func_800E95A8_us", "func_800E9600_us", "func_800E9660_us", "func_800E96C0_us", "func_800E9720_us", "func_800E97F0_us", "func_800E9820_us", "func_800E9854_us", "func_800E986C_us", "func_800E9880_us", "func_800E9894", "func_800E9940_us", "func_800E99D4", "func_800E99E0_us", "func_800E9A00_us", "func_800E9A20_us", "func_800E9A30_us", "func_800E9A54_us", "func_800E9A9C_us", "func_800E9B24_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -305,8 +308,8 @@ signals = ["cap"]
 [[group]]
 name = "code_800EB5E8"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800EB5E8_us", "func_800EB640_us", "func_800EB668_us", "func_800EB69C_us", "func_800EB6D4_us", "func_800EB71C_us", "func_800EB764_us", "func_800EB7AC_us", "func_800EB818_us", "func_800EB840_us", "func_800EB888_us", "func_800EB8B0_us", "func_800EB8F8_us", "func_800EB920_us", "func_800EB968_us", "func_800EB990_us", "func_800EB9D8_us", "func_800EBA00_us", "func_800EBA48_us", "func_800EBA70_us", "func_800EBAB8_us", "func_800EBAE0_us", "func_800EBB58_us", "func_800EBB80_us", "func_800EBBB4_us", "func_800EBBBC_us", "func_800EBBFC_us", "func_800EBC1C_us", "func_800EBC44_us", "func_800EBC6C_us", "func_800EBC94_us", "func_800EBCBC_us"]
+evidence = "proven"
+members = ["func_800EB5E8_us", "func_800EB640_us", "func_800EB668_us", "func_800EB69C_us", "func_800EB6D4_us", "func_800EB818_us", "func_800EB840_us", "func_800EB888_us", "func_800EB8B0_us", "func_800EB8F8_us", "func_800EB920_us", "func_800EB968_us", "func_800EB990_us", "func_800EB9D8_us", "func_800EBA00_us", "func_800EBA48_us", "func_800EBA70_us", "func_800EBAB8_us", "func_800EBAE0_us", "func_800EBB58_us", "func_800EBB80_us", "func_800EBBB4_us", "func_800EBBBC_us", "func_800EBBFC_us", "func_800EBC1C_us", "func_800EBC44_us", "func_800EBC6C_us", "func_800EBC94_us", "func_800EBCBC_us"]
 signals = ["cap"]
 
 [[group]]
@@ -326,8 +329,8 @@ signals = ["callee", "padding"]
 [[group]]
 name = "code_800EDB20"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800EDB20_us", "func_800EDC64_us", "func_800EDE64_us", "func_800EE000_us", "func_800EE164_us", "func_800EE28C_us", "func_800EE4BC_us", "func_800EE4D4_us", "func_800EE75C_us", "func_800EE8B4_us", "func_800EEBEC", "func_800EECA0", "func_800EED5C_us", "func_800EEE58_us", "func_800EF020_us", "func_800EF11C_us", "func_800EF144_us", "func_800EF16C_us"]
+evidence = "proven"
+members = ["func_800EDB20_us", "func_800EDC64_us", "func_800EDE64_us", "func_800EE000_us", "func_800EE164_us", "func_800EE28C_us", "func_800EE4BC_us", "func_800EE4D4_us", "func_800EE75C_us", "func_800EE8B4_us", "func_800EEBEC", "func_800EED5C_us", "func_800EEE58_us", "func_800EF020_us", "func_800EF11C_us", "func_800EF144_us", "func_800EF16C_us"]
 signals = ["callee", "padding"]
 
 [[group]]
@@ -354,15 +357,15 @@ signals = ["cap"]
 [[group]]
 name = "code_800F45C8"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_800F45C8_us", "func_800F46C8_us", "func_800F4794_us", "func_800F4DFC", "func_800F4F60", "func_800F5128", "func_800F5178", "func_800F5264_us", "func_800F53B8_us", "func_800F5610_us", "func_800F5850_us", "func_800F58A0_us", "func_800F58F0", "func_800F5954_us", "func_800F5960_us", "func_800F5B6C_us", "func_800F66F0_us", "func_800F6934_us", "func_800F8120_us", "func_800F9F34_us", "func_800FC674_us", "func_800FF73C_us", "func_800FFB58_us", "func_800FFF78_us", "func_80100550_us", "func_801009E8_us", "func_80101E9C_us", "func_80102050_us", "func_80102A30_us", "func_80102F8C_us", "func_8010316C_us", "func_80103E50_us", "func_8010435C_us", "func_80104CD8_us"]
+evidence = "proven"
+members = ["func_800F45C8_us", "func_800F46C8_us", "func_800F4794_us", "func_800F4DFC", "func_800F4F60", "func_800F5128", "func_800F5264_us", "func_800F53B8_us", "func_800F5610_us", "func_800F5850_us", "func_800F58A0_us", "func_800F58F0", "func_800F5954_us", "func_800F5960_us", "func_800F5B6C_us", "func_800F66F0_us", "func_800F6934_us", "func_800F8120_us", "func_800F9F34_us", "func_800FC674_us", "func_800FF73C_us", "func_800FFB58_us", "func_800FFF78_us", "func_80100550_us", "func_801009E8_us", "func_80101E9C_us", "func_80102050_us", "func_80102A30_us", "func_80102F8C_us", "func_8010316C_us", "func_80103E50_us", "func_8010435C_us", "func_80104CD8_us"]
 signals = ["callee", "cap"]
 
 [[group]]
 name = "code_8010527C"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_8010527C_us", "func_80105290_us", "func_801053B0", "func_801054C0_us", "func_801054D0_us", "func_801054E0", "func_8010552C", "func_80105544_us", "func_8010555C", "func_80105584_us", "func_801055D4_us", "func_80105688_us", "func_80105750_us", "func_801057DC_us", "func_8010595C_us", "func_80105A50", "func_80105B48_us", "func_80105C68_us", "func_80105D90_us", "func_80105F24_us", "func_80106010_us", "func_8010647C_us", "func_8010698C", "func_80106B28_us", "func_80106B60_us", "func_80106C9C_us", "func_80106CCC_us", "func_80106D00", "func_80106D08_us", "func_80106D10_us", "func_80106D18", "func_80106F94_us"]
+evidence = "proven"
+members = ["func_8010527C_us", "func_80105290_us", "func_801053B0", "func_801054C0_us", "func_801054D0_us", "func_801054E0", "func_8010552C", "func_80105544_us", "func_8010555C", "func_80105584_us", "func_801055D4_us", "func_80105688_us", "func_80105750_us", "func_801057DC_us", "func_8010595C_us", "func_80105A50", "func_80105B48_us", "func_80105C68_us", "func_80105D90_us", "func_80105F24_us", "func_80106010_us", "func_8010647C_us", "func_8010698C", "func_80106B28_us", "func_80106B60_us", "func_80106C9C_us", "func_80106CCC_us", "func_80106D00", "func_80106D10_us", "func_80106D18", "func_80106F94_us"]
 signals = ["callee", "cap"]
 
 [[group]]
@@ -543,8 +546,8 @@ signals = ["callee", "padding"]
 [[group]]
 name = "code_80114520"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_80114520_us", "func_801145D0", "func_801146A0", "func_801147A0", "func_80114828", "func_80114858_us"]
+evidence = "proven"
+members = ["func_80114520_us", "func_801145D0", "func_801146A0", "func_801147A0", "func_80114858_us"]
 signals = ["padding"]
 
 [[group]]
@@ -566,6 +569,7 @@ name = "code_801153B0"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_801153B0_us", "func_8011540C", "func_80115474", "func_8011588C", "func_80115A24_us", "func_80115C80", "func_80115D7C_us", "func_8011609C"]
+split = ["func_8011588C"]
 signals = ["padding"]
 
 [[group]]
@@ -697,15 +701,16 @@ signals = ["padding"]
 [[group]]
 name = "code_80119530"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_80119530_us", "func_8011954C", "func_80119568_us", "func_80119570_us", "func_80119578_us", "func_801195C4_us", "func_80119748_us", "func_80119868_us", "func_8011994C_us", "func_801199A0_us", "func_801199F8_us", "func_80119A48_us", "func_80119A78_us", "func_80119B50_us"]
+evidence = "proven"
+members = ["func_80119530_us", "func_8011954C", "func_80119578_us", "func_801195C4_us", "func_80119748_us", "func_80119868_us", "func_8011994C_us", "func_801199A0_us", "func_801199F8_us", "func_80119A48_us", "func_80119A78_us", "func_80119B50_us"]
 signals = ["callee", "padding"]
 
 [[group]]
 name = "code_80119B60"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_80119B60", "func_80119BB4", "func_80119C34", "func_80119CE8_us", "func_80119CF0_us", "func_80119D14_us", "func_80119D9C_us", "func_80119EC8_us", "func_80119F70", "func_80119FE0_us", "func_8011A0BC_us", "func_8011A134", "func_8011A17C_us", "func_8011A1F0_us", "func_8011A260_us", "func_8011A35C_us", "func_8011AB74_us", "func_8011AB7C_us", "func_8011B1A0", "func_8011B2A4", "func_8011B314"]
+evidence = "proven"
+members = ["func_80119B60", "func_80119BB4", "func_80119C34", "func_80119CE8_us", "func_80119CF0_us", "func_80119D14_us", "func_80119D9C_us", "func_80119EC8_us", "func_80119F70", "func_80119FE0_us", "func_8011A0BC_us", "func_8011A134", "func_8011A17C_us", "func_8011A1F0_us", "func_8011A260_us", "func_8011A35C_us", "func_8011AB74_us", "func_8011AB7C_us", "func_8011B1A0", "func_8011B314"]
+split = ["func_80119BB4", "func_80119C34", "func_80119CE8_us"]
 signals = ["callee", "padding"]
 
 [[group]]
@@ -783,13 +788,14 @@ name = "code_8011C150"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_8011C150", "func_8011C180", "func_8011C1A4_us", "func_8011C1DC_us", "func_8011C210_us"]
+split = ["func_8011C180"]
 signals = ["padding"]
 
 [[group]]
 name = "code_8011C2B0"
 segment = "span_1000"
-evidence = "inferred"
-members = ["func_8011C2B0_us", "func_8011C300", "func_8011C320_us", "func_8011C39C_us", "func_8011C3A4_us", "func_8011C3AC_us", "func_8011C8F4_us"]
+evidence = "proven"
+members = ["func_8011C2B0_us", "func_8011C300", "func_8011C320_us", "func_8011C39C_us", "func_8011C3AC_us", "func_8011C8F4_us"]
 signals = ["callee", "padding"]
 
 [[group]]
@@ -874,6 +880,7 @@ name = "code_8011D0D0"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_8011D0D0", "func_8011D0E0", "func_8011D100", "func_8011D180"]
+split = ["func_8011D100"]
 signals = ["callee", "padding"]
 
 [[group]]
@@ -951,6 +958,7 @@ name = "code_8011DC00"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_8011DC00_us", "func_8011DC08_us", "func_8011DC60", "func_8011DC98", "func_8011DCF8_us", "func_8011DD10_us", "func_8011DD40_us", "func_8011DD48_us", "func_8011DFE0_us", "func_8011E2E0", "func_8011E310"]
+split = ["func_8011DC98"]
 signals = ["callee", "padding"]
 
 [[group]]
@@ -958,6 +966,7 @@ name = "code_8011E3F0"
 segment = "span_1000"
 evidence = "inferred"
 members = ["func_8011E3F0", "func_8011E434", "func_8011E488", "func_8011E4DC_us", "func_8011E564", "func_8011E60C_us", "func_8011E6B0_us", "func_8011E750_us"]
+split = ["func_8011E434", "func_8011E488"]
 signals = ["padding"]
 
 [[group]]

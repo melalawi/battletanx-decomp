@@ -1,5 +1,6 @@
 #include "span_1000/code_800A27D0.h"
 #include "types.h"
+#include "callback_word.h"
 
 struct A;
 typedef struct A A;
@@ -25,4 +26,23 @@ unsigned short func_800A4254(A *a) {
         r = func_800F3BE4(a->b0);
     }
     return r;
+}
+
+struct Unknown800A42A4;
+
+
+struct Unknown800A42A4 {
+    u8 padding[0xF4];
+    s32 value;
+};
+
+/* func_800A42A4 -- returns the word at offset 0xF4 of its argument. */
+
+
+s32 func_800A42A4(struct Unknown800A42A4 *arg0) {
+    return arg0->value;
+}
+
+s32 func_800A42B0(s32 arg0) {
+    return ((CallbackWord *)arg0)->value;
 }

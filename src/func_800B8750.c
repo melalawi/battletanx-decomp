@@ -1,5 +1,7 @@
 #include "span_1000/code_800ABFD0.h"
 #include "types.h"
+#include "audio_callbacks.h"
+
 #define NULL ((void *)0)
 
 
@@ -30,4 +32,10 @@ u8 func_800B8750(void) {
         D_80327B34 = -1;
     }
     return D_80327B20;
+}
+
+                                                  /* size = 0x10 */
+
+void func_800B87F4_us(void) {
+    s32 unused[4];
 }

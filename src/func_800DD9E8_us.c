@@ -18,3 +18,9 @@ void func_800DD9E8_us(struct Func800DD970State *state, s32 *result) {
         *result = 2;
     }
 }
+
+              /* size 0x0 */
+
+void func_800DDA00_us(void) {
+
+}
