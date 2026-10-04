@@ -7,7 +7,7 @@ struct Measured_func_8007A26C_us_9f751e433327;
 struct Measured_func_8007A26C_us_9f751e433327 { unsigned char padding[72]; short value; };
 struct Measured_func_8007A26C_us_c1ec687bfaf5;
 struct Measured_func_8007A26C_us_c1ec687bfaf5 { unsigned char padding[76]; int value; };
-extern int func_800794C8(void * arg0);
+extern int func_800794C8(void *arg0);
 extern int func_800795E4_us(void);
 extern void func_8007961C_us(void);
 extern void func_8007967C(void);

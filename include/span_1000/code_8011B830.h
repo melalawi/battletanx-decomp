@@ -3,6 +3,7 @@
 extern void func_8011BA90_us(int arg0);
 extern void func_8011BB80_us(int arg0);
 extern int func_8011BD50_us(void);
+extern int func_8011BDE4(void);
 extern float func_8011BE10_us(float arg0);
 extern int func_8011C320_us(void);
 extern void func_8011C39C_us(void);

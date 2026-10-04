@@ -3,6 +3,8 @@
 extern int func_80076000_us(void);
 extern void func_80076038(int arg0);
 extern int func_800760DC_us(int arg0);
+extern int func_80076124(int arg0);
+extern int func_80076240(int arg0, int arg1);
 extern unsigned char func_800769B0_us(void);
 extern void func_80077110_us(void);
 extern void func_800771BC_us(void);

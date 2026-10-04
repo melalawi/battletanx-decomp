@@ -217,6 +217,7 @@ $(BUILD)/obj/src/func_8007ECE8.built: tools/compile/units/func_8007ECE8.json
 $(BUILD)/obj/src/func_8007ED98.built: tools/compile/units/func_8007ED98.json
 $(BUILD)/obj/src/func_8007EE48.built: tools/compile/units/func_8007EE48.json
 $(BUILD)/obj/src/func_8007FF68.built: tools/compile/units/func_8007FF68.json
+$(BUILD)/obj/src/func_8008001C_us.built: tools/compile/units/func_8008001C_us.json
 $(BUILD)/obj/src/func_800805D0.built: tools/compile/units/func_800805D0.json
 $(BUILD)/obj/src/func_800805DC.built: tools/compile/units/func_800805DC.json
 $(BUILD)/obj/src/func_80085330.built: tools/compile/units/func_80085330.json
@@ -300,6 +301,9 @@ $(BUILD)/obj/src/func_800E6FA0_us.built: tools/compile/units/func_800E6FA0_us.js
 $(BUILD)/obj/src/func_800E6FA8_us.built: tools/compile/units/func_800E6FA8_us.json
 $(BUILD)/obj/src/func_800E7718_us.built: tools/compile/units/func_800E7718_us.json
 $(BUILD)/obj/src/func_800E78BC_us.built: tools/compile/units/func_800E78BC_us.json
+$(BUILD)/obj/src/func_800E78C8_us.built: tools/compile/units/func_800E78C8_us.json
+$(BUILD)/obj/src/func_800E78D4_us.built: tools/compile/units/func_800E78D4_us.json
+$(BUILD)/obj/src/func_800E78E0_us.built: tools/compile/units/func_800E78E0_us.json
 $(BUILD)/obj/src/func_800E9894.built: tools/compile/units/func_800E9894.json
 $(BUILD)/obj/src/func_800E99D4.built: tools/compile/units/func_800E99D4.json
 $(BUILD)/obj/src/func_800E9A20_us.built: tools/compile/units/func_800E9A20_us.json
