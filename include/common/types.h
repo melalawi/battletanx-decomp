@@ -17,6 +17,9 @@ struct QueryResult;
 /* unbake published declaration: published_03ae61c8f4341395548337e8 */
 typedef void ( *QueryCallback)(struct QueryResult *, struct QueryObject *, int, void *, void *);
 
+/* unbake published declaration: published_0442f8080750cdff9b88a743 */
+extern unsigned char D_801B6C20;
+
 struct Shape_func_800E6970_us;
 /* unbake published declaration: published_cd9b84adb68e2ec87de99591 */
 struct Shape_func_800E6970_us {
@@ -52,6 +55,9 @@ struct Shape_func_8007AAC0 {
     int field_218;
 };
 
+/* unbake published declaration: published_198938effae6a385f1df527e */
+extern u8 D_801B4C00[];
+
 /* unbake published declaration: published_21199078331902f74a0d61b1 */
 extern float D_80328154;
 
@@ -62,8 +68,14 @@ typedef struct QueryBox QueryBox;
 /* unbake published declaration: published_29e1c01692773b77c6ce1ab4 */
 extern float D_801B6C18;
 
+/* unbake published declaration: published_2c567e8374e526bc53cd5003 */
+extern s32 D_801B4A48;
+
 /* unbake published declaration: published_2d006595444f2ab3cd46081b */
 extern float D_803275F4;
+
+/* unbake published declaration: published_2d90d5139dc657d0c9a4c5be */
+extern s32 D_B04B3280;
 
 struct Shape_func_800ABAB8_us;
 struct Shape_func_800ABAB8_us {
@@ -108,8 +120,14 @@ struct Shape_func_800ABAB8_us;
 /* unbake published declaration: published_2effdfff2aa70e6b713dcc7b */
 extern struct Shape_func_800ABAB8_us * D_803276D4;
 
+/* unbake published declaration: published_32c298279d58dbb6476e584d */
+extern unsigned char D_802D5BA0[];
+
 /* unbake published declaration: published_32fbf470c8d4e3a37040b182 */
 extern float D_801B6C10;
+
+/* unbake published declaration: published_358d97450c8eb9789b51cad8 */
+extern s32 D_8014C070;
 
 struct Shape_func_8008001C_us;
 struct Shape_func_8008001C_us {
@@ -137,6 +155,9 @@ typedef struct QueryRecord QueryRecord;
 /* unbake published declaration: published_501c11569db5b57ad0726221 */
 extern float D_80328158;
 
+/* unbake published declaration: published_503feea1c70ef59e77385c9f */
+extern s32 D_801B4AA8;
+
 /* unbake published declaration: published_50a9f92af7f887cafe3ebaf9 */
 extern float D_8033B630;
 
@@ -156,6 +177,9 @@ struct QueryDispatch;
 /* unbake published declaration: published_57be063eb00b2fe00782e2da */
 struct QueryDispatch { QueryCallback callback; int tail[2]; };
 
+/* unbake published declaration: published_5a8e5f42037f91c321c1b0a7 */
+extern int D_803C4D80[];
+
 /* unbake published declaration: published_5c95302c17bc4480fee235fe */
 extern int D_802D814C;
 
@@ -166,6 +190,9 @@ struct QueryRecord;
 /* unbake published declaration: published_6583957d4c24afbee3ec6e52 */
 struct QueryRecord { QueryBox box; char tail[22]; };
 
+/* unbake published declaration: published_6ef35b8e4f5c986beebd3230 */
+extern s32 D_8014C0B0;
+
 /* unbake published declaration: published_74f87bb4c7b05e212648b5c6 */
 extern float D_803275F0;
 
@@ -174,6 +201,9 @@ struct Shape_func_800B8804_us;
 struct Shape_func_800B8804_us {
     void * field_0;
 };
+
+/* unbake published declaration: published_7ced0f56a9f35336975dc45d */
+extern s32 D_8014B9F0;
 
 /* unbake published declaration: published_83ede5508dfe789d733b0117 */
 extern float D_80327B20;
@@ -186,6 +216,9 @@ extern int D_80134E5C;
 
 /* unbake published declaration: published_88fe57f5d7045a8de21deb3c */
 extern int D_80152EF0[];
+
+/* unbake published declaration: published_89c9e7399a3d8aa3afdad29f */
+extern s32 D_802DF3A0;
 
 /* unbake published declaration: published_8b02e79a8b3e30a3401fdaae */
 extern int D_80152EF8;
@@ -202,11 +235,26 @@ extern int D_802D8148;
 /* unbake published declaration: published_96b57ea7f95fd498bce6ba4a */
 extern int D_802E17A8[];
 
+/* unbake published declaration: published_9b2f8f0d269cdc6b0ddf3786 */
+extern s32 D_801C0840;
+
+/* unbake published declaration: published_a329c3be154436ccb347bee1 */
+extern s32 D_8014BBA0;
+
+/* unbake published declaration: published_a3acf443b0a777207c1233d0 */
+extern s32 D_8033A980;
+
 /* unbake published declaration: published_a411abaa4f7c2d70b52e9832 */
 extern float D_80328150;
 
 /* unbake published declaration: published_a558a2519bf881ef43e88e3e */
 extern float D_80150354;
+
+/* unbake published declaration: published_a9ca04f42f71f8bf3bec2709 */
+extern int D_8035CD24;
+
+/* unbake published declaration: published_ab75ad8878bc920cfcdb616e */
+extern s32 D_B04B1300;
 
 struct QueryBox;
 struct QueryResult;
@@ -218,6 +266,15 @@ extern float D_8033B631;
 
 /* unbake published declaration: published_c0b8d1b6f711ea1386b92d5f */
 extern QueryRecord D_803B8254[];
+
+/* unbake published declaration: published_c302ac0189c733d3d1b5be38 */
+extern s32 D_803DA800;
+
+/* unbake published declaration: published_c76b214f22646f8cdd381cbd */
+extern s32 D_802DF5B0;
+
+/* unbake published declaration: published_c91819561c1f144956b9b77b */
+extern unsigned char D_803C75C8[];
 
 /* unbake published declaration: published_ca90412a9129beb2414bcd0e */
 extern double D_800723B0;
@@ -235,6 +292,9 @@ extern int D_80327B34;
 /* unbake published declaration: published_da6b1656c04c34863e9e17c3 */
 extern float D_80074428;
 
+/* unbake published declaration: published_dd54c523ed53fd44733f1b24 */
+extern s32 D_802D8144;
+
 /* unbake published declaration: published_e29eea54071038c5e99d17b8 */
 extern QueryDispatch D_802C3804[];
 
@@ -244,11 +304,20 @@ extern int D_801B4AAC;
 /* unbake published declaration: published_edea8e5a3cf2cb7f86d99a2f */
 extern float D_802D5BB7;
 
+/* unbake published declaration: published_ef07876fccf06400e9fb4aab */
+extern s32 D_802E17A0;
+
+/* unbake published declaration: published_f0106488cf79262ad70d30f0 */
+extern unsigned char D_8014E0D0;
+
 /* unbake published declaration: published_f0373f0dae6e9baa16542b05 */
 extern float D_800723BC;
 
 /* unbake published declaration: published_f07fdcbd17be8a5fbfde61a4 */
 extern float D_80328170;
+
+/* unbake published declaration: published_f32333eea9a78d0633240f2f */
+extern s32 D_8014BD50;
 
 /* unbake published declaration: published_f4a1bd6f074a3eedcd2fdd6d */
 extern float D_80328159;
@@ -2399,23 +2468,13 @@ extern int D_80146190;
 extern int D_801471C8;
 extern unsigned char D_80147372;
 extern int D_80147388;
-extern s32 D_8014B9F0;
-extern s32 D_8014BBA0;
-extern s32 D_8014BD50;
-extern s32 D_8014C070;
-extern s32 D_8014C0B0;
-extern unsigned char D_8014E0D0;
 extern int D_8014E2BC;
 extern int D_80150390;
 extern int D_801B4A40;
-extern s32 D_801B4A48;
 extern short D_801B4A58[];
-extern s32 D_801B4AA8;
 extern int D_801B4AC0;
 extern int D_801B4AD0;
-extern u8 D_801B4C00[];
-extern unsigned char D_801B6C20;
-extern s32 D_801C0840;
+extern s32 D_801C9170;
 extern int D_801C9188;
 extern float D_802C13E8;
 extern float D_802C13EC;
@@ -2511,15 +2570,10 @@ extern int D_802C3A04;
 extern int D_802C3A0C;
 extern int D_802C3A1C;
 extern int D_802C3A24;
-extern unsigned char D_802D5BA0[];
-extern s32 D_802D8144;
 extern float D_802D8150;
 extern float D_802D8154;
 extern int D_802DF348;
-extern s32 D_802DF3A0;
 extern int D_802DF540[];
-extern s32 D_802DF5B0;
-extern s32 D_802E17A0;
 extern int D_80327628;
 extern int D_8032762C;
 extern int D_80327634;
@@ -2611,7 +2665,6 @@ extern int D_803283D8[];
 extern int D_80328408;
 extern int D_8032840C;
 extern int D_80328410;
-extern s32 D_8033A980;
 extern int D_8033AAC8[];
 extern unsigned char D_8033B449;
 extern int D_8033B5F4;
@@ -2628,7 +2681,6 @@ extern unsigned char D_8035BC73;
 extern unsigned int D_8035BC74;
 extern unsigned int D_8035BC75;
 extern unsigned short D_8035BC78;
-extern int D_8035CD24;
 extern int D_80362110;
 extern int D_8037A150[];
 extern int D_8037A160;
@@ -2668,7 +2720,6 @@ extern int D_803B75A0;
 extern int D_803B8238;
 extern int D_803B823C;
 extern int D_803C4D68;
-extern int D_803C4D80[];
 extern int D_803C4E10;
 extern struct Shape_func_801125F0_us * D_803C5FD0;
 extern unsigned char D_803C5FD6;
@@ -2682,9 +2733,7 @@ extern int D_803C74A6;
 extern int D_803C74A7;
 extern int D_803C74A8;
 extern int D_803C74AC;
-extern unsigned char D_803C75C8[];
 extern unsigned short D_803C8870;
-extern s32 D_803DA800;
 extern int D_A4040010;
 extern int D_A4400008;
 extern int D_A440000C;
@@ -2712,8 +2761,6 @@ extern int D_A4800010;
 extern int D_A4800018;
 extern int D_A5000508;
 extern int D_A5000510;
-extern s32 D_B04B1300;
-extern s32 D_B04B3280;
 extern int jtbl_800711C8[];
 extern int jtbl_80071350[];
 extern int jtbl_80071378[];
