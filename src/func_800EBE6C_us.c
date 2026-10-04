@@ -1,5 +1,5 @@
-#include "common/types.h"
-#include "span_1000/code_800EBE44.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_800EBCE4.h"
 #include "types.h"
 struct Shape_func_800E6970_us;
 /* 54 call sites pass float bits in a1; v0 is the incremented stack depth. */

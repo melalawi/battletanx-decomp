@@ -1,4 +1,4 @@
-#include "span_1000/code_80077620.h"
+#include "span_1000/code_80078E30.h"
 #include "types.h"
 
 /* This entry returns the address without reading the object. */

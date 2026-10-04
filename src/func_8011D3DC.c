@@ -1,4 +1,4 @@
-#include "span_1000/code_8011C3AC.h"
+#include "span_1000/code_8011D1A0.h"
 /*
  * Returns the length of a NUL-terminated string: it walks a cursor forward
  * while the byte ahead of it is non-zero and returns the distance covered.

@@ -1,7 +1,7 @@
 #include "types.h"
 #include "audio_callbacks.h"
-#include "span_1000/code_8007EB64.h"
-#include "span_1000/data.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_8007EBA0.h"
 
 
 

@@ -1,7 +1,7 @@
 #ifdef NON_MATCHING
 /* NON_MATCHING: diagnostic reconstruction; owner fuzzy bar required. */
 #include "types.h"
-#include "span_1000/code_80076000.h"
+#include "span_1000/code_80076068.h"
 extern void func_80076068_us(void *, int);
 void func_800767E4_us(void) {
     s32 ready;

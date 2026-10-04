@@ -1,4 +1,4 @@
-#include "span_1000/code_800E9538.h"
+#include "span_1000/code_800E9B9C.h"
 #include "types.h"
 
 struct Ent;

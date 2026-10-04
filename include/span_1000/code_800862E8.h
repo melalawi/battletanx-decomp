@@ -1,0 +1,4 @@
+#ifndef UNBAKE_SPAN_1000_CODE_800862E8_H
+#define UNBAKE_SPAN_1000_CODE_800862E8_H
+extern int func_800865E0_us(void);
+#endif

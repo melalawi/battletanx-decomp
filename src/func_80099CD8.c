@@ -1,5 +1,4 @@
-#include "common/types.h"
-#include "span_1000/code_80096D04.h"
+#include "span_1000/code_80097038.h"
 #include "types.h"
 
 struct Func_80099CD8_View0;

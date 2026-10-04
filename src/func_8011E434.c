@@ -1,4 +1,4 @@
-#include "span_1000/code_8011D790.h"
+#include "span_1000/code_8011E3F0.h"
 /* func_8011E434 -- initialises one object by registering a pair of callbacks for it and then
  * clearing and filling three of its own words. The call takes the two function addresses and a
  * count of seven; afterwards the word at 0x14 is zeroed and the second and third arguments are

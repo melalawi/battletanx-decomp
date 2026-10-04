@@ -1,7 +1,6 @@
 #include "audio_callbacks.h"
 #include "types.h"
-#include "common/types.h"
-#include "span_1000/code_800794C8.h"
+#include "span_1000/code_8007963C.h"
 
 /* func_80112140: types.abi.word: r7: semantic type conflict; one O32 word carrier */
 extern int func_80112140(int, int, void *, int, int);

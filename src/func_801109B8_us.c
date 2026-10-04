@@ -1,4 +1,4 @@
-#include "span_1000/code_8010DED4.h"
+#include "span_1000/code_801106A0.h"
 
               /* size 0x0 */
 

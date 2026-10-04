@@ -1,4 +1,4 @@
-#include "span_1000/code_800A2A28.h"
+#include "span_1000/code_800A27D0.h"
 #include "types.h"
 /* func_800A4A64 -- appends arg1's two floats to the looked-up object's pair list (count at 0x1AF,
  * stopping at one entry) and keeps the first entry's id from func_800A6AB4 at 0x1B8. */

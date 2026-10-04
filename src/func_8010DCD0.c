@@ -1,5 +1,5 @@
-#include "common/types.h"
-#include "span_1000/code_8010A8A8.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_8010BFDC.h"
 #include "types.h"
 
 struct func_8010DCD0_S1;

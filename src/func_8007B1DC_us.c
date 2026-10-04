@@ -1,4 +1,4 @@
-#include "span_1000/code_8007A3D8.h"
+#include "span_1000/code_8007A470.h"
 #include "audio_callbacks.h"
 #include "types.h"
 

@@ -1,5 +1,4 @@
-#include "common/types.h"
-#include "span_1000/code_800F3A24.h"
+#include "span_1000/code_800F45C8.h"
 /* func_800F5128 -- shifts seventeen fresh bits from func_800F58F0 into D_8035CD24. */
 
 

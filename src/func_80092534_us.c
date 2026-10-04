@@ -1,5 +1,5 @@
-#include "common/types.h"
-#include "span_1000/code_80090F94.h"
+#include "span_1000/code_80091A60.h"
+#include "span_1000/code_80107168.h"
 /* Scale the query box, collect nearby results, and dispatch their callbacks. */
 #include "types.h"
 void func_80092534_us(QueryObject *object) {

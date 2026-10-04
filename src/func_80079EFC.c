@@ -1,4 +1,4 @@
-#include "span_1000/code_800794C8.h"
+#include "span_1000/code_8007963C.h"
 #include "types.h"
 
 struct Func79EFCArg;

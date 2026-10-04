@@ -1,4 +1,4 @@
-#include "span_1000/code_8011C3AC.h"
+#include "span_1000/code_8011D0D0.h"
 /* Calls func_8011D0D0 with a literal 0x400 and nothing else; the frame exists only to
  * hold the return address across that call.
  * There is no load or store of data, so no field types are involved: the single

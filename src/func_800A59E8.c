@@ -1,4 +1,4 @@
-#include "span_1000/code_800A51E8.h"
+#include "span_1000/code_800A5050.h"
 #include "types.h"
 
 struct FuncA59E8State;

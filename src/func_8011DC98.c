@@ -1,5 +1,5 @@
-#include "common/types.h"
-#include "span_1000/code_8011D790.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_8011DC00.h"
 #include "types.h"
 
 struct Shape_func_8011DC98;

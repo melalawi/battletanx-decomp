@@ -1,4 +1,4 @@
-#include "span_1000/code_80077620.h"
+#include "span_1000/code_80078E30.h"
 #include "types.h"
 
 struct func_800793D0_S1;
@@ -49,7 +49,7 @@ struct func_800793D0_S2 {
 /* Sh2 control register loads/stores */
 
 #endif
-s32 func_800794C8();                      /* extern */
+                      /* extern */
 s32 func_80079530();                      /* extern */
 s32 func_8007F070();                /* extern */
 s32 func_8007F204();                         

@@ -1,4 +1,4 @@
-#include "span_1000/code_8007EB64.h"
+#include "span_1000/code_8008011C.h"
 #include "types.h"
 
 struct func_800805DC_S1;

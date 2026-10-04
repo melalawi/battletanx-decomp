@@ -1,5 +1,5 @@
-#include "common/types.h"
-#include "span_1000/code_8011B830.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_8011B9E0.h"
 #include "types.h"
 
 struct Command;

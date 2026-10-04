@@ -1,4 +1,4 @@
-#include "span_1000/code_80096D04.h"
+#include "span_1000/code_80097038.h"
 #include "types.h"
 
 struct Unknown8009E39C;

@@ -1,6 +1,6 @@
 #include "audio_callbacks.h"
 #include "types.h"
-#include "span_1000/code_8007EB64.h"
+#include "span_1000/code_8008011C.h"
 
 extern unsigned char D_801B6C20; /* opaque address transport */
 

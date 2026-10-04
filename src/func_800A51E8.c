@@ -1,5 +1,5 @@
-#include "common/types.h"
-#include "span_1000/code_800A51E8.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_800A5050.h"
 #include "types.h"
 
 struct FuncA51E8State;

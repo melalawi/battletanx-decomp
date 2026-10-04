@@ -1,4 +1,4 @@
-#include "span_1000/code_80084F90.h"
+#include "span_1000/code_800824E4.h"
 /* Original packets use the classic F3DEX command encoding. */
 #undef F3DEX_GBI_2
 #define F3DEX_GBI

@@ -1,5 +1,4 @@
-#include "common/types.h"
-#include "span_1000/code_800DE664.h"
+#include "span_1000/code_800E0B00.h"
 #include "types.h"
 
 struct Func_800E0B00_View0;
@@ -58,7 +57,7 @@ struct Func_800E0B00_View1 {
 /* Sh2 control register loads/stores */
 
 #endif
-s32 func_800E1818();           /* extern */
+           /* extern */
 const f32 D_80074428 = 2.0f;
 extern void *D_80135834;
 

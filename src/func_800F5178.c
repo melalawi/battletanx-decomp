@@ -1,4 +1,4 @@
-#include "span_1000/code_800F3A24.h"
+#include "span_1000/code_800F45C8.h"
 /* func_800F5178 -- the adaptive model's initial state, as LZARI's StartModel sets it up.
  *
  * Every symbol starts with frequency one, so the cumulative table counts down from 314 to 0; the

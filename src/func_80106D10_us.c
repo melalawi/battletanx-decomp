@@ -1,5 +1,5 @@
 #include "types.h"
-#include "span_1000/code_8010698C.h"
+#include "span_1000/code_8010527C.h"
 
               /* size 0x0 */
 

@@ -1,4 +1,4 @@
-#include "span_1000/code_80084F90.h"
+#include "span_1000/code_800824E4.h"
 /* func_80085460 -- does nothing.
  *
  * Two words: the return and an empty delay slot. The cartridge keeps the entry point, so

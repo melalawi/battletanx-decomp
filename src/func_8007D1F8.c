@@ -1,4 +1,4 @@
-#include "span_1000/code_8007C6D8.h"
+#include "span_1000/code_8007C700.h"
 #include "types.h"
 
 struct Info;

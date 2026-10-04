@@ -1,4 +1,5 @@
 #include "span_1000/code_80076000.h"
+#include "span_1000/code_80076068.h"
 /* func_80076038 -- ORs its argument into what func_800771F4 returns and hands the result to func_80077200. */
 
 

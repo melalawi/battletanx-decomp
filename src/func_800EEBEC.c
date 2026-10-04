@@ -1,4 +1,4 @@
-#include "span_1000/code_800EC700.h"
+#include "span_1000/code_800EDB20.h"
 #include "types.h"
 
 struct FuncEEBECObject;

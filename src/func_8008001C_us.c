@@ -1,7 +1,7 @@
 #include "types.h"
-#include "common/types.h"
-#include "span_1000/code_8007EB64.h"
-#include "span_1000/code_800F3A24.h"
+#include "common/types_d507c48987bb.h"
+#include "span_1000/code_8007EBA0.h"
+#include "span_1000/code_800F45C8.h"
 #include "gfx.h"
 #undef F3DEX_GBI_2
 #define F3D_GBI
