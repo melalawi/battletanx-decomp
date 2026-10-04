@@ -21,4 +21,7 @@ baserom.*
 *.key
 id_rsa*
 credentials.json
+*.lock
+/tools/compile/binaries/
+/tools/compile/drivers/*.sha256
 !baserom.sha1

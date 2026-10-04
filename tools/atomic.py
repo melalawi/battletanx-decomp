@@ -4,26 +4,109 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
+import os
+import shutil
 import subprocess
 import tempfile
 from collections.abc import Iterator
 from contextlib import ExitStack, contextmanager
 from pathlib import Path
+from typing import IO, Any
 
 
 @contextmanager
 def staging(path: Path) -> Iterator[Path]:
     """Yield a nonexistent private path on the destination filesystem."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix=".publish-", dir=path.parent) as directory:
-        temporary = Path(directory) / path.name
+    descriptor, name = tempfile.mkstemp(prefix=".publish-", suffix=path.suffix, dir=path.parent)
+    os.close(descriptor)
+    temporary = Path(name)
+    temporary.unlink()
+    try:
         yield temporary
-        temporary.replace(path)
+        publish(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
-def write(path: Path, content: bytes) -> None:
-    with staging(path) as temporary:
-        temporary.write_bytes(content)
+def publish(temporary: Path, path: Path) -> None:
+    """Sync a private file, then replace the destination directory entry."""
+    with temporary.open("rb") as source:
+        os.fsync(source.fileno())
+    os.replace(temporary, path)
+
+
+@contextmanager
+def stream(
+    path: Path,
+    mode: str = "w",
+    *,
+    encoding: str | None = None,
+    errors: str | None = None,
+    newline: str | None = None,
+    permissions: int | None = None,
+) -> Iterator[IO[Any]]:
+    """Write privately; append under a stable side lock and publish on success."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with ExitStack() as stack:
+        if "a" in mode or "+" in mode:
+            lock = stack.enter_context(path.with_name("." + path.name + ".append.lock").open("a+b"))
+            fcntl.flock(lock, fcntl.LOCK_EX)
+        if permissions is None:
+            permissions = path.stat().st_mode & 0o777 if path.exists() else 0o644
+        with staging(path) as temporary:
+            if ("a" in mode or "+" in mode) and path.exists():
+                shutil.copyfile(path, temporary)
+            with temporary.open(mode, encoding=encoding, errors=errors, newline=newline) as output:
+                yield output
+                output.flush()
+                os.fsync(output.fileno())
+            temporary.chmod(permissions)
+
+
+def write(path: Path, content: bytes | bytearray, *, mode: int | None = None) -> None:
+    with stream(path, "wb", permissions=mode) as output:
+        output.write(content)
+
+
+def text(
+    path: Path, content: str, encoding: str | None = None, errors: str | None = None, newline: str | None = None
+) -> int:
+    with stream(path, encoding=encoding, errors=errors, newline=newline) as output:
+        return int(output.write(content))
+
+
+def copyfile(source: Path, destination: Path, *, follow_symlinks: bool = True) -> Path:
+    with staging(destination) as temporary:
+        shutil.copyfile(source, temporary, follow_symlinks=follow_symlinks)
+    return destination
+
+
+def copy2(source: Path, destination: Path, *, follow_symlinks: bool = True) -> Path:
+    destination = Path(destination)
+    if destination.is_dir():
+        destination /= Path(source).name
+    with staging(destination) as temporary:
+        shutil.copy2(source, temporary, follow_symlinks=follow_symlinks)
+    return destination
+
+
+def copy(source: Path, destination: Path, *, follow_symlinks: bool = True) -> Path:
+    destination = Path(destination)
+    if destination.is_dir():
+        destination /= Path(source).name
+    with staging(destination) as temporary:
+        shutil.copy(source, temporary, follow_symlinks=follow_symlinks)
+    return destination
+
+
+def copytree(source: Path, destination: Path, **kwargs: Any) -> Path:
+    kwargs.setdefault("copy_function", copy2)
+    if kwargs["copy_function"] not in (copy2, os.link):
+        raise ValueError("tree copies require atomic publication or hardlinks")
+    return Path(shutil.copytree(source, destination, **kwargs))
 
 
 def receipt(path: Path) -> None:

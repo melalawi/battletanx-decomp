@@ -7,6 +7,8 @@ import argparse
 import re
 from pathlib import Path
 
+import atomic as atomic_files
+
 CONDITIONAL = {
     "b",
     "bal",
@@ -241,7 +243,7 @@ def main() -> None:
     args = parser.parse_args()
     try:
         symbols, units = read_symbols(args.symbols)
-        args.destination.write_text(resolve(args.source.read_text(), args.unit, symbols, units))
+        atomic_files.text(args.destination, resolve(args.source.read_text(), args.unit, symbols, units))
     except (OSError, ValueError) as error:
         parser.exit(1, f"HELD(resolve-branches): {error}\n")
 

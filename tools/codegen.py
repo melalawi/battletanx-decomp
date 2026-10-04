@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import re
 import shutil
 import tempfile
@@ -11,6 +12,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import TypedDict
 
+import atomic as atomic_files
 from compile_identity import driver_names
 
 Compiler = TypedDict("Compiler", {"kind": str, "cc": str, "cflags": list[str], "as": str})
@@ -169,6 +171,12 @@ def prepare(
         ]
         if args.non_matching == "1":
             flags.append("-DNON_MATCHING=1")
+        consumer = "UNBAKE_CONSUMER_" + hashlib.sha256(Path(args.unit).stem.encode()).hexdigest()[:16].upper()
+        if any(
+            (Path(include) / "shared/consumers" / (Path(args.unit).stem + ".h")).is_file()
+            for include in data["include"]
+        ):
+            flags.append("-D" + consumer + "=1")
         direct = data["unit_cflags"].get(args.unit)
         stem = data["unit_cflags"].get(Path(args.unit).stem)
         if direct is not None and stem is not None and direct != stem:
@@ -192,7 +200,7 @@ def prepare(
                 content = execute([data["cpp"], *cppflags, *preprocess, *dependencies, temporary.name])
                 if args.depfile:
                     text = args.depfile.read_text().replace(temporary.name, str(args.source))
-                    args.depfile.write_text(text)
+                    atomic_files.text(args.depfile, text)
         else:
             content = execute(
                 [
@@ -238,7 +246,7 @@ def prepare(
                 else dependency_paths(args.depfile.read_text())
             )
             target = args.dep_target or str(out)
-            args.depfile.write_text(target + ": " + " ".join(words) + "\n")
+            atomic_files.text(args.depfile, target + ": " + " ".join(words) + "\n")
 
     inputs = [args.recipe.parent / name for name in driver_names(args.kind, sn64)]
     if sn64:
@@ -270,7 +278,7 @@ def prepare(
             # Only a stable unit-relative spelling reaches cc1/as and STT_FILE.
             # The working directory stays randomly isolated for concurrent jobs.
             source = work / source_name
-            source.write_bytes(content)
+            atomic_files.write(source, content)
             if sn64:
                 assert compiler is not None
                 from abumasn64.assemble import assemble
@@ -314,7 +322,8 @@ def prepare(
                 execute([*command, "-o", str(destination), source.name], cwd=work)
                 if args.depfile:
                     text = args.depfile.read_text()
-                    args.depfile.write_text(
+                    atomic_files.text(
+                        args.depfile,
                         (args.dep_target or str(out))
                         + ":"
                         + " "
@@ -322,7 +331,7 @@ def prepare(
                             str(args.source) if word in {str(source), source.name} else word
                             for word in dependency_paths(text)
                         )
-                        + "\n"
+                        + "\n",
                     )
             else:
                 assert compiler is not None

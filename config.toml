@@ -11,7 +11,7 @@ versions = [ "us",]
 default_compiler = "gcc-2.7.2-kmc"
 
 [workspace]
-id = "efd53fbc-45c2-4ea2-ba79-55aa90347428"
+id = "70f100fe-f35f-4162-a87c-848bec40861a"
 
 [paths]
 declaration_evidence = []
@@ -35,6 +35,7 @@ cppflags = [ "-P", "-undef", "-nostdinc", "-D_LANGUAGE_C", "-DF3DEX_GBI_2", "-D_
 sn64_asflags = [ "-mips3",]
 
 [units]
+func_80119568_us = "ido-7.1"
 func_8007967C = "ido-7.1"
 func_80079684 = "ido-7.1"
 func_8007C298 = "ido-7.1"

@@ -46,15 +46,47 @@ def selected_pins(groups: dict[str, dict[str, str]], cc: Path, tools: Path, kind
 
 
 class _Logic(ast.NodeTransformer):
-    def visit_ImportFrom(self, node: ast.ImportFrom) -> ast.AST:
+    def visit_ImportFrom(self, node: ast.ImportFrom) -> ast.AST | None:
         if node.module is not None:
+            if node.module == "unbake.project_tools":
+                node.names = [item for item in node.names if (item.name, item.asname) != ("atomic", "atomic_files")]
+                if not node.names:
+                    return None
             node.module = node.module.removeprefix("unbake.project_tools.")
             if node.module == "unbake.project.cache":
                 node.module = "cache"
         return node
 
+    def visit_Import(self, node: ast.Import) -> ast.AST | None:
+        node.names = [item for item in node.names if (item.name, item.asname) != ("atomic", "atomic_files")]
+        return node if node.names else None
+
+    def visit_Call(self, node: ast.Call) -> ast.AST:
+        self.generic_visit(node)
+        if (
+            isinstance(node.func, ast.Attribute)
+            and isinstance(node.func.value, ast.Name)
+            and node.func.value.id == "atomic_files"
+            and node.func.attr in {"text", "write"}
+            and node.args
+        ):
+            # Publication strategy cannot change generated instruction bytes.
+            # Keep the payload and destination in identity, while allowing warm
+            # objects to survive the migration from direct to atomic writes.
+            attr = "write_text" if node.func.attr == "text" else "write_bytes"
+            return ast.Call(
+                func=ast.Attribute(value=node.args[0], attr=attr, ctx=ast.Load()),
+                args=node.args[1:],
+                keywords=node.keywords,
+            )
+        return node
+
     def visit_Expr(self, node: ast.Expr) -> ast.AST | None:
-        return None if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str) else node
+        return (
+            None
+            if isinstance(node.value, ast.Constant) and isinstance(node.value.value, str)
+            else self.generic_visit(node)
+        )
 
 
 class _Scope(ast.NodeTransformer):

@@ -7,7 +7,6 @@ import argparse
 import hashlib
 import json
 import os
-import shutil
 import subprocess
 import tomllib
 from functools import lru_cache
@@ -15,6 +14,7 @@ from pathlib import Path
 from typing import cast
 
 from cache import Cache, key
+import atomic as atomic_files
 from atomic import receipt, staging, write
 from codegen import (
     Recipe,
@@ -168,13 +168,13 @@ def _compile_object(args: argparse.Namespace, data: Recipe | None = None) -> Non
     cached = cache.produce(args.kind, digest, prepared.produce)
     if not out.exists() or out.read_bytes() != cached.read_bytes():
         with staging(out) as pending:
-            shutil.copyfile(cached, pending)
+            atomic_files.copyfile(cached, pending)
     if args.depfile and (args.kind == "as" or sn64):
         existing = dependency_paths(args.depfile.read_text()) if args.depfile.is_file() else []
         dependencies = list(
             dict.fromkeys([str(args.source), *existing, *assembler_headers(data, args.version, args.kind)])
         )
-        args.depfile.write_text((args.dep_target or str(out)) + ": " + " ".join(dependencies) + "\n")
+        atomic_files.text(args.depfile, (args.dep_target or str(out)) + ": " + " ".join(dependencies) + "\n")
     if args.kind == "cc" and args.depfile and args.depfile.is_file():
         words = dependency_paths(args.depfile.read_text())
         dependency_hashes = {str(Path(word)): dependency_hash(word) for word in words}
