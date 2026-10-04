@@ -3490,7 +3490,7 @@ extern float D_802C37FC;
 extern int D_802C3800[];
 extern QueryDispatch D_802C3804[];
 extern QueryRecord D_803B8254[];
-extern void func_80107A14_us(QueryBox *, int, struct QueryResult **, int *);
+extern void func_80107A14_us(struct QueryBox *, int, struct QueryResult **, int *);
 extern int D_802C3808[];
 extern int D_802C380C;
 extern int D_802C3810;

@@ -205,6 +205,7 @@ $(BUILD)/obj/src/func_8007967C.built: tools/compile/units/func_8007967C.json
 $(BUILD)/obj/src/func_80079684.built: tools/compile/units/func_80079684.json
 $(BUILD)/obj/src/func_80079A5C.built: tools/compile/units/func_80079A5C.json
 $(BUILD)/obj/src/func_80079EFC.built: tools/compile/units/func_80079EFC.json
+$(BUILD)/obj/src/func_8007A26C_us.built: tools/compile/units/func_8007A26C_us.json
 $(BUILD)/obj/src/func_8007AAC0.built: tools/compile/units/func_8007AAC0.json
 $(BUILD)/obj/src/func_8007C298.built: tools/compile/units/func_8007C298.json
 $(BUILD)/obj/src/func_8007C33C.built: tools/compile/units/func_8007C33C.json
@@ -279,6 +280,7 @@ $(BUILD)/obj/src/func_800DDCA4.built: tools/compile/units/func_800DDCA4.json
 $(BUILD)/obj/src/func_800E0B00.built: tools/compile/units/func_800E0B00.json
 $(BUILD)/obj/src/func_800E1A08_us.built: tools/compile/units/func_800E1A08_us.json
 $(BUILD)/obj/src/func_800E2614_us.built: tools/compile/units/func_800E2614_us.json
+$(BUILD)/obj/src/func_800E2620_us.built: tools/compile/units/func_800E2620_us.json
 $(BUILD)/obj/src/func_800E3460.built: tools/compile/units/func_800E3460.json
 $(BUILD)/obj/src/func_800E3470.built: tools/compile/units/func_800E3470.json
 $(BUILD)/obj/src/func_800E3480.built: tools/compile/units/func_800E3480.json
@@ -296,6 +298,8 @@ $(BUILD)/obj/src/func_800E6C14.built: tools/compile/units/func_800E6C14.json
 $(BUILD)/obj/src/func_800E6CA4.built: tools/compile/units/func_800E6CA4.json
 $(BUILD)/obj/src/func_800E6FA0_us.built: tools/compile/units/func_800E6FA0_us.json
 $(BUILD)/obj/src/func_800E6FA8_us.built: tools/compile/units/func_800E6FA8_us.json
+$(BUILD)/obj/src/func_800E7718_us.built: tools/compile/units/func_800E7718_us.json
+$(BUILD)/obj/src/func_800E78BC_us.built: tools/compile/units/func_800E78BC_us.json
 $(BUILD)/obj/src/func_800E9894.built: tools/compile/units/func_800E9894.json
 $(BUILD)/obj/src/func_800E99D4.built: tools/compile/units/func_800E99D4.json
 $(BUILD)/obj/src/func_800E9A20_us.built: tools/compile/units/func_800E9A20_us.json

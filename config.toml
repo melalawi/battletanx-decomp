@@ -11,7 +11,7 @@ versions = [ "us",]
 default_compiler = "gcc-2.7.2-kmc"
 
 [workspace]
-id = "eba651b1-2b5f-44d1-a224-dd5a58dd8e5d"
+id = "173e5406-ec3a-42ae-aee4-fcff2d1f0da1"
 
 [paths]
 declaration_evidence = []
