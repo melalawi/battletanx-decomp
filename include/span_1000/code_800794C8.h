@@ -18,4 +18,5 @@ extern int func_80079BD4_us(void);
 extern int func_80079D58_us(void);
 extern int func_80079D9C_us(void);
 extern s32 func_8007A26C_us(void);
+extern void func_800799C0_us(int arg0);
 #endif

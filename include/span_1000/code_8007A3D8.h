@@ -9,4 +9,5 @@ extern int func_8007B1EC_us(float arg0);
 extern void func_8007C298(void);
 extern int func_8007C33C(void);
 extern int func_8007C6C4_us(void);
+extern int func_8007AAA0(void);
 #endif

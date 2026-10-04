@@ -32,7 +32,4 @@ extern float func_800E7904_us(void);
 extern float func_800E7910_us(void);
 extern float func_800E791C_us(void);
 extern float func_800E7928_us(void);
-extern f32 func_800E7910_us(void);
-extern f32 func_800E791C_us(void);
-extern f32 func_800E7928_us(void);
 #endif
