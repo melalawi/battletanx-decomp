@@ -1,12 +1,6 @@
 #ifndef UNBAKE_SPAN_1000_CODE_8011C3AC_H
 #define UNBAKE_SPAN_1000_CODE_8011C3AC_H
-struct Shape_func_8011D4A0_us;
-struct Shape_func_8011D4A0_us {
-    unsigned char padding_0[20];
-    unsigned char unknown_14[4];
-    unsigned char padding_18[4];
-    int field_1C;
-};
+#include "common/types.h"
 extern int func_8011CC60_us(void * arg0, int arg1, float arg2);
 extern void func_8011D0D0(int arg0);
 extern void func_8011D0E0(void);

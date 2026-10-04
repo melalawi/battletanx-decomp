@@ -304,6 +304,9 @@ $(BUILD)/obj/src/func_800E78BC_us.built: tools/compile/units/func_800E78BC_us.js
 $(BUILD)/obj/src/func_800E78C8_us.built: tools/compile/units/func_800E78C8_us.json
 $(BUILD)/obj/src/func_800E78D4_us.built: tools/compile/units/func_800E78D4_us.json
 $(BUILD)/obj/src/func_800E78E0_us.built: tools/compile/units/func_800E78E0_us.json
+$(BUILD)/obj/src/func_800E78EC_us.built: tools/compile/units/func_800E78EC_us.json
+$(BUILD)/obj/src/func_800E78F8_us.built: tools/compile/units/func_800E78F8_us.json
+$(BUILD)/obj/src/func_800E7904_us.built: tools/compile/units/func_800E7904_us.json
 $(BUILD)/obj/src/func_800E9894.built: tools/compile/units/func_800E9894.json
 $(BUILD)/obj/src/func_800E99D4.built: tools/compile/units/func_800E99D4.json
 $(BUILD)/obj/src/func_800E9A20_us.built: tools/compile/units/func_800E9A20_us.json

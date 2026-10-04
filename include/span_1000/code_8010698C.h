@@ -4,7 +4,6 @@ extern int func_80106B28_us(void * arg0, float arg1);
 extern int func_80106B60_us(int arg0, int arg1);
 extern int func_80106D00(void);
 extern void func_80106D08_us(void);
-extern int func_80107168_us(void);
 extern void func_80107704_us(void);
 extern int func_80109268_us(void * arg0, int arg1, int arg2, float arg3, float arg4, float arg5, float arg6, float arg7);
 extern int func_80109498_us(short arg0, short arg1, void * arg2);
