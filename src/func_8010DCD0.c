@@ -1,3 +1,4 @@
+#include "common/types.h"
 #include "span_1000/code_8010A8A8.h"
 #include "types.h"
 
@@ -58,7 +59,7 @@ struct func_8010DCD0_S3 {
 
 #endif
 s32 func_8008B89C();                 /* extern */
-extern s32 D_801B4AA8;
+
 
 
 

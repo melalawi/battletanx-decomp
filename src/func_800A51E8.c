@@ -44,7 +44,7 @@ struct FuncA51E8State {
 s32 func_800796F0();            /* extern */
 const f32 D_80072DE4 = 30.0f;
 extern s16 D_801260A8[];
-extern s32 D_801B4AA8;
+
 
 
 

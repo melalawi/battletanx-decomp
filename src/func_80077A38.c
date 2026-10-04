@@ -31,7 +31,7 @@ extern s32 D_8014B9F0;
 extern s32 D_8014BBA0;
 extern s32 D_8014BD50;
 extern s32 D_8014C070;
-extern s32 func_80077AD0;
+
 
 /* Configures the title screen callbacks and waits for the screen transition. */
 void func_80077A38(s32 arg0) {

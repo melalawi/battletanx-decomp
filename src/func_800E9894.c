@@ -1,3 +1,4 @@
+#include "common/types.h"
 #include "span_1000/code_800E9538.h"
 #include "types.h"
 
@@ -78,7 +79,7 @@ struct func_800E9894_S4 {
 #endif
 void *func_800A03B8();                      /* extern */
 void *func_800A6688();                            /* extern */
-extern s32 D_8033A980;
+
 
 
 

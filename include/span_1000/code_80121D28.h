@@ -13,6 +13,7 @@ struct Shape_func_80121A20_us {
     int field_20;
 };
 extern void func_80121D28_us(void * arg0);
+extern void * func_80121F00_us(void);
 extern void func_801220C0_us(struct Shape_func_80121A20_us * arg0);
 extern void func_80122130_us(int arg0);
 extern void func_80123978_us(void);

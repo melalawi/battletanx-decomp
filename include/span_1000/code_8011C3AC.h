@@ -16,4 +16,5 @@ struct Shape_func_8011D4A0_us {
 };
 extern void func_8011D0E0(void);
 extern int func_8011D588_us(struct Shape_func_8011D4A0_us * arg0, void * arg1, void * arg2);
+extern void func_8011D6D0(int *arg0);
 #endif

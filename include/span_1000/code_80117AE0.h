@@ -1,7 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_80117AE0_H
 #define UNBAKE_SPAN_1000_CODE_80117AE0_H
 #include "callback_state.h"
-#include "common/types.h"
+#include "span_1000/types.h"
 #include "../types.h"
 extern struct Shape_func_801125F0_us * func_801189F0_us(void);
 extern int func_80118AF0_us(void * arg0);

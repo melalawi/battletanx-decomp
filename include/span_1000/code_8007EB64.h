@@ -2,6 +2,9 @@
 #define UNBAKE_SPAN_1000_CODE_8007EB64_H
 #include "gfx.h"
 #include "../types.h"
+/* unbake published declaration: published_bc9cc1924773ad0cb226168c */
+extern int func_8007EF40_us(int);
+
 /* unbake published declaration: published_de4580f8df5792b6bdbb7dc3 */
 extern void * func_8007F060(void);
 

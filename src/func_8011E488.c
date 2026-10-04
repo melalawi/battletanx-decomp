@@ -5,8 +5,8 @@
  * addresses are taken with %hi/%lo, so they are function pointers.
  */
 extern void func_8011F7F0(void *, void *, void *, int);
-extern void func_8011E310(void);
-extern void func_8011E2E0(void);
+
+
 
 void func_8011E488(int *arg0, int arg1, int arg2) {
     func_8011F7F0(arg0, func_8011E310, func_8011E2E0, 6);

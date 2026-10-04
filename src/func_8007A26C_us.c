@@ -9,7 +9,7 @@ extern int func_80112140(int, int, void *, int, int);
                                                   /* size = 0x30 */
 
 extern unsigned char D_80150340; /* opaque address transport */
-extern s32 D_801B4A48;
+
 
 s32 func_8007A26C_us(void) {
     s32 *var_s0;
