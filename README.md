@@ -8,7 +8,7 @@ A matching decompilation of *BattleTanx* for the Nintendo 64.
 
 | us (NUS-NBXE-0, North America). NTSC release. SHA256 `c5b7cf3523de025e3f18e2c8df2deb0eced5613e7c46cb8c6c5a4f22644ead3f` |
 |---|
-| <pre><code>bytes     [▒░░░░░░░░░░░░░░░░░░░]   2.61% (~3.56%)  18,448 of 705,956</code><br><code>functions [██░░░░░░░░░░░░░░░░░░]   10.60%  182 of 1,717</code></pre> |
+| <pre><code>bytes     [▒░░░░░░░░░░░░░░░░░░░]   2.61% (~3.66%)  18,448 of 705,956</code><br><code>functions [██░░░░░░░░░░░░░░░░░░]   10.60%  182 of 1,717</code></pre> |
 
 ## Development & Contributions
 

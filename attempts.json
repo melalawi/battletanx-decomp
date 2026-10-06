@@ -1,5 +1,20 @@
 {
   "functions": {
+    "func_8008716C_us": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 904,
+      "exact": false,
+      "fuzzy": {
+        "compiler": "gcc-2.7.2-kmc",
+        "score": null,
+        "source_sha256": "9dc62bb6e55651c3a837326fbcb6d2fe3608f416d2af72deed3238ec008be09a",
+        "versions": {
+          "us": null
+        }
+      },
+      "minutes": 0.02
+    },
     "func_80091A60_us": {
       "attempts": 7,
       "best": {
@@ -44,6 +59,15 @@
       "exact": false,
       "minutes": 0.98
     },
+    "func_800983E0_us": {
+      "attempts": 1,
+      "best": {
+        "us": 79.310345
+      },
+      "bytes": 928,
+      "exact": false,
+      "minutes": 0.02
+    },
     "func_800A86E4_us": {
       "attempts": 8,
       "best": {
@@ -61,6 +85,13 @@
       "bytes": 984,
       "exact": false,
       "minutes": 1.0
+    },
+    "func_800B098C_us": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 912,
+      "exact": false,
+      "minutes": 0.02
     },
     "func_800E1118_us": {
       "attempts": 4,

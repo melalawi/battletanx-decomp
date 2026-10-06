@@ -70,6 +70,7 @@ build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_800
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: COMPILER_INCLUDES := 
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: COMPILER_DEFINES := 
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: TRIM := --trim
+build/%/src/func_8008716C_us.i build/%/src/func_8008716C_us.key build/%/units/func_8008716C_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_8008C2DC_us.i build/%/src/func_8008C2DC_us.key build/%/units/func_8008C2DC_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800907CC_us.i build/%/src/func_800907CC_us.key build/%/units/func_800907CC_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80090F10.i build/%/src/func_80090F10.key build/%/units/func_80090F10.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
