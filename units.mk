@@ -298,6 +298,7 @@ build/%/src/func_800EEBEC.i build/%/src/func_800EEBEC.key build/%/units/func_800
 build/%/src/func_800F2120_us.i build/%/src/func_800F2120_us.key build/%/units/func_800F2120_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800F3014.i build/%/src/func_800F3014.key build/%/units/func_800F3014.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800F5128.i build/%/src/func_800F5128.key build/%/units/func_800F5128.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
+build/%/src/func_80106010_us.i build/%/src/func_80106010_us.key build/%/units/func_80106010_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: KIND := ido
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: CC := tools/ido-7.1/cc
