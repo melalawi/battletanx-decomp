@@ -117,6 +117,15 @@
       "exact": false,
       "minutes": 0.02
     },
+    "func_80112E70_us": {
+      "attempts": 2,
+      "best": {
+        "us": 13.57
+      },
+      "bytes": 560,
+      "exact": false,
+      "minutes": 1.02
+    },
     "func_80113460_us": {
       "attempts": 6,
       "best": {
@@ -134,6 +143,24 @@
       "bytes": 560,
       "exact": false,
       "minutes": 39.68
+    },
+    "func_80114C00_us": {
+      "attempts": 1,
+      "best": {
+        "us": 0.0
+      },
+      "bytes": 1156,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_80115084_us": {
+      "attempts": 1,
+      "best": {
+        "us": 0.0
+      },
+      "bytes": 612,
+      "exact": false,
+      "minutes": 0.02
     }
   },
   "v": 1
