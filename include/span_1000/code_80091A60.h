@@ -2,21 +2,9 @@
 #define UNBAKE_SPAN_1000_CODE_80091A60_H
 #include "../types.h"
 #include "common/types_d507c48987bb.h"
-#include "types.h"
+#include "gfx.h"
 struct QueryObject;
 /* unbake published declaration: published_ffda6f322a4231fed9aa2c1c */
-union InterpVertex;
-typedef union InterpVertex InterpVertex;
-
-union InterpVertex {
-    struct {
-        s16 position[3];
-        u16 flag;
-        s16 texture[2];
-        u8 color[4];
-    } v;
-    u64 force_structure_alignment;
-};
 struct QueryObject { char prefix[0x18]; int index; };
 
 struct QueryObject;
@@ -78,8 +66,19 @@ extern int func_80091D04(void *unused, int *out);
 /* unbake published declaration: published_f8d579c0439535dd5850948f */
 extern float D_80071EA0;
 
+union InterpVertex;
+typedef union InterpVertex InterpVertex;
+
+union InterpVertex;
+union InterpVertex {
+    struct {
+        s16 position[3];
+        u16 flag;
+        s16 texture[2];
+        u8 color[4];
+    } v;
+    u64 force_structure_alignment;
+};
 extern void func_80093D30_us();
 extern int func_80093EF8_us(void * arg0, void * arg1);
-
-
 #endif
