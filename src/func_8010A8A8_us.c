@@ -46,7 +46,8 @@ s32 func_8010A8A8_us(struct QueryBox *a, struct QueryBox *b, void *out_arg)
   relative_a.values[4] = a->values[4];
   relative_a.values[5] = a->values[5];
   relative_a.values[6] = a->values[6];
-  direction_sine = func_800F3AE0_us((u16) b->values[8]);
+  dy = func_800F3AE0_us((u16) b->values[8]);
+  direction_sine = dy;
   direction_cosine = func_800F3B40_us((u16) b->values[8]);
   out[1] = 0.0f;
   out[0] = 0.0f;

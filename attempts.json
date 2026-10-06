@@ -162,21 +162,21 @@
       "minutes": 29.27
     },
     "func_8010A8A8_us": {
-      "attempts": 11,
+      "attempts": 13,
       "best": {
-        "us": 93.80531
+        "us": 95.575221
       },
       "bytes": 452,
       "exact": false,
       "fuzzy": {
         "compiler": "gcc-2.7.2-kmc",
-        "score": 93.80531,
-        "source_sha256": "89083c1040f189de38259d0b44a84754983be8328442b8cf9ff21a1220f4a749",
+        "score": 95.575221,
+        "source_sha256": "6e652b99bb48c51bdaac79a9f3dfde95145da7f665b2c787a14ef6a5c3bacb47",
         "versions": {
-          "us": 93.80531
+          "us": 95.575221
         }
       },
-      "minutes": 242.6
+      "minutes": 246.29
     },
     "func_8010AA6C_us": {
       "attempts": 2,
