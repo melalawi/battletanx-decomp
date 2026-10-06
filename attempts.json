@@ -1,5 +1,14 @@
 {
   "functions": {
+    "func_80091A60_us": {
+      "attempts": 1,
+      "best": {
+        "us": 43.05
+      },
+      "bytes": 580,
+      "exact": false,
+      "minutes": 0.02
+    },
     "func_80093744_us": {
       "attempts": 2,
       "best": {
@@ -9,6 +18,24 @@
       "exact": false,
       "minutes": 2.34
     },
+    "func_800942A8_us": {
+      "attempts": 5,
+      "best": {
+        "us": 98.79
+      },
+      "bytes": 660,
+      "exact": false,
+      "minutes": 31.45
+    },
+    "func_800A86E4_us": {
+      "attempts": 2,
+      "best": {
+        "us": 74.17
+      },
+      "bytes": 604,
+      "exact": false,
+      "minutes": 10.33
+    },
     "func_801095D0_us": {
       "attempts": 4,
       "best": {
@@ -17,6 +44,69 @@
       "bytes": 3748,
       "exact": false,
       "minutes": 58.83
+    },
+    "func_8010A680_us": {
+      "attempts": 4,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 552,
+      "exact": true,
+      "minutes": 29.27
+    },
+    "func_8010A8A8_us": {
+      "attempts": 1,
+      "best": {
+        "us": 70.43
+      },
+      "bytes": 452,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_8010AA6C_us": {
+      "attempts": 1,
+      "best": {
+        "us": 5.8
+      },
+      "bytes": 548,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_8010BC10_us": {
+      "attempts": 1,
+      "best": {
+        "us": 6.4
+      },
+      "bytes": 400,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_801106A0_us": {
+      "attempts": 1,
+      "best": {
+        "us": 11.59
+      },
+      "bytes": 792,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_80113460_us": {
+      "attempts": 1,
+      "best": {
+        "us": 77.59
+      },
+      "bytes": 696,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_80114970_us": {
+      "attempts": 1,
+      "best": {
+        "us": 52.14
+      },
+      "bytes": 560,
+      "exact": false,
+      "minutes": 0.02
     }
   },
   "v": 1

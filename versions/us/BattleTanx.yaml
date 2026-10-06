@@ -2450,7 +2450,7 @@ segments:
       - [0x99498, asm, "func_80109498_us"]
       - [0x995D0, asm, "func_801095D0_us"]
       - [0x9A474, asm, "func_8010A474_us"]
-      - [0x9A680, asm, "func_8010A680_us"]
+      - [0x9A680, c, "func_8010A680_us"]
       - [0x9A8A8, asm, "func_8010A8A8_us"]
       - [0x9AA6C, asm, "func_8010AA6C_us"]
       - [0x9AC90, asm, "func_8010AC90_us"]
