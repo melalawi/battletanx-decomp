@@ -50,6 +50,15 @@
       "exact": false,
       "minutes": 230.13
     },
+    "func_80095F30_us": {
+      "attempts": 2,
+      "best": {
+        "us": 57.333333
+      },
+      "bytes": 900,
+      "exact": false,
+      "minutes": 2.02
+    },
     "func_80096920": {
       "attempts": 2,
       "best": {
@@ -90,6 +99,13 @@
       "attempts": 1,
       "best": {},
       "bytes": 912,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_800C17D0_us": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 900,
       "exact": false,
       "minutes": 0.02
     },
