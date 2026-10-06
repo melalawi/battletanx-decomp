@@ -1,7 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_80091A60_H
 #define UNBAKE_SPAN_1000_CODE_80091A60_H
 #include "../types.h"
-#include "common/types_d507c48987bb.h"
+#include "common/types_f8bfabebf96f.h"
 #include "gfx.h"
 struct QueryObject;
 /* unbake published declaration: published_ffda6f322a4231fed9aa2c1c */
@@ -15,6 +15,18 @@ typedef void ( *QueryCallback)(struct QueryResult *, struct QueryObject *, int, 
 struct QueryWork;
 /* unbake published declaration: published_1c2d79c8c1aa035409008f65 */
 typedef struct QueryWork QueryWork;
+
+union InterpVertex;
+/* unbake published declaration: published_306e61c29817b930b559db39 */
+union InterpVertex {
+    struct {
+        s16 position[3];
+        u16 flag;
+        s16 texture[2];
+        u8 color[4];
+    } v;
+    u64 force_structure_alignment;
+};
 
 struct QueryResult;
 /* unbake published declaration: published_4de71db0263339d0bea590ce */
@@ -34,6 +46,14 @@ extern void func_80093F34(void);
 struct QueryRecord;
 /* unbake published declaration: published_6583957d4c24afbee3ec6e52 */
 struct QueryRecord { QueryBox box; char tail[22]; };
+
+union InterpVertex;
+/* unbake published declaration: published_7aa4e8f99b7e8220bab19cd8 */
+typedef union InterpVertex InterpVertex;
+
+struct QueryObject;
+/* unbake published declaration: published_992b99b1daa94031fe6a3c12 */
+extern void func_80092534_us(struct QueryObject * object);
 
 struct QueryObject;
 /* unbake published declaration: published_a6b0a828f3fd8f6f47514456 */
@@ -66,19 +86,13 @@ extern int func_80091D04(void *unused, int *out);
 /* unbake published declaration: published_f8d579c0439535dd5850948f */
 extern float D_80071EA0;
 
-union InterpVertex;
-typedef union InterpVertex InterpVertex;
-
-union InterpVertex;
-union InterpVertex {
-    struct {
-        s16 position[3];
-        u16 flag;
-        s16 texture[2];
-        u8 color[4];
-    } v;
-    u64 force_structure_alignment;
-};
+extern int func_8009201C_us(void * arg0, void * arg1);
+extern int func_80093590_us(void * arg0, void * arg1, void * arg2, void * arg3);
 extern void func_80093D30_us();
 extern int func_80093EF8_us(void * arg0, void * arg1);
+extern int func_800940AC_us(float arg0, float arg1, void * arg2);
+extern int func_8009412C_us(float arg0, float arg1, void * arg2);
+extern int func_800941E0_us(float arg0, float arg1, float arg2, void * arg3);
+extern int func_800942A8_us(int arg0, int arg1, void * arg2);
+extern int func_8009453C_us(void * arg0, void * arg1, int arg2);
 #endif

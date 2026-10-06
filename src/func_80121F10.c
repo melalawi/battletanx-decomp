@@ -6,7 +6,7 @@
  * [toolchain].object_options entry of ["-O1"], and the split interval is 4 bytes longer than
  * the body because it swallows the alignment word at 0x80121F8C.
  */
-extern unsigned int func_80121F90(void *vaddr);
+
 
 unsigned int func_80121F10(void *vaddr) {
     if (((unsigned int) vaddr >= 0x80000000) && ((unsigned int) vaddr < 0xA0000000)) {

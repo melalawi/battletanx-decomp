@@ -1,5 +1,5 @@
 #include "types.h"
-#include "common/types_d507c48987bb.h"
+#include "common/types_f8bfabebf96f.h"
 #include "span_1000/code_80107168.h"
 
 /* Both callees end in add.s to f0 and jr ra. Each takes the low 16 bits

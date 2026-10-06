@@ -1,5 +1,5 @@
-#ifndef UNBAKE_COMMON_TYPES_D507C48987BB_H
-#define UNBAKE_COMMON_TYPES_D507C48987BB_H
+#ifndef UNBAKE_COMMON_TYPES_F8BFABEBF96F_H
+#define UNBAKE_COMMON_TYPES_F8BFABEBF96F_H
 struct QueryResult;
 /* unbake published declaration: published_60778d2a829571a8ff1f9275 */
 struct QueryResult { int unused[2]; int kind; };
@@ -20,12 +20,12 @@ struct Shape_func_8011B9E0 {
 };
 
 struct QueryBox;
-/* unbake published declaration: published_2324a3b162fd64225be1237f */
-typedef struct QueryBox QueryBox;
-
-struct QueryBox;
 /* unbake published declaration: published_3d1e2993526d7186ea4bab56 */
 struct QueryBox { short values[9]; };
+
+struct QueryBox;
+/* unbake published declaration: published_2324a3b162fd64225be1237f */
+typedef struct QueryBox QueryBox;
 
 struct Shape_func_800B8804_us;
 /* unbake published declaration: published_e35999cbb490e5ae38fc178e */
@@ -36,6 +36,14 @@ struct Shape_func_800B8804_us {
 /* unbake published declaration: published_7836b84287ac3397905b4f57 */
 extern void * D_801257D0;
 
+struct Shape_func_800E3F90_us;
+struct Shape_func_800E3F90_us {
+    void * field_0;
+    unsigned char padding_4[8];
+    void * field_C;
+    unsigned char padding_10[8];
+    unsigned char unknown_18[2];
+};
 struct Shape_func_800E73BC_us;
 struct Shape_func_800E73BC_us {
     unsigned char padding_0[8];

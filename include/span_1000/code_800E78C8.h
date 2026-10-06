@@ -7,6 +7,9 @@ extern float func_800E791C_us(void);
 /* unbake published declaration: published_43ae5f38d0c9c7ccbc7483eb */
 extern float func_800E78F8_us(void);
 
+/* unbake published declaration: published_4d16b113acf2788bf77af6de */
+extern float func_800E78C8_us(void);
+
 /* unbake published declaration: published_56f65aeece3cc83d52c56119 */
 extern float func_800E78EC_us(void);
 

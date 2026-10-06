@@ -2,7 +2,7 @@
 /* func_8007627C -- copies n bytes between two byte-addressed spaces, a byte at a time until the source is word-aligned, then a word at a time split into four byte stores, then the tail. */
 
 
-extern unsigned int func_800760A0(unsigned int a);
+
 
 void func_8007627C(unsigned int src, unsigned int dst, unsigned int n) {
     unsigned int w;

@@ -1,6 +1,6 @@
 #include "types.h"
 #include "audio_callbacks.h"
-#include "common/types_d507c48987bb.h"
+#include "common/types_f8bfabebf96f.h"
 #include "span_1000/code_8007EBA0.h"
 
 
