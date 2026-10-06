@@ -1,5 +1,14 @@
 {
   "functions": {
+    "func_8007D4E8_us": {
+      "attempts": 2,
+      "best": {
+        "us": 21.559633
+      },
+      "bytes": 872,
+      "exact": false,
+      "minutes": 0.42
+    },
     "func_8008716C_us": {
       "attempts": 1,
       "best": {},
@@ -117,6 +126,13 @@
       "bytes": 1328,
       "exact": false,
       "minutes": 75.17
+    },
+    "func_800E30F8_us": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 872,
+      "exact": false,
+      "minutes": 0.02
     },
     "func_80107B44_us": {
       "attempts": 1,
