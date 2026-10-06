@@ -82,6 +82,7 @@ build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800
 build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: COMPILER_DEFINES := 
 build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: TRIM := --trim
 build/%/src/func_800917D8.i build/%/src/func_800917D8.key build/%/units/func_800917D8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
+build/%/src/func_80091A60_us.i build/%/src/func_80091A60_us.key build/%/units/func_80091A60_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_80091D04.i build/%/src/func_80091D04.key build/%/units/func_80091D04.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80092534_us.i build/%/src/func_80092534_us.key build/%/units/func_80092534_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
