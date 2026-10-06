@@ -3,8 +3,24 @@
 #include "../types.h"
 #include "common/types_f8bfabebf96f.h"
 #include "gfx.h"
+#include "types.h"
 struct QueryObject;
 /* unbake published declaration: published_ffda6f322a4231fed9aa2c1c */
+struct PolygonPoint;
+struct PolygonTransform;
+struct PolygonPoint {
+    f32 y;
+    f32 x;
+};
+struct PolygonTransform {
+    f32 y_y;
+    f32 y_x;
+    f32 x_x;
+    f32 x_y;
+    f32 translate_x;
+    f32 translate_y;
+    u8 disabled;
+};
 struct QueryObject { char prefix[0x18]; int index; };
 
 struct QueryObject;
@@ -95,4 +111,8 @@ extern int func_8009412C_us(float arg0, float arg1, void * arg2);
 extern int func_800941E0_us(float arg0, float arg1, float arg2, void * arg3);
 extern int func_800942A8_us(int arg0, int arg1, void * arg2);
 extern int func_8009453C_us(void * arg0, void * arg1, int arg2);
+
+
+
+
 #endif

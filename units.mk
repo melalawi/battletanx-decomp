@@ -93,6 +93,7 @@ build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_800
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: COMPILER_INCLUDES := 
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: COMPILER_DEFINES := 
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: TRIM := --trim
+build/%/src/func_800942A8_us.i build/%/src/func_800942A8_us.key build/%/units/func_800942A8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: KIND := ido
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: CC := tools/ido-7.1/cc
