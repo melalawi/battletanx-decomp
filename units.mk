@@ -614,6 +614,7 @@ build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_801
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: COMPILER_DEFINES := 
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: TRIM := --trim
+build/%/src/func_80120C24_us.i build/%/src/func_80120C24_us.key build/%/units/func_80120C24_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: KIND := ido
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: CC := tools/ido-7.1/cc

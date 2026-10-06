@@ -258,6 +258,30 @@
       "bytes": 612,
       "exact": false,
       "minutes": 0.02
+    },
+    "func_80120C24_us": {
+      "attempts": 3,
+      "best": {
+        "us": 5.109489
+      },
+      "bytes": 548,
+      "exact": false,
+      "fuzzy": {
+        "compiler": "gcc-2.7.2-kmc",
+        "score": 5.109489,
+        "source_sha256": "b4ede73482b7b6df86465abc56637c8247ccf92d28d3e1d9c601f49b5ec44ab1",
+        "versions": {
+          "us": 5.109489
+        }
+      },
+      "minutes": 1.21
+    },
+    "func_80120E48_us": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 604,
+      "exact": false,
+      "minutes": 0.02
     }
   },
   "v": 1
