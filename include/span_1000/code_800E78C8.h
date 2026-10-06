@@ -25,13 +25,4 @@ extern float func_800E78E0_us(void);
 /* unbake published declaration: published_e1ec56e240267c16b790ec3f */
 extern float func_800E7910_us(void);
 
-extern float func_800E7934_us(void);
-extern float func_800E7A50_us(void);
-extern float func_800E7B7C_us(void);
-extern float func_800E7CA8_us(void);
-extern float func_800E831C_us(void * arg0, int arg1);
-extern float func_800E8500_us(void * arg0);
-extern float func_800E855C_us(void * arg0);
-extern float func_800E85BC_us(void * arg0);
-extern float func_800E861C_us(void * arg0);
 #endif
