@@ -362,6 +362,7 @@ build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_801
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: COMPILER_INCLUDES := 
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: COMPILER_DEFINES := 
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: TRIM := --trim
+build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: UNIT_CODEGEN := -O1
 build/%/src/func_80113460_us.i build/%/src/func_80113460_us.key build/%/units/func_80113460_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: KIND := ido

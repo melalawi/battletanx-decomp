@@ -272,7 +272,7 @@ func_80109354 = { compiler = "ido-7.1" }
 func_8010BC08 = { compiler = "ido-7.1" }
 func_801109B8_us = { compiler = "ido-7.1" }
 func_80110AAC_us = { compiler = "ido-7.1" }
-func_80110CA0 = { compiler = "ido-7.1" }
+func_80110CA0 = { compiler = "ido-7.1", flags = ["-O1"] }
 func_801145D0 = { compiler = "ido-7.1", flags = ["-O1"] }
 func_801147A0 = { compiler = "ido-7.1" }
 func_80114828 = { compiler = "ido-7.1" }
