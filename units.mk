@@ -109,6 +109,7 @@ build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: COMPILER_DEFINES := 
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: TRIM := --trim
+build/%/src/func_80095F30_us.i build/%/src/func_80095F30_us.key build/%/units/func_80095F30_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_80096760.i build/%/src/func_80096760.key build/%/units/func_80096760.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: KIND := gnu
