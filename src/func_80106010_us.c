@@ -1,7 +1,9 @@
 #ifdef NON_MATCHING
+#include "gbi.h"
 #include "span_1000/code_8010527C.h"
 #include "audio_callbacks.h"
 #include "types.h"
+#include "bt_gbi.h"
 #include "common/draft_fields_func_80106010_us.h"
 
 
@@ -69,7 +71,7 @@ s32 func_80106010_us(s32 *arg0, s32 arg1) {
         temp_t0 = ((struct Measured_func_80106010_us_6118e4b73d6f *)(temp_v0_2))->value;
         temp_s2 = ((struct Measured_func_80106010_us_86ecf9630c4a *)(temp_v0_2))->value;
         temp_s3 = ((struct Measured_func_80106010_us_78c30cba5e02 *)(temp_v0_2))->value;
-        temp_t8_2 = temp_t8 + 8;
+        temp_t8_2 = (void *)(temp_t8 + 8);
         temp_t8_3 = temp_t8_2 + 8;
         temp_t8_4 = temp_t8_3 + 8;
         temp_t8_5 = temp_t8_4 + 8;
@@ -78,32 +80,22 @@ s32 func_80106010_us(s32 *arg0, s32 arg1) {
         temp_t8_8 = temp_t8_7 + 8;
         temp_t8_9 = temp_t8_8 + 8;
         temp_t8_10 = temp_t8_9 + 8;
-        ((struct Measured_func_80106010_us_07091f3fea0d *)(temp_t8))->value = 0xFA000000;
+        gDPSetPrimColor((Gfx *)temp_t8, 0, 0, D_803B75A4, D_803B75A5, D_803B75A6, D_803B75A7);
         temp_t8_11 = temp_t8_10 + 8;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8))->value = (s32) ((D_803B75A4 << 0x18) | (D_803B75A5 << 0x10) | (D_803B75A6 << 8) | D_803B75A7);
         temp_a1 = ((temp_s2 + temp_t6) * 4) & 0xFFF;
-        ((struct Measured_func_80106010_us_034b69863103 *)(temp_t8_2))->value = (void *) (D_803AAD98 + ((struct Measured_func_80106010_us_f88949686c7b *)(D_803AAD98))->value);
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8))->value = (s32) (((((struct Measured_func_80106010_us_7cc74cb35a88 *)(D_803AAD98))->value - 1) & 0xFFF) | 0xFD680000);
+        gDPSetTextureImage((Gfx *)temp_t8_2, G_IM_FMT_IA, G_IM_SIZ_8b, ((struct Measured_func_80106010_us_7cc74cb35a88 *)D_803AAD98)->value, D_803AAD98 + ((struct Measured_func_80106010_us_f88949686c7b *)D_803AAD98)->value);
         temp_a0 = (((u32) (temp_s3 + 8) >> 3) << 9) | 0xF5680000;
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_2))->value = temp_a0;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_3))->value = 0x07080200;
+        gDPSetTile((Gfx *)temp_t8_3, G_IM_FMT_IA, G_IM_SIZ_8b, (((u32)(temp_s3 + 8)) >> 3), 0, G_TX_LOADTILE, 0, G_TX_CLAMP, G_TX_NOMASK, G_TX_NOLOD, G_TX_CLAMP, G_TX_NOMASK, G_TX_NOLOD);
         temp_a3 = temp_t0 << 0xE;
         temp_a2 = temp_s2 * 4;
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_3))->value = 0xE6000000;
+        gDPLoadSync((Gfx *)temp_t8_4);
         temp_v1_2 = (temp_t0 + temp_s3) << 0xE;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_4))->value = 0;
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_4))->value = (s32) (temp_a3 | (temp_a2 | 0xF4000000));
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_5))->value = (s32) (temp_v1_2 | (temp_a1 | 0x07000000));
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_5))->value = 0xE7000000;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_6))->value = 0;
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_6))->value = temp_a0;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_7))->value = 0x80200;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_8))->value = (s32) (temp_v1_2 | temp_a1);
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_7))->value = (s32) (temp_a3 | (temp_a2 | 0xF2000000));
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_9))->value = (s32) ((((D_803AAD88 * 4) & 0xFFF) << 0xC) | ((D_803AAD8C * 4) & 0xFFF));
+        gDPLoadTile((Gfx *)temp_t8_5, G_TX_LOADTILE, temp_t0 * 4, temp_s2 * 4, (temp_t0 + temp_s3) * 4, (temp_s2 + temp_t6) * 4);
+        gDPPipeSync((Gfx *)temp_t8_6);
+        gDPSetTile((Gfx *)temp_t8_7, G_IM_FMT_IA, G_IM_SIZ_8b, (((u32)(temp_s3 + 8)) >> 3), 0, G_TX_RENDERTILE, 0, G_TX_CLAMP, G_TX_NOMASK, G_TX_NOLOD, G_TX_CLAMP, G_TX_NOMASK, G_TX_NOLOD);
+        gDPSetTileSize((Gfx *)temp_t8_8, G_TX_RENDERTILE, temp_t0 * 4, temp_s2 * 4, (temp_t0 + temp_s3) * 4, (temp_s2 + temp_t6) * 4);
         temp_f2 = (f64) temp_t0 * (32.0);
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_8))->value = (s32) (((((D_803AAD88 + (s32) ((f32) temp_s3 * D_803AAD90)) * 4) & 0xFFF) << 0xC) | ((((D_803AAD8C + (s32) ((f32) temp_t6 * D_803AAD94)) * 4) & 0xFFF) | 0xE4000000));
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_9))->value = 0xB4000000;
+        gTexRect((Gfx *)temp_t8_9, D_803AAD88 * 4, D_803AAD8C * 4, (D_803AAD88 + (s32)((f32)temp_s3 * D_803AAD90)) * 4, (D_803AAD8C + (s32)((f32)temp_t6 * D_803AAD94)) * 4, G_TX_RENDERTILE);
         if (!((2147483648.0) <= temp_f2)) {
             var_v1 = (s32) temp_f2;
         } else {
@@ -116,8 +108,7 @@ s32 func_80106010_us(s32 *arg0, s32 arg1) {
             var_v1_2 = (s32) (temp_f2_2 - (2147483648.0)) | 0x80000000;
         }
         temp_f2_3 = (1024.0f) / D_803AAD90;
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_10))->value = (s32) ((var_v1 << 0x10) | (var_v1_2 & 0xFFFF));
-        ((struct Measured_func_80106010_us_db74d82bc842 *)(temp_t8_10))->value = 0xB3000000;
+        gDPHalf1((Gfx *)temp_t8_10, ((u32)var_v1 << 16) | ((u32)var_v1_2 & 0xFFFF));
         if (!((2147483648.0f) <= temp_f2_3)) {
             var_v1_3 = (s32) temp_f2_3;
         } else {
@@ -129,10 +120,10 @@ s32 func_80106010_us(s32 *arg0, s32 arg1) {
         } else {
             var_a0 = (s32) (temp_f2_4 - (2147483648.0f)) | 0x80000000;
         }
-        ((struct Measured_func_80106010_us_5bc2a4c5e17f *)(temp_t8_11))->value = (s32) ((var_v1_3 << 0x10) | (var_a0 & 0xFFFF));
+        gDPHalf2((Gfx *)temp_t8_11, ((u32)var_v1_3 << 16) | ((u32)var_a0 & 0xFFFF));
         var_v0 = (s32) ((f32) (temp_s3 * D_803B75A0) * D_803AAD90);
         D_803AAD88 += var_v0;
-        *arg0 = temp_t8_11 + 8;
+        *arg0 = (s32)(temp_t8_11 + 8);
     }
     return var_v0;
 }
