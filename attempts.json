@@ -710,13 +710,21 @@
       "minutes": 0.02
     },
     "func_801106A0_us": {
-      "attempts": 1,
+      "attempts": 2,
       "best": {
         "us": 11.594203
       },
       "bytes": 792,
       "exact": false,
-      "minutes": 0.02
+      "fuzzy": {
+        "compiler": "gcc-2.7.2-kmc",
+        "score": 8.530806,
+        "source_sha256": "d45d4e6d6d99b94f1303481b56cd024c4ac54320a279bf4ede6bd3b9139f72d7",
+        "versions": {
+          "us": 8.530806
+        }
+      },
+      "minutes": 440.52
     },
     "func_80110CA0": {
       "attempts": 1,
