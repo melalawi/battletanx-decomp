@@ -127,22 +127,22 @@
       "minutes": 0.02
     },
     "func_800D1BA0_us": {
-      "attempts": 2,
+      "attempts": 4,
       "best": {
-        "us": 57.286432
+        "us": 57.788945
       },
       "bytes": 796,
       "exact": false,
-      "minutes": 1.08
+      "minutes": 38.18
     },
     "func_800E1118_us": {
-      "attempts": 4,
+      "attempts": 5,
       "best": {
         "us": 54.819277
       },
       "bytes": 1328,
       "exact": false,
-      "minutes": 75.17
+      "minutes": 155.24
     },
     "func_800E30F8_us": {
       "attempts": 1,
@@ -152,34 +152,34 @@
       "minutes": 0.02
     },
     "func_800F41C0_us": {
-      "attempts": 1,
+      "attempts": 2,
       "best": {
-        "us": 23.193916
+        "us": 26.744186
       },
       "bytes": 1032,
       "exact": false,
-      "minutes": 0.02
+      "minutes": 1.13
     },
     "func_800FF73C_us": {
-      "attempts": 1,
+      "attempts": 2,
       "best": {
-        "us": 31.558935
+        "us": 36.882129
       },
       "bytes": 1052,
       "exact": false,
-      "minutes": 0.02
+      "minutes": 1.05
     },
     "func_800FFB58_us": {
-      "attempts": 1,
+      "attempts": 2,
       "best": {
-        "us": 32.19697
+        "us": 37.121212
       },
       "bytes": 1056,
       "exact": false,
-      "minutes": 0.02
+      "minutes": 1.03
     },
     "func_80106010_us": {
-      "attempts": 2,
+      "attempts": 4,
       "best": {
         "us": 34.982332
       },
@@ -193,7 +193,7 @@
           "us": 33.922261
         }
       },
-      "minutes": 1.07
+      "minutes": 24.12
     },
     "func_80107B44_us": {
       "attempts": 1,
@@ -240,13 +240,21 @@
       "minutes": 246.29
     },
     "func_8010AA6C_us": {
-      "attempts": 2,
+      "attempts": 4,
       "best": {
-        "us": 5.8
+        "us": 46.715328
       },
       "bytes": 548,
       "exact": false,
-      "minutes": 42.52
+      "fuzzy": {
+        "compiler": "gcc-2.7.2-kmc",
+        "score": 46.715328,
+        "source_sha256": "51a3c0e3b9a97b015606076b5c17f25ba8773f91cafda49e1127543206c03312",
+        "versions": {
+          "us": 46.715328
+        }
+      },
+      "minutes": 297.05
     },
     "func_8010AC90_us": {
       "attempts": 2,
@@ -258,13 +266,13 @@
       "minutes": 73.93
     },
     "func_8010BC10_us": {
-      "attempts": 2,
+      "attempts": 3,
       "best": {
-        "us": 6.4
+        "us": 80.19802
       },
       "bytes": 400,
       "exact": false,
-      "minutes": 42.52
+      "minutes": 295.94
     },
     "func_801106A0_us": {
       "attempts": 1,
