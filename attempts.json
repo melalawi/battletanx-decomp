@@ -9,6 +9,42 @@
       "exact": true,
       "minutes": 0.02
     },
+    "func_80078D90": {
+      "attempts": 3,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 156,
+      "exact": true,
+      "minutes": 3.9
+    },
+    "func_800793D0": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 164,
+      "exact": true,
+      "minutes": 3.92
+    },
+    "func_80079EFC": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 168,
+      "exact": true,
+      "minutes": 0.02
+    },
+    "func_8007D384": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 168,
+      "exact": true,
+      "minutes": 3.99
+    },
     "func_8007D4E8_us": {
       "attempts": 2,
       "best": {
@@ -17,6 +53,78 @@
       "bytes": 872,
       "exact": false,
       "minutes": 0.42
+    },
+    "func_8007EC38": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 176,
+      "exact": true,
+      "minutes": 4.02
+    },
+    "func_8007ECE8": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 176,
+      "exact": true,
+      "minutes": 4.05
+    },
+    "func_8007ED98": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 176,
+      "exact": true,
+      "minutes": 4.07
+    },
+    "func_8007EE48": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 176,
+      "exact": true,
+      "minutes": 4.11
+    },
+    "func_8007FF68": {
+      "attempts": 2,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 180,
+      "exact": true,
+      "minutes": 0.02
+    },
+    "func_8008001C_us": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 256,
+      "exact": true,
+      "minutes": 0.02
+    },
+    "func_800805DC": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 160,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_80085330": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 152,
+      "exact": true,
+      "minutes": 0.02
     },
     "func_8008716C_us": {
       "attempts": 1,
@@ -31,6 +139,15 @@
           "us": null
         }
       },
+      "minutes": 0.02
+    },
+    "func_80091608": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 356,
+      "exact": false,
       "minutes": 0.02
     },
     "func_80091A60_us": {
@@ -85,6 +202,15 @@
       "exact": false,
       "minutes": 2.02
     },
+    "func_80096784": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 176,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_80096920": {
       "attempts": 2,
       "best": {
@@ -94,6 +220,15 @@
       "exact": false,
       "minutes": 0.98
     },
+    "func_80097B7C": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 168,
+      "exact": false,
+      "minutes": 0.02
+    },
     "func_800983E0_us": {
       "attempts": 1,
       "best": {
@@ -101,6 +236,51 @@
       },
       "bytes": 928,
       "exact": false,
+      "minutes": 0.02
+    },
+    "func_80099CD8": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 184,
+      "exact": true,
+      "minutes": 0.02
+    },
+    "func_800A2EA4": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 164,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_800A3D30": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 176,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_800A51E8": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 352,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_800A59E8": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 188,
+      "exact": true,
       "minutes": 0.02
     },
     "func_800A86E4_us": {
