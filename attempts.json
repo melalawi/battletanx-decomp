@@ -346,6 +346,15 @@
       "exact": true,
       "minutes": 0.02
     },
+    "func_800AA328": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 168,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_800AACCC_us": {
       "attempts": 2,
       "best": {
