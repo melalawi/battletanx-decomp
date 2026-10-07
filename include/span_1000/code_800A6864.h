@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800A6864_H
 #define UNBAKE_SPAN_1000_CODE_800A6864_H
 #include "../types.h"
+#include "types.h"
 /* unbake published declaration: published_536cddc363cce8847fb779a1 */
 extern int func_800A68F0_us(void);
 
@@ -40,4 +41,52 @@ extern int func_800A70BC_us(void * arg0);
 extern float func_800A76BC_us(void * arg0, float arg1, float arg2, int arg3);
 
 extern float func_800A77D4_us(void * arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
+struct func_800A74AC_S1_Shared800A74AC;
+typedef struct func_800A74AC_S1_Shared800A74AC func_800A74AC_S1_Shared800A74AC;
+typedef struct func_800A74AC_S2_Shared800A74AC func_800A74AC_S2_Shared800A74AC;
+typedef struct func_800A74AC_S3_Shared800A74AC func_800A74AC_S3_Shared800A74AC;
+typedef struct func_800A74AC_S4_Shared800A74AC func_800A74AC_S4_Shared800A74AC;
+typedef struct func_800A74AC_S6_Shared800A74AC func_800A74AC_S6_Shared800A74AC;
+
+struct func_800A74AC_S2_Shared800A74AC;
+
+struct func_800A74AC_S3_Shared800A74AC;
+
+struct func_800A74AC_S4_Shared800A74AC;
+
+struct func_800A74AC_S6_Shared800A74AC;
+
+
+
+
+
+
+
+
+
+
+
+struct func_800A74AC_S1_Shared800A74AC {
+    char pad0[0x8];
+    s32 unk8;
+    void * unkC;
+};
+struct func_800A74AC_S2_Shared800A74AC {
+    char pad0[0x4];
+    u8 unk4;
+    char pad4[0x93];
+    void * unk98;
+};
+struct func_800A74AC_S3_Shared800A74AC {
+    char pad0[0x1AE];
+    u8 unk1AE;
+};
+struct func_800A74AC_S4_Shared800A74AC {
+    char pad0[0xC];
+    u8 unkC;
+};
+struct func_800A74AC_S6_Shared800A74AC {
+    char pad0[0x2C];
+    void * unk2C;
+};
 #endif
