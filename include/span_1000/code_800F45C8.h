@@ -1,6 +1,9 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800F45C8_H
 #define UNBAKE_SPAN_1000_CODE_800F45C8_H
-#include "common/types_d507c48987bb.h"
+#include "common/types_f8bfabebf96f.h"
+/* unbake published declaration: published_07a6a2039a177bdbbefa5b58 */
+extern void func_800F5128(void);
+
 /* unbake published declaration: published_088de745f195192d427a0563 */
 extern void func_800F5178(void);
 
@@ -14,6 +17,8 @@ extern int func_800F4DFC(struct Shape_func_800B8804_us * arg0, int arg1, int arg
 /* unbake published declaration: published_a9ca04f42f71f8bf3bec2709 */
 extern int D_8035CD24;
 
-extern float func_800F46C8_us(void * arg0, void * arg1, void * arg2);
-extern void func_800F5128(void);
+extern int func_800F4794_us(int arg0);
+extern int func_800F53B8_us();
+extern int func_800F5850_us(unsigned int arg0);
+extern int func_800F58A0_us(unsigned int arg0);
 #endif

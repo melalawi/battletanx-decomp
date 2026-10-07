@@ -6,6 +6,9 @@ extern void func_8011BDA0(void);
 /* unbake published declaration: published_4c892df02b8f7846702a4439 */
 extern void func_8011BDE4(void);
 
-extern int func_8011BD50_us(void);
-extern float func_8011BE10_us(float arg0);
+/* unbake published declaration: published_725d4347858a706aff7f6e6e */
+extern int func_8011BFD0(int, int *);
+
+extern int func_8011BD50_us();
+extern int func_8011C080();
 #endif

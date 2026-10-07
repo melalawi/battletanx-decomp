@@ -11,6 +11,12 @@ struct Measured_func_8007A26C_us_9f751e433327;
 /* unbake published declaration: published_3aec693d35da05bb14bb9a92 */
 struct Measured_func_8007A26C_us_9f751e433327 { unsigned char padding[72]; short value; };
 
+/* unbake published declaration: published_51196bee8d01d430a5bfe366 */
+extern void func_8007967C(void);
+
+/* unbake published declaration: published_63826ab20a46fb038c15885a */
+extern void func_80079A5C(int a, float b);
+
 /* unbake published declaration: published_85a6a37ef4d2f06325f86301 */
 extern int func_800798C0(int arg0);
 
@@ -28,13 +34,19 @@ struct Measured_func_8007A26C_us_07091f3fea0d;
 /* unbake published declaration: published_9f96aef683ad453088292de9 */
 struct Measured_func_8007A26C_us_07091f3fea0d { int value; };
 
-extern void func_8007967C(void);
-extern int func_80079948_us(void);
+/* unbake published declaration: published_c89bb4b5356e60db0ff58bcc */
 extern void func_800799C0_us(int arg0);
-extern void func_80079A5C(int a, float b);
-extern int func_80079D58_us(void);
-extern int func_80079D9C_us(void);
+
+/* unbake published declaration: published_f0ec005644ab2124d8d260b4 */
 extern void func_80079EFC(void);
+
+/* unbake published declaration: published_fc9fb6c1a7c657ff06fc637c */
 extern int func_8007A26C_us(void);
-extern int func_8007A36C_us(void);
+
+extern int func_8007968C_us();
+extern int func_80079948_us(void);
+extern int func_80079D58_us();
+extern int func_80079D9C_us(void);
+extern int func_8007A004_us();
+extern int func_8007A36C_us();
 #endif

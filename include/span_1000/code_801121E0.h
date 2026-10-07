@@ -1,4 +1,4 @@
 #ifndef UNBAKE_SPAN_1000_CODE_801121E0_H
 #define UNBAKE_SPAN_1000_CODE_801121E0_H
-extern void func_801121E0_us(void);
+extern void func_801121E0_us();
 #endif

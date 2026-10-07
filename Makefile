@@ -26,7 +26,9 @@ LD := mips-linux-gnu-ld
 N64LINK := n64link
 INCLUDES := -Iinclude
 CPPFLAGS := -P -undef -nostdinc -D_LANGUAGE_C -DF3DEX_GBI_2 -D__GNUC__=2
+PREPROCESS_FLAGS = $(INCLUDES)  $(VERSION_DEFINES) $(CONSUMER)
 SN64_ASFLAGS := -march=vr4300 -mabi=32 -EB -G0 --no-pad-sections
+HASM_ASFLAGS := -march=vr4300 -mabi=32 -EB --no-pad-sections
 KIND := sn64
 CC := tools/gcc-2.7.2-kmc/cc1
 CODEGEN := -G0 -mips3 -mgp32 -mfp32 -O2
@@ -122,41 +124,53 @@ setup:
 	@sha256sum --quiet -c tools/compilers.sha256
 
 clean:
-	rm -rf build/cas $(foreach v,$(VERSIONS),build/$v/src build/$v/units build/$v/slices)
+	rm -rf build/cas $(foreach v,$(VERSIONS),build/$v/src build/$v/units build/$v/hasm build/$v/slices)
 
 include $(foreach v,$(VERSIONS),versions/$v/slices.mk)
 include units.mk
 
-PREPROCESS_ido = $(CPP) -MM -MG $(INCLUDES) $(COMPILER_INCLUDES) $(UNIT_INCLUDES) $(COMPILER_DEFINES) $(VERSION_DEFINES) $(CONSUMER) $(UNIT_DEFINES) $< -MP -MT $@ -MF $(@D)/$(*F).d && $(abspath $(CC)) $(INCLUDES) $(COMPILER_INCLUDES) $(UNIT_INCLUDES) $(CODEGEN) $(UNIT_CODEGEN) $(COMPILER_DEFINES) $(VERSION_DEFINES) $(CONSUMER) $(UNIT_DEFINES) -E $< > $(@D)/$(*F).i
+PREPROCESS_ido = $(abspath $(CC)) $(PREPROCESS_FLAGS) -M src/$(*F).c > $(@D)/$(*F).deps && sed 's|^[^:]*:|$(@D)/$(*F).i:|' $(@D)/$(*F).deps > $(@D)/$(*F).d && rm $(@D)/$(*F).deps && $(abspath $(CC)) $(PREPROCESS_FLAGS) -E src/$(*F).c > $(@D)/$(*F).i
 COMPILE_ido = $(abspath $(CC)) $(CODEGEN) $(UNIT_CODEGEN) -c $(*F).i -o $(*F).o
-PREPROCESS_sn64 = $(CPP) $(INCLUDES) $(COMPILER_INCLUDES) $(UNIT_INCLUDES) $(CPPFLAGS) $(COMPILER_DEFINES) $(VERSION_DEFINES) $(CONSUMER) $(UNIT_DEFINES) $< -MMD -MP -MT $@ -MF $(@D)/$(*F).d > $(@D)/$(*F).i
+PREPROCESS_sn64 = $(CPP) $(CPPFLAGS) $(PREPROCESS_FLAGS) src/$(*F).c -MMD -MP -MT $(@D)/$(*F).i -MF $(@D)/$(*F).d > $(@D)/$(*F).i
 COMPILE_sn64 = $(abspath $(CC)) -quiet $(CODEGEN) $(UNIT_CODEGEN) $(*F).i -o $(*F).s && $(N64LINK) asn64 --as $(AS) $(SN64_ASFLAGS) $(*F).s -o $(*F).o
 VER = $(word 2,$(subst /, ,$@))
 VERSION_DEFINES = $($(VER).DEFINES)
 TOOLCHAIN := $(firstword $(shell cat tools/compilers.sha256 tools/n64link.version | sha1sum))
 UNIT_KEY = printf '%s\n' '$(VER) $(*F)'; \
   $(PREPROCESS_$(KIND)) && \
-  set -- $$(printf '%s\n' '$(TOOLCHAIN) $(COMPILE_$(KIND))' | sha1sum - $(@D)/$(*F).i) && [ -n "$$3" ] && \
+  set -- $$(printf '%s\n' '$(TOOLCHAIN) $(subst $(CURDIR)/,,$(COMPILE_$(KIND)))' | \
+    sha1sum - $(@D)/$(*F).i) && [ -n "$$3" ] && \
   { [ -f build/cas/$$1$$3.o ] || { (cd $(@D) && $(COMPILE_$(KIND))) && mv -f $(@D)/$(*F).o build/cas/$$1$$3.o; }; } && \
-  printf '%s\n' $$1$$3 > $@
+  if [ ! -f $(@D)/$(*F).key ] || [ "$$(cat $(@D)/$(*F).key)" != "$$1$$3" ]; then \
+    printf '%s\n' $$1$$3 > $(@D)/$(*F).key; fi
+LINK_BIN = $(LD) -T versions/$(VER)/$(NAME).ld --section-start=.text=$(firstword $(subst :, ,$($(VER).U.$(*F)))) \
+  --oformat binary -o $@ $(@D)/$(*F).placed.o
 UNIT_BIN = read key < $< && \
   $(N64LINK) place build/cas/$$key.o -o $(@D)/$(*F).placed.o --rom $($(VER).BASEROM) --text $($(VER).U.$(*F)) \
   $(addprefix --map ,$($(VER).MAP)) --symbols versions/$(VER)/symbols.ld $(TRIM) && \
-  $(LD) -T versions/$(VER)/$(NAME).ld --section-start=.text=$(firstword $(subst :, ,$($(VER).U.$(*F)))) \
-  --oformat binary -o $@ $(@D)/$(*F).placed.o
+  $(LINK_BIN)
+HASM_BIN = printf '%s\n' '$(VER) $(*F)'; \
+  $(AS) $(HASM_ASFLAGS) -o $(@D)/$(*F).o $< && \
+  $(N64LINK) place $(@D)/$(*F).o -o $(@D)/$(*F).placed.o --rom $($(VER).BASEROM) --text $($(VER).U.$(*F)) \
+  $(addprefix --map ,$($(VER).MAP)) --symbols versions/$(VER)/symbols.ld --trim && \
+  $(LINK_BIN)
 SLICE = dd if=$($(VER).BASEROM) of=$@ bs=65536 iflag=skip_bytes,count_bytes status=none \
   skip=$(word 1,$($(VER).S.$(*F))) count=$(word 2,$($(VER).S.$(*F)))
 
 define VERSION_RULES
-build/$1/src/%.key: src/%.c Makefile units.mk | verify build/$1/src build/cas
+build/$1/src/%.i: src/%.c Makefile units.mk | verify build/$1/src build/cas
 	$$(Q)$$(UNIT_KEY)
+build/$1/src/%.key: build/$1/src/%.i
+	$$(Q)test -f $$@ || { $$(UNIT_KEY); }
 build/$1/units/%.bin: build/$1/src/%.key versions/$1/symbols.ld versions/$1/$$(NAME).ld | build/$1/units
 	$$(Q)$$(UNIT_BIN)
-build/$1/slices/%.bin: $$($1.BASEROM) | build/$1/slices
+build/$1/hasm/%.bin: src/%.s Makefile versions/$1/symbols.ld versions/$1/$$(NAME).ld | build/$1/hasm
+	$$(Q)$$(HASM_BIN)
+build/$1/slices/%.bin: $$($1.BASEROM) versions/$1/slices.mk | build/$1/slices
 	$$(Q)$$(SLICE)
 build/$1/$$(NAME).z64: $$($1.PIECES)
 	$$(Q)printf '%s\n' '$1 rom'; cat $$($1.PIECES) > $$@
-build/$1/src build/$1/units build/$1/slices:
+build/$1/src build/$1/units build/$1/hasm build/$1/slices:
 	$$(Q)mkdir -p $$@
 endef
 $(foreach v,$(VERSIONS),$(eval $(call VERSION_RULES,$v)))

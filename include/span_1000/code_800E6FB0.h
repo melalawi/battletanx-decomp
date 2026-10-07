@@ -1,7 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800E6FB0_H
 #define UNBAKE_SPAN_1000_CODE_800E6FB0_H
-#include "common/types_d507c48987bb.h"
 #include "../types.h"
+#include "common/types_f8bfabebf96f.h"
 struct Shape_func_800E6970_us;
 /* unbake published declaration: published_081355dd6f2b1c02d42968db */
 extern s32 func_800E7628_us(struct Shape_func_800E6970_us *);
@@ -13,6 +13,9 @@ extern s32 func_800E70B0_us(struct Shape_func_800E6970_us *);
 struct Shape_func_800E6970_us;
 /* unbake published declaration: published_185854ad4a39d3afefd1d368 */
 extern s32 func_800E73A4_us(struct Shape_func_800E6970_us *);
+
+/* unbake published declaration: published_18c6c4dde59785d4ba3a1872 */
+extern float func_800E7718_us(void);
 
 struct Shape_func_800E6970_us;
 /* unbake published declaration: published_1fbe4bcfef7fe282ed4b9bb4 */
@@ -78,6 +81,9 @@ struct Shape_func_800E6970_us;
 /* unbake published declaration: published_db6508a2ea11b055012f0dda */
 extern s32 func_800E7340_us(struct Shape_func_800E6970_us *);
 
+/* unbake published declaration: published_f4ec5b6ec9eea94a0238f1d1 */
+extern float func_800E78BC_us(void);
+
 struct Shape_func_800E6970_us;
 /* unbake published declaration: published_fd43a15867bcb1dbfeff01cf */
 extern s32 func_800E7458_us(struct Shape_func_800E6970_us *);
@@ -86,6 +92,4 @@ extern int func_800E73BC_us(struct Shape_func_800E73BC_us * arg0);
 extern int func_800E7448_us(struct Shape_func_800E73BC_us * arg0);
 extern int func_800E7470_us(void * arg0);
 extern float func_800E7724_us(void);
-extern float func_800E7734_us(void);
-extern float func_800E775C_us(void);
 #endif

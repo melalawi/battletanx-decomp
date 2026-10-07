@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_8010527C_H
 #define UNBAKE_SPAN_1000_CODE_8010527C_H
 #include "../types.h"
+#include "common/draft_fields_func_80106010_us.h"
 /* unbake published declaration: published_77f17b374738a1d9fb047312 */
 extern void func_80106D08_us();
 

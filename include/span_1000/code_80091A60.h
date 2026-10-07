@@ -3,24 +3,8 @@
 #include "../types.h"
 #include "common/types_f8bfabebf96f.h"
 #include "gfx.h"
-#include "types.h"
 struct QueryObject;
 /* unbake published declaration: published_ffda6f322a4231fed9aa2c1c */
-struct PolygonPoint;
-struct PolygonTransform;
-struct PolygonPoint {
-    f32 y;
-    f32 x;
-};
-struct PolygonTransform {
-    f32 y_y;
-    f32 y_x;
-    f32 x_x;
-    f32 x_y;
-    f32 translate_x;
-    f32 translate_y;
-    u8 disabled;
-};
 struct QueryObject { char prefix[0x18]; int index; };
 
 struct QueryObject;
@@ -31,6 +15,9 @@ typedef void ( *QueryCallback)(struct QueryResult *, struct QueryObject *, int, 
 struct QueryWork;
 /* unbake published declaration: published_1c2d79c8c1aa035409008f65 */
 typedef struct QueryWork QueryWork;
+
+/* unbake published declaration: published_2fe0fdc53d12ade985e6e999 */
+extern int func_800942A8_us(int arg0, int arg1, void * arg2);
 
 union InterpVertex;
 /* unbake published declaration: published_306e61c29817b930b559db39 */
@@ -71,6 +58,13 @@ struct QueryObject;
 /* unbake published declaration: published_992b99b1daa94031fe6a3c12 */
 extern void func_80092534_us(struct QueryObject * object);
 
+struct PolygonPoint;
+/* unbake published declaration: published_a0bdae1541e43ed471e54224 */
+struct PolygonPoint {
+    f32 y;
+    f32 x;
+};
+
 struct QueryObject;
 /* unbake published declaration: published_a6b0a828f3fd8f6f47514456 */
 typedef struct QueryObject QueryObject;
@@ -81,6 +75,18 @@ extern QueryRecord D_803B8254[];
 struct QueryDispatch;
 /* unbake published declaration: published_d0cd53c1949f9999497577f1 */
 typedef struct QueryDispatch QueryDispatch;
+
+struct PolygonTransform;
+/* unbake published declaration: published_d45801840a243df97581aa66 */
+struct PolygonTransform {
+    f32 y_y;
+    f32 y_x;
+    f32 x_x;
+    f32 x_y;
+    f32 translate_x;
+    f32 translate_y;
+    u8 disabled;
+};
 
 /* unbake published declaration: published_e29eea54071038c5e99d17b8 */
 extern QueryDispatch D_802C3804[];
@@ -109,10 +115,5 @@ extern int func_80093EF8_us(void * arg0, void * arg1);
 extern int func_800940AC_us(float arg0, float arg1, void * arg2);
 extern int func_8009412C_us(float arg0, float arg1, void * arg2);
 extern int func_800941E0_us(float arg0, float arg1, float arg2, void * arg3);
-extern int func_800942A8_us(int arg0, int arg1, void * arg2);
 extern int func_8009453C_us(void * arg0, void * arg1, int arg2);
-
-
-
-
 #endif
