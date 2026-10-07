@@ -3,6 +3,7 @@
 #include "../types.h"
 #include "callback_control.h"
 #include "callback_word.h"
+#include "types.h"
 /* unbake published declaration: published_42c8d6d6eb6d3da9899d3b93 */
 extern unsigned char func_800A42C4_us(void * arg0);
 
@@ -10,6 +11,12 @@ extern unsigned char func_800A42C4_us(void * arg0);
 struct Shape_func_800A4D10_us;
 
 /* unbake published declaration: published_5406b6c4f805bfd43473efd3 */
+struct func_800A2EA4_S1_Shared800A2EA4;
+typedef struct func_800A2EA4_S1_Shared800A2EA4 func_800A2EA4_S1_Shared800A2EA4;
+typedef struct func_800A2EA4_S2_Shared800A2EA4 func_800A2EA4_S2_Shared800A2EA4;
+
+struct func_800A2EA4_S2_Shared800A2EA4;
+
 struct Shape_func_800A4D10_us {
     unsigned char padding_0[35];
     unsigned char field_23;
@@ -37,4 +44,19 @@ extern int func_800A30A8_us();
 extern unsigned char func_800A31C0_us(int arg0, void * arg1);
 
 extern int func_800A4D34_us(void * arg0, void * arg1);
+
+
+
+
+struct func_800A2EA4_S1_Shared800A2EA4 {
+    s8 unk0;
+    char pad0[0x4 - 0x0 - sizeof(s8)];
+    f32 unk4;
+    f32 unk8;
+};
+struct func_800A2EA4_S2_Shared800A2EA4 {
+    char pad0[0x1C];
+    f32 unk1C;
+    f32 unk20;
+};
 #endif
