@@ -502,11 +502,13 @@
       "minutes": 0.02
     },
     "func_800ED810": {
-      "attempts": 3,
-      "best": {},
+      "attempts": 4,
+      "best": {
+        "us": 100.0
+      },
       "bytes": 172,
-      "exact": false,
-      "minutes": 4.95
+      "exact": true,
+      "minutes": 13.23
     },
     "func_800EEBEC": {
       "attempts": 3,
