@@ -2,7 +2,6 @@
 #include "types.h"
 #include "audio_callbacks.h"
 
-#define NULL ((void *)0)
 
 
 

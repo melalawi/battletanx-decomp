@@ -380,6 +380,15 @@
       "exact": false,
       "minutes": 0.02
     },
+    "func_800B8750": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 180,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_800C17D0_us": {
       "attempts": 1,
       "best": {},
