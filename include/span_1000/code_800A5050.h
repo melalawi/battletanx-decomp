@@ -31,6 +31,9 @@ struct func_800A52AC_S1_Shared800A51E8;
 
 
 
+struct FuncA59E8State_Shared800A59E8;
+typedef struct FuncA59E8State_Shared800A59E8 FuncA59E8State_Shared800A59E8;
+
 struct FuncA51E8State_Shared800A51E8 {
     char pad0[0x1A6];
     u8 unk1A6;
@@ -39,6 +42,10 @@ struct FuncA51E8State_Shared800A51E8 {
     s32 unk21C;
     char pad220[0x260 - 0x220];
     s32 unk260;
+};
+struct FuncA59E8State_Shared800A59E8 {
+    char pad0[0x210];
+    s32 unk210;
 };
 struct func_800A52AC_S1_Shared800A51E8 {
     char pad0[0x1A6];
@@ -50,4 +57,6 @@ struct func_800A52AC_S1_Shared800A51E8 {
     char pad220[0x1F];
     s8 unk240;
 };
+
+
 #endif
