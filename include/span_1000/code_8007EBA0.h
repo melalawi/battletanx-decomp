@@ -2,6 +2,7 @@
 #define UNBAKE_SPAN_1000_CODE_8007EBA0_H
 #include "../types.h"
 #include "gfx.h"
+#include "types.h"
 /* unbake published declaration: published_05593061e302b687a02ab91c */
 extern void *func_8007F030_us(void);
 
@@ -20,6 +21,22 @@ extern void func_8007FF68(void);
 
 struct Shape_func_8008001C_us;
 
+struct Func8007EC38Catalog_Shared8007EC38;
+typedef struct Func8007EC38Catalog_Shared8007EC38 Func8007EC38Catalog_Shared8007EC38;
+typedef struct Func8007EC38Entry_Shared8007EC38 Func8007EC38Entry_Shared8007EC38;
+typedef struct func_8007EC38_S1_Shared8007EC38 func_8007EC38_S1_Shared8007EC38;
+typedef union func_8007EC38_S1_UE8_Shared8007EC38 func_8007EC38_S1_UE8_Shared8007EC38;
+
+struct Func8007EC38Entry_Shared8007EC38;
+
+struct func_8007EC38_S1_Shared8007EC38;
+
+union func_8007EC38_S1_UE8_Shared8007EC38;
+
+struct Func8007EC38Entry_Shared8007EC38 {
+    s32 threshold;
+    char pad4[0x14];
+};
 struct Shape_func_8008001C_us {
     unsigned char unknown_0[4];
     unsigned char unknown_4[4];
@@ -64,4 +81,28 @@ extern void * func_8007F00C_us();
 extern void * func_8007F040_us();
 
 extern int func_8007F2A0_us();
+
+
+
+
+
+
+
+
+union func_8007EC38_S1_UE8_Shared8007EC38 {
+    u32 v0;
+    s32 v1;
+};
+struct Func8007EC38Catalog_Shared8007EC38 {
+    char pad0[0xA4];
+    Func8007EC38Entry_Shared8007EC38 entries[1];
+};
+struct func_8007EC38_S1_Shared8007EC38 {
+    char pad0[0xD0];
+    u16 unkD0;
+    char padD0[0xD8 - 0xD0 - sizeof(u16)];
+    void * unkD8;
+    char padD8[0xE8 - 0xD8 - sizeof(void*)];
+    func_8007EC38_S1_UE8_Shared8007EC38 unkE8;
+};
 #endif
