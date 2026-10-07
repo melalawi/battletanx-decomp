@@ -1,33 +1,12 @@
 #include "span_1000/code_800824E4.h"
 /* Original packets use the classic F3DEX command encoding. */
 #undef F3DEX_GBI_2
-#define F3DEX_GBI
+
 #include "n64sdk.h"
 #include "gbi.h"
 #include "types.h"
-#define NULL ((void *)0)
 
 
-#ifndef M2C_MACROS_H
-#define M2C_MACROS_H
-
-/* Unknown types */
-
-/* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-
-/* Bitwise (reinterpret) cast */
-
-/* Unaligned reads */
-
-/* Unhandled instructions */
-
-/* Carry/overflow bits from partially-implemented instructions */
-
-/* Memcpy patterns */
-
-/* Sh2 control register loads/stores */
-
-#endif
 extern s32 D_80125860;                          /* unable to generate initializer: unknown type */
 extern s32 D_801258D8;                          
 
