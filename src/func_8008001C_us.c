@@ -1,5 +1,5 @@
 #include "types.h"
-#include "common/types_f8bfabebf96f.h"
+#include "common/types_d507c48987bb.h"
 #include "span_1000/code_8007EBA0.h"
 #include "span_1000/code_800F45C8.h"
 #include "gfx.h"

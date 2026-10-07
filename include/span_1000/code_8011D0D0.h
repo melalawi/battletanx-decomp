@@ -4,8 +4,10 @@
 /* unbake published declaration: published_583e0c055d6767c4c50e6e34 */
 extern void func_8011D0D0(int arg0);
 
+
 /* unbake published declaration: published_7a936733c17a04c95309d029 */
 extern void func_8011D0E0(void);
+
 
 /* unbake published declaration: published_cc4077bda524a2adbb38b77d */
 extern int func_8011D180(void);

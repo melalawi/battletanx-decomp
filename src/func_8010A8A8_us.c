@@ -1,6 +1,6 @@
 #ifdef NON_MATCHING
 #include "types.h"
-#include "common/types_f8bfabebf96f.h"
+#include "common/types_d507c48987bb.h"
 #include "span_1000/code_80107168.h"
 
 extern f32 func_800F3AE0_us(s32);

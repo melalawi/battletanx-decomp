@@ -1,4 +1,4 @@
 #ifndef UNBAKE_SPAN_1000_CODE_801120A0_H
 #define UNBAKE_SPAN_1000_CODE_801120A0_H
-
+extern int func_801120A0_us();
 #endif

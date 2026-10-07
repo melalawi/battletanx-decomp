@@ -4,8 +4,14 @@
 /* unbake published declaration: published_34535b2ba28581758ab2ff9a */
 extern void func_8008C2DC_us(int arg0);
 
+
 extern int func_8008B48C_us();
+
 extern int func_8008B66C_us();
+
 extern int func_8008B9E8_us();
+
+extern int func_8008C6F0_us(int arg0);
+
 extern int func_8008CED0_us();
 #endif

@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800F5B6C_H
 #define UNBAKE_SPAN_1000_CODE_800F5B6C_H
 struct Shape_func_800F6934_us;
+
 struct Shape_func_800F6934_us {
     unsigned char padding_0[16];
     int field_10;
@@ -13,8 +14,14 @@ struct Shape_func_800F6934_us {
     unsigned char field_1BD;
     unsigned char field_1BE;
 };
+
 extern int func_800F5B6C_us();
+
+extern int func_80100550_us(int arg0);
+
 extern int func_80101E9C_us(int arg0, int arg1, int arg2, struct Shape_func_800F6934_us * arg3);
+
 extern int func_80102F8C_us();
+
 extern int func_8010316C_us();
 #endif

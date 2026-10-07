@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_801220C0_H
 #define UNBAKE_SPAN_1000_CODE_801220C0_H
 struct Shape_func_80121A20_us;
+
 struct Shape_func_80121A20_us {
     unsigned char padding_0[4];
     int field_4;
@@ -12,5 +13,6 @@ struct Shape_func_80121A20_us {
     int field_1C;
     int field_20;
 };
+
 extern void func_801220C0_us(struct Shape_func_80121A20_us * arg0);
 #endif
