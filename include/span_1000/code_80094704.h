@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_80094704_H
 #define UNBAKE_SPAN_1000_CODE_80094704_H
 #include "../types.h"
+#include "types.h"
 /* unbake published declaration: published_47eecfbd1fa7babe4ffa8449 */
 extern int func_80096760();
 
@@ -20,4 +21,29 @@ extern int func_8009491C_us();
 extern int func_80094C58_us(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
 
 extern int func_80096834_us(unsigned char arg0);
+struct Func_80096784_Output_Shared80096784;
+struct Func_80096784_Record_Shared80096784;
+struct Func_80096784_Value_Shared80096784;
+
+
+
+
+
+
+struct Func_80096784_Output_Shared80096784 {
+    u8 mode;
+    u8 channel;
+    char pad_2[2];
+    s32 value;
+};
+struct Func_80096784_Record_Shared80096784 {
+    u16 value;
+    u8 mode;
+    u8 channel;
+    char pad_4[2];
+};
+struct Func_80096784_Value_Shared80096784 {
+    u16 value;
+    char pad_2[4];
+};
 #endif
