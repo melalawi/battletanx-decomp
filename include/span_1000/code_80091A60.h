@@ -1,8 +1,8 @@
 #ifndef UNBAKE_SPAN_1000_CODE_80091A60_H
 #define UNBAKE_SPAN_1000_CODE_80091A60_H
 #include "../types.h"
-#include "gfx.h"
 #include "common/types_d507c48987bb.h"
+#include "gfx.h"
 struct QueryObject;
 
 /* unbake published declaration: published_ffda6f322a4231fed9aa2c1c */
