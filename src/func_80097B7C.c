@@ -1,45 +1,16 @@
 #include "span_1000/code_80097038.h"
 #include "types.h"
 
-struct func_80097B7C_S1;
-typedef struct func_80097B7C_S1 func_80097B7C_S1;
 
 
 
-struct func_80097B7C_S1 {
-    char pad0[0x1];
-    u8 unk1;
-    char pad1[0x458 - 0x1 - sizeof(u8)];
-    s32 unk458;
-    s32 unk45C;
-    char pad45C[0x4F0 - 0x45C - sizeof(s32)];
-    s32 unk4F0;
-};
+
+
+
 
 #include "types.h"
-#define NULL ((void *)0)
 
 
-#ifndef M2C_MACROS_H
-#define M2C_MACROS_H
-
-/* Unknown types */
-
-/* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-
-/* Bitwise (reinterpret) cast */
-
-/* Unaligned reads */
-
-/* Unhandled instructions */
-
-/* Carry/overflow bits from partially-implemented instructions */
-
-/* Memcpy patterns */
-
-/* Sh2 control register loads/stores */
-
-#endif
 s32 func_800798C0();                         /* extern */
 void *func_800A03B8();                           
 
@@ -52,7 +23,7 @@ void func_80097B7C(void) {
     s32 temp_a0_2;
     s32 temp_a0_3;
     s32 var_s1;
-    func_80097B7C_S1 *temp_v0;
+    func_80097B7C_S1_Shared80097B7C *temp_v0;
 
     var_s1 = 0;
     do {
