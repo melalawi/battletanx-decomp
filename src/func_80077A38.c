@@ -1,28 +1,9 @@
 #include "span_1000/code_80077930.h"
+#include "span_1000/code_80077930.h"
+#include "span_1000/code_80077930.h"
 #include "types.h"
-#define NULL ((void *)0)
 
 
-#ifndef M2C_MACROS_H
-#define M2C_MACROS_H
-
-/* Unknown types */
-
-/* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-
-/* Bitwise (reinterpret) cast */
-
-/* Unaligned reads */
-
-/* Unhandled instructions */
-
-/* Carry/overflow bits from partially-implemented instructions */
-
-/* Memcpy patterns */
-
-/* Sh2 control register loads/stores */
-
-#endif
 s32 func_80111540(); /* extern */
 s32 func_80118860(); /* extern */
 s32 func_8011BB90();            /* extern */
