@@ -653,6 +653,15 @@
       },
       "minutes": 297.09
     },
+    "func_8010DCD0": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 168,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_801106A0_us": {
       "attempts": 1,
       "best": {
