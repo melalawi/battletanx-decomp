@@ -2,10 +2,6 @@
 #define UNBAKE_SPAN_1000_CODE_800D1AD0_H
 extern int func_800D1F20_us(int arg0, int arg1, int arg2, int arg3, int arg4, void * arg5, void * arg6);
 
-extern void func_800D39A4_us(int arg0, int arg1);
-
-extern int func_800D3B2C_us(int arg0, int arg1, int arg2, int arg3);
-
 extern void func_800D3CD4_us(void);
 
 extern int func_800D4410_us();
