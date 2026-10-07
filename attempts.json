@@ -142,13 +142,13 @@
       "minutes": 0.02
     },
     "func_80091608": {
-      "attempts": 1,
+      "attempts": 2,
       "best": {
         "us": 100.0
       },
       "bytes": 356,
-      "exact": false,
-      "minutes": 0.02
+      "exact": true,
+      "minutes": 6.5
     },
     "func_80091A60_us": {
       "attempts": 7,
