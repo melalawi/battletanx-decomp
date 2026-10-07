@@ -1,17 +1,7 @@
+#include "abi.h"
 #include "span_1000/code_8007EBA0.h"
 #include "types.h"
 
-struct Func7EE48Catalog;
-typedef struct Func7EE48Catalog Func7EE48Catalog;
-typedef struct Func7EE48Entry Func7EE48Entry;
-typedef struct func_8007EE48_S1 func_8007EE48_S1;
-typedef union func_8007EE48_S1_UE8 func_8007EE48_S1_UE8;
-
-struct Func7EE48Entry;
-
-struct func_8007EE48_S1;
-
-union func_8007EE48_S1_UE8;
 
 
 
@@ -21,57 +11,31 @@ union func_8007EE48_S1_UE8;
 
 
 
-struct Func7EE48Entry {
-    s32 threshold;
-    char pad4[0x14];
-};
-union func_8007EE48_S1_UE8 {
-    u32 v0;
-    s32 v1;
-};
-struct Func7EE48Catalog {
-    char pad0[0xA4];
-    Func7EE48Entry entries[1];
-};
-struct func_8007EE48_S1 {
-    char pad0[0xD0];
-    u16 unkD0;
-    char padD0[0xDC - 0xD0 - sizeof(u16)];
-    void * unkDC;
-    char padDC[0xE8 - 0xDC - sizeof(void*)];
-    func_8007EE48_S1_UE8 unkE8;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* The target command is classic G_MTX: opcode 0x01, 64-byte matrix,
  * eight flag bits at 16. Select the existing classic SDK builder. */
 #undef F3DEX_GBI_2
-#define F3DEX_GBI
+
 #include "n64sdk.h"
 #include "gbi.h"
 #include "types.h"
-#define NULL ((void *)0)
 
 
-#ifndef M2C_MACROS_H
-#define M2C_MACROS_H
-
-/* Unknown types */
-
-/* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-
-/* Bitwise (reinterpret) cast */
-
-/* Unaligned reads */
-
-/* Unhandled instructions */
-
-/* Carry/overflow bits from partially-implemented instructions */
-
-/* Memcpy patterns */
-
-/* Sh2 control register loads/stores */
-
-#endif
 s32 func_801146A0();                /* extern */
 extern void *D_801257D0[4]; 
 
@@ -89,11 +53,11 @@ s32 func_8007EE48(s32 unused, s32 arg1) {
     s32 var_a2 = 0;
     u32 temp_a1;
     Gfx *temp_a0;
-    func_8007EE48_S1 *temp_s0;
+    func_8007ECE8_S1_Shared8007ECE8 *temp_s0;
 
     temp_s0 = *D_801257D0;
     do {
-        if ((u32) (temp_a1 = temp_s0->unkE8.v0) >= (u32) (((Func7EE48Catalog *) ((temp_s0->unkD0 * sizeof(Func7EE48Entry)) + (u32)temp_s0))->entries[0].threshold + 0xC000)) {
+        if ((u32) (temp_a1 = temp_s0->unkE8.v0) >= (u32) (((Func8007EC38Catalog_Shared8007EC38 *) ((temp_s0->unkD0 * sizeof(Func8007EC38Entry_Shared8007EC38)) + (u32)temp_s0))->entries[0].threshold + 0xC000)) {
             break;
         }
         func_801146A0(unused, temp_a1, var_a2);
