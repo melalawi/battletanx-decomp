@@ -13,6 +13,7 @@ build/%/src/func_8007967C.i build/%/src/func_8007967C.key build/%/units/func_800
 build/%/src/func_8007967C.i build/%/src/func_8007967C.key build/%/units/func_8007967C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8007967C.i build/%/src/func_8007967C.key build/%/units/func_8007967C.bin: COMPILER_INCLUDES := 
 build/%/src/func_8007967C.i build/%/src/func_8007967C.key build/%/units/func_8007967C.bin: COMPILER_DEFINES := 
+build/%/src/func_8007967C.i build/%/src/func_8007967C.key build/%/units/func_8007967C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8007967C.i build/%/src/func_8007967C.key build/%/units/func_8007967C.bin: TRIM := --trim
 build/%/src/func_800799C0_us.i build/%/src/func_800799C0_us.key build/%/units/func_800799C0_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80079A5C.i build/%/src/func_80079A5C.key build/%/units/func_80079A5C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -30,6 +31,7 @@ build/%/src/func_8007C298.i build/%/src/func_8007C298.key build/%/units/func_800
 build/%/src/func_8007C298.i build/%/src/func_8007C298.key build/%/units/func_8007C298.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8007C298.i build/%/src/func_8007C298.key build/%/units/func_8007C298.bin: COMPILER_INCLUDES := 
 build/%/src/func_8007C298.i build/%/src/func_8007C298.key build/%/units/func_8007C298.bin: COMPILER_DEFINES := 
+build/%/src/func_8007C298.i build/%/src/func_8007C298.key build/%/units/func_8007C298.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8007C298.i build/%/src/func_8007C298.key build/%/units/func_8007C298.bin: TRIM := --trim
 build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: KIND := ido
@@ -37,6 +39,7 @@ build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_800
 build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: COMPILER_INCLUDES := 
 build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: COMPILER_DEFINES := 
+build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8007C33C.i build/%/src/func_8007C33C.key build/%/units/func_8007C33C.bin: TRIM := --trim
 build/%/src/func_8007C6D8.i build/%/src/func_8007C6D8.key build/%/units/func_8007C6D8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_8007D1F8.i build/%/src/func_8007D1F8.key build/%/units/func_8007D1F8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -57,6 +60,7 @@ build/%/src/func_800805D0.i build/%/src/func_800805D0.key build/%/units/func_800
 build/%/src/func_800805D0.i build/%/src/func_800805D0.key build/%/units/func_800805D0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800805D0.i build/%/src/func_800805D0.key build/%/units/func_800805D0.bin: COMPILER_INCLUDES := 
 build/%/src/func_800805D0.i build/%/src/func_800805D0.key build/%/units/func_800805D0.bin: COMPILER_DEFINES := 
+build/%/src/func_800805D0.i build/%/src/func_800805D0.key build/%/units/func_800805D0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800805D0.i build/%/src/func_800805D0.key build/%/units/func_800805D0.bin: TRIM := --trim
 build/%/src/func_800805DC.i build/%/src/func_800805DC.key build/%/units/func_800805DC.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80081A30.i build/%/src/func_80081A30.key build/%/units/func_80081A30.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -69,6 +73,7 @@ build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_800
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: COMPILER_INCLUDES := 
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: COMPILER_DEFINES := 
+build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80085460.i build/%/src/func_80085460.key build/%/units/func_80085460.bin: TRIM := --trim
 build/%/src/func_8008716C_us.i build/%/src/func_8008716C_us.key build/%/units/func_8008716C_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_8008C2DC_us.i build/%/src/func_8008C2DC_us.key build/%/units/func_8008C2DC_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -81,6 +86,7 @@ build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800
 build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: COMPILER_INCLUDES := 
 build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: COMPILER_DEFINES := 
+build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800917C4.i build/%/src/func_800917C4.key build/%/units/func_800917C4.bin: TRIM := --trim
 build/%/src/func_800917D8.i build/%/src/func_800917D8.key build/%/units/func_800917D8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80091A60_us.i build/%/src/func_80091A60_us.key build/%/units/func_80091A60_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
@@ -92,6 +98,7 @@ build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_800
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: COMPILER_INCLUDES := 
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: COMPILER_DEFINES := 
+build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80093F34.i build/%/src/func_80093F34.key build/%/units/func_80093F34.bin: TRIM := --trim
 build/%/src/func_800942A8_us.i build/%/src/func_800942A8_us.key build/%/units/func_800942A8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -100,6 +107,7 @@ build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: COMPILER_INCLUDES := 
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: COMPILER_DEFINES := 
+build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800949B8.i build/%/src/func_800949B8.key build/%/units/func_800949B8.bin: TRIM := --trim
 build/%/src/func_80096760.i build/%/src/func_80096760.key build/%/units/func_80096760.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -108,6 +116,7 @@ build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_800
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: CODEGEN := -G0 -mips3 -O2 -mgas -meb -mcpu=VR4300 -mhard-float -mgp32 -mfp64 -mno-fix4300
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: COMPILER_INCLUDES := 
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: COMPILER_DEFINES := 
+build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: ASSEMBLER_FLAGS := -march=vr4300 -mabi=32 -EB -G0 --no-pad-sections
 build/%/src/func_80096784.i build/%/src/func_80096784.key build/%/units/func_80096784.bin: TRIM := 
 build/%/src/func_800968FC.i build/%/src/func_800968FC.key build/%/units/func_800968FC.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80097B7C.i build/%/src/func_80097B7C.key build/%/units/func_80097B7C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -117,7 +126,9 @@ build/%/src/func_80097C24.i build/%/src/func_80097C24.key build/%/units/func_800
 build/%/src/func_80097C24.i build/%/src/func_80097C24.key build/%/units/func_80097C24.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80097C24.i build/%/src/func_80097C24.key build/%/units/func_80097C24.bin: COMPILER_INCLUDES := 
 build/%/src/func_80097C24.i build/%/src/func_80097C24.key build/%/units/func_80097C24.bin: COMPILER_DEFINES := 
+build/%/src/func_80097C24.i build/%/src/func_80097C24.key build/%/units/func_80097C24.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80097C24.i build/%/src/func_80097C24.key build/%/units/func_80097C24.bin: TRIM := --trim
+build/%/src/func_800983E0_us.i build/%/src/func_800983E0_us.key build/%/units/func_800983E0_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_80099CD8.i build/%/src/func_80099CD8.key build/%/units/func_80099CD8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: KIND := ido
@@ -125,6 +136,7 @@ build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_800
 build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: COMPILER_INCLUDES := 
 build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: COMPILER_DEFINES := 
+build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8009E39C.i build/%/src/func_8009E39C.key build/%/units/func_8009E39C.bin: TRIM := --trim
 build/%/src/func_800A2EA4.i build/%/src/func_800A2EA4.key build/%/units/func_800A2EA4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A3D30.i build/%/src/func_800A3D30.key build/%/units/func_800A3D30.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -134,6 +146,7 @@ build/%/src/func_800A424C.i build/%/src/func_800A424C.key build/%/units/func_800
 build/%/src/func_800A424C.i build/%/src/func_800A424C.key build/%/units/func_800A424C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800A424C.i build/%/src/func_800A424C.key build/%/units/func_800A424C.bin: COMPILER_INCLUDES := 
 build/%/src/func_800A424C.i build/%/src/func_800A424C.key build/%/units/func_800A424C.bin: COMPILER_DEFINES := 
+build/%/src/func_800A424C.i build/%/src/func_800A424C.key build/%/units/func_800A424C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800A424C.i build/%/src/func_800A424C.key build/%/units/func_800A424C.bin: TRIM := --trim
 build/%/src/func_800A4254.i build/%/src/func_800A4254.key build/%/units/func_800A4254.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800A42BC.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -142,6 +155,7 @@ build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800
 build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800A42BC.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800A42BC.bin: COMPILER_INCLUDES := 
 build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800A42BC.bin: COMPILER_DEFINES := 
+build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800A42BC.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800A42BC.i build/%/src/func_800A42BC.key build/%/units/func_800A42BC.bin: TRIM := --trim
 build/%/src/func_800A42C4_us.i build/%/src/func_800A42C4_us.key build/%/units/func_800A42C4_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A4368_us.i build/%/src/func_800A4368_us.key build/%/units/func_800A4368_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -153,6 +167,7 @@ build/%/src/func_800A4D1C.i build/%/src/func_800A4D1C.key build/%/units/func_800
 build/%/src/func_800A4D1C.i build/%/src/func_800A4D1C.key build/%/units/func_800A4D1C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800A4D1C.i build/%/src/func_800A4D1C.key build/%/units/func_800A4D1C.bin: COMPILER_INCLUDES := 
 build/%/src/func_800A4D1C.i build/%/src/func_800A4D1C.key build/%/units/func_800A4D1C.bin: COMPILER_DEFINES := 
+build/%/src/func_800A4D1C.i build/%/src/func_800A4D1C.key build/%/units/func_800A4D1C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800A4D1C.i build/%/src/func_800A4D1C.key build/%/units/func_800A4D1C.bin: TRIM := --trim
 build/%/src/func_800A51E8.i build/%/src/func_800A51E8.key build/%/units/func_800A51E8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A59E8.i build/%/src/func_800A59E8.key build/%/units/func_800A59E8.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -163,6 +178,7 @@ build/%/src/func_800A66C0.i build/%/src/func_800A66C0.key build/%/units/func_800
 build/%/src/func_800A66C0.i build/%/src/func_800A66C0.key build/%/units/func_800A66C0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800A66C0.i build/%/src/func_800A66C0.key build/%/units/func_800A66C0.bin: COMPILER_INCLUDES := 
 build/%/src/func_800A66C0.i build/%/src/func_800A66C0.key build/%/units/func_800A66C0.bin: COMPILER_DEFINES := 
+build/%/src/func_800A66C0.i build/%/src/func_800A66C0.key build/%/units/func_800A66C0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800A66C0.i build/%/src/func_800A66C0.key build/%/units/func_800A66C0.bin: TRIM := --trim
 build/%/src/func_800A68E0_us.i build/%/src/func_800A68E0_us.key build/%/units/func_800A68E0_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A6E10.i build/%/src/func_800A6E10.key build/%/units/func_800A6E10.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -174,6 +190,7 @@ build/%/src/func_800A7548.i build/%/src/func_800A7548.key build/%/units/func_800
 build/%/src/func_800A7548.i build/%/src/func_800A7548.key build/%/units/func_800A7548.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800A7548.i build/%/src/func_800A7548.key build/%/units/func_800A7548.bin: COMPILER_INCLUDES := 
 build/%/src/func_800A7548.i build/%/src/func_800A7548.key build/%/units/func_800A7548.bin: COMPILER_DEFINES := 
+build/%/src/func_800A7548.i build/%/src/func_800A7548.key build/%/units/func_800A7548.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800A7548.i build/%/src/func_800A7548.key build/%/units/func_800A7548.bin: TRIM := --trim
 build/%/src/func_800A7550.i build/%/src/func_800A7550.key build/%/units/func_800A7550.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800A76A0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -182,6 +199,7 @@ build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800
 build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800A76A0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800A76A0.bin: COMPILER_INCLUDES := 
 build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800A76A0.bin: COMPILER_DEFINES := 
+build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800A76A0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800A76A0.i build/%/src/func_800A76A0.key build/%/units/func_800A76A0.bin: TRIM := --trim
 build/%/src/func_800A7D10.i build/%/src/func_800A7D10.key build/%/units/func_800A7D10.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800A81F0.i build/%/src/func_800A81F0.key build/%/units/func_800A81F0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -195,6 +213,7 @@ build/%/src/func_800AB200.i build/%/src/func_800AB200.key build/%/units/func_800
 build/%/src/func_800AB200.i build/%/src/func_800AB200.key build/%/units/func_800AB200.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800AB200.i build/%/src/func_800AB200.key build/%/units/func_800AB200.bin: COMPILER_INCLUDES := 
 build/%/src/func_800AB200.i build/%/src/func_800AB200.key build/%/units/func_800AB200.bin: COMPILER_DEFINES := 
+build/%/src/func_800AB200.i build/%/src/func_800AB200.key build/%/units/func_800AB200.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800AB200.i build/%/src/func_800AB200.key build/%/units/func_800AB200.bin: TRIM := --trim
 build/%/src/func_800AB614.i build/%/src/func_800AB614.key build/%/units/func_800AB614.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800AB95C.i build/%/src/func_800AB95C.key build/%/units/func_800AB95C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -204,6 +223,7 @@ build/%/src/func_800ABFA0.i build/%/src/func_800ABFA0.key build/%/units/func_800
 build/%/src/func_800ABFA0.i build/%/src/func_800ABFA0.key build/%/units/func_800ABFA0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800ABFA0.i build/%/src/func_800ABFA0.key build/%/units/func_800ABFA0.bin: COMPILER_INCLUDES := 
 build/%/src/func_800ABFA0.i build/%/src/func_800ABFA0.key build/%/units/func_800ABFA0.bin: COMPILER_DEFINES := 
+build/%/src/func_800ABFA0.i build/%/src/func_800ABFA0.key build/%/units/func_800ABFA0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800ABFA0.i build/%/src/func_800ABFA0.key build/%/units/func_800ABFA0.bin: TRIM := --trim
 build/%/src/func_800ABFD0.i build/%/src/func_800ABFD0.key build/%/units/func_800ABFD0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800AC2D0_us.i build/%/src/func_800AC2D0_us.key build/%/units/func_800AC2D0_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -221,6 +241,7 @@ build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800
 build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800E3460.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800E3460.bin: COMPILER_INCLUDES := 
 build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800E3460.bin: COMPILER_DEFINES := 
+build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800E3460.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800E3460.bin: TRIM := --trim
 build/%/src/func_800E34B4.i build/%/src/func_800E34B4.key build/%/units/func_800E34B4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800E3C18.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -229,6 +250,7 @@ build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800
 build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800E3C18.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800E3C18.bin: COMPILER_INCLUDES := 
 build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800E3C18.bin: COMPILER_DEFINES := 
+build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800E3C18.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800E3C18.i build/%/src/func_800E3C18.key build/%/units/func_800E3C18.bin: TRIM := --trim
 build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: KIND := ido
@@ -236,6 +258,7 @@ build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800
 build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: COMPILER_INCLUDES := 
 build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: COMPILER_DEFINES := 
+build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800E480C.i build/%/src/func_800E480C.key build/%/units/func_800E480C.bin: TRIM := --trim
 build/%/src/func_800E4D44.i build/%/src/func_800E4D44.key build/%/units/func_800E4D44.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800E5198.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -244,6 +267,7 @@ build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800
 build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800E5198.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800E5198.bin: COMPILER_INCLUDES := 
 build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800E5198.bin: COMPILER_DEFINES := 
+build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800E5198.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800E5198.i build/%/src/func_800E5198.key build/%/units/func_800E5198.bin: TRIM := --trim
 build/%/src/func_800E51B8_us.i build/%/src/func_800E51B8_us.key build/%/units/func_800E51B8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800E566C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -252,6 +276,7 @@ build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800
 build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800E566C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800E566C.bin: COMPILER_INCLUDES := 
 build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800E566C.bin: COMPILER_DEFINES := 
+build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800E566C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800E566C.i build/%/src/func_800E566C.key build/%/units/func_800E566C.bin: TRIM := --trim
 build/%/src/func_800E6A70_us.i build/%/src/func_800E6A70_us.key build/%/units/func_800E6A70_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E6C14.i build/%/src/func_800E6C14.key build/%/units/func_800E6C14.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -267,6 +292,7 @@ build/%/src/func_800E99D4.i build/%/src/func_800E99D4.key build/%/units/func_800
 build/%/src/func_800E99D4.i build/%/src/func_800E99D4.key build/%/units/func_800E99D4.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800E99D4.i build/%/src/func_800E99D4.key build/%/units/func_800E99D4.bin: COMPILER_INCLUDES := 
 build/%/src/func_800E99D4.i build/%/src/func_800E99D4.key build/%/units/func_800E99D4.bin: COMPILER_DEFINES := 
+build/%/src/func_800E99D4.i build/%/src/func_800E99D4.key build/%/units/func_800E99D4.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800E99D4.i build/%/src/func_800E99D4.key build/%/units/func_800E99D4.bin: TRIM := --trim
 build/%/src/func_800E9A20_us.i build/%/src/func_800E9A20_us.key build/%/units/func_800E9A20_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E9DA4.i build/%/src/func_800E9DA4.key build/%/units/func_800E9DA4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -276,6 +302,7 @@ build/%/src/func_800EA1B0.i build/%/src/func_800EA1B0.key build/%/units/func_800
 build/%/src/func_800EA1B0.i build/%/src/func_800EA1B0.key build/%/units/func_800EA1B0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800EA1B0.i build/%/src/func_800EA1B0.key build/%/units/func_800EA1B0.bin: COMPILER_INCLUDES := 
 build/%/src/func_800EA1B0.i build/%/src/func_800EA1B0.key build/%/units/func_800EA1B0.bin: COMPILER_DEFINES := 
+build/%/src/func_800EA1B0.i build/%/src/func_800EA1B0.key build/%/units/func_800EA1B0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800EA1B0.i build/%/src/func_800EA1B0.key build/%/units/func_800EA1B0.bin: TRIM := --trim
 build/%/src/func_800EA1FC.i build/%/src/func_800EA1FC.key build/%/units/func_800EA1FC.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800EACEC_us.i build/%/src/func_800EACEC_us.key build/%/units/func_800EACEC_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -290,6 +317,7 @@ build/%/src/func_800EBBB4_us.i build/%/src/func_800EBBB4_us.key build/%/units/fu
 build/%/src/func_800EBBB4_us.i build/%/src/func_800EBBB4_us.key build/%/units/func_800EBBB4_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_800EBBB4_us.i build/%/src/func_800EBBB4_us.key build/%/units/func_800EBBB4_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_800EBBB4_us.i build/%/src/func_800EBBB4_us.key build/%/units/func_800EBBB4_us.bin: COMPILER_DEFINES := 
+build/%/src/func_800EBBB4_us.i build/%/src/func_800EBBB4_us.key build/%/units/func_800EBBB4_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_800EBBB4_us.i build/%/src/func_800EBBB4_us.key build/%/units/func_800EBBB4_us.bin: TRIM := --trim
 build/%/src/func_800EBBBC_us.i build/%/src/func_800EBBBC_us.key build/%/units/func_800EBBBC_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800EBD74_us.i build/%/src/func_800EBD74_us.key build/%/units/func_800EBD74_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -306,6 +334,7 @@ build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_801
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: COMPILER_INCLUDES := 
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: COMPILER_DEFINES := 
+build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80106D00.i build/%/src/func_80106D00.key build/%/units/func_80106D00.bin: TRIM := --trim
 build/%/src/func_80106D10_us.i build/%/src/func_80106D10_us.key build/%/units/func_80106D10_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/func_80107168_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -314,6 +343,7 @@ build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/fu
 build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/func_80107168_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/func_80107168_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/func_80107168_us.bin: COMPILER_DEFINES := 
+build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/func_80107168_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80107168_us.i build/%/src/func_80107168_us.key build/%/units/func_80107168_us.bin: TRIM := --trim
 build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: KIND := ido
@@ -321,6 +351,7 @@ build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/fu
 build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: COMPILER_DEFINES := 
+build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80107704_us.i build/%/src/func_80107704_us.key build/%/units/func_80107704_us.bin: TRIM := --trim
 build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: KIND := ido
@@ -328,6 +359,7 @@ build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_801
 build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: COMPILER_INCLUDES := 
 build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: COMPILER_DEFINES := 
+build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80109354.i build/%/src/func_80109354.key build/%/units/func_80109354.bin: TRIM := --trim
 build/%/src/func_8010A680_us.i build/%/src/func_8010A680_us.key build/%/units/func_8010A680_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_8010A8A8_us.i build/%/src/func_8010A8A8_us.key build/%/units/func_8010A8A8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
@@ -338,6 +370,7 @@ build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_801
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: COMPILER_INCLUDES := 
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: COMPILER_DEFINES := 
+build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: TRIM := --trim
 build/%/src/func_8010BC10_us.i build/%/src/func_8010BC10_us.key build/%/units/func_8010BC10_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_8010DCD0.i build/%/src/func_8010DCD0.key build/%/units/func_8010DCD0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
@@ -347,6 +380,7 @@ build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/fu
 build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: COMPILER_DEFINES := 
+build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: TRIM := --trim
 build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: KIND := ido
@@ -354,6 +388,7 @@ build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/fu
 build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: COMPILER_DEFINES := 
+build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80110AAC_us.i build/%/src/func_80110AAC_us.key build/%/units/func_80110AAC_us.bin: TRIM := --trim
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: KIND := ido
@@ -361,6 +396,7 @@ build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_801
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: COMPILER_INCLUDES := 
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: COMPILER_DEFINES := 
+build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: TRIM := --trim
 build/%/src/func_80110CA0.i build/%/src/func_80110CA0.key build/%/units/func_80110CA0.bin: UNIT_CODEGEN := -O1
 build/%/src/func_80113460_us.i build/%/src/func_80113460_us.key build/%/units/func_80113460_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
@@ -370,6 +406,7 @@ build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: COMPILER_INCLUDES := 
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: COMPILER_DEFINES := 
+build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: TRIM := --trim
 build/%/src/func_801145D0.i build/%/src/func_801145D0.key build/%/units/func_801145D0.bin: UNIT_CODEGEN := -O1
 build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801147A0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -378,6 +415,7 @@ build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801
 build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801147A0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801147A0.bin: COMPILER_INCLUDES := 
 build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801147A0.bin: COMPILER_DEFINES := 
+build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801147A0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_801147A0.i build/%/src/func_801147A0.key build/%/units/func_801147A0.bin: TRIM := --trim
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: KIND := ido
@@ -385,6 +423,7 @@ build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_801
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: COMPILER_INCLUDES := 
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: COMPILER_DEFINES := 
+build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: TRIM := --trim
 build/%/src/func_80115474.i build/%/src/func_80115474.key build/%/units/func_80115474.bin: UNIT_CODEGEN := -O1
 build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -393,6 +432,7 @@ build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_801
 build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: COMPILER_DEFINES := 
+build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: TRIM := --trim
 build/%/src/func_8011588C.i build/%/src/func_8011588C.key build/%/units/func_8011588C.bin: UNIT_CODEGEN := -O1
 build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -401,6 +441,7 @@ build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_801
 build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: COMPILER_INCLUDES := 
 build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: COMPILER_DEFINES := 
+build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: TRIM := --trim
 build/%/src/func_80115C80.i build/%/src/func_80115C80.key build/%/units/func_80115C80.bin: UNIT_CODEGEN := -O1
 build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_8011954C.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -409,6 +450,7 @@ build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_801
 build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_8011954C.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_8011954C.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_8011954C.bin: COMPILER_DEFINES := 
+build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_8011954C.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011954C.i build/%/src/func_8011954C.key build/%/units/func_8011954C.bin: TRIM := --trim
 build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: KIND := ido
@@ -416,6 +458,7 @@ build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_801
 build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: COMPILER_INCLUDES := 
 build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: COMPILER_DEFINES := 
+build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80119B60.i build/%/src/func_80119B60.key build/%/units/func_80119B60.bin: TRIM := --trim
 build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: KIND := ido
@@ -423,6 +466,7 @@ build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_801
 build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: COMPILER_INCLUDES := 
 build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: COMPILER_DEFINES := 
+build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80119BB4.i build/%/src/func_80119BB4.key build/%/units/func_80119BB4.bin: TRIM := --trim
 build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: KIND := ido
@@ -430,6 +474,7 @@ build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_801
 build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: COMPILER_INCLUDES := 
 build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: COMPILER_DEFINES := 
+build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80119C34.i build/%/src/func_80119C34.key build/%/units/func_80119C34.bin: TRIM := --trim
 build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: KIND := ido
@@ -437,6 +482,7 @@ build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/fu
 build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: COMPILER_DEFINES := 
+build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80119CE8_us.i build/%/src/func_80119CE8_us.key build/%/units/func_80119CE8_us.bin: TRIM := --trim
 build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: KIND := ido
@@ -444,6 +490,7 @@ build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_801
 build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: COMPILER_INCLUDES := 
 build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: COMPILER_DEFINES := 
+build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80119F70.i build/%/src/func_80119F70.key build/%/units/func_80119F70.bin: TRIM := --trim
 build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: KIND := ido
@@ -451,6 +498,7 @@ build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_801
 build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: COMPILER_DEFINES := 
+build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011A134.i build/%/src/func_8011A134.key build/%/units/func_8011A134.bin: TRIM := --trim
 build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: KIND := ido
@@ -458,6 +506,7 @@ build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/fu
 build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: COMPILER_DEFINES := 
+build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011AB74_us.i build/%/src/func_8011AB74_us.key build/%/units/func_8011AB74_us.bin: TRIM := --trim
 build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: KIND := ido
@@ -465,6 +514,7 @@ build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_801
 build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011B1A0.i build/%/src/func_8011B1A0.key build/%/units/func_8011B1A0.bin: TRIM := --trim
 build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: KIND := ido
@@ -472,6 +522,7 @@ build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_801
 build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: COMPILER_DEFINES := 
+build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011B7BC.i build/%/src/func_8011B7BC.key build/%/units/func_8011B7BC.bin: TRIM := --trim
 build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: KIND := ido
@@ -479,6 +530,7 @@ build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_801
 build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011B8F0.i build/%/src/func_8011B8F0.key build/%/units/func_8011B8F0.bin: TRIM := --trim
 build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: KIND := ido
@@ -486,6 +538,7 @@ build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_801
 build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011B9E0.i build/%/src/func_8011B9E0.key build/%/units/func_8011B9E0.bin: TRIM := --trim
 build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: KIND := ido
@@ -493,6 +546,7 @@ build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_801
 build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: COMPILER_DEFINES := 
+build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011BDE4.i build/%/src/func_8011BDE4.key build/%/units/func_8011BDE4.bin: TRIM := --trim
 build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: KIND := ido
@@ -500,6 +554,7 @@ build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_801
 build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: COMPILER_DEFINES := 
+build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011C150.i build/%/src/func_8011C150.key build/%/units/func_8011C150.bin: TRIM := --trim
 build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: KIND := ido
@@ -507,6 +562,7 @@ build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_801
 build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: COMPILER_DEFINES := 
+build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011C180.i build/%/src/func_8011C180.key build/%/units/func_8011C180.bin: TRIM := --trim
 build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: KIND := ido
@@ -514,6 +570,7 @@ build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_801
 build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: COMPILER_DEFINES := 
+build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011C300.i build/%/src/func_8011C300.key build/%/units/func_8011C300.bin: TRIM := --trim
 build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: KIND := ido
@@ -521,6 +578,7 @@ build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/fu
 build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: COMPILER_DEFINES := 
+build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011C39C_us.i build/%/src/func_8011C39C_us.key build/%/units/func_8011C39C_us.bin: TRIM := --trim
 build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: KIND := ido
@@ -528,6 +586,7 @@ build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_801
 build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011D0E0.i build/%/src/func_8011D0E0.key build/%/units/func_8011D0E0.bin: TRIM := --trim
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: KIND := ido
@@ -535,6 +594,7 @@ build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_801
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: COMPILER_DEFINES := 
+build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: TRIM := --trim
 build/%/src/func_8011D100.i build/%/src/func_8011D100.key build/%/units/func_8011D100.bin: UNIT_CODEGEN := -O1
 build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_8011D3DC.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
@@ -543,6 +603,7 @@ build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_801
 build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_8011D3DC.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_8011D3DC.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_8011D3DC.bin: COMPILER_DEFINES := 
+build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_8011D3DC.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011D3DC.i build/%/src/func_8011D3DC.key build/%/units/func_8011D3DC.bin: TRIM := --trim
 build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: KIND := ido
@@ -550,6 +611,7 @@ build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_801
 build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011D6D0.i build/%/src/func_8011D6D0.key build/%/units/func_8011D6D0.bin: TRIM := --trim
 build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: KIND := ido
@@ -557,6 +619,7 @@ build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/fu
 build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: COMPILER_DEFINES := 
+build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011DC00_us.i build/%/src/func_8011DC00_us.key build/%/units/func_8011DC00_us.bin: TRIM := --trim
 build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: KIND := ido
@@ -564,6 +627,7 @@ build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_801
 build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: COMPILER_DEFINES := 
+build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011DC60.i build/%/src/func_8011DC60.key build/%/units/func_8011DC60.bin: TRIM := --trim
 build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: KIND := ido
@@ -571,6 +635,7 @@ build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_801
 build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: COMPILER_DEFINES := 
+build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011DC98.i build/%/src/func_8011DC98.key build/%/units/func_8011DC98.bin: TRIM := --trim
 build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: KIND := ido
@@ -578,6 +643,7 @@ build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/fu
 build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: COMPILER_DEFINES := 
+build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011DD40_us.i build/%/src/func_8011DD40_us.key build/%/units/func_8011DD40_us.bin: TRIM := --trim
 build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: KIND := ido
@@ -585,6 +651,7 @@ build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_801
 build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011E3F0.i build/%/src/func_8011E3F0.key build/%/units/func_8011E3F0.bin: TRIM := --trim
 build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: KIND := ido
@@ -592,6 +659,7 @@ build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_801
 build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: COMPILER_DEFINES := 
+build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011E434.i build/%/src/func_8011E434.key build/%/units/func_8011E434.bin: TRIM := --trim
 build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: KIND := ido
@@ -599,6 +667,7 @@ build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_801
 build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: COMPILER_DEFINES := 
+build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011E488.i build/%/src/func_8011E488.key build/%/units/func_8011E488.bin: TRIM := --trim
 build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: KIND := ido
@@ -606,6 +675,7 @@ build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_801
 build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: COMPILER_DEFINES := 
+build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011E564.i build/%/src/func_8011E564.key build/%/units/func_8011E564.bin: TRIM := --trim
 build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: KIND := ido
@@ -613,6 +683,7 @@ build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_801
 build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: COMPILER_DEFINES := 
+build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011ECA4.i build/%/src/func_8011ECA4.key build/%/units/func_8011ECA4.bin: TRIM := --trim
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: KIND := ido
@@ -620,6 +691,7 @@ build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_801
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: COMPILER_INCLUDES := 
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: COMPILER_DEFINES := 
+build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_8011F7F0.i build/%/src/func_8011F7F0.key build/%/units/func_8011F7F0.bin: TRIM := --trim
 build/%/src/func_80120C24_us.i build/%/src/func_80120C24_us.key build/%/units/func_80120C24_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/func_80120E48_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2 -DNON_MATCHING
@@ -628,6 +700,7 @@ build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/fu
 build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/func_80120E48_us.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/func_80120E48_us.bin: COMPILER_INCLUDES := 
 build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/func_80120E48_us.bin: COMPILER_DEFINES := 
+build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/func_80120E48_us.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80120E48_us.i build/%/src/func_80120E48_us.key build/%/units/func_80120E48_us.bin: TRIM := --trim
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: KIND := ido
@@ -635,6 +708,7 @@ build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_801
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: CODEGEN := -G0 -non_shared -mips2 -O2
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: COMPILER_INCLUDES := 
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: COMPILER_DEFINES := 
+build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: ASSEMBLER_FLAGS := 
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: TRIM := --trim
 build/%/src/func_80121F10.i build/%/src/func_80121F10.key build/%/units/func_80121F10.bin: UNIT_CODEGEN := -O1
 build/%/src/func_80123978_us.i build/%/src/func_80123978_us.key build/%/units/func_80123978_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)

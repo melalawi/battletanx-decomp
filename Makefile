@@ -27,7 +27,7 @@ N64LINK := n64link
 INCLUDES := -Iinclude
 CPPFLAGS := -P -undef -nostdinc -D_LANGUAGE_C -DF3DEX_GBI_2 -D__GNUC__=2
 PREPROCESS_FLAGS = $(INCLUDES)  $(VERSION_DEFINES) $(CONSUMER)
-SN64_ASFLAGS := -march=vr4300 -mabi=32 -EB -G0 --no-pad-sections
+ASSEMBLER_FLAGS := -march=vr4300 -mabi=32 -EB -G0 --no-pad-sections
 HASM_ASFLAGS := -march=vr4300 -mabi=32 -EB --no-pad-sections
 KIND := gnu
 CC := tools/gcc-2.7.2-kmc/cc1
@@ -130,7 +130,7 @@ include $(foreach v,$(VERSIONS),versions/$v/slices.mk)
 include units.mk
 
 PREPROCESS_gnu = $(CPP) $(CPPFLAGS) $(PREPROCESS_FLAGS) src/$(*F).c -MMD -MP -MT $(@D)/$(*F).i -MF $(@D)/$(*F).d > $(@D)/$(*F).i
-COMPILE_gnu = $(abspath $(CC)) -quiet $(CODEGEN) $(UNIT_CODEGEN) $(*F).i -o $(*F).s && $(N64LINK) asn64 --as $(AS) $(SN64_ASFLAGS) $(*F).s -o $(*F).o
+COMPILE_gnu = $(abspath $(CC)) -quiet $(CODEGEN) $(UNIT_CODEGEN) $(*F).i -o $(*F).s && $(N64LINK) asn64 --as $(AS) $(ASSEMBLER_FLAGS) $(*F).s -o $(*F).o
 PREPROCESS_ido = $(abspath $(CC)) $(PREPROCESS_FLAGS) -M src/$(*F).c > $(@D)/$(*F).deps && sed 's|^[^:]*:|$(@D)/$(*F).i:|' $(@D)/$(*F).deps > $(@D)/$(*F).d && rm $(@D)/$(*F).deps && $(abspath $(CC)) $(PREPROCESS_FLAGS) -E src/$(*F).c > $(@D)/$(*F).i
 COMPILE_ido = $(abspath $(CC)) $(CODEGEN) $(UNIT_CODEGEN) -c $(*F).i -o $(*F).o
 VER = $(word 2,$(subst /, ,$@))
