@@ -212,6 +212,7 @@ build/%/src/func_800CE4B0.i build/%/src/func_800CE4B0.key build/%/units/func_800
 build/%/src/func_800DD9E8_us.i build/%/src/func_800DD9E8_us.key build/%/units/func_800DD9E8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800DDCA4.i build/%/src/func_800DDCA4.key build/%/units/func_800DDCA4.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E0B00.i build/%/src/func_800E0B00.key build/%/units/func_800E0B00.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
+build/%/src/func_800E1118_us.i build/%/src/func_800E1118_us.key build/%/units/func_800E1118_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_800E1A08_us.i build/%/src/func_800E1A08_us.key build/%/units/func_800E1A08_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E2614_us.i build/%/src/func_800E2614_us.key build/%/units/func_800E2614_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_800E3460.i build/%/src/func_800E3460.key build/%/units/func_800E3460.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2

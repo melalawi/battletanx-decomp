@@ -136,13 +136,21 @@
       "minutes": 38.18
     },
     "func_800E1118_us": {
-      "attempts": 5,
+      "attempts": 6,
       "best": {
         "us": 54.819277
       },
       "bytes": 1328,
       "exact": false,
-      "minutes": 155.24
+      "fuzzy": {
+        "compiler": "gcc-2.7.2-kmc",
+        "score": 54.819277,
+        "source_sha256": "31377fb0fa66a765547b1b7712105773663b8b2ac60a433d357f6bbfa9e07c9f",
+        "versions": {
+          "us": 54.819277
+        }
+      },
+      "minutes": 156.79
     },
     "func_800E30F8_us": {
       "attempts": 1,
