@@ -1,6 +1,8 @@
 #ifdef NON_MATCHING
+#include "abi.h"
 #include "audio_callbacks.h"
 #include "types.h"
+#include "bt_abi.h"
 #include "span_1000/code_801207B0.h"
 #include "common/draft_fields_func_80120C24_us.h"
 
@@ -47,14 +49,16 @@ void *func_80120C24_us(void *arg0, void *arg1, s32 arg2, s32 arg3, void *arg4) {
         sp28 = temp_t3;
         temp_v0_2 = func_80120A98_us(arg0, temp_t0 - temp_t3, 0x280, temp_f16 + temp_t8, arg4);
         temp_t6 = temp_v0_2 + 8;
-        ((struct Measured_func_80120C24_us_d3723d959b3b *)(temp_v0_2))->value = (s32) (((temp_t3 + 0x280) & 0xFFFF) | 0x08000000);
-        ((struct Measured_func_80120C24_us_4466dbb779d0 *)(temp_v0_2))->value = (s32) ((arg2 << 0x10) | ((arg3 * 2) & 0xFFFF));
+        aSetBuffer((Acmd *)temp_v0_2, 0, temp_t3 + 0x280, arg2, arg3 * 2);
         sp30 = temp_t6;
         temp_v1 = temp_v0_2 + 0x10;
-        ((struct Measured_func_80120C24_us_258934bd7eea *)(temp_v0_2))->value = (s32) (((((struct Measured_func_80120C24_us_0b0ad7aac4bc *)(((struct Measured_func_80120C24_us_028cd1a07375 *)(arg1))->value))->value & 0xFF) << 0x10) | 0x05000000 | ((s32) (sp44 * 32768.0f) & 0xFFFF));
+
         sp5C = temp_v1;
         var_v1 = temp_v1;
-        ((struct Measured_func_80120C24_us_2dd2dd1d01e8 *)(temp_t6))->value = func_80121F10(((struct Measured_func_80120C24_us_5a0991979bf8 *)(((struct Measured_func_80120C24_us_028cd1a07375 *)(arg1))->value))->value);
+        aResample((Acmd *)temp_t6,
+            ((struct Measured_func_80120C24_us_0b0ad7aac4bc *)(((struct Measured_func_80120C24_us_028cd1a07375 *)arg1)->value))->value,
+            (s32)(sp44 * 32768.0f),
+            func_80121F10(((struct Measured_func_80120C24_us_5a0991979bf8 *)(((struct Measured_func_80120C24_us_028cd1a07375 *)arg1)->value))->value));
         ((struct Measured_func_80120C24_us_0b0ad7aac4bc *)(((struct Measured_func_80120C24_us_028cd1a07375 *)(arg1))->value))->value = 0;
         ((struct Measured_func_80120C24_us_7705078627e3 *)(arg1))->value = (s32) ((((struct Measured_func_80120C24_us_7705078627e3 *)(arg1))->value + temp_f16) - arg3);
     } else {
