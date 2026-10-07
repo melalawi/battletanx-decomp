@@ -1,5 +1,6 @@
 #ifndef UNBAKE_SPAN_1000_CODE_801207B0_H
 #define UNBAKE_SPAN_1000_CODE_801207B0_H
+#include "acmd.h"
 #include "../types.h"
 #include "common/draft_fields_func_80120C24_us.h"
 /* unbake published declaration: published_474139ccd6f3f1a17f0cbb1f */
