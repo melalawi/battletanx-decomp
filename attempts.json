@@ -522,6 +522,15 @@
       "exact": false,
       "minutes": 1.13
     },
+    "func_800F5128": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 316,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_800FF73C_us": {
       "attempts": 2,
       "best": {
