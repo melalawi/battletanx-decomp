@@ -2,6 +2,7 @@
 #define UNBAKE_SPAN_1000_CODE_800A9FC4_H
 #include "../types.h"
 #include "gfx.h"
+#include "types.h"
 /* unbake published declaration: published_2991a922b4e455f5861ab7f8 */
 extern int func_800AB614();
 
@@ -41,4 +42,14 @@ extern int func_800ABF40_us();
 extern int func_800ABF70_us();
 
 extern int func_800ABFA8_us(void);
+struct func_800AA280_S1_Shared800AA280;
+typedef struct func_800AA280_S1_Shared800AA280 func_800AA280_S1_Shared800AA280;
+
+
+
+struct func_800AA280_S1_Shared800AA280 {
+    void * unk0;
+    char pad0[0x14 - 0x0 - sizeof(void*)];
+    u16 unk14;
+};
 #endif
