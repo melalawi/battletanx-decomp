@@ -1,44 +1,16 @@
 #include "span_1000/code_800E5328.h"
 #include "types.h"
 
-struct func_800E6CA4_S1;
-typedef struct func_800E6CA4_S1 func_800E6CA4_S1;
 
 
 
-struct func_800E6CA4_S1 {
-    char pad0[0x4D0];
-    f32 unk4D0;
-    f32 unk4D4;
-    f32 unk4D8;
-    f32 unk4DC;
-    f32 unk4E0;
-};
+
+
+
 
 #include "types.h"
-#define NULL ((void *)0)
 
 
-#ifndef M2C_MACROS_H
-#define M2C_MACROS_H
-
-/* Unknown types */
-
-/* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-
-/* Bitwise (reinterpret) cast */
-
-/* Unaligned reads */
-
-/* Unhandled instructions */
-
-/* Carry/overflow bits from partially-implemented instructions */
-
-/* Memcpy patterns */
-
-/* Sh2 control register loads/stores */
-
-#endif
 /* Tests whether two points remain within the object's scaled distance threshold. */
 f32 func_800E1A20(s32, f32 *);                  
 
@@ -46,7 +18,7 @@ f32 func_800E1A20(s32, f32 *);
 
 /* extern */
 
-s32 func_800E6CA4(func_800E6CA4_S1 *arg0, s32 arg1) {
+s32 func_800E6CA4(func_800E6CA4_S1_Shared800E6CA4 *arg0, s32 arg1) {
     f32 sp10[4];
     f32 temp_f20;
     f32 temp_f4;

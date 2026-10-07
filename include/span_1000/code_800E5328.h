@@ -2,6 +2,7 @@
 #define UNBAKE_SPAN_1000_CODE_800E5328_H
 #include "../types.h"
 #include "common/types_d507c48987bb.h"
+#include "types.h"
 struct Shape_func_800E6970_us;
 
 /* unbake published declaration: published_05e7ec82d65cf8a48e4b3806 */
@@ -87,4 +88,17 @@ extern int func_800E5AB0_us(void);
 extern int func_800E5DE4_us(int arg0);
 
 extern int func_800E6A30_us(struct Shape_func_800E3F90_us * arg0);
+struct func_800E6CA4_S1_Shared800E6CA4;
+typedef struct func_800E6CA4_S1_Shared800E6CA4 func_800E6CA4_S1_Shared800E6CA4;
+
+
+
+struct func_800E6CA4_S1_Shared800E6CA4 {
+    char pad0[0x4D0];
+    f32 unk4D0;
+    f32 unk4D4;
+    f32 unk4D8;
+    f32 unk4DC;
+    f32 unk4E0;
+};
 #endif
