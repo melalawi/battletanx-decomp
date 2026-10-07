@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_800A8940_H
 #define UNBAKE_SPAN_1000_CODE_800A8940_H
 #include "../types.h"
+#include "types.h"
 /* unbake published declaration: published_329ddadca9e691f034c7b966 */
 extern int func_800A9B70(int arg0, int arg1);
 
@@ -46,4 +47,14 @@ extern int func_800A9E78_us(void * arg0);
 extern int func_800A9EE0_us(void * arg0);
 
 extern void * func_800A9F48_us(void * arg0);
+struct Func_800A979C_View0_Shared800A979C;
+
+
+struct Func_800A979C_View0_Shared800A979C {
+    char pad_0[0x4];
+    s32 field_4;
+    u16 field_8;
+    s8 field_a[4];
+    s8 field_e[1];
+};
 #endif
