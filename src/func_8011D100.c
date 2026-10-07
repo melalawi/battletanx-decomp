@@ -1,28 +1,19 @@
+#include "span_1000/code_80077930.h"
 #include "span_1000/code_8011D0D0.h"
 #include "types.h"
 
-struct func_80078D90_S1;
-typedef struct func_80078D90_S1 func_80078D90_S1;
-typedef struct func_80078D90_S2 func_80078D90_S2;
-
-struct func_80078D90_S2;
 
 
 
 
 
-struct func_80078D90_S1 {
-    char pad0[0xC];
-    u8 unkC;
-    char padC[1];
-    u16 unkE;
-    s32 unk10;
-    s32 unk14;
-};
-struct func_80078D90_S2 {
-    char pad0[4];
-    s32 unk4;
-};
+
+
+
+
+
+
+
 
 /* Polls the status word, reports whether its 0x100 bit was set, and when the
    0x80 bit is also set folds that report into the object's flag word at 0x4
@@ -33,7 +24,7 @@ struct func_80078D90_S2 {
 
 
 
-int func_8011D100(func_80078D90_S2 *obj) {
+int func_8011D100(func_80078D90_S2_Shared80078D90 *obj) {
     int status;
     int pressed;
 

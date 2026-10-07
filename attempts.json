@@ -758,11 +758,13 @@
       "minutes": 13.19
     },
     "func_8011D100": {
-      "attempts": 3,
-      "best": {},
+      "attempts": 4,
+      "best": {
+        "us": 100.0
+      },
       "bytes": 128,
-      "exact": false,
-      "minutes": 4.7
+      "exact": true,
+      "minutes": 13.37
     },
     "func_8011E564": {
       "attempts": 1,
