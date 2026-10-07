@@ -511,11 +511,13 @@
       "minutes": 13.23
     },
     "func_800EEBEC": {
-      "attempts": 3,
-      "best": {},
+      "attempts": 4,
+      "best": {
+        "us": 100.0
+      },
       "bytes": 368,
-      "exact": false,
-      "minutes": 4.97
+      "exact": true,
+      "minutes": 13.32
     },
     "func_800F3014": {
       "attempts": 1,
