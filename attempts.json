@@ -793,11 +793,21 @@
       "minutes": 60.94
     },
     "func_80120E48_us": {
-      "attempts": 2,
-      "best": {},
+      "attempts": 4,
+      "best": {
+        "us": 17.218543
+      },
       "bytes": 604,
       "exact": false,
-      "minutes": 83.47
+      "fuzzy": {
+        "compiler": "ido-7.1",
+        "score": 16.556291,
+        "source_sha256": "b60e16285833e4e8f36328d572238febaa287cd90001b1e1dac4803be09793e7",
+        "versions": {
+          "us": 16.556291
+        }
+      },
+      "minutes": 112.05
     }
   },
   "v": 1

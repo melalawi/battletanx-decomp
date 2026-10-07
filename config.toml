@@ -230,89 +230,267 @@ cflags = [ "-c", "-G0", "-non_shared", "-mips2", "-O2",]
 [compilers."ido-7.1"]
 cflags = [ "-c", "-G0", "-non_shared", "-mips2", "-O2",]
 
-[units]
-func_8007967C = { compiler = "ido-7.1" }
-func_80079684 = { compiler = "ido-7.1" }
-func_8007C298 = { compiler = "ido-7.1" }
-func_8007C33C = { compiler = "ido-7.1" }
-func_800805D0 = { compiler = "ido-7.1" }
-func_80085460 = { compiler = "ido-7.1" }
-func_80085468 = { compiler = "ido-7.1" }
-func_800917C4 = { compiler = "ido-7.1" }
-func_80093F34 = { compiler = "ido-7.1" }
-func_800949B8 = { compiler = "ido-7.1" }
-func_80096784 = { compiler = "gcc-2.8.1-sn64" }
-func_80097C24 = { compiler = "ido-7.1" }
-func_8009E39C = { compiler = "ido-7.1" }
-func_800A424C = { compiler = "ido-7.1" }
-func_800A42BC = { compiler = "ido-7.1" }
-func_800A4D1C = { compiler = "ido-7.1" }
-func_800A66C0 = { compiler = "ido-7.1" }
-func_800A7548 = { compiler = "ido-7.1" }
-func_800A76A0 = { compiler = "ido-7.1" }
-func_800AB200 = { compiler = "ido-7.1" }
-func_800ABFA0 = { compiler = "ido-7.1" }
-func_800E3460 = { compiler = "ido-7.1" }
-func_800E3470 = { compiler = "ido-7.1" }
-func_800E3480 = { compiler = "ido-7.1" }
-func_800E349C = { compiler = "ido-7.1" }
-func_800E3C18 = { compiler = "ido-7.1" }
-func_800E480C = { compiler = "ido-7.1" }
-func_800E4814_us = { compiler = "ido-7.1" }
-func_800E5198 = { compiler = "ido-7.1" }
-func_800E566C = { compiler = "ido-7.1" }
-func_800E99D4 = { compiler = "ido-7.1" }
-func_800EA1B0 = { compiler = "ido-7.1" }
-func_800EBBB4_us = { compiler = "ido-7.1" }
-func_80106D00 = { compiler = "ido-7.1" }
-func_80106D08_us = { compiler = "ido-7.1" }
-func_80107168_us = { compiler = "ido-7.1" }
-func_80107704_us = { compiler = "ido-7.1" }
-func_80109354 = { compiler = "ido-7.1" }
-func_8010BC08 = { compiler = "ido-7.1" }
-func_801109B8_us = { compiler = "ido-7.1" }
-func_80110AAC_us = { compiler = "ido-7.1" }
-func_80110CA0 = { compiler = "ido-7.1", flags = ["-O1"] }
-func_801145D0 = { compiler = "ido-7.1", flags = ["-O1"] }
-func_801147A0 = { compiler = "ido-7.1" }
-func_80114828 = { compiler = "ido-7.1" }
-func_80115474 = { compiler = "ido-7.1", flags = ["-O1"] }
-func_8011588C = { compiler = "ido-7.1", flags = ["-O1"] }
-func_80115C80 = { compiler = "ido-7.1", flags = ["-O1"] }
-func_8011954C = { compiler = "ido-7.1" }
-func_80119568_us = { compiler = "ido-7.1" }
-func_80119570_us = { compiler = "ido-7.1" }
-func_80119B60 = { compiler = "ido-7.1" }
-func_80119BB4 = { compiler = "ido-7.1" }
-func_80119C34 = { compiler = "ido-7.1" }
-func_80119CE8_us = { compiler = "ido-7.1" }
-func_80119F70 = { compiler = "ido-7.1" }
-func_8011A134 = { compiler = "ido-7.1" }
-func_8011AB74_us = { compiler = "ido-7.1" }
-func_8011B1A0 = { compiler = "ido-7.1" }
-func_8011B2A4 = { compiler = "ido-7.1" }
-func_8011B7BC = { compiler = "ido-7.1" }
-func_8011B8F0 = { compiler = "ido-7.1" }
-func_8011B9E0 = { compiler = "ido-7.1" }
-func_8011BDE4 = { compiler = "ido-7.1" }
-func_8011C150 = { compiler = "ido-7.1" }
-func_8011C180 = { compiler = "ido-7.1" }
-func_8011C300 = { compiler = "ido-7.1" }
-func_8011C39C_us = { compiler = "ido-7.1" }
-func_8011C3A4_us = { compiler = "ido-7.1" }
-func_8011D0E0 = { compiler = "ido-7.1" }
-func_8011D100 = { compiler = "ido-7.1", flags = ["-O1"] }
-func_8011D3DC = { compiler = "ido-7.1" }
-func_8011D6D0 = { compiler = "ido-7.1" }
-func_8011DC00_us = { compiler = "ido-7.1" }
-func_8011DC60 = { compiler = "ido-7.1" }
-func_8011DC98 = { compiler = "ido-7.1" }
-func_8011DD40_us = { compiler = "ido-7.1" }
-func_8011E3F0 = { compiler = "ido-7.1" }
-func_8011E434 = { compiler = "ido-7.1" }
-func_8011E488 = { compiler = "ido-7.1" }
-func_8011E564 = { compiler = "ido-7.1" }
-func_8011E6B0_us = { compiler = "ido-5.3" }
-func_8011ECA4 = { compiler = "ido-7.1" }
-func_8011F7F0 = { compiler = "ido-7.1" }
-func_80121F10 = { compiler = "ido-7.1", flags = ["-O1"] }
+[units.func_8007967C]
+compiler = "ido-7.1"
+
+[units.func_80079684]
+compiler = "ido-7.1"
+
+[units.func_8007C298]
+compiler = "ido-7.1"
+
+[units.func_8007C33C]
+compiler = "ido-7.1"
+
+[units.func_800805D0]
+compiler = "ido-7.1"
+
+[units.func_80085460]
+compiler = "ido-7.1"
+
+[units.func_80085468]
+compiler = "ido-7.1"
+
+[units.func_800917C4]
+compiler = "ido-7.1"
+
+[units.func_80093F34]
+compiler = "ido-7.1"
+
+[units.func_800949B8]
+compiler = "ido-7.1"
+
+[units.func_80096784]
+compiler = "gcc-2.8.1-sn64"
+
+[units.func_80097C24]
+compiler = "ido-7.1"
+
+[units.func_8009E39C]
+compiler = "ido-7.1"
+
+[units.func_800A424C]
+compiler = "ido-7.1"
+
+[units.func_800A42BC]
+compiler = "ido-7.1"
+
+[units.func_800A4D1C]
+compiler = "ido-7.1"
+
+[units.func_800A66C0]
+compiler = "ido-7.1"
+
+[units.func_800A7548]
+compiler = "ido-7.1"
+
+[units.func_800A76A0]
+compiler = "ido-7.1"
+
+[units.func_800AB200]
+compiler = "ido-7.1"
+
+[units.func_800ABFA0]
+compiler = "ido-7.1"
+
+[units.func_800E3460]
+compiler = "ido-7.1"
+
+[units.func_800E3470]
+compiler = "ido-7.1"
+
+[units.func_800E3480]
+compiler = "ido-7.1"
+
+[units.func_800E349C]
+compiler = "ido-7.1"
+
+[units.func_800E3C18]
+compiler = "ido-7.1"
+
+[units.func_800E480C]
+compiler = "ido-7.1"
+
+[units.func_800E4814_us]
+compiler = "ido-7.1"
+
+[units.func_800E5198]
+compiler = "ido-7.1"
+
+[units.func_800E566C]
+compiler = "ido-7.1"
+
+[units.func_800E99D4]
+compiler = "ido-7.1"
+
+[units.func_800EA1B0]
+compiler = "ido-7.1"
+
+[units.func_800EBBB4_us]
+compiler = "ido-7.1"
+
+[units.func_80106D00]
+compiler = "ido-7.1"
+
+[units.func_80106D08_us]
+compiler = "ido-7.1"
+
+[units.func_80107168_us]
+compiler = "ido-7.1"
+
+[units.func_80107704_us]
+compiler = "ido-7.1"
+
+[units.func_80109354]
+compiler = "ido-7.1"
+
+[units.func_8010BC08]
+compiler = "ido-7.1"
+
+[units.func_801109B8_us]
+compiler = "ido-7.1"
+
+[units.func_80110AAC_us]
+compiler = "ido-7.1"
+
+[units.func_80110CA0]
+compiler = "ido-7.1"
+flags = [ "-O1",]
+
+[units.func_801145D0]
+compiler = "ido-7.1"
+flags = [ "-O1",]
+
+[units.func_801147A0]
+compiler = "ido-7.1"
+
+[units.func_80114828]
+compiler = "ido-7.1"
+
+[units.func_80115474]
+compiler = "ido-7.1"
+flags = [ "-O1",]
+
+[units.func_8011588C]
+compiler = "ido-7.1"
+flags = [ "-O1",]
+
+[units.func_80115C80]
+compiler = "ido-7.1"
+flags = [ "-O1",]
+
+[units.func_8011954C]
+compiler = "ido-7.1"
+
+[units.func_80119568_us]
+compiler = "ido-7.1"
+
+[units.func_80119570_us]
+compiler = "ido-7.1"
+
+[units.func_80119B60]
+compiler = "ido-7.1"
+
+[units.func_80119BB4]
+compiler = "ido-7.1"
+
+[units.func_80119C34]
+compiler = "ido-7.1"
+
+[units.func_80119CE8_us]
+compiler = "ido-7.1"
+
+[units.func_80119F70]
+compiler = "ido-7.1"
+
+[units.func_8011A134]
+compiler = "ido-7.1"
+
+[units.func_8011AB74_us]
+compiler = "ido-7.1"
+
+[units.func_8011B1A0]
+compiler = "ido-7.1"
+
+[units.func_8011B2A4]
+compiler = "ido-7.1"
+
+[units.func_8011B7BC]
+compiler = "ido-7.1"
+
+[units.func_8011B8F0]
+compiler = "ido-7.1"
+
+[units.func_8011B9E0]
+compiler = "ido-7.1"
+
+[units.func_8011BDE4]
+compiler = "ido-7.1"
+
+[units.func_8011C150]
+compiler = "ido-7.1"
+
+[units.func_8011C180]
+compiler = "ido-7.1"
+
+[units.func_8011C300]
+compiler = "ido-7.1"
+
+[units.func_8011C39C_us]
+compiler = "ido-7.1"
+
+[units.func_8011C3A4_us]
+compiler = "ido-7.1"
+
+[units.func_8011D0E0]
+compiler = "ido-7.1"
+
+[units.func_8011D100]
+compiler = "ido-7.1"
+flags = [ "-O1",]
+
+[units.func_8011D3DC]
+compiler = "ido-7.1"
+
+[units.func_8011D6D0]
+compiler = "ido-7.1"
+
+[units.func_8011DC00_us]
+compiler = "ido-7.1"
+
+[units.func_8011DC60]
+compiler = "ido-7.1"
+
+[units.func_8011DC98]
+compiler = "ido-7.1"
+
+[units.func_8011DD40_us]
+compiler = "ido-7.1"
+
+[units.func_8011E3F0]
+compiler = "ido-7.1"
+
+[units.func_8011E434]
+compiler = "ido-7.1"
+
+[units.func_8011E488]
+compiler = "ido-7.1"
+
+[units.func_8011E564]
+compiler = "ido-7.1"
+
+[units.func_8011E6B0_us]
+compiler = "ido-5.3"
+
+[units.func_8011ECA4]
+compiler = "ido-7.1"
+
+[units.func_8011F7F0]
+compiler = "ido-7.1"
+
+[units.func_80120E48_us]
+compiler = "ido-7.1"
+
+[units.func_80121F10]
+compiler = "ido-7.1"
+flags = [ "-O1",]
