@@ -36,9 +36,19 @@ union func_8007EC38_S1_UE8_Shared8007EC38;
 struct func_8007ECE8_S1_Shared8007ECE8;
 typedef struct func_8007ECE8_S1_Shared8007ECE8 func_8007ECE8_S1_Shared8007ECE8;
 
+struct Func_8007FF68_View0_Shared8007FF68;
+struct Func_8007FF68_View1_Shared8007FF68;
 struct Func8007EC38Entry_Shared8007EC38 {
     s32 threshold;
     char pad4[0x14];
+};
+struct Func_8007FF68_View0_Shared8007FF68 {
+    char pad_0[0x88];
+    s32 field_88;
+};
+struct Func_8007FF68_View1_Shared8007FF68 {
+    char pad_0[0x140];
+    s32 field_140;
 };
 struct Shape_func_8008001C_us {
     unsigned char unknown_0[4];
@@ -116,6 +126,10 @@ struct func_8007EC38_S1_Shared8007EC38 {
     char padD8[0xE8 - 0xD8 - sizeof(void*)];
     func_8007EC38_S1_UE8_Shared8007EC38 unkE8;
 };
+
+
+
+
 
 
 #endif
