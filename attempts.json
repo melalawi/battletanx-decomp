@@ -611,7 +611,7 @@
       "minutes": 246.29
     },
     "func_8010AA6C_us": {
-      "attempts": 4,
+      "attempts": 5,
       "best": {
         "us": 46.715328
       },
@@ -625,7 +625,7 @@
           "us": 46.715328
         }
       },
-      "minutes": 297.05
+      "minutes": 306.02
     },
     "func_8010AC90_us": {
       "attempts": 2,
@@ -637,7 +637,7 @@
       "minutes": 73.93
     },
     "func_8010BC10_us": {
-      "attempts": 4,
+      "attempts": 5,
       "best": {
         "us": 80.19802
       },
@@ -651,7 +651,7 @@
           "us": 80.19802
         }
       },
-      "minutes": 297.09
+      "minutes": 306.02
     },
     "func_8010DCD0": {
       "attempts": 1,
