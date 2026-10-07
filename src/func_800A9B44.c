@@ -12,29 +12,7 @@ int func_800A9B44(unsigned char *arg0) {
     return sum;
 }
 
-#define NULL ((void *)0)
 
-
-#ifndef M2C_MACROS_H
-#define M2C_MACROS_H
-
-/* Unknown types */
-
-/* Unknown field access, like `*(type_ptr) &expr->unk_offset` */
-
-/* Bitwise (reinterpret) cast */
-
-/* Unaligned reads */
-
-/* Unhandled instructions */
-
-/* Carry/overflow bits from partially-implemented instructions */
-
-/* Memcpy patterns */
-
-/* Sh2 control register loads/stores */
-
-#endif
 s32 func_80116A10();                 /* extern */
 s32 func_80119240(); /* extern */
 s32 func_801193E0(); /* extern */
