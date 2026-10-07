@@ -30,6 +30,13 @@ typedef struct func_80097B7C_S1_Shared80097B7C func_80097B7C_S1_Shared80097B7C;
 
 
 
+struct Func_80099CD8_View0_Shared80099CD8;
+struct Func_80099CD8_View0_Shared80099CD8 {
+    char pad_0[0x3b4];
+    f32 field_3b4;
+    char pad_3b8[0xac];
+    u8 field_464;
+};
 struct func_80097B7C_S1_Shared80097B7C {
     char pad0[0x1];
     u8 unk1;
@@ -39,4 +46,6 @@ struct func_80097B7C_S1_Shared80097B7C {
     char pad45C[0x4F0 - 0x45C - sizeof(s32)];
     s32 unk4F0;
 };
+
+
 #endif
