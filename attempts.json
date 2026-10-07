@@ -301,6 +301,15 @@
       "exact": true,
       "minutes": 0.02
     },
+    "func_800A7D10": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 172,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_800A86E4_us": {
       "attempts": 8,
       "best": {
