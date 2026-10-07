@@ -33,6 +33,9 @@ struct func_8007EC38_S1_Shared8007EC38;
 
 union func_8007EC38_S1_UE8_Shared8007EC38;
 
+struct func_8007ECE8_S1_Shared8007ECE8;
+typedef struct func_8007ECE8_S1_Shared8007ECE8 func_8007ECE8_S1_Shared8007ECE8;
+
 struct Func8007EC38Entry_Shared8007EC38 {
     s32 threshold;
     char pad4[0x14];
@@ -97,6 +100,14 @@ struct Func8007EC38Catalog_Shared8007EC38 {
     char pad0[0xA4];
     Func8007EC38Entry_Shared8007EC38 entries[1];
 };
+struct func_8007ECE8_S1_Shared8007ECE8 {
+    char pad0[0xD0];
+    u16 unkD0;
+    char padD0[0xDC - 0xD0 - sizeof(u16)];
+    void * unkDC;
+    char padDC[0xE8 - 0xDC - sizeof(void*)];
+    func_8007EC38_S1_UE8_Shared8007EC38 unkE8;
+};
 struct func_8007EC38_S1_Shared8007EC38 {
     char pad0[0xD0];
     u16 unkD0;
@@ -105,4 +116,6 @@ struct func_8007EC38_S1_Shared8007EC38 {
     char padD8[0xE8 - 0xD8 - sizeof(void*)];
     func_8007EC38_S1_UE8_Shared8007EC38 unkE8;
 };
+
+
 #endif
