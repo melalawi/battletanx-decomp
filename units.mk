@@ -338,6 +338,7 @@ build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_801
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: COMPILER_INCLUDES := 
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: COMPILER_DEFINES := 
 build/%/src/func_8010BC08.i build/%/src/func_8010BC08.key build/%/units/func_8010BC08.bin: TRIM := --trim
+build/%/src/func_8010BC10_us.i build/%/src/func_8010BC10_us.key build/%/units/func_8010BC10_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -DNON_MATCHING
 build/%/src/func_8010DCD0.i build/%/src/func_8010DCD0.key build/%/units/func_8010DCD0.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER)
 build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: PREPROCESS_FLAGS = -Iinclude $(VERSION_DEFINES) $(CONSUMER) -G0 -non_shared -mips2
 build/%/src/func_801109B8_us.i build/%/src/func_801109B8_us.key build/%/units/func_801109B8_us.bin: KIND := ido
