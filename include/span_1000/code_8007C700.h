@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_8007C700_H
 #define UNBAKE_SPAN_1000_CODE_8007C700_H
 #include "../types.h"
+#include "types.h"
 /* unbake published declaration: published_57462093e196c78cfb2f5852 */
 extern void func_8007E140_us(void *arg0);
 
@@ -40,4 +41,22 @@ extern int func_8007E9C8_us(void * arg0, int arg1);
 extern int func_8007EAA4_us(int arg0);
 
 extern int func_8007EB04_us(int arg0);
+struct func_8007D384_S1_Shared8007D384;
+typedef struct func_8007D384_S1_Shared8007D384 func_8007D384_S1_Shared8007D384;
+typedef struct func_8007D384_S2_Shared8007D384 func_8007D384_S2_Shared8007D384;
+
+struct func_8007D384_S2_Shared8007D384;
+
+
+
+
+
+struct func_8007D384_S1_Shared8007D384 {
+    char pad0[0x218];
+    s32 unk218;
+};
+struct func_8007D384_S2_Shared8007D384 {
+    char pad0[0x10];
+    s32 unk10;
+};
 #endif
