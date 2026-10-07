@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_8007963C_H
 #define UNBAKE_SPAN_1000_CODE_8007963C_H
 #include "../types.h"
+#include "types.h"
 /* unbake published declaration: published_2c567e8374e526bc53cd5003 */
 extern s32 D_801B4A48;
 
@@ -12,6 +13,25 @@ extern void func_80079684(void);
 struct Measured_func_8007A26C_us_9f751e433327;
 
 /* unbake published declaration: published_3aec693d35da05bb14bb9a92 */
+struct Func79EFCArg_Shared80079EFC;
+typedef struct Func79EFCArg_Shared80079EFC Func79EFCArg_Shared80079EFC;
+
+struct Func79EFCArg_Shared80079EFC {
+    s32 unk0;
+    s32 unk4;
+    s8 unk8;
+    s8 unk9;
+    s8 padA[2];
+    union {
+        s32 values[4];
+        struct {
+            s32 unkC;
+            s32 unk10;
+            s32 unk14;
+            s32 unk18;
+        } fields;
+    } tail;
+};
 struct Measured_func_8007A26C_us_9f751e433327 { unsigned char padding[72]; short value; };
 
 
@@ -74,4 +94,6 @@ extern int func_80079D9C_us(void);
 extern int func_8007A004_us();
 
 extern int func_8007A36C_us();
+
+
 #endif

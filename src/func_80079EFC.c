@@ -1,30 +1,15 @@
 #include "span_1000/code_8007963C.h"
 #include "types.h"
 
-struct Func79EFCArg;
-typedef struct Func79EFCArg Func79EFCArg;
 
 
 
-struct Func79EFCArg {
-    s32 unk0;
-    s32 unk4;
-    s8 unk8;
-    s8 unk9;
-    s8 padA[2];
-    union {
-        s32 values[4];
-        struct {
-            s32 unkC;
-            s32 unk10;
-            s32 unk14;
-            s32 unk18;
-        } fields;
-    } tail;
-};
+
+
+
 
 #include "types.h"
-#define NULL ((void *)0)
+
 
 
 s32 func_80112140(); /* extern */
@@ -36,7 +21,7 @@ extern s32 D_80150354;
 
 
 void func_80079EFC(void) {
-    Func79EFCArg arg;
+    Func79EFCArg_Shared80079EFC arg;
     s32 temp_v0;
 
     arg.unk0 = 0x30;
