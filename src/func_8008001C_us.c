@@ -4,7 +4,7 @@
 #include "span_1000/code_800F45C8.h"
 #include "gfx.h"
 #undef F3DEX_GBI_2
-#define F3D_GBI
+
 #include "gbi.h"
 
 
