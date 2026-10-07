@@ -66,10 +66,19 @@ struct func_800A74AC_S6_Shared800A74AC;
 
 
 
+struct func_800A7550_S1_Shared800A7550;
+typedef struct func_800A7550_S1_Shared800A7550 func_800A7550_S1_Shared800A7550;
+
 struct func_800A74AC_S1_Shared800A74AC {
     char pad0[0x8];
     s32 unk8;
     void * unkC;
+};
+struct func_800A7550_S1_Shared800A7550 {
+    char pad0[0xC];
+    s32 unkC;
+    f32 unk10;
+    f32 unk14;
 };
 struct func_800A74AC_S2_Shared800A74AC {
     char pad0[0x4];
@@ -89,4 +98,6 @@ struct func_800A74AC_S6_Shared800A74AC {
     char pad0[0x2C];
     void * unk2C;
 };
+
+
 #endif
