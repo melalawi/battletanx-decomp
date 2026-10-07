@@ -136,13 +136,13 @@
       "minutes": 0.02
     },
     "func_800D1BA0_us": {
-      "attempts": 4,
+      "attempts": 5,
       "best": {
-        "us": 57.788945
+        "us": 58.291457
       },
       "bytes": 796,
       "exact": false,
-      "minutes": 38.18
+      "minutes": 39.53
     },
     "func_800E1118_us": {
       "attempts": 6,
