@@ -724,6 +724,29 @@
       "exact": false,
       "minutes": 0.02
     },
+    "func_80119C34": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 180,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_8011D100": {
+      "attempts": 1,
+      "best": {},
+      "bytes": 128,
+      "exact": false,
+      "minutes": 0.02
+    },
+    "func_8011E564": {
+      "attempts": 1,
+      "best": {
+        "us": 100.0
+      },
+      "bytes": 168,
+      "exact": true,
+      "minutes": 0.02
+    },
     "func_80120C24_us": {
       "attempts": 4,
       "best": {
