@@ -2,6 +2,7 @@
 #define UNBAKE_SPAN_1000_CODE_800E3BC0_H
 #include "../types.h"
 #include "common/types_d507c48987bb.h"
+#include "types.h"
 /* unbake published declaration: published_08f84d8052e72d0947462f62 */
 extern void func_800E51B8_us(void);
 
@@ -35,4 +36,13 @@ extern void * func_800E4A38_us();
 extern void func_800E4D2C_us(void * arg0);
 
 extern int func_800E51A0_us(int arg0);
+struct Func_800E4D44_Lists_Shared800E4D44;
+
+
+struct Func_800E4D44_Lists_Shared800E4D44 {
+    s16 initial_ids[3];
+    u16 initial_count;
+    s16 extra_ids[15];
+    u16 extra_count;
+};
 #endif
