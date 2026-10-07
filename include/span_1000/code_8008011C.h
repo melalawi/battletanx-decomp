@@ -1,6 +1,7 @@
 #ifndef UNBAKE_SPAN_1000_CODE_8008011C_H
 #define UNBAKE_SPAN_1000_CODE_8008011C_H
 #include "../types.h"
+#include "types.h"
 /* unbake published declaration: published_2837c1f4e1ca85a2f0e24d8b */
 extern void func_800805DC(void);
 
@@ -54,4 +55,13 @@ extern int func_80081934_us();
 extern int func_80081A50_us();
 
 extern int func_80081A78_us(int arg0);
+struct func_800805DC_S1_Shared800805DC;
+typedef struct func_800805DC_S1_Shared800805DC func_800805DC_S1_Shared800805DC;
+
+
+
+struct func_800805DC_S1_Shared800805DC {
+    char pad0[0x2680];
+    s8 unk2680;
+};
 #endif
