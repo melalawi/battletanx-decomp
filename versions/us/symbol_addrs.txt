@@ -1842,3 +1842,7 @@ D_802C13F0 = 0x802C13F0;
 D_802DF34A = 0x802DF34A;
 D_802DF350 = 0x802DF350;
 D_803276E0 = 0x803276E0;
+
+__cmpdi2 = 0x80125450; // type:func
+__floatdisf = 0x801254A0; // type:func
+__udivdi3 = 0x80124EC0; // type:func

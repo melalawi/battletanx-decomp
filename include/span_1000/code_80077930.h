@@ -7,7 +7,7 @@ extern void func_80077A38(int arg0);
 
 
 /* unbake published declaration: published_a48240a6bc80648ec839f7dd */
-extern s32 func_80077AD0;
+extern s32 func_80077AD0();
 
 
 extern float func_80077C78_us(void * arg0, void * arg1, void * arg2, void * arg3, void * arg4);

@@ -293,6 +293,10 @@ compiler = "ido-7.1"
 [units.func_800ABFA0]
 compiler = "ido-7.1"
 
+[units.func_800B1520_us]
+compiler = "gcc-2.7.2-kmc"
+flags = [ "-UF3DEX_GBI_2", "-G8",]
+
 [units.func_800E3460]
 compiler = "ido-7.1"
 

@@ -13,8 +13,8 @@
 
 void func_8011F7F0(void *, int, int, int);
 s32 func_80112140(); /* extern */
-extern s32 func_8011F810;
-extern s32 func_8011FEBC;
+extern s32 func_8011F810();
+extern s32 func_8011FEBC();
 
 
 

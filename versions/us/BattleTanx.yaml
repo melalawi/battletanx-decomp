@@ -1689,7 +1689,7 @@ segments:
       - [0x4098C, asm, "func_800B098C_us"]
       - [0x40D1C, asm, "func_800B0D1C_us"]
       - [0x41264, asm, "func_800B1264_us"]
-      - [0x41520, asm, "func_800B1520_us"]
+      - [0x41520, c, "func_800B1520_us"]
       - [0x4850C, asm, "func_800B850C_us"]
       - [0x48750, c, func_800B8750]
       - [0x48804, asm, "func_800B8804_us"]
